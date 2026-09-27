@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Dependencies and build output (site/.gitignore has the site-specific rules)
+node_modules/
+
+# Local caches
+*.log
