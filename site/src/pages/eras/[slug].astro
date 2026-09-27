@@ -1,0 +1,99 @@
+---
+import Base from '../../layouts/Base.astro';
+import TimeRibbon from '../../components/TimeRibbon.astro';
+import EraContext from '../../components/EraContext.astro';
+import Figure from '../../components/Figure.astro';
+import ConstitutionStrip from '../../components/ConstitutionStrip.astro';
+import RegimeMatrix from '../../components/RegimeMatrix.astro';
+import TransitionFlow from '../../components/TransitionFlow.astro';
+import MythCards from '../../components/MythCards.astro';
+import Debates from '../../components/Debates.astro';
+import ConfidenceTable from '../../components/ConfidenceTable.astro';
+import SourcesList from '../../components/SourcesList.astro';
+import EvidenceRail from '../../components/EvidenceRail.astro';
+import { periods, builtEras, eraHref, type Period } from '../../lib/content';
+
+export function getStaticPaths() {
+  return periods.filter((p) => builtEras.includes(p.slug)).map((p) => ({ params: { slug: p.slug }, props: { period: p } }));
+}
+const { period } = Astro.props as { period: Period };
+const calmSections: number[] = Array.isArray(period.sensitiveSections) ? period.sensitiveSections : [];
+const isCalm = (n: number) => period.sensitive || calmSections.includes(n);
+const OPEN = [8, 11, 12]; // featured panels start open; the rest expand on demand
+const [hero, ...more] = period.images;
+// Remaining images are spread evenly between sections 2–14 (placement only; captions carry the meaning).
+const imageAfter = new Map<number, typeof more>();
+more.forEach((img, i) => {
+  const at = Math.round(2 + ((i + 1) * 12) / (more.length + 1));
+  imageAfter.set(at, [...(imageAfter.get(at) ?? []), img]);
+});
+const idx = periods.findIndex((p) => p.slug === period.slug);
+const prev = periods[idx - 1];
+const next = periods[idx + 1];
+const sectionTitle = (s: Period['sections'][number]) => s.name + (s.qualifier ? ` — ${s.qualifier}` : '');
+---
+
+<Base title={period.title} description={`${period.title} (${period.dateLabel})`} mood={period.mood} calm={period.sensitive}>
+  <TimeRibbon slot="ribbon" current={period} />
+  <article class="chapter" data-pagefind-body>
+    <header class="chapter-hero wrap-wide">
+      <div class="hero-text">
+        <p class="kicker">{period.groupLabel} · <code>{period.file}</code></p>
+        <h1 set:html={period.titleHtml} />
+        <p class="hero-date">{period.dateLabel}</p>
+        <div class="lead" id="s1">
+          <h2 class="visually-hidden">1. Period in One Paragraph</h2>
+          <Fragment set:html={period.leadHtml} />
+        </div>
+      </div>
+      <div class="hero-media">
+        {hero && <Figure id={hero.id} captionHtml={hero.captionHtml} variant="hero" eager />}
+      </div>
+    </header>
+
+    <div class="wrap">
+      <EvidenceRail period={period} />
+      <ConstitutionStrip period={period} />
+      <EraContext current={period} />
+
+      <div class="sections-tools">
+        <h2 class="kicker">The chapter, section by section</h2>
+        <button type="button" class="btn-quiet" data-expand-all aria-pressed="false">Expand all sections</button>
+      </div>
+
+      {period.sections.slice(1).map((s) => (
+        <>
+          <details class:list={['sec', `sec-${s.n}`, isCalm(s.n) && 'calm']} id={`s${s.n}`} open={OPEN.includes(s.n)}>
+            <summary><span class="sec-n">{s.n}</span> <span class="sec-title">{sectionTitle(s)}</span></summary>
+            <div class="sec-body">
+              {s.n === 12 && <p class="panel-label">Historians disagree</p>}
+              {(s.blocks as any[]).map((b) => (
+                b.type === 'html' ? <Fragment set:html={b.html} /> :
+                b.type === 'matrix' || b.type === 'matrixRef' ? <RegimeMatrix period={period} /> :
+                b.type === 'constitution' ? <p class="pointer"><a href="#constitution-h">What the constitution said vs how power actually worked</a> — shown at the top of this chapter.</p> :
+                b.type === 'transition' ? <TransitionFlow steps={b.steps} /> :
+                b.type === 'misconceptions' ? <MythCards items={b.items} calm={isCalm(11)} uid={`m-${period.slug}`} /> :
+                b.type === 'debates' ? <Debates items={b.items} /> :
+                b.type === 'confidence' ? <ConfidenceTable rows={b.rows} extraHeads={b.extraHeads} /> :
+                b.type === 'sources' ? <SourcesList items={b.items} /> : null
+              ))}
+              <p class="source-note">From <code>{period.file}</code> §{s.n}.</p>
+            </div>
+          </details>
+          {(imageAfter.get(s.n) ?? []).map((img) => <Figure id={img.id} captionHtml={img.captionHtml} variant="band" />)}
+        </>
+      ))}
+
+      <section class="five" aria-labelledby="five-h">
+        <h2 id="five-h">If you remember only 5 things</h2>
+        <ol>{period.fiveThings.map((t) => <li set:html={t} />)}</ol>
+      </section>
+
+      <nav class="chapter-nav" aria-label="Neighbouring chapters">
+        {prev && (eraHref(prev.slug) ? <a href={eraHref(prev.slug)} rel="prev">← {prev.title}</a> : <span class="pending">← {prev.title} <small>(rollout)</small></span>)}
+        <a href="/eras/">All eras</a>
+        {next && (eraHref(next.slug) ? <a href={eraHref(next.slug)} rel="next">{next.title} →</a> : <span class="pending">{next.title} → <small>(rollout)</small></span>)}
+      </nav>
+    </div>
+  </article>
+</Base>

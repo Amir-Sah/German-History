@@ -4,3 +4,4 @@ dist/
 src/content/generated/
 public/img-cache/
 qa/reports/
+dist-public/

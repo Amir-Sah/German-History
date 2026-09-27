@@ -1,0 +1,34 @@
+---
+// "Misconception / Correction" cards. Without JS, or in the calm register, both sides are shown
+// stacked. With JS, each card turns to show the correction (a fade when reduced motion is set).
+interface Item { mythHtml: string; correctionHtml: string; }
+interface Props { items: Item[]; calm?: boolean; uid: string; }
+const { items, calm = false, uid } = Astro.props;
+---
+<div class:list={['myths', calm ? 'myths-stacked' : 'myths-cards']} data-myths>
+  {!calm && (
+    <p class="myths-tools"><button type="button" class="btn-quiet" data-myths-all aria-pressed="false">Show all corrections</button></p>
+  )}
+  <ul class="myth-list">
+    {items.map((it, i) => (
+      <li class="myth" data-myth>
+        <div class="myth-face myth-front">
+          <p class="myth-kicker">Misconception</p>
+          <p class="myth-text" set:html={it.mythHtml} />
+          {!calm && (
+            <button type="button" class="myth-turn" aria-expanded="false" aria-controls={`${uid}-c${i}`} data-myth-turn>
+              Show the correction
+            </button>
+          )}
+        </div>
+        <div class="myth-face myth-back" id={`${uid}-c${i}`}>
+          <p class="myth-kicker">Correction</p>
+          <p class="myth-text" set:html={it.correctionHtml} />
+          {!calm && (
+            <button type="button" class="myth-turn myth-turn-back" data-myth-back>Back to the misconception</button>
+          )}
+        </div>
+      </li>
+    ))}
+  </ul>
+</div>

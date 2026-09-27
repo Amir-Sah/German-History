@@ -1,0 +1,17 @@
+{
+  "_about": "Known, reviewed deviations from the template rules in 01_RESEARCH_METHOD.md §8. The build fails on any deviation not listed here, and also on any entry here that no longer matches a deviation (so the list cannot go stale).",
+  "exceptions": [
+    {
+      "file": "ancient/02_roman_frontier.md",
+      "rule": "matrix-heading-form",
+      "found": "### Regime Matrix (Roman provinces of Germania Inferior, Germania Superior, Raetia)",
+      "reason": "Qualifier in parentheses instead of after an em dash. Rendered with the qualifier as written; logged as K14 in CONTENT_TRACE.md."
+    },
+    {
+      "file": "twentieth_century/07_world_war_two.md",
+      "rule": "matrix-heading-form",
+      "found": "### Regime Matrix (wartime changes)",
+      "reason": "Qualifier in parentheses instead of after an em dash. Rendered with the qualifier as written; logged as K14 in CONTENT_TRACE.md."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+---
+import { levelMeaning } from '../lib/content';
+interface Row { findingHtml: string; levels: string[]; qualifier: string | null; text: string; extraHtml: string[]; }
+interface Props { rows: Row[]; extraHeads: string[]; }
+const { rows, extraHeads } = Astro.props;
+---
+<div class="table-wrap" tabindex="0" role="region" aria-label="Confidence assessment">
+  <table class="conf-table">
+    <thead><tr><th scope="col">Finding</th><th scope="col">Confidence</th>{extraHeads.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+    <tbody>
+      {rows.map((r) => (
+        <tr>
+          <td set:html={r.findingHtml} />
+          <td class="conf-cell">
+            <span class="conf-badges">
+              {r.levels.map((l, i) => (<>{i > 0 && <span aria-hidden="true">–</span>}<span class={`conf conf-${l.toLowerCase()}`} title={levelMeaning(l)}>{l}</span></>))}
+            </span>
+            {r.qualifier && <span class="conf-q">({r.qualifier})</span>}
+          </td>
+          {r.extraHtml.map((h) => <td set:html={h} />)}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+<details class="legend">
+  <summary>What the confidence labels mean</summary>
+  <dl>
+    {['HIGH', 'MEDIUM', 'UNCERTAIN', 'CONTESTED', 'REJECTED'].map((l) => (
+      <div><dt><span class={`conf conf-${l.toLowerCase()}`}>{l}</span></dt><dd>{levelMeaning(l)}</dd></div>
+    ))}
+  </dl>
+  <p class="muted small">From <a href="/how-we-know/#s4"><code>01_RESEARCH_METHOD.md</code> §4</a>. There is no LOW label.</p>
+</details>

@@ -1,0 +1,77 @@
+---
+// An image as a source: caption, creator, date, holder, licence and a source link are always shown.
+// No cropping (object-fit: contain), no zoom/pan/filters. If the hotlink fails, the credit card remains.
+import { imageById, PUBLIC_BUILD, method, localImage, imageSize } from '../lib/content';
+
+interface Props {
+  id: string;
+  captionHtml?: string | null; // the caption as written in the file that uses the image
+  variant?: 'hero' | 'band' | 'grid';
+  eager?: boolean;
+}
+const { id, captionHtml, variant = 'band', eager = false } = Astro.props;
+const img = imageById.get(id);
+if (!img) throw new Error(`Figure: unknown image id ${id}`);
+const caption = captionHtml ?? img.captionHtml;
+const showImage = !(PUBLIC_BUILD && img.rights === '©');
+const rightsLabel = img.rights === '©' ? '© personal study only' : img.rights === 'CC0' ? 'Public domain (CC0)' : 'No known restrictions';
+const size = imageSize(id);
+// True proportions, but never taller than 4:5 (portrait) or flatter than 21:9; the image is contained, never cropped.
+const ratio = size ? Math.min(21 / 9, Math.max(4 / 5, size[0] / size[1])) : 4 / 3;
+const creditBits = [img.creator, img.date].filter(Boolean).join(', ');
+---
+
+<figure class:list={['fig', `fig-${variant}`, img.critical && 'fig-critical']} id={`img-${id}`}>
+  <div class:list={['fig-media', !showImage && 'failed', `type-${img.type.replace(' ', '-')}`]} style={`aspect-ratio:${ratio.toFixed(4)}`}>
+    {
+      showImage && (
+        <img
+          src={localImage(img.id) ?? img.url}
+          alt={img.title}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchpriority={eager ? 'high' : undefined}
+          referrerpolicy="no-referrer"
+          width={size ? size[0] : 1200}
+          height={size ? size[1] : 900}
+        />
+      )
+    }
+    <div class="fig-fallback">
+      <p class="fig-fallback-title">{img.title}</p>
+      <p class:list={[showImage && 'fig-fallback-msg']}>
+        {showImage ? 'The image could not be loaded from its holder.' : 'This image is © and is not reproduced in the public version.'}
+      </p>
+      <p class:list={[showImage && 'fig-fallback-msg']}><a href={img.holderUrl} rel="noopener">View it at {img.holder}</a></p>
+    </div>
+  </div>
+  <figcaption>
+    {img.critical && <p class="fig-flag"><span class="chip chip-critical">{img.critical.kind}</span></p>}
+    <p class="fig-caption" set:html={caption} />
+    <p class="fig-credit">
+      <span class="fig-title" set:html={img.titleHtml} />
+      {creditBits && <span> — {creditBits}.</span>}
+      <span> <a href={img.holderUrl} rel="noopener">{img.holder}</a>.</span>
+      <span class:list={['chip', img.rights === '©' ? 'chip-copyright' : 'chip-free']} title={img.licence}>{rightsLabel}</span>
+      <span class="chip chip-type">{img.type}</span>
+    </p>
+    {
+      img.critical && (
+        <details class="read-critically">
+          <summary>Read this image critically</summary>
+          <p>
+            This is <strong>{img.critical.kind}</strong>: it shows how power wanted to be seen. Its caption:{' '}
+            <span set:html={img.captionHtml} />
+          </p>
+          <p>Questions this project asks of every primary source:</p>
+          <ol>
+            {method.primaryChecklist.map((q) => (
+              <li>{q}</li>
+            ))}
+          </ol>
+          <p class="muted">Checklist from <code>sources/primary_sources.md</code>.</p>
+        </details>
+      )
+    }
+  </figcaption>
+</figure>

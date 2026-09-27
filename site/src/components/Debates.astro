@@ -1,0 +1,15 @@
+---
+// "Historians disagree": every §12 bullet as a card, text verbatim; CONTESTED marked.
+interface Item { titleHtml: string | null; bodyHtml: string; contested: boolean; }
+interface Props { items: Item[]; }
+const { items } = Astro.props;
+---
+<ul class="debates">
+  {items.map((d) => (
+    <li class:list={['debate', d.contested && 'is-contested']}>
+      {d.titleHtml && <h3 class="debate-h" set:html={d.titleHtml} />}
+      {d.contested && <p class="debate-flag" data-ui><span class="conf conf-contested">CONTESTED</span></p>}
+      <div class="debate-body" set:html={d.bodyHtml} />
+    </li>
+  ))}
+</ul>

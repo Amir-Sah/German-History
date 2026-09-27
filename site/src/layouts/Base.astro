@@ -1,0 +1,96 @@
+---
+// Page shell: header (nav + "How do we know?" + theme), optional time ribbon, footer.
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  mood?: string | null;
+  calm?: boolean;
+}
+const { title, description, mood, calm = false } = Astro.props;
+const path = Astro.url.pathname;
+// UI labels are site wording (CONTENT_TRACE.md U1). Only pages that exist in this build are listed.
+const nav = [
+  { href: '/eras/', label: 'Eras' },
+  { href: '/glossary/', label: 'Glossary' },
+  { href: '/how-we-know/audit/', label: 'Source audit' },
+];
+---
+
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · German History, Explained</title>
+    {description && <meta name="description" content={description} />}
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      // Before paint: theme, "How do we know?" layer, JS flag. Storage access is guarded.
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+        var get = function (k) {
+          try { return localStorage.getItem(k); } catch (e) { return null; }
+        };
+        var t = get('ghx-theme');
+        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        if (get('ghx-evidence') === '1') d.classList.add('evidence-on');
+        // Hotlinked images can fail (holder offline, blocked network). Swap in the credit card.
+        document.addEventListener('error', function (e) {
+          var img = e.target;
+          if (img && img.tagName === 'IMG' && img.closest('.fig-media')) img.closest('.fig-media').classList.add('failed');
+        }, true);
+      })();
+    </script>
+  </head>
+  <body class:list={[mood && `mood-${mood}`, calm && 'calm']}>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="bar">
+        <a class="brand" href="/">German History, Explained</a>
+        <nav aria-label="Site">
+          <ul>
+            {nav.map((n) => (
+              <li>
+                <a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div class="tools">
+          <button type="button" class="tool evidence-toggle" aria-pressed="false" data-evidence-toggle>
+            <span class="tool-dot" aria-hidden="true"></span>How do we know?
+          </button>
+          <button type="button" class="tool theme-toggle" data-theme-toggle aria-label="Colour theme: automatic">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 3a9 9 0 1 0 0 18V3z"/><circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="theme-label">Auto</span>
+          </button>
+        </div>
+      </div>
+      <slot name="ribbon" />
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          Every historical sentence on this site is generated from the Markdown knowledge base
+          <em>German History — A Source-Critical Knowledge Base</em> (compiled September 2026). New site wording is listed in
+          <code>site/CONTENT_TRACE.md</code>.
+        </p>
+        <p>
+          Images are hotlinked from the institutions that hold them; each carries its own credit and licence. Images marked ©
+          are shown for personal study only.
+        </p>
+      </div>
+    </footer>
+    <script>
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>

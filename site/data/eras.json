@@ -1,0 +1,52 @@
+{
+  "_about": "Editorial configuration (traced in CONTENT_TRACE.md §1, ids E1–E4). Era groups and moods follow PLAN.md §6 and the decision of 27 Sept 2026 in WEBSITE_BUILD_PROMPT.md; the sensitive list follows PLAN.md §5 plus the decision to add twentieth_century/03 and to apply the calm register to repression sections only in twentieth_century/10 and 11.",
+  "groups": [
+    { "id": "antiquity", "label": "Antiquity and the Franks", "from": -500, "to": 919, "mood": "vellum" },
+    { "id": "reich", "label": "Holy Roman Empire and early modern", "from": 919, "to": 1806, "mood": "woodcut" },
+    { "id": "long19", "label": "Long 19th century", "from": 1792, "to": 1918, "mood": "biedermeier" },
+    { "id": "wars", "label": "1914–1945", "from": 1914, "to": 1945, "mood": "archive" },
+    { "id": "divided", "label": "Divided Germany", "from": 1945, "to": 1990, "mood": "two-inks" },
+    { "id": "united", "label": "United Germany", "from": 1990, "to": 2026, "mood": "civic" }
+  ],
+  "files": {
+    "ancient/01_germanic_societies.md": { "group": "antiquity" },
+    "ancient/02_roman_frontier.md": { "group": "antiquity" },
+    "medieval/01_carolingian_world.md": { "group": "antiquity" },
+    "medieval/02_holy_roman_empire.md": { "group": "reich" },
+    "medieval/03_medieval_society.md": { "group": "reich" },
+    "medieval/04_cities_church_feudalism.md": { "group": "reich" },
+    "early_modern/01_reformation.md": { "group": "reich" },
+    "early_modern/02_thirty_years_war.md": { "group": "reich", "mood": "callot" },
+    "early_modern/03_territorial_states.md": { "group": "reich" },
+    "early_modern/04_prussia_and_austria.md": { "group": "reich" },
+    "early_modern/05_enlightenment.md": { "group": "reich" },
+    "nineteenth_century/01_napoleon.md": { "group": "long19" },
+    "nineteenth_century/02_german_confederation.md": { "group": "long19" },
+    "nineteenth_century/03_nationalism.md": { "group": "long19" },
+    "nineteenth_century/04_1848_revolutions.md": { "group": "long19" },
+    "nineteenth_century/05_unification.md": { "group": "long19" },
+    "nineteenth_century/06_german_empire.md": { "group": "long19" },
+    "nineteenth_century/07_industrial_society.md": { "group": "long19", "mood": "iron" },
+    "nineteenth_century/08_colonialism.md": { "group": "long19", "sensitive": true },
+    "twentieth_century/01_world_war_one.md": { "group": "wars" },
+    "twentieth_century/02_weimar_republic.md": { "group": "wars", "mood": "weimar" },
+    "twentieth_century/03_rise_of_nazism.md": { "group": "wars", "sensitive": true },
+    "twentieth_century/04_nazi_state.md": { "group": "wars", "sensitive": true },
+    "twentieth_century/05_everyday_life_under_nazism.md": { "group": "wars", "sensitive": true },
+    "twentieth_century/06_holocaust_and_persecution.md": { "group": "wars", "sensitive": true },
+    "twentieth_century/07_world_war_two.md": { "group": "wars", "sensitive": true },
+    "twentieth_century/08_occupation_and_denazification.md": { "group": "divided", "sensitive": true },
+    "twentieth_century/09_west_germany.md": { "group": "divided" },
+    "twentieth_century/10_east_germany.md": { "group": "divided", "sensitiveSections": "to be set during rollout (repression, Stasi, border deaths)" },
+    "twentieth_century/11_cold_war_germany.md": { "group": "divided", "sensitiveSections": "to be set during rollout (Berlin Wall and border deaths)" },
+    "twentieth_century/12_reunification.md": { "group": "divided" },
+    "contemporary/01_post_reunification.md": { "group": "united" },
+    "contemporary/02_modern_political_system.md": { "group": "united" },
+    "contemporary/03_modern_society.md": { "group": "united" },
+    "contemporary/04_germany_in_europe.md": { "group": "united" }
+  },
+  "ruptures": {
+    "_source": "00_FINAL_EXPLANATION.md, mental map: 'The biggest ruptures came from war — 1618, 1806, 1918, 1945'",
+    "years": [1618, 1806, 1918, 1945]
+  }
+}

@@ -1,0 +1,40 @@
+---
+// Signature element: "What the constitution said vs how power actually worked".
+// Column headings are the two halves of the KB's own label; items keep their labels verbatim.
+import type { Period } from '../lib/content';
+interface Props { period: Period; }
+const { period } = Astro.props;
+const c = period.constitution;
+const items = (c.items ?? []) as { label: string | null; side: string | null; html: string }[];
+const said = items.filter((i) => i.side === 'said');
+const worked = items.filter((i) => i.side === 'worked');
+const other = items.filter((i) => !i.side);
+const split = said.length > 0 && worked.length > 0;
+---
+<section class="constitution" aria-labelledby="constitution-h">
+  <h2 id="constitution-h" class="constitution-h">
+    <span>What the constitution said</span> <span class="vs">vs</span> <span>how power actually worked</span>
+  </h2>
+  {c.leadHtml && <p class="constitution-lead" set:html={c.leadHtml} />}
+  {split && (
+    <div class="cvr">
+      <div class="cvr-col cvr-said">
+        <h3 class="cvr-h">What the constitution said</h3>
+        {said.map((i) => (<div class="cvr-item"><p class="cvr-label">{i.label}</p><p set:html={i.html} /></div>))}
+      </div>
+      <div class="cvr-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+      <div class="cvr-col cvr-worked">
+        <h3 class="cvr-h">How power actually worked</h3>
+        {worked.map((i) => (<div class="cvr-item"><p class="cvr-label">{i.label}</p><p set:html={i.html} /></div>))}
+      </div>
+    </div>
+  )}
+  {(!split && items.length > 0) && (
+    <ul class="cvr-list">{items.map((i) => (<li>{i.label && <strong class="cvr-label">{i.label}: </strong>}<span set:html={i.html} /></li>))}</ul>
+  )}
+  {split && other.length > 0 && (
+    <ul class="cvr-list">{other.map((i) => (<li set:html={i.html} />))}</ul>
+  )}
+  {c.tableHtml && <Fragment set:html={c.tableHtml} />}
+  <p class="source-note">From <code>{period.file}</code> §2.</p>
+</section>
