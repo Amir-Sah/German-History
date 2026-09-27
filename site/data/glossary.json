@@ -1,0 +1,43 @@
+{
+  "_about": "Reviewed glossary allow-list. Every gloss is quoted from the knowledge base: the build checks that `evidence` occurs verbatim in `source`, and that both the term and the gloss occur inside that evidence. Nothing here is written from outside the KB. Candidates the build finds but that are not yet listed appear in src/content/generated/report.json (glossaryCandidates). Traced in CONTENT_TRACE.md §1 (id G1).",
+  "terms": [
+    {
+      "term": "Vernunftrepublikaner",
+      "gloss": "republicans of reason",
+      "source": "twentieth_century/02_weimar_republic.md",
+      "evidence": "\"republicans of reason\" (*Vernunftrepublikaner*"
+    },
+    {
+      "term": "Preußenschlag",
+      "gloss": "Prussian coup",
+      "source": "twentieth_century/02_weimar_republic.md",
+      "evidence": "**Prussian coup (*Preußenschlag*"
+    },
+    {
+      "term": "Präsidialkabinette",
+      "forms": ["Präsidialkabinett"],
+      "gloss": "presidential cabinets",
+      "source": "twentieth_century/03_rise_of_nazism.md",
+      "evidence": "presidential cabinets (*Präsidialkabinette*)"
+    },
+    {
+      "term": "Kaiserreich",
+      "gloss": "German Empire",
+      "source": "01_RESEARCH_METHOD.md",
+      "evidence": "**German Empire (*Kaiserreich*)**"
+    },
+    {
+      "term": "Machtergreifung",
+      "gloss": "seizure of power",
+      "source": "twentieth_century/04_nazi_state.md",
+      "evidence": "The seizure of power (*Machtergreifung*)"
+    },
+    {
+      "term": "Reichsstädte",
+      "forms": ["Reichsstadt"],
+      "gloss": "imperial cities",
+      "source": "images/IMAGE_INDEX.md",
+      "evidence": "imperial cities (*Reichsstädte*)"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "_about": "Editorial mapping of SOURCE_AUDIT.md claim numbers to the period chapters that make the same claim. Rule: a claim maps to a chapter when the chapter's §13 Confidence table or text states the same finding. Traced in CONTENT_TRACE.md §1 (id A1). Filled for the Weimar slice; the rest is added during rollout.",
+  "map": {
+    "twentieth_century/02_weimar_republic.md": [28, 29, 30, 32]
+  }
+}
