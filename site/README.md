@@ -44,9 +44,12 @@ The default build is a **local, personal-study site**: 54 of the 72 images are �
 | Accessibility | `qa/axe.mjs` | axe-core WCAG 2.2 A/AA on every page, 360/1280 px, light/dark, all sections open |
 | Contrast | `qa/contrast.mjs` | Every text/background token pair meets WCAG AA in each theme and mood (covers what axe cannot measure) |
 | Behaviour | `qa/behaviour.mjs` | Keyboard use, reduced motion (static equivalents), no-JS reading, persisted toggle, `PUBLIC_BUILD` hides © images |
+| Hotlinked images | `qa/image-urls.mjs [--write-sizes]` | All 72 index images render in Chromium (nothing saved); `--write-sizes` records their pixel sizes in `data/image-sizes.json` for exact `width`/`height` and true proportions |
 | Screenshots | `qa/screenshots.mjs`, `qa/crops.mjs` | Pages and components at 360 and 1280 px, light and dark → `qa/reports/` |
 
-QA uses Playwright with the Chromium found at `PW_CHROMIUM` or `/opt/pw-browsers/chromium` (cloud sessions); elsewhere run `npx playwright install chromium` once (≈150 MB download).
+`npm run qa:final` adds `--final` (full KB coverage required) and `--external` (external links via curl; hosts behind a bot challenge or blocked by the network are reported separately, not as broken).
+
+QA uses Playwright with the Chromium found at `PW_CHROMIUM` or `/opt/pw-browsers/chromium` (cloud sessions); elsewhere run `npx playwright install chromium` once (≈150 MB download). In cloud sessions, `qa/lib/browser.mjs` makes Chromium trust the session proxy's CA (pinned by public-key hash; certificate checks stay on).
 
 ## Images offline
 

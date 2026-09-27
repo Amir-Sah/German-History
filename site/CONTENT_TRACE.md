@@ -44,6 +44,7 @@ Every piece of wording or classification on the site that does not come verbatim
 | A1 | `data/audit-map.json` | A claim maps to a chapter when the chapter states the same finding in §12/§13. Weimar → claims 28, 29, 30, 32 | `sources/SOURCE_AUDIT.md` claim table; `twentieth_century/02` §12–13 |
 | G1 | `data/glossary.json` | 6 terms. Each gloss is quoted from the KB: the build checks that the `evidence` string occurs verbatim in the source file and contains both term and gloss. Candidates found automatically (281) are listed in `src/content/generated/report.json` for review, never published unreviewed | Files named per entry |
 | P1 | Chapter page | Images after the hero are spread evenly between sections 2–14 (placement only; the caption carries the meaning) | — |
+| P3 | `data/image-sizes.json` | Pixel sizes measured from the hotlinked images; used for `width`/`height` and the frame's aspect ratio (clamped between 4:5 and 21:9, image contained, never cropped). Layout metadata, not content | Measured 27 Sept 2026 by `qa/image-urls.mjs` |
 | P2 | Chapter page | Sections 8, 11 and 12 open by default (featured diagram, cards, debate panel); the others expand on demand; §1 is the lead | Brief: "expandable sections" + featured components |
 
 ## 2. Knowledge-base inconsistencies (flagged, not resolved)

@@ -1,7 +1,7 @@
 ---
 // An image as a source: caption, creator, date, holder, licence and a source link are always shown.
 // No cropping (object-fit: contain), no zoom/pan/filters. If the hotlink fails, the credit card remains.
-import { imageById, PUBLIC_BUILD, method, localImage } from '../lib/content';
+import { imageById, PUBLIC_BUILD, method, localImage, imageSize } from '../lib/content';
 
 interface Props {
   id: string;
@@ -15,11 +15,14 @@ if (!img) throw new Error(`Figure: unknown image id ${id}`);
 const caption = captionHtml ?? img.captionHtml;
 const showImage = !(PUBLIC_BUILD && img.rights === '©');
 const rightsLabel = img.rights === '©' ? '© personal study only' : img.rights === 'CC0' ? 'Public domain (CC0)' : 'No known restrictions';
+const size = imageSize(id);
+// True proportions, but never taller than 4:5 (portrait) or flatter than 21:9; the image is contained, never cropped.
+const ratio = size ? Math.min(21 / 9, Math.max(4 / 5, size[0] / size[1])) : 4 / 3;
 const creditBits = [img.creator, img.date].filter(Boolean).join(', ');
 ---
 
 <figure class:list={['fig', `fig-${variant}`, img.critical && 'fig-critical']} id={`img-${id}`}>
-  <div class:list={['fig-media', !showImage && 'failed', `type-${img.type.replace(' ', '-')}`]}>
+  <div class:list={['fig-media', !showImage && 'failed', `type-${img.type.replace(' ', '-')}`]} style={`aspect-ratio:${ratio.toFixed(4)}`}>
     {
       showImage && (
         <img
@@ -29,8 +32,8 @@ const creditBits = [img.creator, img.date].filter(Boolean).join(', ');
           decoding="async"
           fetchpriority={eager ? 'high' : undefined}
           referrerpolicy="no-referrer"
-          width="1200"
-          height="900"
+          width={size ? size[0] : 1200}
+          height={size ? size[1] : 900}
         />
       )
     }

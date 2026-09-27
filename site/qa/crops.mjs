@@ -2,7 +2,10 @@
 // Element-level screenshots of the chapter components (for visual review).
 import { launch } from './lib/browser.mjs';
 import fs from 'node:fs';
-const base = process.argv[2] ?? 'http://localhost:4322';
+import { serve } from './lib/serve.mjs';
+import path from 'node:path';
+const served = process.argv[2] ? null : await serve(path.resolve('dist'));
+const base = process.argv[2] ?? served.url;
 const p = process.argv[3] ?? '/eras/weimar-republic/';
 const out = 'qa/reports/crops';
 fs.mkdirSync(out, { recursive: true });
@@ -35,4 +38,5 @@ for (const [w, scheme] of [[1280, 'light'], [360, 'light'], [1280, 'dark']]) {
   await page.locator('.constitution').screenshot({ path: `${out}/glossary-tip-${w}-${scheme}.png` });
 }
 await browser.close();
+served?.server.close();
 console.log('crops written to', out);

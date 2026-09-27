@@ -30,6 +30,11 @@ const manifestFile = new URL('../../public/img-cache/manifest.json', import.meta
 const imageCache: Record<string, { file: string }> = fs.existsSync(manifestFile) ? JSON.parse(fs.readFileSync(manifestFile, 'utf8')) : {};
 export const localImage = (id: string) => imageCache[id]?.file ?? null;
 
+// Measured image sizes (qa/image-urls.mjs --write-sizes); absent → a 4:3 frame.
+const sizesFile = new URL('../../data/image-sizes.json', import.meta.url);
+const imageSizes: Record<string, [number, number]> = fs.existsSync(sizesFile) ? JSON.parse(fs.readFileSync(sizesFile, 'utf8')).sizes : {};
+export const imageSize = (id: string) => imageSizes[id] ?? null;
+
 export const RIBBON = { from: -500, to: 2026 };
 
 export const LEVEL_ORDER = ['HIGH', 'MEDIUM', 'UNCERTAIN', 'CONTESTED', 'REJECTED'] as const;

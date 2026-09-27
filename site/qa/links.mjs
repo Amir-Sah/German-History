@@ -30,14 +30,30 @@ for (const [p, h] of Object.entries(html)) {
 }
 console.log(`${broken ? '✖' : '✔'} links: ${pages.length} pages, ${broken} broken internal link(s); ${ext.size} external URLs ${external ? 'checked below' : 'not checked (use --external)'}`);
 if (external) {
-  let bad = 0;
-  for (const u of ext) {
-    try {
-      const r = await fetch(u, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(15000) });
-      if (!r.ok) { bad++; console.log(`✖ ${r.status} ${u}`); }
-    } catch (e) { bad++; console.log(`✖ ${e.cause?.code ?? e.name} ${u}`); }
+  // curl follows redirects the way browsers do (Node's fetch gets a self-redirect from some holders, e.g. DHM).
+  // A proxy/egress refusal ("Host not in allowlist", CONNECT 403) is an environment limit, not a broken link.
+  const { spawnSync } = await import('node:child_process');
+  function check(u, retry = true) {
+    const r = spawnSync('curl', ['-sS', '-L', '--max-redirs', '10', '-r', '0-0', '-A', 'Mozilla/5.0 (link check)', '--max-time', '25', '-o', '-', '-w', '\n%{http_code}', u], { encoding: 'latin1' });
+    const out = r.stdout ?? '';
+    const status = +out.slice(out.lastIndexOf('\n') + 1) || 0;
+    const envBlocked = /Host not in allowlist/.test(out) || /CONNECT tunnel failed, response 403/.test(r.stderr ?? '');
+    const botCheck = /<title>Just a moment\.\.\.<\/title>|cf-mitigated/i.test(out);
+    if (!status && retry) return check(u, false); // one retry for a transient timeout
+    return { status, envBlocked, botCheck };
   }
-  console.log(`${bad ? '✖' : '✔'} external: ${ext.size - bad}/${ext.size} reachable`);
+  const results = [];
+  for (const u of ext) results.push({ u, ...check(u) });
+  let bad = 0, env = 0;
+  let bots = 0;
+  for (const { u, status, envBlocked, botCheck } of results) {
+    const ok = status === 200 || status === 206;
+    if (ok) continue;
+    if (botCheck) { bots++; console.log(`– bot challenge (works in a browser; verify by hand): ${u}`); continue; }
+    if (envBlocked) { env++; console.log(`– blocked by this environment's network policy: ${u}`); }
+    else { bad++; console.log(`✖ ${status} ${u}`); }
+  }
+  console.log(`${bad ? '✖' : '✔'} external: ${results.length - bad - env - bots}/${results.length} reachable, ${bad} broken, ${bots} behind a bot challenge, ${env} not checkable here (host not allowed)`);
   if (bad) process.exitCode = 1;
 }
 if (broken) process.exitCode = 1;

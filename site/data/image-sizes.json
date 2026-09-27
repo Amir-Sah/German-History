@@ -1,0 +1,294 @@
+{
+ "_about": "Pixel sizes of the hotlinked images, measured by qa/image-urls.mjs --write-sizes. Layout metadata only.",
+ "measuredAt": "2026-09-27",
+ "sizes": {
+  "fibula": [
+   658,
+   900
+  ],
+  "caster-vase": [
+   894,
+   893
+  ],
+  "carolingian-gradual": [
+   623,
+   900
+  ],
+  "star-brooch": [
+   871,
+   893
+  ],
+  "ottonian-ivory": [
+   595,
+   893
+  ],
+  "durer-dancing": [
+   571,
+   893
+  ],
+  "durer-market": [
+   578,
+   893
+  ],
+  "nuremberg-chronicle": [
+   603,
+   893
+  ],
+  "tiepolo-harold": [
+   450,
+   625
+  ],
+  "cranach-luther": [
+   649,
+   893
+  ],
+  "callot-hanging": [
+   1263,
+   555
+  ],
+  "callot-pillaging": [
+   1263,
+   593
+  ],
+  "bellotto-dresden": [
+   900,
+   620
+  ],
+  "teapot-frederick": [
+   600,
+   600
+  ],
+  "chodowiecki-cagliostro": [
+   492,
+   893
+  ],
+  "chodowiecki-susanne": [
+   900,
+   545
+  ],
+  "napoleon-bicorne": [
+   4561,
+   4393
+  ],
+  "waterloo-morning": [
+   1912,
+   1528
+  ],
+  "vienna-congress": [
+   5595,
+   3093
+  ],
+  "geschichtsunterricht": [
+   3412,
+   1925
+  ],
+  "hambach": [
+   2589,
+   1189
+  ],
+  "friedrich-moon": [
+   599,
+   485
+  ],
+  "armuth": [
+   1131,
+   577
+  ],
+  "barrikaden": [
+   2014,
+   1042
+  ],
+  "koeniggraetz": [
+   2957,
+   2309
+  ],
+  "kaiserproklamation": [
+   3364,
+   2851
+  ],
+  "unter-den-linden": [
+   1024,
+   772
+  ],
+  "koehler-streik": [
+   4411,
+   2731
+  ],
+  "mietskaserne": [
+   2061,
+   2369
+  ],
+  "kolonialbeamter": [
+   5689,
+   3031
+  ],
+  "armentieres": [
+   2605,
+   1497
+  ],
+  "kohlrueben": [
+   935,
+   467
+  ],
+  "hindenburg-ludendorff": [
+   1024,
+   1604
+  ],
+  "reichstag-1918": [
+   2712,
+   2022
+  ],
+  "nationalversammlung": [
+   2220,
+   1504
+  ],
+  "billion-marks": [
+   1843,
+   1091
+  ],
+  "ballhause": [
+   4848,
+   2971
+  ],
+  "kabinett-hitler": [
+   5031,
+   3765
+  ],
+  "hj-march": [
+   1044,
+   682
+  ],
+  "vb-enabling": [
+   1115,
+   630
+  ],
+  "volksempfaenger": [
+   1054,
+   540
+  ],
+  "white-rose": [
+   1024,
+   1638
+  ],
+  "synagogue-munich": [
+   1969,
+   1881
+  ],
+  "polish-pows": [
+   2384,
+   1509
+  ],
+  "soviet-brandenburg": [
+   2505,
+   1225
+  ],
+  "truemmerfrauen": [
+   1280,
+   1177
+  ],
+  "who-was-a-nazi": [
+   1280,
+   1647
+  ],
+  "hakenkreuz": [
+   1280,
+   955
+  ],
+  "expellee-map": [
+   1280,
+   971
+  ],
+  "airlift": [
+   1280,
+   800
+  ],
+  "pr-signpost": [
+   1280,
+   949
+  ],
+  "grundgesetz": [
+   1280,
+   1814
+  ],
+  "oberpollinger": [
+   1500,
+   1230
+  ],
+  "moped-gastarbeiter": [
+   1280,
+   1015
+  ],
+  "vietnam-demo": [
+   1280,
+   834
+  ],
+  "aufstand-1953": [
+   1280,
+   955
+  ],
+  "geruchskonserve": [
+   1500,
+   875
+  ],
+  "zdf-cartoon": [
+   1280,
+   1597
+  ],
+  "bernauer": [
+   1280,
+   1278
+  ],
+  "wall-aerial": [
+   1280,
+   964
+  ],
+  "wir-bleiben": [
+   1280,
+   1813
+  ],
+  "mauerfall": [
+   1280,
+   953
+  ],
+  "brandenburger-tor-1989": [
+   1280,
+   862
+  ],
+  "nikon": [
+   1280,
+   833
+  ],
+  "treuhand": [
+   1280,
+   1024
+  ],
+  "umzugskarton": [
+   1280,
+   998
+  ],
+  "puzzle": [
+   1280,
+   1139
+  ],
+  "baustelle-reichstag": [
+   1280,
+   1276
+  ],
+  "euro-coin": [
+   1280,
+   1270
+  ],
+  "europa-schild": [
+   1280,
+   1281
+  ],
+  "gesellschafter": [
+   1280,
+   906
+  ],
+  "lampedusa": [
+   1280,
+   832
+  ]
+ }
+}

@@ -22,6 +22,12 @@ for (const p of paths) {
       const ctx = await browser.newContext({ viewport: { width: w, height: h }, colorScheme: scheme, deviceScaleFactor: 1 });
       const page = await ctx.newPage();
       await page.goto(base + p, { waitUntil: 'networkidle' });
+      // Scroll through once so lazy images load (as they would for a reader), then return to the top.
+      await page.evaluate(async () => {
+        for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); }
+        window.scrollTo(0, 0);
+      });
+      await page.waitForLoadState('networkidle');
       await page.waitForTimeout(300);
       const name = `${p.replace(/\W+/g, '_').replace(/^_|_$/g, '') || 'home'}-${w}-${scheme}`;
       await page.screenshot({ path: `${out}/${name}-top.png` });
