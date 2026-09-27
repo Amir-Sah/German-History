@@ -1,0 +1,44 @@
+---
+// Part of the "How do we know?" layer: a summary of this chapter's own confidence table (§13),
+// source levels (§14) and the matching SOURCE_AUDIT.md claims (mapping: data/audit-map.json).
+import { audit, levelMeaning, sourceLevelMeaning, type Period } from '../lib/content';
+interface Props { period: Period; }
+const { period } = Astro.props;
+const blocks = period.sections.flatMap((s) => s.blocks as any[]);
+const conf = blocks.find((b) => b.type === 'confidence')?.rows ?? [];
+const confCounts = new Map<string, number>();
+for (const r of conf) { const k = r.levels.join('–'); confCounts.set(k, (confCounts.get(k) ?? 0) + 1); }
+const srcs = blocks.find((b) => b.type === 'sources')?.items ?? [];
+const lvlCounts = new Map<string, number>();
+for (const s of srcs) { const k = s.level ?? (s.primary ? 'primary' : 'none'); lvlCounts.set(k, (lvlCounts.get(k) ?? 0) + 1); }
+const claims = period.auditClaims.map((n: number) => audit.find((a) => a.n === n)!).filter(Boolean);
+---
+<aside class="evidence-rail ev-only" aria-label="How do we know? Evidence for this chapter">
+  <p class="rail-h">How do we know?</p>
+  <dl class="rail">
+    <div>
+      <dt>Confidence in this chapter's key findings <a href="#s13">(§13)</a></dt>
+      <dd class="rail-chips">
+        {[...confCounts].map(([k, n]) => (
+          <span class="rail-chip"><span class:list={['conf', `conf-${k.split('–')[0].toLowerCase()}`]} title={k.split('–').map(levelMeaning).join(' / ')}>{k}</span> × {n}</span>
+        ))}
+      </dd>
+    </div>
+    <div>
+      <dt>Sources by level <a href="#s14">(§14)</a></dt>
+      <dd class="rail-chips">
+        {[...lvlCounts].map(([k, n]) => (<span class="rail-chip"><span class="chip chip-level" title={/^[A-F]/.test(k) ? sourceLevelMeaning(k) : ''}>{/^[A-F]/.test(k) ? `Level ${k}` : k}</span> × {n}</span>))}
+      </dd>
+    </div>
+    {claims.length > 0 && (
+      <div>
+        <dt>Checked in the source audit</dt>
+        <dd>
+          <ul class="rail-claims">
+            {claims.map((c) => (<li><a href={`/how-we-know/audit/#claim-${c.n}`}>Claim {c.n}</a>: <span set:html={c.claimHtml} /> <span class="muted">— {c.confidence}</span></li>))}
+          </ul>
+        </dd>
+      </div>
+    )}
+  </dl>
+</aside>

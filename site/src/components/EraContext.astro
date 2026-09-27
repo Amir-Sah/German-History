@@ -1,0 +1,62 @@
+---
+// "Where this chapter sits": the chapters of the same era group on a zoomed, linear scale.
+// Overlaps between chapters are real (01_RESEARCH_METHOD.md §9) and are shown as separate lanes.
+import { periods, eraHref, type Period } from '../lib/content';
+
+interface Props {
+  current: Period;
+}
+const { current } = Astro.props;
+const group = periods.filter((p) => p.group === current.group).sort((a, b) => a.span.start - b.span.start || a.order - b.order);
+const from = Math.min(...group.map((p) => p.span.start));
+const to = Math.max(...group.map((p) => p.span.end));
+const pct = (y: number) => ((y - from) / Math.max(1, to - from)) * 100;
+// Greedy lane assignment so overlapping chapters never hide each other.
+const laneEnds: number[] = [];
+const rows = group.map((p) => {
+  let lane = laneEnds.findIndex((end) => end <= p.span.start);
+  if (lane < 0) lane = laneEnds.push(0) - 1;
+  laneEnds[lane] = p.span.end;
+  return { p, lane };
+});
+const decades: number[] = [];
+for (let y = Math.ceil(from / 10) * 10; y <= to; y += to - from > 200 ? 50 : 10) decades.push(y);
+---
+
+<section class="era-context" aria-labelledby="era-context-h">
+  <h2 id="era-context-h" class="kicker">Where this chapter sits · {current.groupLabel}</h2>
+  <p class="muted small">
+    Chapters overlap at their edges on purpose (<a href="/how-we-know/#s9">date conventions</a>). Scale: {from}–{to}, linear.
+  </p>
+  <div class="ctx-chart" style={`--lanes:${laneEnds.length}`}>
+    <div class="ctx-axis" aria-hidden="true">
+      {decades.map((y) => <span style={`left:${pct(y)}%`}>{y}</span>)}
+    </div>
+    <ol class="ctx-rows">
+      {
+        rows.map(({ p, lane }) => {
+          const href = eraHref(p.slug);
+          const inner = (
+            <>
+              <span class="ctx-title">{p.title}</span> <span class="ctx-date">{p.dateLabel}</span>
+            </>
+          );
+          return (
+            <li
+              class:list={['ctx-bar', p.slug === current.slug && 'is-current', p.sensitive && 'is-calm']}
+              style={`--l:${pct(p.span.start)}%;--w:${pct(p.span.end) - pct(p.span.start)}%;--lane:${lane}`}
+            >
+              {p.slug === current.slug ? (
+                <span aria-current="page">{inner}</span>
+              ) : href ? (
+                <a href={href}>{inner}</a>
+              ) : (
+                <span class="pending" title="Built in the rollout step">{inner}</span>
+              )}
+            </li>
+          );
+        })
+      }
+    </ol>
+  </div>
+</section>

@@ -310,6 +310,17 @@ const bibliography = [];
     }
   }
 }
+// Source-criticism checklist (sources/primary_sources.md), bold questions verbatim.
+const primaryChecklist = [];
+{
+  const src = raw['sources/primary_sources.md'];
+  const part = src.split(/^## How to read primary sources critically.*$/m)[1] ?? '';
+  for (const m of part.matchAll(/^\d+\. \*\*(.+?)\*\*/gm)) primaryChecklist.push(m[1]);
+  if (primaryChecklist.length !== 5) fail('sources/primary_sources.md', 0, `expected 5 checklist questions, found ${primaryChecklist.length}`);
+}
+const accessLegend = {};
+for (const m of raw['sources/bibliography.md'].split('\n')[2].matchAll(/\*\*([RMK])\*\* = ([^;*]+)/g)) accessLegend[m[1]] = m[2].trim();
+if (Object.keys(accessLegend).length !== 3) fail('sources/bibliography.md', 3, 'cannot read the R/M/K access legend');
 const bibByUrl = new Map(bibliography.filter((b) => b.url).map((b) => [normUrl(b.url), b]));
 
 const audit = [];
@@ -714,6 +725,41 @@ for (const f of kbFiles) {
   })(tree, null);
 }
 
+// ───────────────────────── whole documents rendered by H2 (method page, audit page) ─────────────────────────
+function renderDoc(file, { skipTableUnder } = {}) {
+  const text = stripImageBlocks(raw[file]);
+  const lines = text.split('\n');
+  const h1 = lines[0].replace(/^# /, '');
+  const parts = [];
+  let cur = { n: null, title: null, lines: [] };
+  for (const l of lines.slice(1)) {
+    const m = l.match(/^## (?:(\d+)\. )?(.+)$/);
+    if (m) {
+      parts.push(cur);
+      cur = { n: m[1] ? +m[1] : null, title: m[2], lines: [] };
+    } else cur.lines.push(l);
+  }
+  parts.push(cur);
+  const ctx = { ...baseCtx(file), headingShift: 0 };
+  return {
+    title: h1,
+    sections: parts
+      .filter((p) => p.title || p.lines.join('').trim())
+      .map((p) => {
+        let md = p.lines.join('\n');
+        if (skipTableUnder && p.title === skipTableUnder) md = md.replace(/^\|[\s\S]*?\n(?!\|)/m, '');
+        return {
+          n: p.n,
+          id: p.n ? `s${p.n}` : (p.title ?? 'intro').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+          title: p.title,
+          html: renderMd(md, ctx),
+        };
+      }),
+  };
+}
+const methodDoc = renderDoc('01_RESEARCH_METHOD.md');
+const auditDoc = renderDoc('sources/SOURCE_AUDIT.md', { skipTableUnder: 'Claim table' });
+
 // ───────────────────────── schema check ─────────────────────────
 for (const p of periods) {
   const r = Period.safeParse(p);
@@ -764,8 +810,9 @@ write('images', images);
 write('glossary', glossary);
 write('audit', audit);
 write('bibliography', bibliography);
-write('method', { confidenceScale, sourceLevels, canonicalSections: CANONICAL, groups: erasCfg.groups, ruptures: erasCfg.ruptures.years });
+write('method', { confidenceScale, sourceLevels, accessLegend, primaryChecklist, canonicalSections: CANONICAL, groups: erasCfg.groups, ruptures: erasCfg.ruptures.years });
 write('report', report);
+write('docs', { method: methodDoc, audit: auditDoc });
 
 console.log('✔ build-content: knowledge base parsed and validated');
 for (const [k, v] of Object.entries(report.counts)) console.log(`  ${k.padEnd(20)} ${v}`);

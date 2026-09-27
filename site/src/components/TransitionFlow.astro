@@ -1,0 +1,15 @@
+---
+// BEFORE → PRESSURES → TRANSITION → AFTER as a step diagram. Labels and qualifiers verbatim.
+// Steps reveal on scroll only when motion is allowed and the page is not in the calm register.
+interface Step { label: string; qualifier: string | null; html: string; }
+interface Props { steps: Step[]; }
+const { steps } = Astro.props;
+---
+<ol class="flow" aria-label="Transition: before, pressures, transition, after">
+  {steps.map((s, i) => (
+    <li class:list={['flow-step', `flow-${s.label.toLowerCase()}`]} style={`--i:${i}`}>
+      <p class="flow-label">{s.label}{s.qualifier && <span class="flow-q"> ({s.qualifier})</span>}</p>
+      <div class="flow-body" set:html={s.html} />
+    </li>
+  ))}
+</ol>

@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import docs from '../../content/generated/docs.json';
+import { audit } from '../../lib/content';
+const d = docs.audit;
+const cls = (c: string) => (c.match(/HIGH|MEDIUM|UNCERTAIN|CONTESTED|REJECTED/)?.[0] ?? '').toLowerCase();
+---
+<Base title="Source audit">
+  <div class="wrap page doc">
+    <p class="kicker"><code>sources/SOURCE_AUDIT.md</code></p>
+    <h1>{d.title}</h1>
+    {d.sections.map((s) => (
+      <section id={s.id} aria-labelledby={`${s.id}-h`}>
+        {s.title && <h2 id={`${s.id}-h`}>{s.title}</h2>}
+        {s.id === 'claim-table' ? (
+          <ol class="claims">
+            {audit.map((c) => (
+              <li class="claim" id={`claim-${c.n}`}>
+                <p class="claim-h"><span class="claim-n">{c.n}</span> <span set:html={c.claimHtml} /></p>
+                <p class="claim-conf"><span class={`conf conf-${cls(c.confidence)}`}>{c.confidence}</span></p>
+                <dl class="claim-grid">
+                  <div><dt>Source 1</dt><dd set:html={c.sourcesHtml[0]} /></div>
+                  <div><dt>Source 2</dt><dd set:html={c.sourcesHtml[1]} /></div>
+                  <div><dt>Source 3</dt><dd set:html={c.sourcesHtml[2]} /></div>
+                  <div><dt>Agreement</dt><dd set:html={c.agreementHtml} /></div>
+                  <div><dt>Disagreement</dt><dd set:html={c.disagreementHtml} /></div>
+                </dl>
+              </li>
+            ))}
+          </ol>
+        ) : <Fragment set:html={s.html} />}
+      </section>
+    ))}
+  </div>
+</Base>

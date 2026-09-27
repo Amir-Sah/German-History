@@ -6,11 +6,13 @@
   "description": "Source-critical interactive website generated from the German history knowledge base (../).",
   "scripts": {
     "content": "node scripts/build-content.mjs",
-    "dev": "npm run content && astro dev",
-    "build": "npm run content && astro build && pagefind --site dist",
-    "preview": "astro preview",
+    "dev": "npm run content && ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "npm run content && ASTRO_TELEMETRY_DISABLED=1 astro build && pagefind --site dist",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "qa": "node qa/run-all.mjs",
-    "images:download": "node scripts/download-images.mjs"
+    "images:download": "node scripts/download-images.mjs",
+    "build:public": "PUBLIC_BUILD=1 npm run build",
+    "qa:pipeline": "node qa/pipeline-negative.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

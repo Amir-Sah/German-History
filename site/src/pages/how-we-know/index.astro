@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import docs from '../../content/generated/docs.json';
+const d = docs.method;
+---
+<Base title="How we know">
+  <div class="wrap page doc">
+    <p class="kicker"><code>01_RESEARCH_METHOD.md</code></p>
+    <h1>{d.title}</h1>
+    {d.sections.map((s) => (
+      <section id={s.id} aria-labelledby={`${s.id}-h`}>
+        {s.title && <h2 id={`${s.id}-h`}>{s.n ? `${s.n}. ` : ''}{s.title}</h2>}
+        <Fragment set:html={s.html} />
+      </section>
+    ))}
+  </div>
+</Base>

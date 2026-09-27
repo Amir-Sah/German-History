@@ -1,0 +1,28 @@
+---
+// §14 sources. The level stays in the text as written; the "How do we know?" layer adds a level chip
+// (with the meaning from 01_RESEARCH_METHOD.md §3) and the bibliography's access mark R/M/K.
+import { method, sourceLevelMeaning } from '../lib/content';
+interface Item { html: string; level: string | null; levelNote: string | null; primary: boolean; access: string | null; }
+interface Props { items: Item[]; }
+const { items } = Astro.props;
+const accessKey = (a: string | null) => (a ? a.trim().charAt(0) : null);
+const legend = method.accessLegend as Record<string, string>;
+---
+<ul class="sources">
+  {items.map((s) => {
+    const a = accessKey(s.access);
+    return (
+      <li>
+        <span class="ev-only src-chips">
+          {s.level ? <span class="chip chip-level" title={sourceLevelMeaning(s.level)}>Level {s.level}</span> : s.primary ? <span class="chip chip-level">primary</span> : <span class="chip">no level</span>}
+          {a && legend[a] && <span class="chip chip-access" title={legend[a]}>{a}{s.access && s.access.length > 1 ? '*' : ''}</span>}
+        </span>
+        <span set:html={s.html} />
+        {s.access && s.access.length > 1 && <span class="ev-only muted small"> Access note: {s.access}</span>}
+      </li>
+    );
+  })}
+</ul>
+<dl class="ev-only access-legend">
+  {Object.entries(legend).map(([k, v]) => (<div><dt><span class="chip chip-access">{k}</span></dt><dd>{v}</dd></div>))}
+</dl>

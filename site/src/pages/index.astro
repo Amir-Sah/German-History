@@ -1,0 +1,24 @@
+---
+// Preview landing for the vertical slice. The Journey (00_FINAL_EXPLANATION.md) replaces this page in the rollout.
+import Base from '../layouts/Base.astro';
+import TimeRibbon from '../components/TimeRibbon.astro';
+import { periods, builtEras } from '../lib/content';
+const built = periods.filter((p) => builtEras.includes(p.slug));
+---
+<Base title="Preview">
+  <TimeRibbon slot="ribbon" />
+  <div class="wrap page">
+    <p class="kicker">Build preview · vertical slice</p>
+    <h1>German History, Explained</h1>
+    <p class="lead-small">
+      This preview contains one complete era chapter, built with the pattern that every chapter will use. The Journey
+      through the ten Parts of <code>00_FINAL_EXPLANATION.md</code> becomes this home page in the next step.
+    </p>
+    <ul class="card-list">
+      {built.map((p) => (
+        <li class="card"><a href={`/eras/${p.slug}/`}><span class="card-kicker">{p.groupLabel}</span><span class="card-title">{p.title}</span><span class="card-date">{p.dateLabel}</span></a></li>
+      ))}
+    </ul>
+    <p><a href="/eras/">All 35 era chapters</a> · <a href="/how-we-know/">How the research was done</a> · <a href="/glossary/">Glossary</a></p>
+  </div>
+</Base>

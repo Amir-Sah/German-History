@@ -1,0 +1,30 @@
+---
+import { eraHref, type Period } from '../lib/content';
+interface Props { period: Period; }
+const { period } = Astro.props;
+const m = period.matrix;
+const ref = period.matrixRef;
+---
+{m && (
+  <div class="matrix">
+    <h3 set:html={m.headingHtml} />
+    <p class="muted small">The same 12 questions are asked of every political system (<code>05_REGIME_MATRIX.md</code>).</p>
+    <dl class="matrix-grid">
+      {m.rows.map((r) => (
+        <div class="matrix-row">
+          <dt><span class="matrix-q">{r.q}</span> {r.question}</dt>
+          <dd set:html={r.answerHtml} />
+        </div>
+      ))}
+    </dl>
+  </div>
+)}
+{ref && (
+  <div class="matrix matrix-ref">
+    <h3>Regime Matrix — cross-reference</h3>
+    <p set:html={ref.html} />
+    <ul class="ref-links">
+      {ref.targets.map((t) => { const h = eraHref(t.slug); return h ? <li><a href={h}>{t.file}</a></li> : <li><code>{t.file}</code> <span class="muted small">(built in the rollout)</span></li>; })}
+    </ul>
+  </div>
+)}

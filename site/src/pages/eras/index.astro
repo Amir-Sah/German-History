@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import TimeRibbon from '../../components/TimeRibbon.astro';
+import { periods, method, eraHref } from '../../lib/content';
+const groups = method.groups.map((g) => ({ ...g, items: periods.filter((p) => p.group === g.id) }));
+---
+<Base title="Eras">
+  <TimeRibbon slot="ribbon" />
+  <div class="wrap page">
+    <h1>Eras</h1>
+    <p class="lead-small">All 35 period chapters of the knowledge base, grouped by era. In this preview only the Weimar chapter is built; the others follow the same pattern in the rollout.</p>
+    {groups.map((g) => (
+      <section class={`era-group band-${g.id}-edge`} aria-labelledby={`g-${g.id}`}>
+        <h2 id={`g-${g.id}`}>{g.label}</h2>
+        <ol class="era-list">
+          {g.items.map((p) => {
+            const h = eraHref(p.slug);
+            return (
+              <li>
+                {h ? <a href={h}>{p.title}</a> : <span class="pending">{p.title}</span>}
+                <span class="era-date">{p.dateLabel}</span>
+                <code class="era-file">{p.file}</code>
+                {!h && <span class="chip">rollout</span>}
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    ))}
+  </div>
+</Base>
