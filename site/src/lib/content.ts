@@ -24,6 +24,12 @@ export const eraHref = (slug: string) => (isBuiltEra(slug) ? `/eras/${slug}/` : 
 /** PUBLIC_BUILD=1 renders © images as credit-and-link cards (decision of 27 Sept 2026). */
 export const PUBLIC_BUILD = process.env.PUBLIC_BUILD === '1';
 
+// Local copies made by scripts/download-images.mjs (optional). Never used for © images in PUBLIC_BUILD.
+import fs from 'node:fs';
+const manifestFile = new URL('../../public/img-cache/manifest.json', import.meta.url);
+const imageCache: Record<string, { file: string }> = fs.existsSync(manifestFile) ? JSON.parse(fs.readFileSync(manifestFile, 'utf8')) : {};
+export const localImage = (id: string) => imageCache[id]?.file ?? null;
+
 export const RIBBON = { from: -500, to: 2026 };
 
 export const LEVEL_ORDER = ['HIGH', 'MEDIUM', 'UNCERTAIN', 'CONTESTED', 'REJECTED'] as const;

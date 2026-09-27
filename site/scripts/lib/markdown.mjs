@@ -108,7 +108,8 @@ function renderNode(node, ctx) {
     case 'link': {
       const r = ctx.resolveXref?.(node.url, ctx.file, true);
       const inner = renderInline(node.children, ctx);
-      if (r) return `<a href="${escapeHtml(r.href)}">${inner}</a>`;
+      if (r?.href) return `<a href="${escapeHtml(r.href)}">${inner}</a>`;
+      if (r?.pending) return `<span class="xref-pending" title="This page is built in a later step">${inner}</span>`;
       if (/^https?:/.test(node.url))
         return `<a href="${escapeHtml(node.url)}" rel="noopener">${inner}</a>`;
       ctx.warn?.(`unresolved link ${node.url}`);

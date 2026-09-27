@@ -541,7 +541,7 @@ function parsePeriod(file) {
               const p = li.children[0];
               const first = p?.children?.[0];
               const label =
-                first?.type === 'emphasis' && /:$/.test(mdText(first).trim()) ? mdText(first).trim().replace(/:$/, '') : null;
+                first?.type === 'emphasis' && /:$/.test(mdText(first).trim()) ? mdText(first).trim() : null;
               const kids = label ? p.children.slice(1) : p.children;
               return {
                 label,
@@ -580,9 +580,9 @@ function parsePeriod(file) {
             const first = p?.children?.[0];
             const hasTitle = first?.type === 'strong';
             const rest = hasTitle ? p.children.slice(1) : p.children;
-            const bodyHtml = (renderInline(rest, ctxFor()).replace(/^\s*[:—–-]?\s*/, '') || '') + renderBlocks(li.children.slice(1), ctxFor());
+            const bodyHtml = (renderInline(rest, ctxFor()).replace(/^\s+/, '') || '') + renderBlocks(li.children.slice(1), ctxFor());
             return {
-              titleHtml: hasTitle ? renderInline(first.children, ctxFor()).replace(/[:.]\s*$/, '') : null,
+              titleHtml: hasTitle ? renderInline(first.children, ctxFor()) : null,
               bodyHtml,
               contested: /\bCONTESTED\b/.test(mdText(li)),
             };

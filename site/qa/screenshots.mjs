@@ -1,13 +1,17 @@
 #!/usr/bin/env node
 // Screenshots at phone (360 px) and desktop (1280 px), light and dark. Usage:
-//   node qa/screenshots.mjs [baseUrl] [path ...]
+//   node qa/screenshots.mjs [serve | baseUrl] [path ...]
 // Chromium: see qa/lib/browser.mjs.
 import { launch } from './lib/browser.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const base = process.argv[2] ?? 'http://localhost:4322';
-const paths = process.argv.slice(3).length ? process.argv.slice(3) : ['/eras/weimar-republic/'];
+import { serve, builtPages } from './lib/serve.mjs';
+// base URL, or "serve" to serve dist/ and shoot every built page
+const arg = process.argv[2] ?? 'serve';
+const served = arg === 'serve' ? await serve(path.resolve('dist')) : null;
+const base = served ? served.url : arg;
+const paths = process.argv.slice(3).length ? process.argv.slice(3) : served ? builtPages(path.resolve('dist')) : ['/eras/weimar-republic/'];
 const out = path.resolve('qa/reports/screens');
 fs.mkdirSync(out, { recursive: true });
 
@@ -29,4 +33,5 @@ for (const p of paths) {
   }
 }
 await browser.close();
+served?.server.close();
 console.log(`Screenshots in ${out}`);

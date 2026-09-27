@@ -11,8 +11,9 @@
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "qa": "node qa/run-all.mjs",
     "images:download": "node scripts/download-images.mjs",
-    "build:public": "PUBLIC_BUILD=1 npm run build",
-    "qa:pipeline": "node qa/pipeline-negative.mjs"
+    "build:public": "npm run content && PUBLIC_BUILD=1 ASTRO_TELEMETRY_DISABLED=1 astro build --outDir dist-public",
+    "qa:pipeline": "node qa/pipeline-negative.mjs",
+    "qa:final": "node qa/run-all.mjs --final --external"
   },
   "engines": {
     "node": ">=22.12.0"

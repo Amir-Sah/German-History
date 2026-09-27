@@ -1,7 +1,7 @@
 ---
 // An image as a source: caption, creator, date, holder, licence and a source link are always shown.
 // No cropping (object-fit: contain), no zoom/pan/filters. If the hotlink fails, the credit card remains.
-import { imageById, PUBLIC_BUILD, method } from '../lib/content';
+import { imageById, PUBLIC_BUILD, method, localImage } from '../lib/content';
 
 interface Props {
   id: string;
@@ -23,7 +23,7 @@ const creditBits = [img.creator, img.date].filter(Boolean).join(', ');
     {
       showImage && (
         <img
-          src={img.url}
+          src={localImage(img.id) ?? img.url}
           alt={img.title}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"

@@ -2,6 +2,8 @@
 
 *Step 1 of `WEBSITE_BUILD_PROMPT.md` (Inventory). Written 27 Sept 2026 after reading all 63 Markdown files and `images/IMAGE_INDEX.md`. **Nothing is built yet.** This plan waits for your approval.*
 
+> **Progress (27 Sept 2026).** Approved; decisions recorded in `WEBSITE_BUILD_PROMPT.md`. Step 8.1 (pipeline) and 8.2 (Weimar vertical slice) are done and waiting for review; QA suite in `qa/` passes. Since this plan was written, the knowledge base's consistency pass 2 resolved most of §7 (see `CONTENT_TRACE.md` §2 for the current status of each item). QA runs in headless Chromium (Playwright + axe), per decision 5, not in the in-app browser.
+
 ---
 
 ## 0. Setup already done (reversible)
