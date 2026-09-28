@@ -64,10 +64,39 @@ function glossWrap(innerHtml, text, ctx) {
   );
 }
 
-function renderText(value) {
+function badges(esc) {
   // Confidence words written in capitals in the prose become badges (same text, styled).
-  const esc = escapeHtml(value);
   return esc.replace(LEVEL_WORD, (m) => `<span class="${levelClass(m)}">${m}</span>`);
+}
+
+/**
+ * Dictionary highlighting (SITE_CHANGELOG_AND_TASKS.md C2). ctx.dict = { matcher, chapter, seen: Set, used: Set }.
+ * People and places: every mention. Terms: first mention per section (ctx.dict.seen is reset per section).
+ * Places get a location glyph on their first mention per section. Never inside headings or links (ctx.noDict).
+ */
+function renderText(value, ctx) {
+  const d = ctx?.dict;
+  if (!d || ctx.noDict) return badges(escapeHtml(value));
+  let pos = 0;
+  return d.matcher
+    .split(value, d.chapter)
+    .map((part) => {
+      const at = pos;
+      pos += part.text.length;
+      const esc = badges(escapeHtml(part.text));
+      const e = part.entry;
+      if (!e) return esc;
+      const firstInSection = !d.seen.has(e.id);
+      if (e.kind === 'term' && !firstInSection) return esc;
+      const firstOnPage = d.anchor !== false && !d.used.has(e.id);
+      d.seen.add(e.id);
+      d.used.add(e.id);
+      d.log?.push({ chapter: d.chapter, form: part.text, id: e.id, kind: e.kind, context: value.slice(Math.max(0, at - 70), at + part.text.length + 70) });
+      const cls = `dx dx-${e.kind}${firstInSection ? ' dx-first' : ''}`;
+      const anchor = firstOnPage ? ` id="m-${e.id}"` : '';
+      return `<a class="${cls}"${anchor} href="/dictionary/#${e.id}" data-dx="${e.id}" aria-describedby="dxd-${e.id}">${esc}</a>`;
+    })
+    .join('');
 }
 
 function renderNode(node, ctx) {
@@ -78,10 +107,10 @@ function renderNode(node, ctx) {
       return `<p>${renderInline(node.children, ctx)}</p>`;
     case 'heading': {
       const lvl = Math.min(6, node.depth + (ctx.headingShift ?? 0));
-      return `<h${lvl}>${renderInline(node.children, ctx)}</h${lvl}>`;
+      return `<h${lvl}>${renderInline(node.children, { ...ctx, noDict: true })}</h${lvl}>`;
     }
     case 'text':
-      return renderText(node.value);
+      return renderText(node.value, ctx);
     case 'emphasis': {
       const inner = renderInline(node.children, ctx);
       const html = `<em>${inner}</em>`;
@@ -107,7 +136,7 @@ function renderNode(node, ctx) {
       return '<br>';
     case 'link': {
       const r = ctx.resolveXref?.(node.url, ctx.file, true);
-      const inner = renderInline(node.children, ctx);
+      const inner = renderInline(node.children, { ...ctx, noDict: true });
       if (r?.href) return `<a href="${escapeHtml(r.href)}">${inner}</a>`;
       if (r?.pending) return `<span class="xref-pending" title="This page is built in a later step">${inner}</span>`;
       if (/^https?:/.test(node.url))
@@ -164,12 +193,14 @@ export function renderTable(node, ctx, { caption } = {}) {
 }
 
 function renderXref(value, ctx) {
-  // Inline code in the KB is (almost always) a file cross-reference such as
-  // `twentieth_century/04_nazi_state.md` or `01_RESEARCH_METHOD.md §5`.
+  // Inline code in the KB is (almost always) a file cross-reference such as `twentieth_century/04_nazi_state.md`
+  // or `01_RESEARCH_METHOD.md §5`. Part B3: show the chapter's title (the file path stays in the tooltip).
   const r = ctx.resolveXref?.(value, ctx.file, false);
-  if (r?.href) return `<a class="xref" href="${escapeHtml(r.href)}"><code>${escapeHtml(value)}</code></a>`;
-  if (r && r.pending)
-    return `<code class="xref xref-pending" title="This page is built in a later step">${escapeHtml(value)}</code>`;
+  if (r) {
+    const label = escapeHtml(r.title + (r.section ? ` §${r.section}` : ''));
+    if (r.href) return `<a class="xref" href="${escapeHtml(r.href)}" title="${escapeHtml(value)}">${label}</a>`;
+    return `<span class="xref xref-pending" title="${escapeHtml(value)} — this page is built in a later step">${label}</span>`;
+  }
   return `<code>${escapeHtml(value)}</code>`;
 }
 

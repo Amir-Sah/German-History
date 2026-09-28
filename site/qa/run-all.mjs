@@ -12,6 +12,7 @@ const steps = [
   ['accessibility (axe)', ['qa/axe.mjs']],
   ['contrast tokens', ['qa/contrast.mjs']],
   ['behaviour (keyboard, reduced motion, no-JS, PUBLIC_BUILD)', ['qa/behaviour.mjs']],
+  ['inline dictionary', ['qa/dictionary.mjs']],
   ['screenshots', ['qa/screenshots.mjs', 'serve']],
   ...(extra.includes('--external') ? [['hotlinked images render', ['qa/image-urls.mjs']]] : []),
 ];

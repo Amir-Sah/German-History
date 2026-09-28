@@ -20,14 +20,17 @@ const claims = period.auditClaims.map((n: number) => audit.find((a) => a.n === n
       <dt>Confidence in this chapter's key findings <a href="#s13">(§13)</a></dt>
       <dd class="rail-chips">
         {[...confCounts].map(([k, n]) => (
-          <span class="rail-chip"><span class:list={['conf', `conf-${k.split('–')[0].toLowerCase()}`]} title={k.split('–').map(levelMeaning).join(' / ')}>{k}</span> × {n}</span>
+          <span class="rail-chip" role="img" aria-label={`${n} ${n === 1 ? 'finding' : 'findings'} rated ${k}`}><span aria-hidden="true" class:list={['conf', `conf-${k.split('–')[0].toLowerCase()}`]} title={k.split('–').map(levelMeaning).join(' / ')}>{k}</span><span aria-hidden="true"> × {n}</span></span>
         ))}
       </dd>
     </div>
     <div>
       <dt>Sources by level <a href="#s14">(§14)</a></dt>
       <dd class="rail-chips">
-        {[...lvlCounts].map(([k, n]) => (<span class="rail-chip"><span class="chip chip-level" title={/^[A-F]/.test(k) ? sourceLevelMeaning(k) : ''}>{/^[A-F]/.test(k) ? `Level ${k}` : k}</span> × {n}</span>))}
+        {[...lvlCounts].map(([k, n]) => {
+          const label = /^[A-F]/.test(k) ? `Level ${k.split('/').join(' + ')}` : k;
+          return (<span class="rail-chip" role="img" aria-label={`${n} ${n === 1 ? 'source' : 'sources'} at ${label}`}><span aria-hidden="true" class="chip chip-level" title={/^[A-F]/.test(k) ? sourceLevelMeaning(k) : ''}>{label}</span><span aria-hidden="true"> × {n}</span></span>);
+        })}
       </dd>
     </div>
     {claims.length > 0 && (

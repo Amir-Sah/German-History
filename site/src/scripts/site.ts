@@ -95,22 +95,20 @@ document.querySelectorAll<HTMLElement>('[data-myths]').forEach((box) => {
   });
 });
 
-// ── glossary tooltips: hover/focus via CSS; tap toggles; Escape closes ────
-document.addEventListener('click', (e) => {
-  const btn = (e.target as HTMLElement).closest<HTMLElement>('.gl-term');
-  document.querySelectorAll('.gl.open').forEach((g) => {
-    if (!btn || g !== btn.parentElement) g.classList.remove('open');
-  });
-  if (btn) btn.parentElement?.classList.toggle('open');
+// ── phone menu (nav, highlight toggle, theme); without JS the menu is always shown ────
+const menuBtn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+const menu = document.getElementById('site-menu');
+menuBtn?.addEventListener('click', () => {
+  const open = menuBtn.getAttribute('aria-expanded') !== 'true';
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menu?.classList.toggle('open', open);
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') document.querySelectorAll('.gl.open, .gl:focus-within').forEach((g) => {
-    g.classList.remove('open');
-    g.classList.add('dismissed');
-  });
-});
-document.addEventListener('focusin', (e) => {
-  (e.target as HTMLElement).closest?.('.gl')?.classList.remove('dismissed');
+  if (e.key === 'Escape' && menu?.classList.contains('open')) {
+    menu.classList.remove('open');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+    menuBtn?.focus();
+  }
 });
 
 // ── images that failed before this script ran ────────────────────────────

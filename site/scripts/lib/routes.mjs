@@ -34,7 +34,7 @@ const TOP = {
  * @param {string[]} kbFiles  all KB markdown paths (repo-relative)
  * @param {(href:string)=>boolean} isBuilt  whether a site URL exists in this build
  */
-export function makeResolver(kbFiles, isBuilt) {
+export function makeResolver(kbFiles, isBuilt, titles = {}) {
   const fileSet = new Set(kbFiles);
 
   function kbToHref(kb, section) {
@@ -46,7 +46,8 @@ export function makeResolver(kbFiles, isBuilt) {
     if (!href) return null;
     const page = href.split('#')[0];
     const anchor = section ? `#s${section}` : '';
-    return isBuilt(page) ? { href: href + anchor, kb } : { pending: true, kb };
+    const title = titles[kb] ?? kb;
+    return isBuilt(page) ? { href: href + anchor, kb, title, section } : { pending: true, kb, title, section };
   }
 
   function findKb(target, fromFile) {

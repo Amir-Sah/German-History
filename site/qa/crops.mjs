@@ -30,13 +30,29 @@ for (const [w, scheme] of [[1280, 'light'], [360, 'light'], [1280, 'dark']]) {
   await page.locator('.evidence-rail').screenshot({ path: `${out}/rail-${w}-${scheme}.png` });
   await page.locator('.sec-13 .sec-body').screenshot({ path: `${out}/confidence-${w}-${scheme}.png` });
   await page.locator('.sec-14 .sec-body').screenshot({ path: `${out}/sources-${w}-${scheme}.png` });
-  const term = page.locator('.gl-term').first();
-  await term.scrollIntoViewIfNeeded();
-  await term.focus();
-  await page.keyboard.press('Tab'); await page.keyboard.press('Shift+Tab');
-  await page.waitForTimeout(200);
-  await page.locator('.constitution').screenshot({ path: `${out}/glossary-tip-${w}-${scheme}.png` });
+  // dictionary: hover tooltip on a person (mouse), then open the card
+  await page.locator('[data-evidence-toggle]').click(); // back off
+  const person = page.locator('.lead a.dx-person').first();
+  await person.scrollIntoViewIfNeeded();
+  if (w > 700) {
+    await person.hover();
+    await page.waitForTimeout(200);
+    await page.screenshot({ path: `${out}/dx-tooltip-${w}-${scheme}.png`, clip: await clipAround(page, person) });
+  }
+  await person.click();
+  await page.waitForTimeout(250);
+  await page.screenshot({ path: `${out}/dx-card-${w}-${scheme}.png` });
+  await page.keyboard.press('Escape');
+  const debates = page.locator('.sec-12 .sec-body');
+  await debates.scrollIntoViewIfNeeded();
+  await debates.screenshot({ path: `${out}/debates-${w}-${scheme}.png` });
 }
 await browser.close();
+async function clipAround(page, loc) {
+  const b = await loc.boundingBox();
+  const vp = page.viewportSize();
+  const x = Math.max(0, b.x - 200), y = Math.max(0, b.y - 170);
+  return { x, y, width: Math.min(vp.width - x, 520), height: Math.min(vp.height - y, 260) };
+}
 served?.server.close();
 console.log('crops written to', out);

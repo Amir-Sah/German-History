@@ -15,6 +15,9 @@ const PAIRS = [
   ['--era-accent-2', '--paper', 4.5, 'panel labels'], ['--era-accent-2', '--era-tint', 4.5, '"How power worked" heading'],
   ['--muted', '--era-tint', 4.5, 'notes in panels'], ['--ink', '--era-tint', 4.5, 'panel text'],
   ['--paper', '--ink', 4.5, '"5 things" card'], ['--era-line', '--ink', 3, '"5 things" numerals (large)'], ['--paper', '--era-accent', 4.5, 'current chapter bar'],
+  ['--dx-person', '--paper', 4.5, 'person names'], ['--dx-place', '--paper', 4.5, 'place names'],
+  ['--dx-person', '--era-tint', 4.5, 'person names in panels'], ['--dx-place', '--era-tint', 4.5, 'place names in panels'],
+  ['--dx-person', '--paper-2', 4.5, 'person names on dictionary tools'], ['--era-accent', '--paper-2', 4.5, 'plain-words label'],
   ['--c-high', '--c-high-bg', 4.5, 'HIGH'], ['--c-medium', '--c-medium-bg', 4.5, 'MEDIUM'], ['--c-uncertain', '--c-uncertain-bg', 4.5, 'UNCERTAIN'],
   ['--c-contested', '--c-contested-bg', 4.5, 'CONTESTED'], ['--c-rejected', '--c-rejected-bg', 4.5, 'REJECTED'], ['--c-contested', '--paper', 4.5, 'rail heading'],
 ];

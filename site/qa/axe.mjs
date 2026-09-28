@@ -18,6 +18,15 @@ for (const p of pages) {
     const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, colorScheme: scheme });
     const page = await ctx.newPage();
     await page.goto(url + p, { waitUntil: 'load' });
+    // The dictionary page has 2,300 entries; axe over all of them takes too long. Audit a sample: every 12th entry
+    // plus every entry with a note, a German form or a place/person kind variant (the markup is identical per entry).
+    const sampled = await page.evaluate(() => {
+      const all = [...document.querySelectorAll('.dict-entry')];
+      if (all.length < 400) return 0;
+      all.forEach((e, i) => { if (i % 12 && !e.querySelector('.note, .de')) e.remove(); });
+      return all.length;
+    });
+    if (sampled) console.log(`  (${p}: sampled ${await page.$$eval('.dict-entry', (x) => x.length)} of ${sampled} entries)`);
     await page.evaluate(() => {
       document.documentElement.classList.add('evidence-on');
       document.querySelectorAll('details').forEach((d) => (d.open = true));

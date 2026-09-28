@@ -1,0 +1,44 @@
+---
+// Data for the inline dictionary on this page: hidden one-line descriptions (targets of aria-describedby, so
+// screen readers get the Short text without hover), the entries as JSON for the tooltip and the card, and
+// one <dialog> (focus trap and Esc come from the platform). All text comes from dictionary/*.md.
+import { dictById, kbTitles, kbHref } from '../lib/content';
+interface Props { ids: string[]; }
+const { ids } = Astro.props;
+const entries = [...new Set(ids)].map((id) => dictById.get(id)).filter(Boolean) as NonNullable<ReturnType<typeof dictById.get>>[];
+const chapter = (f: string | null) => (f ? { title: kbTitles[f] ?? f, href: kbHref(f) } : null);
+const data = Object.fromEntries(
+  entries.map((e) => [
+    e.id,
+    {
+      name: e.name, kind: e.kind, subkind: e.subkind, dates: e.dates, german: e.german, short: e.short,
+      explanation: e.explanation, note: e.note, basis: e.basis, main: chapter(e.main), also: e.also.map(chapter),
+    },
+  ]),
+);
+---
+<div hidden id="dx-descs">
+  {entries.map((e) => <span id={`dxd-${e.id}`}>{`${e.kind === 'person' ? 'Person' : e.kind === 'place' ? 'Place' : 'Term'}: ${e.short}`}</span>)}
+</div>
+<script type="application/json" id="dx-data" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
+<div class="dx-tooltip" id="dx-tooltip" role="presentation" hidden></div>
+<dialog class="dx-card" id="dx-card" aria-labelledby="dx-card-name">
+  <div class="dx-card-inner">
+    <header class="dx-card-head">
+      <p class="dx-card-kind" data-f="kind"></p>
+      <h2 id="dx-card-name" data-f="name"></h2>
+      <p class="dx-card-meta"><span data-f="german" lang="de"></span><span data-f="dates"></span></p>
+      <button type="button" class="dx-card-close" data-dx-close aria-label="Close">×</button>
+    </header>
+    <p class="dx-card-note" data-f="note" hidden></p>
+    <p class="dx-card-expl" data-f="explanation"></p>
+    <dl class="dx-card-links">
+      <div data-f="main-wrap"><dt>Main chapter</dt><dd data-f="main"></dd></div>
+      <div data-f="also-wrap"><dt>Also in</dt><dd data-f="also"></dd></div>
+    </dl>
+    <p class="dx-card-foot">
+      <a data-f="dict-link" href="/dictionary/">Open in dictionary</a>
+      <span class="ev-only chip" data-f="basis" title="KB: from the knowledge base text. KB+K: knowledge base plus well-established general knowledge (dictionary/README.md)."></span>
+    </p>
+  </div>
+</dialog>

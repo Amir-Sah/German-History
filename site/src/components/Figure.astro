@@ -18,7 +18,10 @@ const rightsLabel = img.rights === '©' ? '© personal study only' : img.rights 
 const size = imageSize(id);
 // True proportions, but never taller than 4:5 (portrait) or flatter than 21:9; the image is contained, never cropped.
 const ratio = size ? Math.min(21 / 9, Math.max(4 / 5, size[0] / size[1])) : 4 / 3;
-const creditBits = [img.creator, img.date].filter(Boolean).join(', ');
+// Part B5: the caption is shown once; the credit line gives creator · date · holder · licence
+// (the date is omitted when the title already contains it). The title stays as the image's alt text.
+const dateInTitle = img.date && img.title.includes(img.date);
+const creditBits = [img.creator, dateInTitle ? null : img.date].filter(Boolean);
 ---
 
 <figure class:list={['fig', `fig-${variant}`, img.critical && 'fig-critical']} id={`img-${id}`}>
@@ -49,9 +52,8 @@ const creditBits = [img.creator, img.date].filter(Boolean).join(', ');
     {img.critical && <p class="fig-flag"><span class="chip chip-critical">{img.critical.kind}</span></p>}
     <p class="fig-caption" set:html={caption} />
     <p class="fig-credit">
-      <span class="fig-title" set:html={img.titleHtml} />
-      {creditBits && <span> — {creditBits}.</span>}
-      <span> <a href={img.holderUrl} rel="noopener">{img.holder}</a>.</span>
+      {creditBits.map((b) => <span class="fig-bit">{b}</span>)}
+      <span class="fig-bit"><a href={img.holderUrl} rel="noopener">{img.holder}</a></span>
       <span class:list={['chip', img.rights === '©' ? 'chip-copyright' : 'chip-free']} title={img.licence}>{rightsLabel}</span>
       <span class="chip chip-type">{img.type}</span>
     </p>

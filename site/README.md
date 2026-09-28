@@ -30,7 +30,7 @@ The default build is a **local, personal-study site**: 54 of the 72 images are �
 
 - **Validation fails loudly.** The template rules are read from `01_RESEARCH_METHOD.md` §8 and enforced on every period file: 14 canonical section names, one `### Regime Matrix — …` (12-row table or `**Matrix:** see …`), one "What the constitution said vs how power actually worked:" paragraph, the four-step BEFORE → PRESSURES → TRANSITION → AFTER chain, the closed confidence vocabulary (§4), exactly five "things to remember", image blocks that match `images/IMAGE_INDEX.md`. Any deviation stops the build with `file:line`, unless it is listed with a reason in `data/template-exceptions.json` (stale exceptions also fail).
 - **Editorial data** lives in `data/` (era groups and moods, sensitive chapters, glossary allow-list, image flags, audit mapping). Each file says where its rules come from; `CONTENT_TRACE.md` lists them.
-- **Glossary glosses are quoted, not written:** the build checks each gloss against the KB text it cites.
+- **Inline dictionary:** `dictionary/*.md` (KB) is parsed strictly into `dictionary.json`; names and terms are marked at build time (`scripts/lib/dictionary.mjs`). Misreadings found in review are suppressed per chapter in `data/dictionary-overrides.json` and reported for fixing in the KB.
 - **Pages built so far** are listed in `scripts/lib/scope.mjs`. Cross-references to pages that do not exist yet render as plain file names.
 
 ## Quality checks (`npm run qa`)
@@ -45,6 +45,7 @@ The default build is a **local, personal-study site**: 54 of the 72 images are �
 | Contrast | `qa/contrast.mjs` | Every text/background token pair meets WCAG AA in each theme and mood (covers what axe cannot measure) |
 | Behaviour | `qa/behaviour.mjs` | Keyboard use, reduced motion (static equivalents), no-JS reading, persisted toggle, `PUBLIC_BUILD` hides © images |
 | Hotlinked images | `qa/image-urls.mjs [--write-sizes]` | All 72 index images render in Chromium (nothing saved); `--write-sizes` records their pixel sizes in `data/image-sizes.json` for exact `width`/`height` and true proportions |
+| Inline dictionary | `qa/dictionary.mjs` | No highlight in headings/links/credits/code; every matched entry highlighted; no stale suppressions; tooltip on keyboard focus without covering the word; Enter opens the card, Esc returns focus; first tap opens a bottom sheet; the highlight toggle works and persists; axe on the open card |
 | Screenshots | `qa/screenshots.mjs`, `qa/crops.mjs` | Pages and components at 360 and 1280 px, light and dark → `qa/reports/` |
 
 `npm run qa:final` adds `--final` (full KB coverage required) and `--external` (external links via curl; hosts behind a bot challenge or blocked by the network are reported separately, not as broken).

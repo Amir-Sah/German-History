@@ -30,14 +30,7 @@ const check = (ok, msg) => { console.log(`${ok ? '✔' : '✖'} ${msg}`); if (!o
   await page.locator('.sec-3 > summary').focus();
   await page.keyboard.press('Enter');
   check(await page.evaluate(() => document.querySelector('.sec-3').open), 'keyboard: Enter opens a section');
-  // Glossary tip is shown on keyboard focus
-  const term = page.locator('.gl-term').first();
-  await term.focus();
-  await page.keyboard.press('Shift+Tab'); await page.keyboard.press('Tab');
-  const vis = await page.evaluate(() => getComputedStyle(document.activeElement.nextElementSibling).visibility);
-  check(vis === 'visible', 'keyboard: glossary explanation appears on focus');
-  await page.keyboard.press('Escape');
-  check(await page.evaluate(() => getComputedStyle(document.activeElement.nextElementSibling).visibility) === 'hidden', 'keyboard: Escape hides the glossary explanation');
+  // (Dictionary tooltips and cards are checked in qa/dictionary.mjs.)
   // Evidence toggle persists
   await page.locator('[data-evidence-toggle]').click();
   await page.reload();

@@ -20,12 +20,12 @@ const split = said.length > 0 && worked.length > 0;
     <div class="cvr">
       <div class="cvr-col cvr-said">
         <h3 class="cvr-h">What the constitution said</h3>
-        {said.map((i) => (<div class="cvr-item"><p class="cvr-label">{i.label}</p><p set:html={i.html} /></div>))}
+        {said.map((i) => (<div class="cvr-item">{i.label && <p class="cvr-label">{i.label}</p>}<p set:html={i.html} /></div>))}
       </div>
       <div class="cvr-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
       <div class="cvr-col cvr-worked">
         <h3 class="cvr-h">How power actually worked</h3>
-        {worked.map((i) => (<div class="cvr-item"><p class="cvr-label">{i.label}</p><p set:html={i.html} /></div>))}
+        {worked.map((i) => (<div class="cvr-item">{i.label && <p class="cvr-label">{i.label}</p>}<p set:html={i.html} /></div>))}
       </div>
     </div>
   )}

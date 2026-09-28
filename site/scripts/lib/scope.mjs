@@ -3,4 +3,4 @@
 // then the rollout. Cross-references to pages not yet built render as plain (unlinked) file names.
 export const BUILT_ERAS = ['weimar-republic'];
 
-export const BUILT_PAGES = [...BUILT_ERAS.map((s) => `/eras/${s}/`), '/eras/', '/glossary/', '/how-we-know/', '/how-we-know/audit/'];
+export const BUILT_PAGES = [...BUILT_ERAS.map((s) => `/eras/${s}/`), '/eras/', '/dictionary/', '/how-we-know/', '/how-we-know/audit/'];

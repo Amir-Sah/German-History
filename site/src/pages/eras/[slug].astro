@@ -30,10 +30,12 @@ more.forEach((img, i) => {
 const idx = periods.findIndex((p) => p.slug === period.slug);
 const prev = periods[idx - 1];
 const next = periods[idx + 1];
+// Dictionary entries used on this page: the chapter text plus its image captions.
+const dictIds = [...new Set([...(period.dictionaryUsed ?? []), ...period.images.flatMap((i) => [...i.captionHtml.matchAll(/data-dx="([^"]+)"/g)].map((m) => m[1]))])];
 const sectionTitle = (s: Period['sections'][number]) => s.name + (s.qualifier ? ` — ${s.qualifier}` : '');
 ---
 
-<Base title={period.title} description={`${period.title} (${period.dateLabel})`} mood={period.mood} calm={period.sensitive}>
+<Base title={period.title} description={`${period.title} (${period.dateLabel})`} mood={period.mood} calm={period.sensitive} dictIds={dictIds}>
   <TimeRibbon slot="ribbon" current={period} />
   <article class="chapter" data-pagefind-body>
     <header class="chapter-hero wrap-wide">
@@ -41,10 +43,10 @@ const sectionTitle = (s: Period['sections'][number]) => s.name + (s.qualifier ? 
         <p class="kicker">{period.groupLabel} · <code>{period.file}</code></p>
         <h1 set:html={period.titleHtml} />
         <p class="hero-date">{period.dateLabel}</p>
-        <div class="lead" id="s1">
-          <h2 class="visually-hidden">1. Period in One Paragraph</h2>
-          <Fragment set:html={period.leadHtml} />
-        </div>
+      </div>
+      <div class="lead" id="s1">
+        <h2 class="visually-hidden">1. Period in One Paragraph</h2>
+        <Fragment set:html={period.leadHtml} />
       </div>
       <div class="hero-media">
         {hero && <Figure id={hero.id} captionHtml={hero.captionHtml} variant="hero" eager />}
