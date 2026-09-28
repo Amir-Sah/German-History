@@ -728,7 +728,7 @@
 - **Short:** The United Provinces of the Netherlands, independent from Spain; recognised as outside the Empire in 1648.
 - **Explanation:** Its revolt against Spain was one of the European conflicts intertwined with the Thirty Years' War.
 - **Main chapter:** [`early_modern/02_thirty_years_war.md`](../early_modern/02_thirty_years_war.md)
-- **Also in:** `00_README.md` · `ancient/01_germanic_societies.md`
+- **Also in:** `00_README.md`
 - **Basis:** KB+K
 
 ## E
@@ -1332,7 +1332,7 @@
 - **Short:** Jewish state whose security Germany calls part of its 'Staatsräson' (reason of state).
 - **Explanation:** Reconciliation with Israel was part of post-war West Germany's return to the community of states. In 2008 Merkel declared Israel's security part of Germany's 'Staatsräson', rooted in the memory of the Holocaust.
 - **Main chapter:** [`contemporary/04_germany_in_europe.md`](../contemporary/04_germany_in_europe.md)
-- **Also in:** `contemporary/01_post_reunification.md` · `early_modern/05_enlightenment.md` · `twentieth_century/06_holocaust_and_persecution.md` · `twentieth_century/10_east_germany.md`
+- **Also in:** `contemporary/01_post_reunification.md` · `twentieth_century/06_holocaust_and_persecution.md` · `twentieth_century/10_east_germany.md`
 - **Basis:** KB+K
 
 ### Italy

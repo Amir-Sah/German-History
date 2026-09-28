@@ -89,7 +89,7 @@
 - **Short:** Failed attempt on 20 July 1944 by officers to kill Hitler and seize power.
 - **Explanation:** Stauffenberg's bomb failed; about 200 people were executed and families were punished. Many plotters had supported the early regime; motives were mixed. West Germany long honoured it above other resistance.
 - **Main chapter:** [`twentieth_century/06_holocaust_and_persecution.md`](../twentieth_century/06_holocaust_and_persecution.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `twentieth_century/02_weimar_republic.md` · `twentieth_century/04_nazi_state.md` · `twentieth_century/07_world_war_two.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `twentieth_century/07_world_war_two.md`
 - **Basis:** KB+K
 
 ### 2006 World Cup
@@ -185,7 +185,7 @@
 - **Explanation:** Beitritt: the Volkskammer voted for it on 23 August 1990. It was fast and adopted the Basic Law, but limited East German co-design — a reason some later felt 'annexed'.
 - **German:** Beitritt
 - **Main chapter:** [`twentieth_century/12_reunification.md`](../twentieth_century/12_reunification.md)
-- **Also in:** `02_MASTER_TIMELINE.md` · `contemporary/02_modern_political_system.md` · `early_modern/04_prussia_and_austria.md` · `twentieth_century/09_west_germany.md` · `twentieth_century/10_east_germany.md`
+- **Also in:** `02_MASTER_TIMELINE.md` · `contemporary/02_modern_political_system.md` · `twentieth_century/09_west_germany.md` · `twentieth_century/10_east_germany.md`
 - **Basis:** KB+K
 
 ### ADAV
@@ -416,7 +416,7 @@
 - **Explanation:** Allied forces occupied Germany's colonies during the First World War, except East Africa.
 - **German:** Alliierte
 - **Main chapter:** [`twentieth_century/01_world_war_one.md`](../twentieth_century/01_world_war_one.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `ancient/01_germanic_societies.md` · `nineteenth_century/05_unification.md` · `twentieth_century/06_holocaust_and_persecution.md`
+- **Also in:** `00_FINAL_EXPLANATION.md`
 - **Basis:** KB+K
 
 ### Alsatians
@@ -979,7 +979,7 @@
 - **Short:** Non-citizen soldiers serving in the Roman army alongside the legions.
 - **Explanation:** Many young men from beyond the frontier served as Roman auxiliaries and came home with money and experience — one way Roman contact reshaped Germanic-speaking societies.
 - **Main chapter:** [`ancient/01_germanic_societies.md`](../ancient/01_germanic_societies.md)
-- **Also in:** `ancient/02_roman_frontier.md` · `twentieth_century/06_holocaust_and_persecution.md` · `twentieth_century/07_world_war_two.md`
+- **Also in:** `ancient/02_roman_frontier.md`
 - **Basis:** KB+K
 
 ### auxiliary police
@@ -1796,7 +1796,6 @@
 - **Explanation:** Represents the Länder governments. Many laws ('consent laws') need its approval, so opposition-led states can block federal policy — one reason German politics favours compromise.
 - **German:** Bundesrat
 - **Main chapter:** [`contemporary/02_modern_political_system.md`](../contemporary/02_modern_political_system.md)
-- **Also in:** `nineteenth_century/06_german_empire.md`
 - **Basis:** KB+K
 
 ### Bundesrat
@@ -2515,7 +2514,7 @@
 - **Explanation:** The 1913 law made citizenship depend on descent from a German parent. The 2000 reform added partial birthright citizenship (ius soli) for children of long-term residents; the 2024 reform cut the residence requirement to five years and allowed dual citizenship; a 3-year fast track was abolished in 2025.
 - **German:** Staatsangehörigkeitsrecht
 - **Main chapter:** [`contemporary/01_post_reunification.md`](../contemporary/01_post_reunification.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `02_MASTER_TIMELINE.md` · `contemporary/03_modern_society.md` · `medieval/04_cities_church_feudalism.md` · `themes/german_identity.md` · `themes/minorities_and_migration.md` · `twentieth_century/06_holocaust_and_persecution.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `02_MASTER_TIMELINE.md` · `contemporary/03_modern_society.md` · `themes/german_identity.md` · `themes/minorities_and_migration.md` · `twentieth_century/06_holocaust_and_persecution.md`
 - **Basis:** KB+K
 
 ### civic culture
@@ -2693,7 +2692,7 @@
 - **Explanation:** Illegal in most German states until the 1860s; allowed by the 1869 Industrial Code.
 - **German:** Koalitionsfreiheit
 - **Main chapter:** [`nineteenth_century/07_industrial_society.md`](../nineteenth_century/07_industrial_society.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `02_MASTER_TIMELINE.md` · `05_REGIME_MATRIX.md` · `ancient/01_germanic_societies.md` · `contemporary/01_post_reunification.md` · `contemporary/02_modern_political_system.md` · `contemporary/04_germany_in_europe.md` · `themes/political_power.md` · `twentieth_century/01_world_war_one.md` · `twentieth_century/02_weimar_republic.md` · `twentieth_century/03_rise_of_nazism.md` · `twentieth_century/09_west_germany.md` · `twentieth_century/12_reunification.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `02_MASTER_TIMELINE.md` · `05_REGIME_MATRIX.md` · `contemporary/02_modern_political_system.md` · `themes/political_power.md` · `twentieth_century/02_weimar_republic.md` · `twentieth_century/03_rise_of_nazism.md` · `twentieth_century/12_reunification.md`
 - **Basis:** KB+K
 
 ### coalition committee
@@ -3084,7 +3083,6 @@
 - **Short:** Christian rite in which teenagers affirm their faith and become full church members.
 - **Explanation:** In the GDR the state's secular Jugendweihe largely displaced Protestant confirmation, as church membership collapsed.
 - **Main chapter:** [`twentieth_century/10_east_germany.md`](../twentieth_century/10_east_germany.md)
-- **Also in:** `early_modern/04_prussia_and_austria.md`
 - **Basis:** KB+K
 
 ### confirmed right-wing extremist
@@ -3313,7 +3311,7 @@
 - **Explanation:** Military entrepreneurs like Wallenstein financed whole armies this way, spreading hunger and ruin.
 - **German:** Kontributionen
 - **Main chapter:** [`early_modern/02_thirty_years_war.md`](../early_modern/02_thirty_years_war.md)
-- **Also in:** `05_REGIME_MATRIX.md` · `contemporary/02_modern_political_system.md` · `contemporary/04_germany_in_europe.md` · `nineteenth_century/02_german_confederation.md` · `nineteenth_century/06_german_empire.md` · `nineteenth_century/07_industrial_society.md` · `twentieth_century/09_west_germany.md`
+- **Also in:** `05_REGIME_MATRIX.md` · `nineteenth_century/06_german_empire.md`
 - **Basis:** KB
 
 ### cooperative separation
@@ -3439,7 +3437,7 @@
 - **Explanation:** Carolingian counts (Latin comites) were the king's local agents for justice and military service. Whether they obeyed depended on their own interests; the office later became hereditary noble lordship.
 - **German:** Graf
 - **Main chapter:** [`medieval/01_carolingian_world.md`](../medieval/01_carolingian_world.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `05_REGIME_MATRIX.md` · `contemporary/01_post_reunification.md` · `contemporary/03_modern_society.md` · `medieval/02_holy_roman_empire.md` · `medieval/03_medieval_society.md` · `nineteenth_century/01_napoleon.md` · `nineteenth_century/07_industrial_society.md` · `twentieth_century/01_world_war_one.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `05_REGIME_MATRIX.md` · `medieval/02_holy_roman_empire.md` · `medieval/03_medieval_society.md` · `nineteenth_century/01_napoleon.md` · `twentieth_century/01_world_war_one.md`
 - **Basis:** KB+K
 
 ### count palatine of the Rhine
@@ -4375,7 +4373,7 @@
 - **Explanation:** The Soviet Union took industrial plants, rail tracks and output from eastern Germany as war reparations until 1953, heavily burdening the GDR's recovery.
 - **German:** Demontage
 - **Main chapter:** [`twentieth_century/10_east_germany.md`](../twentieth_century/10_east_germany.md)
-- **Also in:** `twentieth_century/08_occupation_and_denazification.md` · `twentieth_century/12_reunification.md`
+- **Also in:** `twentieth_century/08_occupation_and_denazification.md`
 - **Basis:** KB+K
 
 ### Displaced persons
@@ -4736,7 +4734,7 @@
 - **Explanation:** Electors (e.g. of Saxony, Brandenburg, Mainz) formed the first college of the Imperial Diet; the Archbishop-Elector of Mainz chaired it. Their territories were called electorates.
 - **German:** Kurfürst
 - **Main chapter:** [`early_modern/03_territorial_states.md`](../early_modern/03_territorial_states.md)
-- **Also in:** `02_MASTER_TIMELINE.md` · `contemporary/01_post_reunification.md` · `early_modern/01_reformation.md` · `early_modern/04_prussia_and_austria.md` · `nineteenth_century/01_napoleon.md` · `nineteenth_century/06_german_empire.md` · `twentieth_century/12_reunification.md`
+- **Also in:** `02_MASTER_TIMELINE.md` · `early_modern/01_reformation.md` · `early_modern/04_prussia_and_austria.md` · `nineteenth_century/01_napoleon.md`
 - **Basis:** KB+K
 
 ### electoral capitulation
@@ -5903,7 +5901,7 @@
 - **Explanation:** Civilians, prisoners of war and camp inmates worked in factories, farms and households. By August 1944 civilian forced workers were over a quarter of the workforce. Treatment followed a racial hierarchy.
 - **German:** Zwangsarbeit
 - **Main chapter:** [`twentieth_century/07_world_war_two.md`](../twentieth_century/07_world_war_two.md)
-- **Also in:** `02_MASTER_TIMELINE.md` · `images/IMAGE_INDEX.md` · `nineteenth_century/08_colonialism.md` · `themes/class.md` · `themes/industrialization.md` · `themes/minorities_and_migration.md` · `themes/women_and_family.md` · `twentieth_century/01_world_war_one.md` · `twentieth_century/04_nazi_state.md` · `twentieth_century/05_everyday_life_under_nazism.md` · `twentieth_century/06_holocaust_and_persecution.md` · `twentieth_century/08_occupation_and_denazification.md`
+- **Also in:** `02_MASTER_TIMELINE.md` · `images/IMAGE_INDEX.md` · `themes/class.md` · `themes/industrialization.md` · `themes/minorities_and_migration.md` · `themes/women_and_family.md` · `twentieth_century/01_world_war_one.md` · `twentieth_century/04_nazi_state.md` · `twentieth_century/05_everyday_life_under_nazism.md` · `twentieth_century/06_holocaust_and_persecution.md` · `twentieth_century/08_occupation_and_denazification.md`
 - **Basis:** KB+K
 
 ### forced merger
@@ -6005,7 +6003,7 @@
 - **Explanation:** It asked about Nazi memberships and activities and was used to classify people.
 - **German:** Fragebogen
 - **Main chapter:** [`twentieth_century/08_occupation_and_denazification.md`](../twentieth_century/08_occupation_and_denazification.md)
-- **Also in:** `contemporary/02_modern_political_system.md` · `images/IMAGE_INDEX.md`
+- **Also in:** `images/IMAGE_INDEX.md`
 - **Basis:** KB+K
 
 ### Frame of reference
@@ -6923,7 +6921,7 @@
 - **Short:** Medieval chant book containing music for the Mass.
 - **Explanation:** Carolingian monasteries copied such books in the new Carolingian minuscule script.
 - **Main chapter:** [`medieval/01_carolingian_world.md`](../medieval/01_carolingian_world.md)
-- **Also in:** `ancient/02_roman_frontier.md` · `images/IMAGE_INDEX.md` · `themes/democracy.md` · `themes/women_and_family.md`
+- **Also in:** `images/IMAGE_INDEX.md` · `themes/democracy.md` · `themes/women_and_family.md`
 - **Basis:** KB+K
 
 ### grand coalition
@@ -8442,7 +8440,6 @@
 - **Short:** Latin: 'right to emigrate' — subjects who rejected their ruler's faith could leave.
 - **Explanation:** Granted by the Peace of Augsburg in 1555, it is often seen as an early individual right: dissenters could not be forced to convert, but had to move away.
 - **Main chapter:** [`early_modern/01_reformation.md`](../early_modern/01_reformation.md)
-- **Also in:** `twentieth_century/10_east_germany.md`
 - **Basis:** KB
 
 ### ius soli
@@ -9874,7 +9871,7 @@
 - **Explanation:** Bodies such as the Free German Youth and the Free German Trade Union Federation, which organised people's lives under SED guidance and held fixed seats in the Volkskammer.
 - **German:** Massenorganisationen
 - **Main chapter:** [`twentieth_century/10_east_germany.md`](../twentieth_century/10_east_germany.md)
-- **Also in:** `05_REGIME_MATRIX.md` · `twentieth_century/04_nazi_state.md` · `twentieth_century/05_everyday_life_under_nazism.md`
+- **Also in:** `05_REGIME_MATRIX.md`
 - **Basis:** KB+K
 
 ### Mass strike
@@ -12947,7 +12944,7 @@
 - **Explanation:** The Confederation was restored and the Basic Rights annulled, but Prussia kept a constitution and most feudal burdens stayed abolished.
 - **German:** Reaktionszeit
 - **Main chapter:** [`nineteenth_century/04_1848_revolutions.md`](../nineteenth_century/04_1848_revolutions.md)
-- **Also in:** `02_MASTER_TIMELINE.md` · `early_modern/05_enlightenment.md` · `themes/militarism.md` · `twentieth_century/09_west_germany.md`
+- **Also in:** `02_MASTER_TIMELINE.md` · `themes/militarism.md`
 - **Basis:** KB
 
 ### reading revolution
@@ -13026,7 +13023,7 @@
 - **Short:** Rebuilding Germany's armed forces beyond Versailles limits.
 - **Explanation:** Elites wanted it; under the Nazis it drove the economy, was hidden through Mefo bills, and pushed the regime towards war.
 - **Main chapter:** [`twentieth_century/04_nazi_state.md`](../twentieth_century/04_nazi_state.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `contemporary/01_post_reunification.md` · `contemporary/04_germany_in_europe.md` · `themes/industrialization.md` · `themes/militarism.md` · `twentieth_century/03_rise_of_nazism.md` · `twentieth_century/05_everyday_life_under_nazism.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `themes/industrialization.md` · `themes/militarism.md` · `twentieth_century/03_rise_of_nazism.md` · `twentieth_century/05_everyday_life_under_nazism.md`
 - **Basis:** KB+K
 
 ### reason of state
@@ -13541,7 +13538,7 @@
 - **Short:** Payments the Allies required Germany to make for war damage after WWI.
 - **Explanation:** Imposed at Versailles and restructured by the Dawes and Young Plans, they strained public finances. Brüning's austerity aimed partly at ending them, achieved at Lausanne in 1932 — too late.
 - **Main chapter:** [`twentieth_century/02_weimar_republic.md`](../twentieth_century/02_weimar_republic.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `themes/industrialization.md` · `twentieth_century/08_occupation_and_denazification.md` · `twentieth_century/10_east_germany.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `themes/industrialization.md` · `twentieth_century/08_occupation_and_denazification.md`
 - **Basis:** KB+K
 
 ### Replacement Army
@@ -13683,7 +13680,7 @@
 - **Explanation:** Formally rejected by the SPD but reflected in its reformist practice.
 - **German:** Revisionismus
 - **Main chapter:** [`nineteenth_century/07_industrial_society.md`](../nineteenth_century/07_industrial_society.md)
-- **Also in:** `nineteenth_century/08_colonialism.md` · `themes/socialism.md` · `twentieth_century/01_world_war_one.md`
+- **Also in:** `nineteenth_century/08_colonialism.md` · `themes/socialism.md`
 - **Basis:** KB
 
 ### Revolution from above
@@ -15277,7 +15274,7 @@
 - **Explanation:** Workers were excluded from state power but organised their own world of party, unions, clubs and press.
 - **German:** Staat im Staate
 - **Main chapter:** [`nineteenth_century/07_industrial_society.md`](../nineteenth_century/07_industrial_society.md)
-- **Also in:** `themes/militarism.md` · `themes/political_power.md` · `twentieth_century/02_weimar_republic.md` · `twentieth_century/04_nazi_state.md`
+- **Also in:** `themes/militarism.md` · `themes/political_power.md`
 - **Basis:** KB
 
 ### state–church agreement
@@ -15442,7 +15439,7 @@
 - **Explanation:** German princes hired out troops for foreign subsidies (Hesse-Kassel to Britain); Britain paid Prussia subsidies in the Seven Years' War.
 - **German:** Subsidien
 - **Main chapter:** [`early_modern/03_territorial_states.md`](../early_modern/03_territorial_states.md)
-- **Also in:** `ancient/01_germanic_societies.md` · `early_modern/04_prussia_and_austria.md` · `nineteenth_century/08_colonialism.md` · `themes/authoritarianism.md` · `twentieth_century/02_weimar_republic.md`
+- **Also in:** `ancient/01_germanic_societies.md` · `early_modern/04_prussia_and_austria.md` · `nineteenth_century/08_colonialism.md` · `themes/authoritarianism.md`
 - **Basis:** KB
 
 ### subsistence agriculture
@@ -15731,7 +15728,7 @@
 - **Explanation:** In the Sonderweg debate, Germany's path is compared with a supposed 'Western' path to bourgeois democracy.
 - **German:** der Westen
 - **Main chapter:** [`nineteenth_century/06_german_empire.md`](../nineteenth_century/06_german_empire.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `ancient/01_germanic_societies.md` · `ancient/02_roman_frontier.md` · `contemporary/01_post_reunification.md` · `contemporary/03_modern_society.md` · `contemporary/04_germany_in_europe.md` · `images/IMAGE_INDEX.md` · `themes/education.md` · `themes/religion.md` · `themes/women_and_family.md` · `twentieth_century/07_world_war_two.md` · `twentieth_century/08_occupation_and_denazification.md` · `twentieth_century/09_west_germany.md` · `twentieth_century/10_east_germany.md` · `twentieth_century/11_cold_war_germany.md` · `twentieth_century/12_reunification.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `contemporary/01_post_reunification.md` · `contemporary/03_modern_society.md` · `contemporary/04_germany_in_europe.md` · `images/IMAGE_INDEX.md` · `themes/education.md` · `themes/religion.md` · `themes/women_and_family.md` · `twentieth_century/07_world_war_two.md` · `twentieth_century/08_occupation_and_denazification.md` · `twentieth_century/09_west_germany.md` · `twentieth_century/10_east_germany.md` · `twentieth_century/11_cold_war_germany.md` · `twentieth_century/12_reunification.md`
 - **Basis:** KB+K
 
 ### theodiscus
@@ -15872,7 +15869,7 @@
 - **Short:** The SPD's policy of not overturning Brüning's decrees, to avoid something worse.
 - **Explanation:** Because the Reichstag could cancel decrees only by majority, the SPD's toleration kept Brüning's presidential cabinet in place.
 - **Main chapter:** [`twentieth_century/02_weimar_republic.md`](../twentieth_century/02_weimar_republic.md)
-- **Also in:** `00_FINAL_EXPLANATION.md` · `early_modern/02_thirty_years_war.md` · `early_modern/04_prussia_and_austria.md` · `early_modern/05_enlightenment.md` · `nineteenth_century/01_napoleon.md` · `themes/minorities_and_migration.md` · `twentieth_century/03_rise_of_nazism.md`
+- **Also in:** `00_FINAL_EXPLANATION.md` · `themes/minorities_and_migration.md` · `twentieth_century/03_rise_of_nazism.md`
 - **Basis:** KB+K
 
 ### Toleration Patents
@@ -16269,7 +16266,7 @@
 - **Explanation:** In East Germany, expellees from the lost eastern territories were officially called 'resettlers'. The communist state, allied with Poland and the USSR, did not allow them to mourn their lost homelands in public.
 - **German:** Umsiedler
 - **Main chapter:** [`twentieth_century/08_occupation_and_denazification.md`](../twentieth_century/08_occupation_and_denazification.md)
-- **Also in:** `01_RESEARCH_METHOD.md` · `contemporary/03_modern_society.md` · `themes/minorities_and_migration.md`
+- **Also in:** `01_RESEARCH_METHOD.md` · `themes/minorities_and_migration.md`
 - **Basis:** KB+K
 
 ### Umweltbibliothek
@@ -17623,7 +17620,7 @@
 - **Explanation:** Work collectives (Brigaden) that competed to meet plan targets and organised social life, outings and political education, making the workplace a social centre.
 - **German:** Brigaden
 - **Main chapter:** [`twentieth_century/10_east_germany.md`](../twentieth_century/10_east_germany.md)
-- **Also in:** `05_REGIME_MATRIX.md` · `contemporary/03_modern_society.md` · `twentieth_century/06_holocaust_and_persecution.md`
+- **Also in:** `05_REGIME_MATRIX.md`
 - **Basis:** KB+K
 
 ### works councils

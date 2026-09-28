@@ -4,6 +4,9 @@
 
 | Form | Chapter | Means |
 |---|---|---|
+| 20 July | `twentieth_century/02_weimar_republic.md` | — |
+| 20 July | `twentieth_century/04_nazi_state.md` | — |
+| accession | `early_modern/04_prussia_and_austria.md` | — |
 | Allied | `05_REGIME_MATRIX.md` | — |
 | Allied | `contemporary/03_modern_society.md` | — |
 | Allied | `nineteenth_century/08_colonialism.md` | — |
@@ -22,6 +25,9 @@
 | Allies | `twentieth_century/06_holocaust_and_persecution.md` | — |
 | Allies | `twentieth_century/08_occupation_and_denazification.md` | [Allies](terms.md#allies-second-world-war) |
 | Allies | `twentieth_century/09_west_germany.md` | [Allies](terms.md#allies-second-world-war) |
+| allies | `ancient/01_germanic_societies.md` | — |
+| allies | `nineteenth_century/05_unification.md` | — |
+| allies | `twentieth_century/06_holocaust_and_persecution.md` | — |
 | America | `00_FINAL_EXPLANATION.md` | — |
 | America | `early_modern/03_territorial_states.md` | — |
 | America | `nineteenth_century/07_industrial_society.md` | [United States](places.md#united-states) |
@@ -64,6 +70,8 @@
 | atonement | `twentieth_century/06_holocaust_and_persecution.md` | [Atonement levy](terms.md#atonement-levy) |
 | Austrian Empire | `early_modern/04_prussia_and_austria.md` | [Austria](places.md#austria) |
 | Austrian Empire | `nineteenth_century/02_german_confederation.md` | [Austria](places.md#austria) |
+| auxiliaries | `twentieth_century/06_holocaust_and_persecution.md` | — |
+| auxiliaries | `twentieth_century/07_world_war_two.md` | — |
 | Baltic | `00_README.md` | — |
 | Baltic | `ancient/01_germanic_societies.md` | [Baltic Sea](places.md#baltic-sea) |
 | Baltic | `early_modern/02_thirty_years_war.md` | [Baltic Sea](places.md#baltic-sea) |
@@ -125,6 +133,8 @@
 | bourgeois | `themes/women_and_family.md` | — |
 | bourgeois | `twentieth_century/02_weimar_republic.md` | — |
 | bourgeois | `twentieth_century/03_rise_of_nazism.md` | — |
+| brigades | `contemporary/03_modern_society.md` | — |
+| brigades | `twentieth_century/06_holocaust_and_persecution.md` | — |
 | Bundesrat | `00_FINAL_EXPLANATION.md` | — |
 | Bundesrat | `05_REGIME_MATRIX.md` | — |
 | Bundesrat | `contemporary/02_modern_political_system.md` | [Bundesrat](terms.md#bundesrat-federal-republic) |
@@ -178,7 +188,6 @@
 | Centre | `twentieth_century/02_weimar_republic.md` | [Centre Party](terms.md#centre-party) |
 | Chancellor | `00_FINAL_EXPLANATION.md` | — |
 | Chancellor | `05_REGIME_MATRIX.md` | — |
-| Chancellor | `SITE_CHANGELOG_AND_TASKS.md` | — |
 | Chancellor | `contemporary/02_modern_political_system.md` | [Federal Chancellor](terms.md#federal-chancellor) |
 | Chancellor | `nineteenth_century/06_german_empire.md` | — |
 | Chancellor | `themes/political_power.md` | — |
@@ -196,6 +205,7 @@
 | chancellor | `twentieth_century/04_nazi_state.md` | [Reich Chancellor](terms.md#reich-chancellor) |
 | chancellor | `twentieth_century/08_occupation_and_denazification.md` | — |
 | chancellor | `twentieth_century/09_west_germany.md` | — |
+| Citizenship | `medieval/04_cities_church_feudalism.md` | — |
 | civic | `01_RESEARCH_METHOD.md` | — |
 | civic | `03_MENTAL_MODEL.md` | — |
 | civic | `contemporary/01_post_reunification.md` | — |
@@ -213,17 +223,16 @@
 | Clark | `nineteenth_century/05_unification.md` | [Christopher Clark](people.md#christopher-clark) |
 | Clark | `themes/militarism.md` | — |
 | Clark | `twentieth_century/01_world_war_one.md` | [Christopher Clark](people.md#christopher-clark) |
+| coalition | `contemporary/01_post_reunification.md` | — |
+| coalition | `contemporary/02_modern_political_system.md` | — |
+| coalition | `twentieth_century/09_west_germany.md` | — |
+| coalitions | `ancient/01_germanic_societies.md` | — |
+| coalitions | `contemporary/02_modern_political_system.md` | — |
+| coalitions | `contemporary/04_germany_in_europe.md` | — |
+| coalitions | `twentieth_century/01_world_war_one.md` | — |
+| coalitions | `twentieth_century/02_weimar_republic.md` | — |
 | combination | `medieval/02_holy_roman_empire.md` | — |
 | combination | `nineteenth_century/07_industrial_society.md` | [Coalition](terms.md#coalition) |
-| combination | `site/node_modules/chalk/readme.md` | — |
-| combination | `site/node_modules/commander/Readme.md` | — |
-| combination | `site/node_modules/diff/README.md` | — |
-| combination | `site/node_modules/mdast-util-from-markdown/readme.md` | — |
-| combination | `site/node_modules/meow/build/licenses.md` | — |
-| combination | `site/node_modules/prismjs/CHANGELOG.md` | — |
-| combination | `site/node_modules/regex/README.md` | — |
-| combination | `site/node_modules/undici/docs/docs/api/MockCallHistory.md` | — |
-| combination | `site/node_modules/vite/LICENSE.md` | — |
 | combination | `twentieth_century/04_nazi_state.md` | — |
 | Commission | `ancient/02_roman_frontier.md` | — |
 | Commission | `contemporary/04_germany_in_europe.md` | [European Commission](terms.md#european-commission) |
@@ -231,6 +240,7 @@
 | Commission | `nineteenth_century/06_german_empire.md` | — |
 | concentration camp | `twentieth_century/04_nazi_state.md` | [concentration camps](terms.md#concentration-camps) |
 | concentration camp | `twentieth_century/05_everyday_life_under_nazism.md` | — |
+| concentration camps | `nineteenth_century/08_colonialism.md` | — |
 | Concordat | `02_MASTER_TIMELINE.md` | — |
 | Concordat | `medieval/02_holy_roman_empire.md` | — |
 | Concordat | `themes/religion.md` | — |
@@ -267,6 +277,12 @@
 | confessional | `themes/german_identity.md` | — |
 | confessional | `themes/political_power.md` | — |
 | confessional | `themes/religion.md` | — |
+| confirmation | `early_modern/04_prussia_and_austria.md` | — |
+| contributions | `contemporary/02_modern_political_system.md` | — |
+| contributions | `contemporary/04_germany_in_europe.md` | — |
+| contributions | `nineteenth_century/02_german_confederation.md` | — |
+| contributions | `nineteenth_century/07_industrial_society.md` | — |
+| contributions | `twentieth_century/09_west_germany.md` | — |
 | coordinated | `00_FINAL_EXPLANATION.md` | — |
 | coordinated | `twentieth_century/04_nazi_state.md` | [Gleichschaltung](terms.md#gleichschaltung) |
 | coordinated | `twentieth_century/06_holocaust_and_persecution.md` | — |
@@ -296,16 +312,18 @@
 | councils | `medieval/04_cities_church_feudalism.md` | — |
 | councils | `nineteenth_century/01_napoleon.md` | — |
 | councils | `nineteenth_century/06_german_empire.md` | [Councils](terms.md#councils) |
-| councils | `nineteenth_century/08_colonialism.md` | [Councils](terms.md#councils) |
+| councils | `nineteenth_century/08_colonialism.md` | — |
 | councils | `themes/continuity_and_change.md` | — |
 | councils | `themes/industrialization.md` | — |
 | councils | `themes/socialism.md` | — |
 | councils | `twentieth_century/01_world_war_one.md` | — |
 | councils | `twentieth_century/02_weimar_republic.md` | [Councils](terms.md#councils) |
+| count | `contemporary/01_post_reunification.md` | — |
+| counts | `contemporary/03_modern_society.md` | — |
+| counts | `nineteenth_century/07_industrial_society.md` | — |
 | Dann | `nineteenth_century/03_nationalism.md` | [Otto Dann](people.md#otto-dann) |
 | Depression | `00_FINAL_EXPLANATION.md` | — |
 | Depression | `02_MASTER_TIMELINE.md` | — |
-| Depression | `SITE_CHANGELOG_AND_TASKS.md` | — |
 | Depression | `images/IMAGE_INDEX.md` | — |
 | Depression | `nineteenth_century/07_industrial_society.md` | — |
 | Depression | `themes/class.md` | — |
@@ -316,7 +334,6 @@
 | Diet | `00_FINAL_EXPLANATION.md` | — |
 | Diet | `02_MASTER_TIMELINE.md` | — |
 | Diet | `05_REGIME_MATRIX.md` | — |
-| Diet | `SITE_CHANGELOG_AND_TASKS.md` | — |
 | Diet | `early_modern/01_reformation.md` | [Imperial Diet](terms.md#imperial-diet) |
 | Diet | `early_modern/02_thirty_years_war.md` | [Imperial Diet](terms.md#imperial-diet) |
 | Diet | `early_modern/03_territorial_states.md` | [Imperial Diet](terms.md#imperial-diet) |
@@ -329,6 +346,7 @@
 | Diet of Worms | `early_modern/01_reformation.md` | [Diet of Worms](terms.md#diet-of-worms-1521) |
 | Diet of Worms | `medieval/02_holy_roman_empire.md` | [Diet of Worms](terms.md#diet-of-worms-1495) |
 | Diets | `medieval/02_holy_roman_empire.md` | [Imperial Diet](terms.md#imperial-diet) |
+| dismantling | `twentieth_century/12_reunification.md` | — |
 | districts | `contemporary/02_modern_political_system.md` | — |
 | districts | `early_modern/04_prussia_and_austria.md` | — |
 | districts | `medieval/01_carolingian_world.md` | — |
@@ -336,6 +354,7 @@
 | districts | `themes/continuity_and_change.md` | — |
 | districts | `themes/political_power.md` | — |
 | districts | `twentieth_century/02_weimar_republic.md` | — |
+| Dutch | `ancient/01_germanic_societies.md` | — |
 | East Elbian | `early_modern/04_prussia_and_austria.md` | [Elbe](places.md#elbe) |
 | East Elbian | `nineteenth_century/06_german_empire.md` | [East Elbia](places.md#east-elbia) |
 | East Elbian | `twentieth_century/02_weimar_republic.md` | [East Elbia](places.md#east-elbia) |
@@ -365,6 +384,9 @@
 | electoral | `nineteenth_century/06_german_empire.md` | — |
 | electoral | `themes/democracy.md` | — |
 | electoral | `twentieth_century/09_west_germany.md` | — |
+| electorate | `contemporary/01_post_reunification.md` | — |
+| electorate | `nineteenth_century/06_german_empire.md` | — |
+| electorate | `twentieth_century/12_reunification.md` | — |
 | electors | `02_MASTER_TIMELINE.md` | — |
 | electors | `05_REGIME_MATRIX.md` | — |
 | electors | `early_modern/03_territorial_states.md` | [elector](terms.md#elector) |
@@ -381,6 +403,18 @@
 | emancipation | `themes/class.md` | — |
 | emancipation | `themes/minorities_and_migration.md` | — |
 | emancipation | `themes/religion.md` | — |
+| Emperor | `00_FINAL_EXPLANATION.md` | — |
+| Emperor | `05_REGIME_MATRIX.md` | — |
+| Emperor | `early_modern/01_reformation.md` | — |
+| Emperor | `early_modern/03_territorial_states.md` | [Holy Roman Emperor](terms.md#holy-roman-emperor) |
+| Emperor | `images/IMAGE_INDEX.md` | — |
+| Emperor | `medieval/02_holy_roman_empire.md` | — |
+| Emperor | `medieval/04_cities_church_feudalism.md` | — |
+| Emperor | `nineteenth_century/01_napoleon.md` | — |
+| Emperor | `nineteenth_century/05_unification.md` | [Kaiser](terms.md#kaiser) |
+| Emperor | `nineteenth_century/06_german_empire.md` | [Kaiser](terms.md#kaiser) |
+| Emperor | `themes/nationalism.md` | — |
+| Emperor | `themes/political_power.md` | — |
 | emperor | `00_FINAL_EXPLANATION.md` | — |
 | emperor | `02_MASTER_TIMELINE.md` | — |
 | emperor | `05_REGIME_MATRIX.md` | — |
@@ -396,18 +430,6 @@
 | emperor | `nineteenth_century/04_1848_revolutions.md` | — |
 | emperor | `themes/political_power.md` | — |
 | emperor | `twentieth_century/02_weimar_republic.md` | — |
-| Emperor | `00_FINAL_EXPLANATION.md` | — |
-| Emperor | `05_REGIME_MATRIX.md` | — |
-| Emperor | `early_modern/01_reformation.md` | — |
-| Emperor | `early_modern/03_territorial_states.md` | [Holy Roman Emperor](terms.md#holy-roman-emperor) |
-| Emperor | `images/IMAGE_INDEX.md` | — |
-| Emperor | `medieval/02_holy_roman_empire.md` | — |
-| Emperor | `medieval/04_cities_church_feudalism.md` | — |
-| Emperor | `nineteenth_century/01_napoleon.md` | — |
-| Emperor | `nineteenth_century/05_unification.md` | [Kaiser](terms.md#kaiser) |
-| Emperor | `nineteenth_century/06_german_empire.md` | [Kaiser](terms.md#kaiser) |
-| Emperor | `themes/nationalism.md` | — |
-| Emperor | `themes/political_power.md` | — |
 | Empire | `00_FINAL_EXPLANATION.md` | — |
 | Empire | `00_README.md` | — |
 | Empire | `01_RESEARCH_METHOD.md` | — |
@@ -424,15 +446,13 @@
 | Empire | `images/IMAGE_INDEX.md` | — |
 | Empire | `medieval/01_carolingian_world.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
 | Empire | `medieval/02_holy_roman_empire.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
-| Empire | `medieval/04_cities_church_feudalism.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
+| Empire | `medieval/04_cities_church_feudalism.md` | — |
 | Empire | `nineteenth_century/01_napoleon.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
 | Empire | `nineteenth_century/02_german_confederation.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
 | Empire | `nineteenth_century/04_1848_revolutions.md` | — |
 | Empire | `nineteenth_century/05_unification.md` | [Kaiserreich](terms.md#kaiserreich) |
 | Empire | `nineteenth_century/06_german_empire.md` | [Kaiserreich](terms.md#kaiserreich) |
 | Empire | `nineteenth_century/07_industrial_society.md` | [Kaiserreich](terms.md#kaiserreich) |
-| Empire | `site/CONTENT_TRACE.md` | — |
-| Empire | `site/PLAN.md` | — |
 | Empire | `themes/continuity_and_change.md` | — |
 | Empire | `themes/german_identity.md` | — |
 | Empire | `themes/nationalism.md` | — |
@@ -456,7 +476,6 @@
 | estates | `nineteenth_century/01_napoleon.md` | — |
 | estates | `nineteenth_century/02_german_confederation.md` | — |
 | estates | `nineteenth_century/03_nationalism.md` | — |
-| estates | `site/PLAN.md` | — |
 | estates | `themes/authoritarianism.md` | — |
 | estates | `themes/class.md` | — |
 | estates | `themes/continuity_and_change.md` | — |
@@ -480,27 +499,12 @@
 | exit | `00_FINAL_EXPLANATION.md` | — |
 | exit | `02_MASTER_TIMELINE.md` | — |
 | exit | `ancient/02_roman_frontier.md` | — |
-| exit | `site/PLAN.md` | — |
-| exit | `site/node_modules/@clack/core/README.md` | — |
-| exit | `site/node_modules/@clack/prompts/README.md` | — |
-| exit | `site/node_modules/argparse/README.md` | — |
-| exit | `site/node_modules/commander/Readme.md` | — |
-| exit | `site/node_modules/js-yaml/README.md` | — |
-| exit | `site/node_modules/mdast-util-from-markdown/readme.md` | — |
-| exit | `site/node_modules/mdast-util-to-markdown/readme.md` | — |
-| exit | `site/node_modules/meow/readme.md` | — |
-| exit | `site/node_modules/micromark-factory-space/readme.md` | — |
-| exit | `site/node_modules/micromark-util-chunked/readme.md` | — |
-| exit | `site/node_modules/micromark-util-classify-character/readme.md` | — |
-| exit | `site/node_modules/p-queue/readme.md` | — |
-| exit | `site/node_modules/tinyexec/README.md` | — |
-| exit | `site/node_modules/unist-util-visit-parents/readme.md` | — |
-| exit | `site/node_modules/unist-util-visit/readme.md` | — |
 | exit | `themes/authoritarianism.md` | — |
 | exit | `twentieth_century/04_nazi_state.md` | — |
 | exit | `twentieth_century/10_east_germany.md` | [exit and voice](terms.md#exit-and-voice) |
 | exit | `twentieth_century/11_cold_war_germany.md` | [exit and voice](terms.md#exit-and-voice) |
 | exit | `twentieth_century/12_reunification.md` | [exit and voice](terms.md#exit-and-voice) |
+| Federal Council | `nineteenth_century/06_german_empire.md` | — |
 | feudal | `00_FINAL_EXPLANATION.md` | — |
 | feudal | `05_REGIME_MATRIX.md` | — |
 | feudal | `medieval/02_holy_roman_empire.md` | [feudalism](terms.md#feudalism) |
@@ -508,12 +512,12 @@
 | feudal | `nineteenth_century/02_german_confederation.md` | [feudalism](terms.md#feudalism) |
 | feudal | `nineteenth_century/04_1848_revolutions.md` | [feudalism](terms.md#feudalism) |
 | Followers | `twentieth_century/08_occupation_and_denazification.md` | [Mitläufer](terms.md#mitlaufer) |
+| forced labour | `nineteenth_century/08_colonialism.md` | — |
 | Francis | `00_FINAL_EXPLANATION.md` | — |
 | Francis | `02_MASTER_TIMELINE.md` | — |
 | Francis | `nineteenth_century/01_napoleon.md` | [Francis II](people.md#francis-ii) |
 | Franz | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Franz | `early_modern/02_thirty_years_war.md` | [Günther Franz](people.md#gunther-franz) |
-| Franz | `site/PLAN.md` | — |
 | Frederick | `00_FINAL_EXPLANATION.md` | — |
 | Frederick | `early_modern/01_reformation.md` | [Frederick the Great](people.md#frederick-the-great) |
 | Frederick | `early_modern/04_prussia_and_austria.md` | [Frederick the Great](people.md#frederick-the-great) |
@@ -547,9 +551,6 @@
 | French | `nineteenth_century/01_napoleon.md` | [France](places.md#france) |
 | French | `nineteenth_century/03_nationalism.md` | [France](places.md#france) |
 | French | `nineteenth_century/05_unification.md` | [France](places.md#france) |
-| French | `site/node_modules/axe-core/README.md` | — |
-| French | `site/node_modules/mdast-util-to-hast/readme.md` | — |
-| French | `site/node_modules/vite/README.md` | — |
 | French | `themes/nationalism.md` | — |
 | French | `twentieth_century/02_weimar_republic.md` | — |
 | French | `twentieth_century/08_occupation_and_denazification.md` | [France](places.md#france) |
@@ -562,7 +563,6 @@
 | Friedrich | `nineteenth_century/01_napoleon.md` | — |
 | Friedrich | `nineteenth_century/03_nationalism.md` | — |
 | Friedrich | `nineteenth_century/08_colonialism.md` | — |
-| Friedrich | `site/PLAN.md` | — |
 | Friedrich | `themes/authoritarianism.md` | — |
 | Friedrich | `themes/german_identity.md` | — |
 | Friedrich | `twentieth_century/01_world_war_one.md` | [Carl Joachim Friedrich](people.md#carl-joachim-friedrich) |
@@ -574,6 +574,8 @@
 | Gotha | `nineteenth_century/07_industrial_society.md` | — |
 | Gotha | `themes/socialism.md` | — |
 | Gothic | `ancient/01_germanic_societies.md` | [Goths](terms.md#goths) |
+| Gradual | `ancient/02_roman_frontier.md` | — |
+| grand coalition | `twentieth_century/12_reunification.md` | — |
 | Great Depression | `00_FINAL_EXPLANATION.md` | — |
 | Great Depression | `images/IMAGE_INDEX.md` | — |
 | Great Depression | `nineteenth_century/07_industrial_society.md` | [Great Depression (1873–1895)](terms.md#great-depression-18731895) |
@@ -609,10 +611,9 @@
 | Hull | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Hull | `nineteenth_century/08_colonialism.md` | [Isabel V. Hull](people.md#isabel-v-hull) |
 | Hull | `themes/militarism.md` | — |
+| Israel | `early_modern/05_enlightenment.md` | — |
 | Jordan | `nineteenth_century/04_1848_revolutions.md` | [Wilhelm Jordan](people.md#wilhelm-jordan) |
-| Jordan | `site/node_modules/@babel/parser/CHANGELOG.md` | — |
-| Jordan | `site/node_modules/extend/README.md` | — |
-| Land | `ancient/02_roman_frontier.md` | [Länder](terms.md#lander) |
+| Land | `ancient/02_roman_frontier.md` | — |
 | Land | `nineteenth_century/08_colonialism.md` | — |
 | Land | `twentieth_century/08_occupation_and_denazification.md` | [Länder](terms.md#lander) |
 | Left | `00_FINAL_EXPLANATION.md` | — |
@@ -620,8 +621,6 @@
 | Left | `nineteenth_century/01_napoleon.md` | — |
 | Left | `nineteenth_century/06_german_empire.md` | — |
 | Left | `nineteenth_century/07_industrial_society.md` | — |
-| Left | `site/PLAN.md` | — |
-| Left | `site/node_modules/micromark-extension-gfm-table/readme.md` | — |
 | Left | `themes/socialism.md` | — |
 | Left | `twentieth_century/09_west_germany.md` | — |
 | Liebknecht | `00_FINAL_EXPLANATION.md` | — |
@@ -632,26 +631,6 @@
 | Lisbon | `contemporary/02_modern_political_system.md` | [Treaty of Lisbon](terms.md#treaty-of-lisbon) |
 | Lisbon | `contemporary/04_germany_in_europe.md` | [Treaty of Lisbon](terms.md#treaty-of-lisbon) |
 | List | `nineteenth_century/03_nationalism.md` | [Friedrich List](people.md#friedrich-list) |
-| List | `site/node_modules/axe-core/README.md` | — |
-| List | `site/node_modules/character-entities-legacy/readme.md` | — |
-| List | `site/node_modules/css-tree/README.md` | — |
-| List | `site/node_modules/html-void-elements/readme.md` | — |
-| List | `site/node_modules/linkinator/README.md` | — |
-| List | `site/node_modules/marked-gfm-heading-id/README.md` | — |
-| List | `site/node_modules/mdast-util-from-markdown/readme.md` | — |
-| List | `site/node_modules/mdast-util-to-markdown/readme.md` | — |
-| List | `site/node_modules/meow/readme.md` | — |
-| List | `site/node_modules/micromark-util-html-tag-name/readme.md` | — |
-| List | `site/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/request-mocking.md` | — |
-| List | `site/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/session-management.md` | — |
-| List | `site/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/storage-state.md` | — |
-| List | `site/node_modules/playwright-core/lib/tools/skills/playwright-trace/SKILL.md` | — |
-| List | `site/node_modules/undici/docs/docs/api/Interceptors.md` | — |
-| List | `site/node_modules/undici/docs/docs/api/MockAgent.md` | — |
-| List | `site/node_modules/unified/readme.md` | — |
-| List | `site/node_modules/unist-util-visit-parents/readme.md` | — |
-| List | `site/node_modules/unist-util-visit/readme.md` | — |
-| List | `site/node_modules/vfile/readme.md` | — |
 | Luxemburg | `00_FINAL_EXPLANATION.md` | — |
 | Luxemburg | `nineteenth_century/07_industrial_society.md` | [Rosa Luxemburg](people.md#rosa-luxemburg) |
 | Luxemburg | `themes/socialism.md` | — |
@@ -659,23 +638,18 @@
 | Maastricht | `02_MASTER_TIMELINE.md` | — |
 | Maastricht | `contemporary/04_germany_in_europe.md` | [Maastricht Treaty](terms.md#maastricht-treaty) |
 | Maastricht | `twentieth_century/12_reunification.md` | — |
-| Main | `SITE_CHANGELOG_AND_TASKS.md` | — |
-| Main | `nineteenth_century/02_german_confederation.md` | [Main River](places.md#main-river) |
-| Main | `nineteenth_century/04_1848_revolutions.md` | [Main River](places.md#main-river) |
+| Main | `nineteenth_century/02_german_confederation.md` | — |
+| Main | `nineteenth_century/04_1848_revolutions.md` | — |
 | Main | `nineteenth_century/05_unification.md` | [Main River](places.md#main-river) |
-| Main | `site/node_modules/anymatch/node_modules/picomatch/README.md` | — |
-| Main | `site/node_modules/minimatch/README.md` | — |
-| Main | `site/node_modules/picomatch/README.md` | — |
 | Main | `themes/nationalism.md` | — |
 | Main | `twentieth_century/04_nazi_state.md` | — |
 | Main | `twentieth_century/09_west_germany.md` | — |
+| mass organisations | `twentieth_century/04_nazi_state.md` | — |
+| mass organisations | `twentieth_century/05_everyday_life_under_nazism.md` | — |
 | Max | `early_modern/02_thirty_years_war.md` | — |
-| Max | `site/node_modules/cookie/README.md` | — |
-| Max | `site/node_modules/minimatch/README.md` | — |
-| Max | `site/node_modules/verkit/README.md` | — |
 | Max | `twentieth_century/01_world_war_one.md` | [Prince Max of Baden](people.md#prince-max-of-baden) |
 | Max | `twentieth_century/04_nazi_state.md` | [Prince Max of Baden](people.md#prince-max-of-baden) |
-| Meissner | `twentieth_century/02_weimar_republic.md` | [Christopher M. Meissner](people.md#christopher-m-meissner) |
+| Meissner | `twentieth_century/02_weimar_republic.md` | — |
 | Meissner | `twentieth_century/03_rise_of_nazism.md` | [Otto Meissner](people.md#otto-meissner) |
 | Moltke | `twentieth_century/06_holocaust_and_persecution.md` | [Helmuth James von Moltke](people.md#helmuth-james-von-moltke) |
 | Mommsen | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
@@ -717,8 +691,6 @@
 | Nazi | `medieval/03_medieval_society.md` | — |
 | Nazi | `nineteenth_century/06_german_empire.md` | [National Socialism](terms.md#national-socialism) |
 | Nazi | `nineteenth_century/08_colonialism.md` | — |
-| Nazi | `site/CLAUDE.md` | — |
-| Nazi | `site/PLAN.md` | — |
 | Nazi | `themes/authoritarianism.md` | — |
 | Nazi | `themes/class.md` | — |
 | Nazi | `themes/continuity_and_change.md` | — |
@@ -833,9 +805,15 @@
 | Prussian | `twentieth_century/02_weimar_republic.md` | [Prussia](places.md#prussia) |
 | Prussian | `twentieth_century/03_rise_of_nazism.md` | [Prussia](places.md#prussia) |
 | Prussian | `twentieth_century/10_east_germany.md` | [Prussian virtues](terms.md#prussian-virtues) |
+| questionnaire | `contemporary/02_modern_political_system.md` | — |
 | RAF | `images/IMAGE_INDEX.md` | — |
 | RAF | `twentieth_century/05_everyday_life_under_nazism.md` | [Royal Air Force](terms.md#royal-air-force) |
 | RAF | `twentieth_century/09_west_germany.md` | [Red Army Faction](terms.md#red-army-faction) |
+| reaction | `contemporary/02_modern_political_system.md` | — |
+| reaction | `early_modern/05_enlightenment.md` | — |
+| reaction | `twentieth_century/09_west_germany.md` | — |
+| rearmament | `contemporary/01_post_reunification.md` | — |
+| rearmament | `contemporary/04_germany_in_europe.md` | — |
 | Reich | `00_FINAL_EXPLANATION.md` | — |
 | Reich | `00_README.md` | — |
 | Reich | `01_RESEARCH_METHOD.md` | — |
@@ -864,7 +842,6 @@
 | Reichstag | `00_FINAL_EXPLANATION.md` | — |
 | Reichstag | `02_MASTER_TIMELINE.md` | — |
 | Reichstag | `05_REGIME_MATRIX.md` | — |
-| Reichstag | `SITE_CHANGELOG_AND_TASKS.md` | — |
 | Reichstag | `contemporary/01_post_reunification.md` | — |
 | Reichstag | `contemporary/02_modern_political_system.md` | [Reichstag building](places.md#reichstag-building) |
 | Reichstag | `early_modern/03_territorial_states.md` | [Imperial Diet](terms.md#imperial-diet) |
@@ -874,22 +851,26 @@
 | Reichstag | `nineteenth_century/06_german_empire.md` | [Reichstag](terms.md#reichstag) |
 | Reichstag | `nineteenth_century/07_industrial_society.md` | — |
 | Reichstag | `nineteenth_century/08_colonialism.md` | — |
-| Reichstag | `site/CONTENT_TRACE.md` | — |
 | Reichstag | `themes/continuity_and_change.md` | — |
 | Reichstag | `themes/political_power.md` | — |
 | Reichstag | `twentieth_century/01_world_war_one.md` | — |
 | Reichstag | `twentieth_century/02_weimar_republic.md` | [Reichstag](terms.md#reichstag) |
 | Reichstag | `twentieth_century/03_rise_of_nazism.md` | — |
 | Reichstag | `twentieth_century/04_nazi_state.md` | — |
+| Reparations | `twentieth_century/08_occupation_and_denazification.md` | — |
+| reparations | `twentieth_century/08_occupation_and_denazification.md` | — |
+| reparations | `twentieth_century/10_east_germany.md` | — |
+| resettlers | `contemporary/03_modern_society.md` | — |
+| revisionism | `twentieth_century/01_world_war_one.md` | — |
 | Richter | `01_RESEARCH_METHOD.md` | — |
 | Richter | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Richter | `nineteenth_century/06_german_empire.md` | [Hedwig Richter](people.md#hedwig-richter) |
 | Richter | `themes/democracy.md` | — |
+| right to emigrate | `twentieth_century/10_east_germany.md` | — |
 | Romantic | `00_FINAL_EXPLANATION.md` | — |
 | Romantic | `03_MENTAL_MODEL.md` | — |
 | Romantic | `images/IMAGE_INDEX.md` | — |
 | Romantic | `nineteenth_century/03_nationalism.md` | [Romanticism](terms.md#romanticism) |
-| Romantic | `site/PLAN.md` | — |
 | Romantic | `themes/german_identity.md` | — |
 | Rosenberg | `early_modern/04_prussia_and_austria.md` | [Hans Rosenberg](people.md#hans-rosenberg) |
 | Roth | `nineteenth_century/07_industrial_society.md` | [Guenther Roth](people.md#guenther-roth) |
@@ -906,7 +887,6 @@
 | Saxony | `01_RESEARCH_METHOD.md` | — |
 | Saxony | `02_MASTER_TIMELINE.md` | — |
 | Saxony | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
-| Saxony | `SITE_CHANGELOG_AND_TASKS.md` | — |
 | Saxony | `contemporary/02_modern_political_system.md` | — |
 | Saxony | `early_modern/01_reformation.md` | [Electoral Saxony](places.md#electoral-saxony) |
 | Saxony | `early_modern/02_thirty_years_war.md` | — |
@@ -930,7 +910,6 @@
 | Schmidt | `early_modern/03_territorial_states.md` | — |
 | Schmidt | `images/IMAGE_INDEX.md` | — |
 | Schmidt | `nineteenth_century/02_german_confederation.md` | — |
-| Schmidt | `site/node_modules/devalue/README.md` | — |
 | Schmidt | `themes/education.md` | — |
 | Schmidt | `themes/german_identity.md` | — |
 | Schmidt | `themes/political_power.md` | — |
@@ -940,10 +919,13 @@
 | secularisation | `nineteenth_century/01_napoleon.md` | [secularisation](terms.md#secularisation-church-lands) |
 | secularisation | `themes/religion.md` | — |
 | secularisation | `twentieth_century/09_west_germany.md` | — |
+| Soviet Russia | `twentieth_century/01_world_war_one.md` | — |
 | State Council | `05_REGIME_MATRIX.md` | — |
 | State Council | `themes/political_power.md` | — |
+| state within the state | `twentieth_century/02_weimar_republic.md` | — |
+| state within the state | `twentieth_century/04_nazi_state.md` | — |
 | Stein | `nineteenth_century/01_napoleon.md` | [Karl vom und zum Stein](people.md#karl-vom-stein) |
-| Stein | `site/node_modules/vite/LICENSE.md` | — |
+| subsidies | `twentieth_century/02_weimar_republic.md` | — |
 | Taylor | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Taylor | `medieval/02_holy_roman_empire.md` | [A.J.P. Taylor](people.md#a-j-p-taylor) |
 | Taylor | `nineteenth_century/04_1848_revolutions.md` | [A.J.P. Taylor](people.md#a-j-p-taylor) |
@@ -961,19 +943,31 @@
 | the Empire | `medieval/04_cities_church_feudalism.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
 | the Empire | `nineteenth_century/01_napoleon.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
 | the Empire | `nineteenth_century/02_german_confederation.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
-| the Empire | `nineteenth_century/05_unification.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
-| the Empire | `nineteenth_century/06_german_empire.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
-| the Empire | `nineteenth_century/07_industrial_society.md` | [Holy Roman Empire](places.md#holy-roman-empire) |
+| the Empire | `nineteenth_century/05_unification.md` | — |
+| the Empire | `nineteenth_century/06_german_empire.md` | — |
+| the Empire | `nineteenth_century/07_industrial_society.md` | — |
 | the Empire | `themes/political_power.md` | — |
 | the Empire | `themes/religion.md` | — |
 | the Empire | `themes/socialism.md` | — |
 | the Empire | `twentieth_century/01_world_war_one.md` | — |
+| the West | `ancient/01_germanic_societies.md` | — |
+| the West | `ancient/02_roman_frontier.md` | — |
 | theses | `02_MASTER_TIMELINE.md` | — |
 | theses | `early_modern/01_reformation.md` | [Ninety-five Theses](terms.md#ninety-five-theses) |
 | tolerated | `05_REGIME_MATRIX.md` | — |
-| tolerated | `site/PLAN.md` | — |
 | tolerated | `themes/socialism.md` | — |
 | tolerated | `twentieth_century/02_weimar_republic.md` | [toleration](terms.md#toleration) |
+| toleration | `early_modern/02_thirty_years_war.md` | — |
+| toleration | `early_modern/04_prussia_and_austria.md` | — |
+| toleration | `early_modern/05_enlightenment.md` | — |
+| toleration | `nineteenth_century/01_napoleon.md` | — |
+| Unification | `00_FINAL_EXPLANATION.md` | — |
+| Unification | `02_MASTER_TIMELINE.md` | — |
+| Unification | `contemporary/01_post_reunification.md` | [reunification](terms.md#reunification) |
+| Unification | `contemporary/02_modern_political_system.md` | [reunification](terms.md#reunification) |
+| Unification | `contemporary/04_germany_in_europe.md` | [reunification](terms.md#reunification) |
+| Unification | `nineteenth_century/05_unification.md` | — |
+| Unification | `twentieth_century/12_reunification.md` | [reunification](terms.md#reunification) |
 | unification | `00_FINAL_EXPLANATION.md` | — |
 | unification | `00_README.md` | — |
 | unification | `02_MASTER_TIMELINE.md` | — |
@@ -984,13 +978,6 @@
 | unification | `nineteenth_century/05_unification.md` | — |
 | unification | `twentieth_century/11_cold_war_germany.md` | [reunification](terms.md#reunification) |
 | unification | `twentieth_century/12_reunification.md` | [reunification](terms.md#reunification) |
-| Unification | `00_FINAL_EXPLANATION.md` | — |
-| Unification | `02_MASTER_TIMELINE.md` | — |
-| Unification | `contemporary/01_post_reunification.md` | [reunification](terms.md#reunification) |
-| Unification | `contemporary/02_modern_political_system.md` | [reunification](terms.md#reunification) |
-| Unification | `contemporary/04_germany_in_europe.md` | [reunification](terms.md#reunification) |
-| Unification | `nineteenth_century/05_unification.md` | — |
-| Unification | `twentieth_century/12_reunification.md` | [reunification](terms.md#reunification) |
 | Verdun | `01_RESEARCH_METHOD.md` | — |
 | Verdun | `02_MASTER_TIMELINE.md` | — |
 | Verdun | `medieval/01_carolingian_world.md` | [Treaty of Verdun](terms.md#treaty-of-verdun) |
@@ -1015,7 +1002,6 @@
 | Wall | `02_MASTER_TIMELINE.md` | — |
 | Wall | `05_REGIME_MATRIX.md` | — |
 | Wall | `images/IMAGE_INDEX.md` | — |
-| Wall | `site/PLAN.md` | — |
 | Wall | `themes/authoritarianism.md` | — |
 | Wall | `themes/socialism.md` | — |
 | Wall | `twentieth_century/10_east_germany.md` | [Berlin Wall](places.md#berlin-wall) |
@@ -1028,7 +1014,6 @@
 | Weimar | `02_MASTER_TIMELINE.md` | — |
 | Weimar | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Weimar | `05_REGIME_MATRIX.md` | — |
-| Weimar | `SITE_CHANGELOG_AND_TASKS.md` | — |
 | Weimar | `contemporary/02_modern_political_system.md` | — |
 | Weimar | `early_modern/03_territorial_states.md` | — |
 | Weimar | `early_modern/05_enlightenment.md` | [Weimar](places.md#weimar) |
@@ -1036,9 +1021,6 @@
 | Weimar | `nineteenth_century/04_1848_revolutions.md` | — |
 | Weimar | `nineteenth_century/06_german_empire.md` | [Weimar Republic](places.md#weimar-republic) |
 | Weimar | `nineteenth_century/08_colonialism.md` | — |
-| Weimar | `site/CONTENT_TRACE.md` | — |
-| Weimar | `site/PLAN.md` | — |
-| Weimar | `site/README.md` | — |
 | Weimar | `themes/authoritarianism.md` | — |
 | Weimar | `themes/continuity_and_change.md` | — |
 | Weimar | `themes/democracy.md` | — |
@@ -1071,7 +1053,6 @@
 | West | `images/IMAGE_INDEX.md` | — |
 | West | `nineteenth_century/06_german_empire.md` | [The West](terms.md#the-west) |
 | West | `nineteenth_century/08_colonialism.md` | [The West](terms.md#the-west) |
-| West | `site/PLAN.md` | — |
 | West | `themes/class.md` | — |
 | West | `themes/continuity_and_change.md` | — |
 | West | `themes/democracy.md` | — |
@@ -1134,8 +1115,6 @@
 | Wilson | `early_modern/02_thirty_years_war.md` | [Peter H. Wilson](people.md#peter-h-wilson) |
 | Wilson | `early_modern/03_territorial_states.md` | [Peter H. Wilson](people.md#peter-h-wilson) |
 | Wilson | `medieval/02_holy_roman_empire.md` | [Peter H. Wilson](people.md#peter-h-wilson) |
-| Wilson | `site/PLAN.md` | — |
-| Wilson | `site/node_modules/vite/LICENSE.md` | — |
 | Winkler | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Winkler | `themes/socialism.md` | — |
 | Yorck | `twentieth_century/06_holocaust_and_persecution.md` | [Peter Yorck von Wartenburg](people.md#peter-yorck-von-wartenburg) |
