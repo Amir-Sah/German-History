@@ -95,8 +95,14 @@ Dynastic, regional and confessional loyalties dominated.
 ## 12. Historiographical Debate
 
 - **Civic vs ethnic nationalism (Hans Kohn's dichotomy):** Kohn classed German nationalism as "eastern/ethnic" vs "western/civic"; current historians find this too schematic — German nationalism had both strands.
+
+  *In plain words:* Was German nationalism by nature 'ethnic' — based on shared descent — rather than 'civic', based on shared citizenship? Hans Kohn divided nationalisms into a western, civic type and an eastern, ethnic type, and placed Germany in the ethnic camp. Today's historians find this division too neat: German nationalism contained both strands.
 - **Modernist theories** (Gellner, Anderson, Hobsbawm) — nations as products of modernity, print and state; applied to Germany by Otto Dann, Dieter Langewiesche. **Critics** (e.g., Caspar Hirschi) argue for older, pre-modern roots in humanism.
+
+  *In plain words:* Are nations a modern invention, or do they have older roots? 'Modernist' theorists (Gellner, Anderson, Hobsbawm) see nations as products of modern times — of printing and the modern state; Otto Dann and Dieter Langewiesche applied this view to Germany. Critics such as Caspar Hirschi argue that German national identity reaches back further, to the humanist scholars of the Renaissance.
 - **Federal nationalism (Langewiesche):** German national identity long combined with loyalty to states.
+
+  *In plain words:* Did feeling German mean giving up loyalty to one's own state? Dieter Langewiesche argues it did not: for a long time Germans combined national identity with loyalty to their individual states (kingdoms, duchies, free cities), so nationalism and federalism went together rather than against each other.
 
 ## 13. Confidence Assessment
 

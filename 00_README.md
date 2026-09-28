@@ -26,6 +26,7 @@ It is **not** a list of dates to memorise. Dates are used as anchors only.
 | Deep dives on one period | the period folders below |
 | Long-run themes (power, class, identity, religion…) | [`themes/`](themes/) |
 | Open questions and live debates | [`04_QUESTIONS_WORTH_EXPLORING.md`](04_QUESTIONS_WORTH_EXPLORING.md) |
+| Names, places, terms with definitions | [`dictionary/`](dictionary/) |
 | Pictures of each era, with credits | [`images/IMAGE_INDEX.md`](images/IMAGE_INDEX.md) |
 
 ## Structure
@@ -50,6 +51,7 @@ Germany/   (the repository root; the folder name may differ)
 ├── contemporary/                 post-1990 Germany; the political system today; society; Germany in Europe
 ├── themes/                       cross-period analyses (14 files)
 ├── images/                       IMAGE_INDEX.md — every embedded picture with creator, date, holder, licence
+├── dictionary/                  people, places, and terms with short/long definitions
 └── sources/                      bibliography, primary/German/international/video sources,
                                   source-quality assessment, SOURCE_AUDIT
 ```

@@ -88,7 +88,11 @@ Roman urban sites, road lines, viticulture, Latin as the language of church and 
 ## 12. Historiographical Debate
 
 - **Where exactly was the Varus battle?** Kalkriese (near Osnabrück) is — in Steinacher's careful phrasing (2022/23) — "identified by many scholars as the place of the Varus defeat"; it is widely accepted as at least one major battle site — thousands of Roman military finds — but some scholars argue it could be a later engagement (e.g., Germanicus's campaigns of 15–16 CE). **MEDIUM CONFIDENCE** for identification.
+
+  *In plain words:* Is Kalkriese, near Osnabrück, really where three Roman legions under Varus were destroyed in 9 CE? Many scholars say yes; historian Roland Steinacher phrases it carefully, and thousands of Roman military finds show a major battle happened there. Some scholars argue the finds could come from a later fight, such as the campaigns of the Roman general Germanicus in 15–16 CE. The identification is rated medium confidence.
 - **"Transformation" vs "decline and fall":** Did the end of Roman rule mean catastrophe (Bryan Ward-Perkins) or continuity and transformation (the "Transformation of the Roman World" programme)? For the Rhineland, archaeology supports both — continuity of church and some towns, sharp decline of material complexity.
+
+  *In plain words:* When Roman rule ended in the West, was it a catastrophe or a gradual change? Bryan Ward-Perkins stresses decline and collapse; the 'Transformation of the Roman World' research programme stresses continuity and slow change. For the Rhineland, archaeology supports both: the church and some towns carried on, but everyday material life — goods, buildings, trade — became much simpler.
 
 ## 13. Confidence Assessment
 

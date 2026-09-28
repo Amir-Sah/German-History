@@ -123,10 +123,20 @@ Federalism and state monarchies; noble dominance in army and diplomacy; confessi
 ## 12. Historiographical Debate
 
 - **Sonderweg (Special Path):** Hans-Ulrich Wehler (*Das Deutsche Kaiserreich*, 1973) — pre-industrial elites (Junkers, military, bureaucracy) blocked democratisation, used "social imperialism" and "negative integration"; Germany diverged from the "Western" path of bourgeois democracy, creating preconditions for Nazism.
+
+  *In plain words:* Did the German Empire take a 'special path' (Sonderweg) towards Nazism? Hans-Ulrich Wehler said yes: old pre-industrial elites — landowning nobles (Junkers), the military, the bureaucracy — blocked democracy, diverted discontent into colonial expansion ('social imperialism') and united people against supposed internal enemies ('negative integration'). Unlike Western countries, Germany thus never became a middle-class democracy.
 - **Critique:** David Blackbourn & Geoff Eley (*The Peculiarities of German History*, 1984) — there was no "normal" Western path; the German bourgeoisie was successful economically and culturally ("silent bourgeois revolution"); popular mobilisation came from below, not only elite manipulation. Thomas Nipperdey stressed the Empire's ambivalence and openness ("grey tones").
+
+  *In plain words:* Was there really a 'normal' Western path from which Germany strayed? David Blackbourn and Geoff Eley said no such norm existed: Germany's middle class succeeded in business and culture (a 'silent bourgeois revolution'), and mass politics grew from below rather than being steered by elites. Thomas Nipperdey stressed that the Empire was mixed and open-ended — 'grey tones', not black and white.
 - **Kocka's moderated Sonderweg (1988):** meaningful comparative differences (bureaucratic tradition, weak parliamentarism) without determinism.
+
+  *In plain words:* Can the special-path idea survive in a milder form? Jürgen Kocka (1988) argued that Germany did differ from Western countries in meaningful ways — a strong tradition of bureaucratic rule and a weak parliament — but that these differences did not make later catastrophe inevitable.
 - **Democratisation view:** Margaret Lavinia Anderson (*Practicing Democracy*, 2000) — Germans learned democratic practices through fiercely contested elections. Benjamin Ziemann (bpb 2016) warns against reading the period "from its end."
+
+  *In plain words:* Were Germans in the Empire learning democracy? Margaret Lavinia Anderson argues yes: fiercely contested elections taught voters democratic habits in practice. Benjamin Ziemann adds a warning against reading the period backwards from how it ended, as if its whole history pointed to that end.
 - **The 2021 "Richter debate":** Hedwig Richter argued the Empire had considerable democratic vitality and Germany belonged to the West; Eckart Conze, Ulrich Herbert and others objected that she underplayed authoritarian structures, nationalism and antisemitism — Herbert: "The concept of democracy is devalued if one detects an element of 'democracy' in the rule of the Nazi regime." (Metzler, *Public History Weekly*, 2021). **CONTESTED.**
+
+  *In plain words:* How democratic was the German Empire? In 2021 Hedwig Richter argued that it had real democratic energy and that Germany belonged to the West. Eckart Conze, Ulrich Herbert and others replied that she played down its authoritarian structures, nationalism and antisemitism; Herbert warned that 'democracy' loses meaning if one finds democratic elements even in Nazi rule. The dispute remains open.
 
 ## 13. Confidence Assessment
 

@@ -149,3 +149,23 @@ Triggered by an independent inventory of the knowledge base (the website plan in
 | Dates in every chapter title | 3 titles lacked a range | medieval/04, 19c/04, contemporary/04 (and 19c/06, contemporary/02 formatting) |
 | Sources section in every theme file | `themes/continuity_and_change.md` had none | Added |
 | Image types and rights | Not recorded | `images/IMAGE_INDEX.md` now has a Type column and a rights summary (18 public domain / 54 © for personal study) |
+
+### Dictionary pass (28 Sept 2026)
+
+All named entities (people, places, terms) mentioned across the 35 period files and 14 theme files were extracted, merged, deduplicated, and fact-checked. Three manual fixes were made to `verify_terms_a.json` and six to `verify_terms_b.json` (none to `verify_people.json`, which was accurate). The resulting dictionary contains:
+
+| Item | Count |
+|---|---|
+| People | 437 |
+| Places | 280 |
+| Terms | 1,583 |
+| Ambiguous rows | 1,135 (338 resolved; 797 unresolved) |
+| Total entries | 2,300 |
+| Fact-check fixes applied | 9 |
+| "In plain words" lines added to §12 (historiographical debate) sections | 122 |
+
+**Basis:** entries marked "Basis: KB+K" combine knowledge base text with well-established general knowledge (e.g., biographical dates, institutional origins). Fact-check verified dates, titles, roles, and definitions against standard reference sources and the KB. Not audited claim by claim like the source audit above; some recent items (e.g., September 2026 election figures) come from KB text and are unverified.
+
+**Ambiguous forms:** when multiple people or concepts share a name, the dictionary notes both. "Unresolved" forms (797 rows) are not highlighted in the text; this is safe, as it simply means the reference is ambiguous and cannot be automatically distinguished.
+
+**Limits:** the dictionary is complete and accurate for names, dates, and roles. Contested claims (e.g., interpretations of Borchardt or Weimar causation) are not re-audited here; readers consulting the dictionary for historiographical disputes should check the chapter source notes and the main audit above.

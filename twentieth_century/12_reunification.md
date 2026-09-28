@@ -138,8 +138,14 @@ The FRG's institutions (Basic Law, federalism, social market economy, alliances)
 ## 12. Historiographical Debate
 
 - **Revolution, collapse or implosion?** Emphasis on citizens' agency (Ilko-Sascha Kowalczuk, *Endspiel*, 2009) vs structural collapse (economic bankruptcy, Soviet withdrawal — e.g., Stephen Kotkin, *Uncivil Society*, 2009, stressing the elites' implosion).
+
+  *In plain words:* Did East Germans bring down their regime, or did it collapse by itself? Ilko-Sascha Kowalczuk (Endspiel, 2009) stresses citizens' agency — a real revolution made by the people. Others stress structural collapse: the state was economically bankrupt and the Soviet Union withdrew. Stephen Kotkin (Uncivil Society, 2009) emphasises that the ruling elites themselves imploded (fell apart from within).
 - **Speed and form of unification:** Necessary (emigration pressure, Gorbachev's fragile position) vs avoidable costs (currency conversion rate; Treuhand; Art. 23). Hoffmann (bpb 2024) emphasises openness and missed chances.
+
+  *In plain words:* Did unification have to be so fast and take this form? One side says speed was necessary: East Germans kept emigrating and Gorbachev's position in Moscow was fragile. The other points to avoidable costs — the currency conversion rate, the Treuhand (the agency that privatised East German firms) and accession under Article 23 instead of a new constitution. Dierk Hoffmann (2024) stresses open options and missed chances.
 - **NATO expansion assurances:** Sarotte and others document verbal exchanges; no binding agreement; politically instrumentalised by Russia.
+
+  *In plain words:* Did the West promise in 1990 not to expand NATO eastward? Mary Elise Sarotte and other historians document spoken exchanges on this during the negotiations, but there was no binding agreement. Russia has used the issue for political purposes, so interpretations remain politically charged and contested.
 
 ## 13. Confidence Assessment
 

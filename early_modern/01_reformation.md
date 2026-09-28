@@ -108,8 +108,14 @@ Lordship, serfdom where it existed, the estates order, and the Empire's institut
 ## 12. Historiographical Debate
 
 - **Confessionalisation thesis (Heinz Schilling, Wolfgang Reinhard, from the 1980s):** Lutheran, Reformed and Catholic churches all performed functionally similar work — building confessional identity, disciplining subjects, strengthening the early modern state. **Critiques:** Heinrich Richard Schmidt argued moral discipline came largely from communities "from below"; others argue the model is too state-centred ("etatist"), downplays theological differences, and overestimates effectiveness. **CONTESTED.**
+
+  *In plain words:* Did the Protestant and Catholic churches, by drilling people in their faith, mainly help rulers build stronger states? Schilling and Reinhard say yes: all the churches did similar work shaping loyal, disciplined subjects. Schmidt says much of this discipline came from village communities themselves; other critics say the idea puts too much weight on the state, ignores real differences in belief, and overrates how well it worked.
 - **Peasants' War:** Friedrich Engels (1850) and GDR historiography ("early bourgeois revolution") vs Western social history (Blickle's "revolution of the common man," 1975). The 2025 quincentenary produced many exhibitions stressing its democratic demands.
+
+  *In plain words:* What kind of uprising was the Peasants' War? Engels and East German historians called it an 'early bourgeois revolution' — a first step toward middle-class revolution driven by class conflict. Western historians, led by Blickle, called it a 'revolution of the common man', mixing religious arguments with concrete economic and political demands. The 2025 anniversary exhibitions stressed its democratic demands.
 - **Luther and antisemitism:** Consensus that his late writings were virulently anti-Jewish; debate about continuity to modern racial antisemitism (most historians distinguish religious anti-Judaism from racial antisemitism while acknowledging Nazi exploitation).
+
+  *In plain words:* Is there a straight line from Luther's hatred of Jews to modern Nazi racism? All agree his late writings were fiercely anti-Jewish. Most historians separate religious hostility to Judaism from modern antisemitism based on ideas of race, while admitting that the Nazis exploited Luther's words.
 
 ## 13. Confidence Assessment
 

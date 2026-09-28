@@ -94,8 +94,14 @@ Local farming life; the importance of kin and lordship; the region-based identit
 ## 12. Historiographical Debate
 
 - **How effective was Carolingian government?** Older views saw a proto-state; more recent work (e.g., Matthew Innes, Jennifer Davis, Rosamond McKitterick) emphasises negotiation, local elites and the role of writing as a tool of persuasion rather than command.
+
+  *In plain words:* Did Charlemagne's dynasty run something close to a real state? Older historians thought so. More recent scholars (Matthew Innes, Jennifer Davis, Rosamond McKitterick) say rule depended on bargaining with local elites, and that written royal orders were used more to persuade people than to command them.
 - **When does "German" history begin?** Historians no longer look for a founding date. Len Scales argues that a "German people" first became visible to contemporaries *as a consequence of* the Ottonians' imperial turn in the 10th century; others stress the 11th-century Investiture Contest (see next file). Carlrichard Brühl's influential thesis placed the emergence of "Germany and France" in the 11th century, as a slow process rather than an event.
+
+  *In plain words:* When did 'Germany' or a German people first exist? Historians no longer look for one founding date. Len Scales says contemporaries first saw a 'German people' after the Ottonian kings took the imperial title in the 10th century. Others point to the 11th-century quarrel between emperor and pope over appointing bishops. Carlrichard Brühl argued 'Germany and France' emerged slowly, in the 11th century.
 - **The massacre of Verden (782):** the "4,500 Saxons" reported by the Royal Frankish Annals has been questioned (textual problems and propaganda purpose), though the violence of the conquest is not in doubt.
+
+  *In plain words:* Did Charlemagne really have 4,500 Saxons killed at Verden in 782? The number comes from a single source, the Royal Frankish Annals (the court's official year-by-year record). Critics question it because of problems in the text and the chronicle's propaganda purpose. What nobody doubts is that the Frankish conquest of Saxony was violent.
 
 ## 13. Confidence Assessment
 

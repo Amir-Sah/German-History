@@ -102,8 +102,14 @@ Elective, consensual kingship; regional diversity; the combination of religious 
 ## 12. Historiographical Debate
 
 - **Decline narrative vs revaluation:** 19th- and early-20th-century German (and Austrian) historians "despised it for not being a nation state and blamed it for delaying the development of the Germans" (Whaley & Scales). A.J.P. Taylor (1945) folded it into a long road to Nazism. After 1945, Catholic scholars (Konrad Repgen, Heinrich Lutz, Karl Otmar von Aretin) and then a broad consensus reinterpreted it as a functioning, proto-federal, supranational order — sometimes compared to the EU (a comparison itself criticised as presentist).
+
+  *In plain words:* Was the Holy Roman Empire a failure? Older German historians (1800s–early 1900s) scorned it for not being a nation-state and blamed it for holding Germans back; A.J.P. Taylor linked it to a long road to Nazism. After 1945, Catholic scholars and then most historians saw a working, federal-like order spanning many peoples. Some compare it to the EU — criticised as reading today into the past.
 - **"Imperial church system":** Reuter's critique (1982) vs older view (Leo Santifaller).
+
+  *In plain words:* Did the Ottonian and Salian kings (10th–11th centuries) deliberately build a 'system' of ruling through bishops and abbots they appointed and endowed with land and royal rights? An older view, associated with Leo Santifaller, said yes. Timothy Reuter (1982) replied that this was ordinary practice across Latin Europe, which German historians had turned into a neat system after the fact.
 - **Ritual and symbolic communication:** Gerd Althoff and Barbara Stollberg-Rilinger argue that rituals (coronations, submissions, seating orders) *were* the constitution — power was performed and negotiated rather than administered.
+
+  *In plain words:* How did power actually work in the medieval Empire without a written constitution? Gerd Althoff and Barbara Stollberg-Rilinger argue that public rituals — coronations, ceremonies of submission, who sat where — were themselves the constitution. Power, in their view, was acted out and negotiated in public, not run through administration.
 
 ## 13. Confidence Assessment
 

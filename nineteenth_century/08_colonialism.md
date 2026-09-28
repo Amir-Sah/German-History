@@ -83,8 +83,14 @@ Germany's economy remained Europe-focused; after 1919 colonial ideas persisted w
 ## 12. Historiographical Debate
 
 - **Herero and Nama genocide:** Scholarly consensus that the 1904–08 war became genocidal after General Lothar von Trotha's orders (October 1904 against the Herero, April 1905 against the Nama). The German Federal Government recognised it as genocide in 2021, asked for forgiveness, and initialled a Joint Declaration with Namibia; implementation and compensation (a €1.1 billion development-aid package was announced in 2021) remain disputed by Herero and Nama representatives, who were not direct parties. The Federal Government estimates approximately 100,000 deaths. (Bundesregierung, 28 May 2025)
+
+  *In plain words:* How should Germany make amends for the Herero and Nama genocide? Scholars agree the 1904–08 war in today's Namibia became genocidal after General Lothar von Trotha's orders. Germany recognised this in 2021, asked forgiveness and initialled a joint declaration with Namibia; but Herero and Nama representatives, not direct parties to it, dispute its implementation and the compensation (a €1.1 billion development-aid package).
 - **Continuity from colonialism to the Holocaust:** Jürgen Zimmerer and Isabel Hull argue that colonial practices (annihilation warfare, camps, racial law) formed part of the genealogy of Nazi crimes; critics (e.g., Robert Gerwarth & Stephan Malinowski; Birthe Kundrus) caution against simple lines and stress differences.
+
+  *In plain words:* Is there a line from German colonial violence to the Holocaust? Jürgen Zimmerer and Isabel Hull argue that colonial practices — wars of annihilation, camps, race-based law — were among the roots of Nazi crimes. Critics such as Robert Gerwarth, Stephan Malinowski and Birthe Kundrus warn against drawing simple straight lines and stress the differences between them.
 - **"Historikerstreit 2.0" (2021–22):** A. Dirk Moses's essay "The German Catechism" challenged the centrality of Holocaust singularity in German memory culture; critics defended it. **CONTESTED.**
+
+  *In plain words:* Should the Holocaust keep its unique, central place in German remembrance? In 2021–22 A. Dirk Moses's essay 'The German Catechism' challenged the idea that the Holocaust is singular (without comparison) and central to German memory culture; critics defended that idea. The row was nicknamed 'Historikerstreit 2.0' — a second 'historians' dispute'. It remains unresolved.
 
 ## 13. Confidence Assessment
 

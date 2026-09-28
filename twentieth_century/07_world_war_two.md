@@ -95,8 +95,14 @@ The Nazi regime held until the end — no 1918-style revolution; terror and loya
 ## 12. Historiographical Debate
 
 - **Origins of WWII:** A.J.P. Taylor (1961) argued Hitler was an opportunist like other statesmen; overwhelmingly rejected — Hitler's expansionist aims are well documented (e.g., Hossbach memorandum 1937). Debate continues on economic pressures pushing to war in 1939 (Tim Mason's "flight into war" thesis — contested).
+
+  *In plain words:* Did Hitler plan the Second World War? A.J.P. Taylor (1961) called him an opportunist like other statesmen. This is overwhelmingly rejected: sources such as the 1937 Hossbach memorandum (notes of a meeting where Hitler set out expansion plans) document his aims. Still debated is Tim Mason's contested thesis that economic pressures pushed the regime into a 'flight into war' in 1939.
 - **Wehrmacht and crimes:** Consensus since the 1990s that participation was extensive; debate on proportion of soldiers directly involved.
+
+  *In plain words:* How many ordinary German soldiers took part in war crimes? Since the 1990s historians agree that the army's (Wehrmacht's) participation was extensive. What is still argued over is what share of soldiers were directly involved.
 - **Germans as victims** (bombing, expulsion, rape): since the 2000s (W. G. Sebald; Jörg Friedrich's *Der Brand*, 2002) a debate about whether acknowledging German suffering relativises German guilt; most historians argue both must be told, in context.
+
+  *In plain words:* Can Germans' own suffering (bombed cities, expulsion from their homes, mass rape) be acknowledged without playing down German guilt? Since the 2000s, works by W. G. Sebald and Jörg Friedrich's 'Der Brand' ('The Fire', 2002) have raised this question. Most historians argue both stories must be told, with German suffering placed in context.
 
 ## 13. Confidence Assessment
 

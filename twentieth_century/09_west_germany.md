@@ -129,9 +129,17 @@ Federalism; civil service traditions (*Berufsbeamtentum*, Art. 33(5)); church–
 ## 12. Historiographical Debate
 
 - **"Successful democracy" narrative** (Edgar Wolfrum, *Die geglückte Demokratie*, 2006) vs critical accounts emphasising continuities of Nazi personnel, authoritarian mentalities and restrictive policies (e.g., Radicals Decree, treatment of migrants).
+
+  *In plain words:* Was West Germany above all a success story? Edgar Wolfrum's account, Die geglückte Demokratie ('The Successful Democracy', 2006), says yes. Critical accounts point to what carried on from the Nazi era — former Nazi officials in office and authoritarian habits of mind — and to restrictive policies such as the Radicals Decree (loyalty checks on public employees) and the treatment of migrants.
 - **Westernisation vs Americanisation** (Anselm Doering-Manteuffel): how deeply Western political culture was adopted.
+
+  *In plain words:* How deeply did West Germans really take on Western political culture after 1945? The debate, shaped by historian Anselm Doering-Manteuffel, weighs two labels: 'Westernisation' (adopting the political values shared across Western Europe and North America) versus 'Americanisation' (influence coming specifically from the United States) — and asks how far the change went beneath the surface.
 - **Integration of former Nazis:** Lübbe's "communicative silence" as stabilising vs Frei's critique.
+
+  *In plain words:* Was it right that the early Federal Republic quietly took former Nazis back into jobs and public life? Lübbe argued that this 'communicative silence' — not openly discussing individual Nazi pasts — helped stabilise the new democracy. Historian Norbert Frei criticises this view of how the young republic handled its former Nazis.
 - **1968:** Liberalisation catalyst (Wolfgang Kraushaar) vs overrated myth (Götz Aly's *Unser Kampf*, 2008 — controversial comparison with 1933).
+
+  *In plain words:* How important was the 1968 student movement? Wolfgang Kraushaar sees it as a catalyst that sped up the liberalisation (loosening and opening up) of West German society. Götz Aly, in Unser Kampf (2008), calls its importance an overrated myth; his book is controversial because it draws a comparison with 1933, the year the Nazis came to power.
 
 ## 13. Confidence Assessment
 

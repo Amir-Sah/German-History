@@ -99,8 +99,14 @@ Class hierarchies; limited social mobility (few workers' children reached Gymnas
 ## 12. Historiographical Debate
 
 - **Industrialisation and democracy:** Did rapid industrialisation under an authoritarian state (Gerschenkron's "late development") create social tensions that politics could not absorb (Wehler), or did it create the social basis for democracy (Anderson, Nipperdey)?
+
+  *In plain words:* Did fast industrial growth help or hurt democracy in Germany? Wehler, using Gerschenkron's idea of 'late development' (a country industrialising quickly to catch up with earlier ones), argues that rapid industrialisation under an authoritarian state created social tensions that politics could not absorb. Anderson and Nipperdey argue that it instead built the social foundations for democracy.
 - **Negative integration (Roth, 1963) vs participatory integration:** Were workers excluded or gradually included (e.g., through unions, insurance, municipal politics)?
+
+  *In plain words:* Were workers shut out of the Empire or gradually drawn in? Guenther Roth (1963) spoke of 'negative integration': workers were excluded from state power and built their own separate world around the Social Democrats. The opposing view, 'participatory integration', holds that trade unions, social insurance and local politics slowly brought workers into the system.
 - **Social insurance:** Social-conservative pacification vs genuine welfare innovation (both).
+
+  *In plain words:* Was Bismarck's social insurance (state schemes covering sickness, accidents and old age) a conservative tool to calm workers and weaken socialism, or a genuine welfare innovation? The chapter's answer is that it was both at once.
 
 ## 13. Confidence Assessment
 

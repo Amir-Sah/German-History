@@ -95,8 +95,14 @@ The Empire and its institutions; the estates order; the confessional map (largel
 ## 12. Historiographical Debate
 
 - **Death toll:** Franz's high estimates (produced in 1940 with Nazi-era "Volk" framing, revised 1961) vs Wilson's lower "conservative" figure; the debate concerns method (extrapolation from regional data).
+
+  *In plain words:* How many people died in the Thirty Years' War? Günther Franz gave high estimates — first produced in 1940 with Nazi-era ideas about the 'Volk' (the ethnic people), revised in 1961. Peter Wilson gives a lower, 'conservative' figure. The quarrel is about method: how far local records can be scaled up to the whole Empire.
 - **Religious vs political war:** Wilson (*Europe's Tragedy*, 2009) emphasises politics and constitution over religion; others (e.g., Johannes Burkhardt's "state-building war" thesis) stress the struggle over the form of statehood.
+
+  *In plain words:* What was the war really about? Peter Wilson argues politics and the Empire's constitution (its rules of who holds power) mattered more than religion. Others, like Johannes Burkhardt, see it as a 'state-building war' — a struggle over what form states should take.
 - **Westphalia and sovereignty:** IR textbooks vs historians (Osiander, Derek Croxton, Heinz Duchhardt).
+
+  *In plain words:* Did the 1648 peace invent the modern world of fully independent 'sovereign' states? Many international-relations textbooks say so. Historians such as Osiander, Croxton and Duchhardt disagree: the treaties never mention sovereignty and actually rebuilt the Empire under shared law.
 
 ## 13. Confidence Assessment
 

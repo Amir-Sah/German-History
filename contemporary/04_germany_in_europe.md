@@ -108,6 +108,8 @@ The Franco-German relationship as the core of Germany's European policy; NATO me
 
 Reluctant hegemon (William Paterson; Hans Kundnani's *The Paradox of German Power*, 2014); German responsibility for eurozone austerity; the lessons of Ostpolitik after 2022; European strategic autonomy.
 
+*In plain words:* Four disputes. Is Germany a 'reluctant hegemon' — Europe's leading power, yet hesitant to lead — as discussed by William Paterson and Hans Kundnani? Does Germany bear responsibility for the spending cuts (austerity) in the eurozone crisis? What lessons does Ostpolitik, the old policy of dialogue with the East, hold after 2022? And should Europe gain 'strategic autonomy' — the ability to act without depending on others?
+
 ## 13. Confidence Assessment
 
 | Finding | Confidence | Why |

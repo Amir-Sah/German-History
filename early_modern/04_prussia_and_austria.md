@@ -104,9 +104,17 @@ The Junker-peasant relationship in the east; the multi-national Habsburg structu
 ## 12. Historiographical Debate
 
 - **Social militarisation (Otto Büsch, 1962):** the canton system fused estate and regiment, militarising rural society and producing a lasting habit of obedience. **Critiques:** Hagen and others argue the model is too top-down; comparative work shows other European armies were similar; the canton system was more negotiated than Büsch suggested; research by Harnisch, Enders and Hagen shows wage labour mattered in the Prussian countryside well before the reforms. Reviewing the English translation, Philip Dwyer (H-German 1997) accepts Büsch's core picture of crown–Junker interdependence but criticises "sometimes excessive claims of causality" and the neglect of foreign policy: "Foreign policy determined the manner in which Prussian society developed."
+
+  *In plain words:* Did Prussia's army system militarise the countryside? Otto Büsch said the canton system (local recruiting districts where noble landlords were also officers) did so and bred obedience. Critics, including Hagen, say this view is too top-down: other armies were similar, the system was negotiated, and wage labour already mattered. Dwyer accepts the core picture but says it claims too much and neglects foreign policy.
 - **Junkers and the Sonderweg:** Hans Rosenberg, F. L. Carsten (Junker tyranny, peasant degradation) vs William Hagen (*Ordinary Prussians*, 2002), who calls for "a nuanced depiction" that "does not strip them of their capacity to act in their own interests."
+
+  *In plain words:* Were Prussia's noble landowners (Junkers) tyrants over crushed peasants, setting Germany on a harmful 'special path' (Sonderweg)? Rosenberg and Carsten say yes: Junker tyranny degraded the peasants. Hagen answers that villagers were not helpless and calls for a nuanced picture that does not deny them the ability to act in their own interests.
 - **Christopher Clark (*Iron Kingdom*, 2006):** Prussia as a fragile, improvised state whose later "militarist" image owes much to the 19th and 20th centuries; its dissolution by the Allies (1947) was based partly on a myth.
+
+  *In plain words:* Was Prussia a naturally militaristic state? Christopher Clark says no: it was fragile and improvised, and its 'militarist' image was largely built in the 19th and 20th centuries — so the Allies' decision to abolish Prussia in 1947 rested partly on a myth.
 - **Was Prussia's "rise" inevitable?** No — it nearly collapsed in 1759–61 and 1806.
+
+  *In plain words:* Was Prussia bound to become a great power? The chapter answers no: Prussia nearly collapsed twice, in 1759–61 and again in 1806, so its rise was not inevitable.
 
 ## 13. Confidence Assessment
 

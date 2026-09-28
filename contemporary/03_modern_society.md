@@ -87,6 +87,8 @@ Federalism, associations (*Vereine*), social insurance, consensus orientation, t
 
 Integration and citizenship; the place of Islam; antisemitism (including in migrant communities and on the far right and far left); the meaning of memory culture in a diverse society; East German identity.
 
+*In plain words:* Several open questions. How should immigrants become part of society and gain citizenship? What place does Islam have in Germany? How should antisemitism (hostility to Jews) be understood when it appears in some migrant communities and on both the far right and far left? What does remembering Nazi crimes (memory culture) mean in a diverse society? And what is East German identity today?
+
 ## 13. Confidence Assessment
 
 | Finding | Confidence | Why |
