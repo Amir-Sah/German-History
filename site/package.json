@@ -16,7 +16,8 @@
     "qa:final": "node qa/run-all.mjs --final --external",
     "predev": "node scripts/check-deps.mjs",
     "prebuild": "node scripts/check-deps.mjs",
-    "preqa": "node scripts/check-deps.mjs --dev"
+    "preqa": "node scripts/check-deps.mjs --dev",
+    "dictionary:report": "node qa/dictionary-report.mjs"
   },
   "engines": {
     "node": ">=22.12.0"
