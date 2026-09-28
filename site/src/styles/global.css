@@ -248,6 +248,8 @@ strong.conf { font-size: 0.72em; }
   .ribbon-track { height: 22px; }
   .ribbon-tick { font-size: 9px; top: 11px; }
   .ribbon-bare { grid-template-columns: 1fr; } /* no "you are here" label (home, index pages): the track takes the row */
+  .ribbon:not(.ribbon-bare) .ribbon-tick { display: none; } /* the date label gives the years; ticks would overlap */
+  .ribbon:not(.ribbon-bare) .ribbon-track { height: 14px; }
 }
 .ribbon-bare { grid-template-columns: 1fr; }
 
@@ -268,6 +270,7 @@ strong.conf { font-size: 0.72em; }
 .fig-media { position: relative; aspect-ratio: 4 / 3; background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
 .fig-media img { position: absolute; inset: 0; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; }
 .fig-fallback-msg { display: none; }
+.fig-media.loaded:not(.failed) .fig-fallback { visibility: hidden; }
 .fig-media.failed .fig-fallback-msg { display: block; }
 /* The credit card sits behind every image: a placeholder while loading, the fallback if loading fails. */
 .fig-fallback { display: flex; position: absolute; inset: 0; padding: 1.25rem; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-family: var(--sans); font-size: 0.9rem; color: var(--ink-2);

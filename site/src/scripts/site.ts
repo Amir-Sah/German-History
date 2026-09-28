@@ -115,6 +115,7 @@ document.addEventListener('keydown', (e) => {
 function checkImages() {
   document.querySelectorAll<HTMLImageElement>('.fig-media img').forEach((img) => {
     if (img.complete && img.naturalWidth === 0) img.closest('.fig-media')?.classList.add('failed');
+    else if (img.complete) img.closest('.fig-media')?.classList.add('loaded');
   });
 }
 checkImages();

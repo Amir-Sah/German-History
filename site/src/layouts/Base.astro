@@ -49,6 +49,11 @@ const nav = [
           var img = e.target;
           if (img && img.tagName === 'IMG' && img.closest('.fig-media')) img.closest('.fig-media').classList.add('failed');
         }, true);
+        // Once an image has loaded, the placeholder card behind it is hidden (it showed beside narrow images).
+        document.addEventListener('load', function (e) {
+          var img = e.target;
+          if (img && img.tagName === 'IMG' && img.closest('.fig-media')) img.closest('.fig-media').classList.add('loaded');
+        }, true);
       })();
     </script>
   </head>
