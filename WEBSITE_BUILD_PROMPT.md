@@ -33,7 +33,7 @@ Each file ends with "If you remember only 5 things".
 **Other folders**
 - `themes/` has 14 cross-period analyses: power, class, identity, nationalism, religion, militarism, democracy, authoritarianism, socialism, industrialisation, minorities & migration, women & family, education, continuity & change.
 - `sources/` holds the bibliography, primary, German, international and video sources, the source-quality notes, and `SOURCE_AUDIT.md`. `SOURCE_AUDIT.md` is a claim-by-claim verification table.
-- `dictionary/` contains 2,300 reference entries (437 people, 280 places, 1,583 terms) with short and long definitions. See `SITE_CHANGELOG_AND_TASKS.md` for the plain-language lines added to historiographical debates and the website rendering plan.
+- `dictionary/` contains 2,298 reference entries (437 people, 280 places, 1,581 terms) with short and long definitions. See `SITE_CHANGELOG_AND_TASKS.md` for the plain-language lines added to historiographical debates and the website rendering plan.
 
 **Images**
 - Every period, theme and top-level narrative file starts with an image block between `<!-- IMAGES:START -->` and `<!-- IMAGES:END -->` (the method file and the `sources/` files have none, by design). `00_FINAL_EXPLANATION.md` has one block per Part.

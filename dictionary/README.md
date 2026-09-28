@@ -1,6 +1,6 @@
 # Dictionary
 
-This directory contains the reference dictionary for the German history knowledge base: 2,300 entries covering people, places, and historical terms mentioned across the 35 period chapters and 14 theme files.
+This directory contains the reference dictionary for the German history knowledge base: 2,298 entries covering people, places, and historical terms mentioned across the 35 period chapters and 14 theme files.
 
 ## Purpose
 
@@ -34,9 +34,9 @@ When multiple people or concepts share a name, the dictionary marks which forms 
 
 - **437 people** in `people.md`
 - **280 places** in `places.md`
-- **1,583 terms** in `terms.md`
-- **1,114 ambiguous rows** in `ambiguous_forms.md` (329 resolved, 785 unresolved)
-- **Total: 2,300 entries**
+- **1,581 terms** in `terms.md`
+- **1,128 ambiguous rows** in `ambiguous_forms.md` (345 resolved, 783 unresolved)
+- **Total: 2,298 entries**
 
 ## How it was made
 
