@@ -2105,6 +2105,7 @@
 
 - **Kind:** person · activist
 - **Dates:** 1918–1943
+- **Also written as:** Hans and Sophie Scholl
 - **Short:** Munich student and co-founder of the White Rose resistance group, executed in February 1943.
 - **Explanation:** Medical student who, with his sister Sophie and friends, wrote and distributed the White Rose leaflets against the regime in 1942–43. He was arrested and executed with Sophie in February 1943.
 - **Main chapter:** [`twentieth_century/06_holocaust_and_persecution.md`](../twentieth_century/06_holocaust_and_persecution.md)
@@ -2603,7 +2604,7 @@
 - **Dates:** 1785–1863
 - **Short:** German language scholar and folklorist; introduced the romantic phrase 'Germania libera' in 1835/36.
 - **Explanation:** Linguist and collector of fairy tales with his brother Wilhelm. The sound changes that define the Germanic language family are called Grimm's Law after him. Steinacher notes that he coined 'Germania libera' ('free Germania'), a phrase that appears in no ancient source.
-- **Main chapter:** [`nineteenth_century/03_nationalism.md`](../nineteenth_century/03_nationalism.md)
+- **Main chapter:** [`ancient/01_germanic_societies.md`](../ancient/01_germanic_societies.md)
 - **Also in:** `ancient/01_germanic_societies.md`
 - **Basis:** KB+K
 

@@ -146,7 +146,7 @@
 - **Short:** Female head of a convent; one of the few medieval roles giving women public authority.
 - **Explanation:** The KB names abbesses, and occasionally noblewomen rulers, as exceptions to women's exclusion from medieval politics.
 - **German:** Äbtissin
-- **Main chapter:** [`medieval/03_medieval_society.md`](../medieval/03_medieval_society.md)
+- **Main chapter:** [`medieval/01_carolingian_world.md`](../medieval/01_carolingian_world.md)
 - **Also in:** `medieval/01_carolingian_world.md` · `themes/women_and_family.md`
 - **Basis:** KB+K
 
@@ -1563,6 +1563,7 @@
 
 - **Kind:** term · event
 - **Dates:** 1991–1999
+- **Also written as:** move from Bonn to Berlin · Capital move
 - **Short:** Transfer of parliament and government from Bonn to Berlin after unification.
 - **Explanation:** The Bundestag voted in 1991 to make Berlin the seat of government; the move was completed in 1999, when the Bundestag moved into the rebuilt Reichstag building with its glass dome. Some ministries stayed in Bonn.
 - **German:** Umzug von Bonn nach Berlin
@@ -1656,7 +1657,7 @@
 
 - **Kind:** term · event
 - **Dates:** 1 April 1933
-- **Also written as:** 1933 boycott · April boycott
+- **Also written as:** 1933 boycott · April boycott · Boycott (1 April 1933)
 - **Short:** Nazi-organised boycott of Jewish shops, doctors and lawyers.
 - **Explanation:** The first nationwide action against German Jews, it began the stage of legal and economic exclusion.
 - **Main chapter:** [`twentieth_century/06_holocaust_and_persecution.md`](../twentieth_century/06_holocaust_and_persecution.md)
@@ -2054,6 +2055,7 @@
 
 - **Kind:** term · institution
 - **Dates:** 1995–
+- **Also written as:** long-term care
 - **Short:** Compulsory insurance, introduced in 1995, that pays for long-term nursing care.
 - **Explanation:** The newest branch of German social insurance, added to a system whose roots go back to Bismarck's laws of the 1880s and Weimar's unemployment insurance (1927).
 - **German:** Pflegeversicherung
@@ -2367,6 +2369,7 @@
 
 - **Kind:** term · law/decree
 - **Dates:** 2013–
+- **Also written as:** legal right to a place
 - **Short:** Legal entitlement since 2013 to a childcare place for children from age one.
 - **Explanation:** With parental allowance (2007) it marks Germany's shift toward the dual-earner family model.
 - **German:** Rechtsanspruch auf einen Kita-Platz
@@ -2733,6 +2736,7 @@
 <a id="collective-bargaining"></a>
 
 - **Kind:** term · economic term
+- **Also written as:** Collective bargaining
 - **Short:** Negotiation of wages and conditions between unions and employers without state interference.
 - **Explanation:** Germany's 'Tarifautonomie' goes back to the 1918 Stinnes–Legien Agreement. Coverage by collective agreements has declined to about half of employees.
 - **German:** Tarifautonomie
@@ -4056,7 +4060,7 @@
 - **Also written as:** democratic radicalism
 - **Short:** Current demanding popular sovereignty and a republic, going beyond liberal constitutionalism.
 - **Explanation:** Represented by Büchner and the Baden radicals Hecker and Struve. In 1848 democrats split from liberals over the republic and social reform.
-- **Main chapter:** [`nineteenth_century/03_nationalism.md`](../nineteenth_century/03_nationalism.md)
+- **Main chapter:** [`nineteenth_century/02_german_confederation.md`](../nineteenth_century/02_german_confederation.md)
 - **Also in:** `nineteenth_century/02_german_confederation.md`
 - **Basis:** KB+K
 
@@ -4600,7 +4604,7 @@
 <a id="early-tracking"></a>
 
 - **Kind:** term · concept
-- **Also written as:** tracked schooling
+- **Also written as:** tracked schooling · Early tracking
 - **Short:** Sorting children into different secondary school types at around age 10.
 - **Explanation:** West German Länder divided pupils early among school types. The KB links this to Germany's strong dependence of school success on parental background, highlighted by the 2001 PISA shock.
 - **Main chapter:** [`contemporary/03_modern_society.md`](../contemporary/03_modern_society.md)
@@ -5153,7 +5157,7 @@
 - **Dates:** 1967–1993
 - **Short:** Umbrella name for the coal and steel community, the EEC and Euratom.
 - **Explanation:** The joined European institutions of the Cold War era, predecessors of the European Union, in which West Germany was integrated.
-- **Main chapter:** [`contemporary/04_germany_in_europe.md`](../contemporary/04_germany_in_europe.md)
+- **Main chapter:** [`twentieth_century/11_cold_war_germany.md`](../twentieth_century/11_cold_war_germany.md)
 - **Also in:** `twentieth_century/11_cold_war_germany.md`
 - **Basis:** KB+K
 
@@ -5240,7 +5244,7 @@
 - **Kind:** term · movement/ideology
 - **Short:** Commitment to European integration as a core of German identity and policy.
 - **Explanation:** The conviction that Germany's interests are best served inside the EU. It is a pillar of post-war German policy, but tensions between solidarity and fiscal orthodoxy persist and it is contested by the AfD and BSW.
-- **Main chapter:** [`contemporary/04_germany_in_europe.md`](../contemporary/04_germany_in_europe.md)
+- **Main chapter:** [`contemporary/01_post_reunification.md`](../contemporary/01_post_reunification.md)
 - **Also in:** `contemporary/01_post_reunification.md` · `contemporary/02_modern_political_system.md`
 - **Basis:** KB+K
 
@@ -7879,7 +7883,7 @@
 
 - **Kind:** term · event
 - **Dates:** 1846–1847
-- **Also written as:** hunger crisis
+- **Also written as:** hunger crisis · 1846–47 crisis
 - **Short:** Harvest failures and famine in 1846–47 that deepened mass poverty before 1848.
 - **Explanation:** Bad harvests caused famine, soaring food prices and food riots, on top of the mass poverty (Pauperismus) of the 1840s. Emigration surged. The crisis helped create the unrest that broke out in the revolutions of March 1848.
 - **Main chapter:** [`nineteenth_century/02_german_confederation.md`](../nineteenth_century/02_german_confederation.md)
@@ -8334,7 +8338,7 @@
 
 - **Kind:** term · war/battle
 - **Dates:** 1 September 1939
-- **Also written as:** Invasion of Poland
+- **Also written as:** Invasion of Poland · invaded Poland
 - **Short:** German attack on Poland on 1 September 1939 that began the Second World War in Europe.
 - **Explanation:** Britain and France declared war two days later. In occupied Poland the regime began mass shootings and set up ghettos (1939–41), early stages of the persecution that led to the Holocaust.
 - **German:** Überfall auf Polen
@@ -9464,7 +9468,7 @@
 
 - **Kind:** term · event
 - **Dates:** 1989
-- **Also written as:** falsified local elections
+- **Also written as:** falsified local elections · Local elections
 - **Short:** GDR local elections of 7 May 1989, whose falsification opposition groups documented.
 - **Explanation:** Official results claimed 98.85% 'yes'. Opposition activists observed the vote counts and proved fraud, a spark for the protests of autumn 1989.
 - **Main chapter:** [`twentieth_century/12_reunification.md`](../twentieth_century/12_reunification.md)
@@ -10419,7 +10423,7 @@
 
 - **Kind:** term · war/battle
 - **Dates:** 1803–1815
-- **Also written as:** Napoleonic wars
+- **Also written as:** Napoleonic wars · Napoleonic war
 - **Short:** Wars between Napoleon's France and European coalitions that reshaped Germany.
 - **Explanation:** French occupation and the wars of liberation of 1813–15 gave German nationalism an anti-French, sometimes ethnic edge.
 - **Main chapter:** [`nineteenth_century/01_napoleon.md`](../nineteenth_century/01_napoleon.md)
@@ -11108,6 +11112,7 @@
 
 - **Kind:** term · institution
 - **Dates:** 1956–1990
+- **Also written as:** National People's Army
 - **Short:** The GDR's army (National People's Army), controlled by the ruling SED.
 - **Explanation:** A party army; the GDR also militarised education with paramilitary youth training. It was dissolved at unification in 1990.
 - **German:** Nationale Volksarmee
@@ -11263,7 +11268,7 @@
 
 - **Kind:** term · war/battle
 - **Dates:** 22 June 1941
-- **Also written as:** invasion of the Soviet Union in 1941 · Invasion of USSR
+- **Also written as:** invasion of the Soviet Union in 1941 · Invasion of USSR · invasion of the Soviet Union
 - **Short:** Germany's invasion of the Soviet Union on 22 June 1941.
 - **Explanation:** Planned as a war of annihilation to conquer 'living space' in the East. With it began the systematic murder of Soviet Jews by the Einsatzgruppen and other units, and the mass deaths of Soviet prisoners of war. The campaign stalled before Moscow in 1941.
 - **German:** Unternehmen Barbarossa
@@ -14281,7 +14286,7 @@
 - **Short:** Industrial phase driven by chemicals, electrical engineering and steel.
 - **Explanation:** Germany became a world leader in these science-based industries.
 - **German:** zweite industrielle Revolution
-- **Main chapter:** [`nineteenth_century/07_industrial_society.md`](../nineteenth_century/07_industrial_society.md)
+- **Main chapter:** [`nineteenth_century/06_german_empire.md`](../nineteenth_century/06_german_empire.md)
 - **Also in:** `nineteenth_century/06_german_empire.md`
 - **Basis:** KB
 
@@ -14859,6 +14864,7 @@
 
 - **Kind:** term · economic term
 - **Dates:** 1991–
+- **Also written as:** solidarity surcharge
 - **Short:** Surcharge on income tax introduced to help pay for rebuilding eastern Germany.
 - **Explanation:** Solidaritätszuschlag, paid by taxpayers in West and East, one of the ways unification was financed.
 - **German:** Solidaritätszuschlag
@@ -15770,7 +15776,7 @@
 - **Short:** Common name for Nazi Germany, 1933–45.
 - **Explanation:** The name presented the regime as successor to the medieval empire and Bismarck's empire.
 - **German:** Drittes Reich
-- **Main chapter:** [`twentieth_century/04_nazi_state.md`](../twentieth_century/04_nazi_state.md)
+- **Main chapter:** [`twentieth_century/05_everyday_life_under_nazism.md`](../twentieth_century/05_everyday_life_under_nazism.md)
 - **Also in:** `03_MENTAL_MODEL.md` · `twentieth_century/05_everyday_life_under_nazism.md`
 - **Basis:** KB+K
 
@@ -16253,7 +16259,7 @@
 - **Short:** Catholic orientation toward the Pope in Rome ('beyond the mountains') rather than local rulers.
 - **Explanation:** After losing its principalities in 1803, the German Catholic Church became more Rome-oriented and less aristocratic.
 - **German:** Ultramontanismus
-- **Main chapter:** [`nineteenth_century/06_german_empire.md`](../nineteenth_century/06_german_empire.md)
+- **Main chapter:** [`nineteenth_century/01_napoleon.md`](../nineteenth_century/01_napoleon.md)
 - **Also in:** `nineteenth_century/01_napoleon.md` · `themes/religion.md`
 - **Basis:** KB+K
 

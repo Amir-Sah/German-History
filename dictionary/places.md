@@ -246,7 +246,7 @@
 - **Short:** South-eastern Europe, scene of crises before 1914.
 - **Explanation:** Balkan crises raised tensions among the great powers before the First World War.
 - **German:** Balkan
-- **Main chapter:** [`twentieth_century/01_world_war_one.md`](../twentieth_century/01_world_war_one.md)
+- **Main chapter:** [`nineteenth_century/06_german_empire.md`](../nineteenth_century/06_german_empire.md)
 - **Also in:** `nineteenth_century/06_german_empire.md`
 - **Basis:** KB+K
 
@@ -2090,7 +2090,7 @@
 - **Short:** Region in north-west Germany that Prussia gained in 1815; not the 1648 peace.
 - **Explanation:** At the Congress of Vienna (1815) Prussia gained Westphalia and the Rhineland, giving it a western base that later included the industrial Ruhr. Today the region is part of North Rhine-Westphalia. Not to be confused with the Peace of Westphalia (1648) or Napoleon's Kingdom of Westphalia.
 - **German:** Westfalen
-- **Main chapter:** [`nineteenth_century/02_german_confederation.md`](../nineteenth_century/02_german_confederation.md)
+- **Main chapter:** [`nineteenth_century/01_napoleon.md`](../nineteenth_century/01_napoleon.md)
 - **Basis:** KB+K
 
 ### Prussia
