@@ -209,3 +209,35 @@ A shared system on all pages: one serif for reading (Source Serif 4), one grotes
 3. **© images:** is this a local personal-study site only, or should I build the `PUBLIC_BUILD` variant from the start?
 4. **Editorial classifications** (timeline→theme tags, image types) by documented keyword rules: OK?
 5. **QA browser:** the built-in browser (no download) or the Playwright Chromium download?
+
+---
+
+## 10. Tasks from `SITE_CHANGELOG_AND_TASKS.md` (28 Sept 2026)
+
+**Part A — KB changes**
+- [x] A1 Consistency pass 2 adopted: the pipeline enforces the §8 template on all 35 files. *`data/template-exceptions.json` is **not** empty:* `ancient/02` and `twentieth_century/07` still write `### Regime Matrix (…)` with parentheses (CONTENT_TRACE K14). The build keeps failing on any new deviation.
+- [x] A1 Transition qualifiers as sub-labels; closed confidence vocabulary; §9 date links; image Type column used.
+- [x] A2 Dictionary parsed (2,300 entries; 77 `site/…` rows in `ambiguous_forms.md` ignored and reported, K19).
+- [x] A3 "In plain words" lines parsed; the build fails if a §12 item lacks one.
+
+**Part B — review fixes**
+- [x] B1 "How do we know?" always in the visible header (phones included).
+- [x] B2 Phone header ≈ 78 px (one row + compact ribbon); nav, highlight toggle and theme in a menu.
+- [x] B3 `.md` references render as chapter titles (linked when built; path in tooltip).
+- [x] B4 Debate titles without trailing colon; bare "CONTESTED." replaced by the badge.
+- [x] B5 Credit line = creator · date · holder · licence; date dropped when in the title.
+- [x] B6 Footer space fixed.
+- [x] B7 "Where this chapter sits": two-line labels, full title in the tooltip.
+- [x] B8 Constitution strip labels = date qualifier only.
+- [x] B9 Evidence counts have accessible names ("3 findings rated HIGH"); combined levels shown as "C + B".
+- [x] B10 Misconception cards sized to content (min-height only for the turn).
+- [x] B11 Hero image: beside the summary on desktop, directly after the title on phones (logged P3b).
+
+**Part C — inline dictionary**
+- [x] C1 `dictionary.json` with strict validation (fields, ids, chapters, ambiguity links).
+- [x] C2 Build-time matching (longest first, whole word, case-sensitive; ambiguity table; people/places every mention, terms first per section). 72 misreadings suppressed after review (`data/dictionary-overrides.json`, CONTENT_TRACE D2/K20).
+- [x] C3 Three distinct classes (small caps / location glyph / dotted underline); tooltip on hover or keyboard focus; card as dialog (bottom sheet on phones) with Esc and focus return; first tap opens the card; `/dictionary/` page (A–Z, filters, search, anchors); "Highlight names & terms" toggle.
+- [x] C4 "In plain words" panels in every debate card and sub-point.
+- [x] C5 `qa/dictionary.mjs` (no highlights in headings/links/credits/code, completeness, stale overrides, keyboard, touch, toggle, axe on the open card); screenshots at 360/375 and 1280 px, light and dark.
+
+**Next:** roll the chapter pattern out to the other 34 eras (step 8.3).

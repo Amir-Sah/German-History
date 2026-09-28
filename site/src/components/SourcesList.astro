@@ -14,7 +14,7 @@ const legend = method.accessLegend as Record<string, string>;
     return (
       <li>
         <span class="ev-only src-chips">
-          {s.level ? <span class="chip chip-level" title={sourceLevelMeaning(s.level)}>Level {s.level}</span> : s.primary ? <span class="chip chip-level">primary</span> : <span class="chip">no level</span>}
+          {s.level ? <span class="chip chip-level" title={sourceLevelMeaning(s.level)}>Level {s.level.split('/').join(' + ')}</span> : s.primary ? <span class="chip chip-level">primary</span> : <span class="chip">no level</span>}
           {a && legend[a] && <span class="chip chip-access" title={legend[a]}>{a}{s.access && s.access.length > 1 ? '*' : ''}</span>}
         </span>
         <span set:html={s.html} />

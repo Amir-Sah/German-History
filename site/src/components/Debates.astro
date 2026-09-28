@@ -1,15 +1,33 @@
 ---
-// "Historians disagree": every §12 bullet as a card, text verbatim; CONTESTED marked.
-interface Item { titleHtml: string | null; bodyHtml: string; contested: boolean; }
+// "Historians disagree": every §12 item as a card. The scholarly text is verbatim (Part B4: a title's trailing
+// colon and a bare trailing "CONTESTED." are dropped because the heading and badge carry them). Each item's
+// "In plain words" line is shown as an always-visible panel (Part C4); sub-points keep their own lines.
+interface Item { titleHtml: string | null; bodyHtml: string; plainHtml: string | null; subs: Item[]; contested: boolean; }
 interface Props { items: Item[]; }
 const { items } = Astro.props;
 ---
 <ul class="debates">
   {items.map((d) => (
-    <li class:list={['debate', d.contested && 'is-contested']}>
+    <li class:list={['debate', d.contested && 'is-contested', d.subs.length > 0 && 'has-subs']}>
       {d.titleHtml && <h3 class="debate-h" set:html={d.titleHtml} />}
       {d.contested && <p class="debate-flag" data-ui><span class="conf conf-contested">CONTESTED</span></p>}
-      <div class="debate-body" set:html={d.bodyHtml} />
+      {d.bodyHtml && <div class="debate-body" set:html={d.bodyHtml} />}
+      {d.plainHtml && (
+        <div class="plain"><p class="plain-label" data-ui>In plain words</p><p set:html={d.plainHtml} /></div>
+      )}
+      {d.subs.length > 0 && (
+        <ul class="debate-subs">
+          {d.subs.map((s) => (
+            <li class:list={['debate-sub', s.contested && 'is-contested']}>
+              {s.titleHtml && <h4 class="debate-sub-h" set:html={s.titleHtml} />}
+              {s.bodyHtml && <div class="debate-body" set:html={s.bodyHtml} />}
+              {s.plainHtml && (
+                <div class="plain"><p class="plain-label" data-ui>In plain words</p><p set:html={s.plainHtml} /></div>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </li>
   ))}
 </ul>

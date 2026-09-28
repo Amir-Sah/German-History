@@ -2,9 +2,10 @@
 // scripts/build-content.mjs). Templates must take all historical text from here.
 import periodsJson from '../content/generated/periods.json';
 import imagesJson from '../content/generated/images.json';
-import glossaryJson from '../content/generated/glossary.json';
 import auditJson from '../content/generated/audit.json';
 import methodJson from '../content/generated/method.json';
+import kbTitlesJson from '../content/generated/kb-titles.json';
+import dictionaryJson from '../content/generated/dictionary.json';
 import { BUILT_ERAS } from '../../scripts/lib/scope.mjs';
 
 export type Period = (typeof periodsJson)[number];
@@ -12,11 +13,19 @@ export type ImageRec = (typeof imagesJson)[number];
 
 export const periods = periodsJson as Period[];
 export const images = imagesJson as ImageRec[];
-export const glossary = glossaryJson;
 export const audit = auditJson;
 export const method = methodJson;
 export const builtEras: string[] = BUILT_ERAS;
 
+export const kbTitles = kbTitlesJson as Record<string, string>;
+export type DictEntry = (typeof dictionaryJson.entries)[number];
+export const dictionary = dictionaryJson.entries as DictEntry[];
+export const dictById = new Map(dictionary.map((e) => [e.id, e]));
+/** Site URL of a KB file if that page is built, else null. */
+export const kbHref = (file: string): string | null => {
+  const p = periods.find((x) => x.file === file);
+  return p ? eraHref(p.slug) : null;
+};
 export const imageById = new Map(images.map((i) => [i.id, i]));
 export const isBuiltEra = (slug: string) => builtEras.includes(slug);
 export const eraHref = (slug: string) => (isBuiltEra(slug) ? `/eras/${slug}/` : null);

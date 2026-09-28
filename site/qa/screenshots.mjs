@@ -24,14 +24,15 @@ for (const p of paths) {
       await page.goto(base + p, { waitUntil: 'networkidle' });
       // Scroll through once so lazy images load (as they would for a reader), then return to the top.
       await page.evaluate(async () => {
-        for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); }
+        for (let y = 0; y < Math.min(document.body.scrollHeight, 16000); y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); }
         window.scrollTo(0, 0);
       });
       await page.waitForLoadState('networkidle');
       await page.waitForTimeout(300);
       const name = `${p.replace(/\W+/g, '_').replace(/^_|_$/g, '') || 'home'}-${w}-${scheme}`;
       await page.screenshot({ path: `${out}/${name}-top.png` });
-      await page.screenshot({ path: `${out}/${name}-full.png`, fullPage: true });
+      const tall = await page.evaluate(() => document.body.scrollHeight > 20000);
+      if (!tall) await page.screenshot({ path: `${out}/${name}-full.png`, fullPage: true });
       const sw = await page.evaluate(() => document.documentElement.scrollWidth);
       if (sw > w) console.log(`⚠ horizontal overflow on ${p} at ${w}px: scrollWidth ${sw}`);
       await ctx.close();

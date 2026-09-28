@@ -21,6 +21,7 @@ import {
 import { makeResolver, periodSlug, PERIOD_FOLDERS } from './lib/routes.mjs';
 import { BUILT_PAGES } from './lib/scope.mjs';
 import { Period, Image } from './lib/schema.mjs';
+import { parseDictionary, makeMatcher } from './lib/dictionary.mjs';
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const KB = process.env.KB_ROOT ? path.resolve(process.env.KB_ROOT) : path.resolve(SITE, '..');
@@ -57,8 +58,15 @@ const raw = Object.fromEntries(kbFiles.map((f) => [f, fs.readFileSync(path.join(
 const periodFiles = kbFiles.filter((f) => PERIOD_FOLDERS.includes(f.split('/')[0]));
 const themeFiles = kbFiles.filter((f) => f.startsWith('themes/'));
 
+// Title of every KB file (its H1, without a trailing date range) — for cross-reference links and chapter chips.
+const kbTitles = Object.fromEntries(
+  kbFiles.map((f) => {
+    const h1 = (raw[f].match(/^# (.+)$/m)?.[1] ?? f).replace(/\*/g, '');
+    return [f, h1.replace(/\s\((?=[^()]*\d)[^()]*\)$/, '').trim()];
+  }),
+);
 const isBuilt = (href) => BUILT_PAGES.some((p) => (typeof p === 'string' ? p === href : p.test(href)));
-const resolveXref = makeResolver(kbFiles, isBuilt);
+const resolveXref = makeResolver(kbFiles, isBuilt, kbTitles);
 
 // ───────────────────────── method file: canonical names & vocab ─────────────────────────
 const method = raw['01_RESEARCH_METHOD.md'];
@@ -123,44 +131,15 @@ function parseConfidence(text) {
   return { levels: b ? [a, b] : [a], qualifier: qualifier ?? null, text: t };
 }
 
-// ───────────────────────── glossary ─────────────────────────
-const stripMarks = (s) => s.replace(/[*_`]/g, '');
-const glossaryCfg = readJson('data/glossary.json').terms;
-const glossary = [];
-for (const g of glossaryCfg) {
-  const src = raw[g.source];
-  const where = `data/glossary.json (${g.term})`;
-  if (!src) {
-    fail(where, 0, `source file ${g.source} not found`);
-    continue;
-  }
-  if (!src.includes(g.evidence)) fail(where, 0, `evidence not found verbatim in ${g.source}: ${g.evidence}`);
-  const ev = stripMarks(g.evidence);
-  const forms = [g.term, ...(g.forms ?? [])];
-  if (!forms.some((f) => ev.includes(f))) fail(where, 0, 'term does not occur in its evidence');
-  if (!ev.includes(g.gloss)) fail(where, 0, 'gloss is not quoted from its evidence');
-  const line = src.slice(0, src.indexOf(g.evidence)).split('\n').length;
-  const id = g.term
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/ß/g, 'ss')
-    .replace(/[̀-ͯ]/g, (c) => (c === '̈' ? 'e' : ''))
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-  glossary.push({
-    id,
-    term: g.term,
-    forms,
-    gloss: g.gloss,
-    source: g.source,
-    sourceLine: line,
-    sourceLabel: g.source.replace(/\.md$/, ''),
-    evidence: g.evidence,
-  });
-}
-const glossaryIndex = new Map();
-for (const g of glossary) for (const f of g.forms) glossaryIndex.set(f, g);
-const glossaryMatcher = { match: (text) => glossaryIndex.get(text.trim()) ?? null };
+// ───────────────────────── dictionary (dictionary/*.md; SITE_CHANGELOG_AND_TASKS.md C1) ─────────────────────────
+const dictionary = parseDictionary(raw, new Set(kbFiles), fail);
+const dictOverrides = readJson('data/dictionary-overrides.json').suppress;
+const dictMatcher = makeMatcher(dictionary, dictOverrides);
+const dictLog = [];
+if (dictionary.skippedSiteRows)
+  kbIssues.push({ file: 'dictionary/ambiguous_forms.md', item: `${dictionary.skippedSiteRows} rows`, detail: 'rows name files inside site/ (incl. node_modules) as chapters; ignored' });
+// The six earlier glossary entries (data/glossary.json) are all covered by dictionary forms; the file is retired.
+const dictCtx = (chapter, seen = new Set(), used = new Set(), anchor = true) => ({ matcher: dictMatcher, chapter, seen, used, log: dictLog, anchor });
 
 // ───────────────────────── image index ─────────────────────────
 const idx = raw['images/IMAGE_INDEX.md'];
@@ -270,7 +249,7 @@ for (const f of kbFiles) {
         .trim();
       if (caption !== rec.caption)
         kbIssues.push({ file: f, item: `caption of ${id}`, detail: 'caption in the file differs from IMAGE_INDEX.md full caption; the file’s caption is shown there' });
-      imageBlocks[f].push({ id, block: bi, caption, captionHtml: renderMdInline(caption, baseCtx(f)) });
+      imageBlocks[f].push({ id, block: bi, caption, captionHtml: renderMdInline(caption, { ...baseCtx(f), dict: dictCtx(f, new Set(), new Set(), false) }) });
       if (!rec.usedIn.some((u) => u.file === f))
         kbIssues.push({ file: f, item: `image ${id}`, detail: 'image used in this file but the index "Used in" column does not list the file' });
     }
@@ -416,9 +395,33 @@ function parsePeriod(file) {
   let constitution = null;
   let matrix = null;
   let matrixRef = null;
-  const glossSeen = new Set();
-  const usedTerms = new Set();
-  const ctxFor = () => ({ ...baseCtx(file), glossary: glossaryMatcher, glossSeen, usedTerms });
+  const sectionSeen = new Set();
+  const usedEntries = new Set();
+  const ctxFor = () => ({ ...baseCtx(file), dict: dictCtx(file, sectionSeen, usedEntries) });
+  const isPlain = (node) =>
+    node?.type === 'paragraph' && node.children[0]?.type === 'emphasis' && mdText(node.children[0]).trim() === 'In plain words:';
+  function parseDebate(children, line) {
+    const [p, ...rest] = children;
+    const plainNode = rest.find(isPlain);
+    const subList = rest.find((c) => c.type === 'list');
+    const others = rest.filter((c) => c !== plainNode && c !== subList);
+    let kids = [...(p?.children ?? [])];
+    let titleHtml = null;
+    if (kids[0]?.type === 'strong') {
+      titleHtml = renderInline(kids[0].children, { ...ctxFor(), noDict: true }).replace(/:\s*$/, '');
+      kids = kids.slice(1);
+    }
+    const contested = /\bCONTESTED\b/.test(mdText(p ?? { type: 'text', value: '' }));
+    // drop a bare trailing **CONTESTED.** (the badge carries it)
+    const last = kids.at(-1);
+    if (contested && last?.type === 'strong' && /^CONTESTED\.?$/.test(mdText(last).trim())) kids = kids.slice(0, -1);
+    const bodyHtml = renderInline(kids, ctxFor()).replace(/^\s*:?\s*/, '').trim() + renderBlocks(others, ctxFor());
+    const subs = subList ? subList.children.map((li) => parseDebate(li.children, line)) : [];
+    if (!plainNode && !(subs.length && subs.every((x) => x.plainHtml)))
+      fail(file, line, `§12 item "${mdText(p ?? { type: 'text', value: '?' }).slice(0, 50)}" has no "*In plain words:*" line`);
+    const plainHtml = plainNode ? renderInline(plainNode.children.slice(1), ctxFor()).trim() : null;
+    return { titleHtml, bodyHtml, plainHtml, subs, contested: contested || subs.some((x) => x.contested) };
+  }
 
   for (let i = 0; i < heads.length; i++) {
     const h = heads[i];
@@ -440,7 +443,7 @@ function parsePeriod(file) {
       }
     }
 
-    glossSeen.clear(); // tooltip on the first occurrence in each (collapsible) section
+    sectionSeen.clear(); // terms: first mention per (collapsible) section
     const md = body.join('\n');
     const section = { n: h.n, name: h.name, qualifier: h.qualifier, blocks: [] };
     const html = (nodes) => ({ type: 'html', html: renderBlocks(nodes, ctxFor()) });
@@ -501,7 +504,7 @@ function parsePeriod(file) {
           const head = next.children[0].children.map((c) => mdText(c).trim()).join('|');
           if (head !== '#|Question|Answer') fail(file, line, `matrix header "${head}" ≠ "#|Question|Answer"`);
           if (rows.length !== 12 || rows.some((r, j) => r.q !== j + 1)) fail(file, line, 'matrix must have rows 1–12');
-          matrix = { title: mtitle, headingHtml: renderInline(n.children, ctxFor()), rows };
+          matrix = { title: mtitle, headingHtml: renderInline(n.children, { ...ctxFor(), noDict: true }), rows };
           section.blocks.push({ type: 'matrix' });
           k++;
         } else if (next?.type === 'paragraph' && mdText(next).startsWith('Matrix:')) {
@@ -543,9 +546,11 @@ function parsePeriod(file) {
               const label =
                 first?.type === 'emphasis' && /:$/.test(mdText(first).trim()) ? mdText(first).trim() : null;
               const kids = label ? p.children.slice(1) : p.children;
+              const side = label ? (/^Said/.test(label) ? 'said' : /^Worked/.test(label) ? 'worked' : null) : null;
               return {
-                label,
-                side: label ? (/^Said/.test(label) ? 'said' : /^Worked/.test(label) ? 'worked' : null) : null,
+                // Part B8: the column heading already says "said"/"worked"; keep only the date qualifier.
+                label: side ? (label.match(/\(([^)]*)\)/)?.[1] ?? null) : label,
+                side,
                 html: renderInline(kids, ctxFor()).trim() + renderBlocks(li.children.slice(1), ctxFor()),
               };
             });
@@ -571,23 +576,19 @@ function parsePeriod(file) {
         continue;
       }
 
-      if (h.n === 12 && n.type === 'list') {
+      if (h.n === 12 && (n.type === 'list' || (n.type === 'paragraph' && isPlain(nodes[k + 1])))) {
+        // Debates (§12) with their "In plain words" lines (SITE_CHANGELOG_AND_TASKS.md C4). Presentation per Part B4:
+        // a title's trailing colon is dropped, and a bare trailing "CONTESTED." is dropped because the card shows the badge.
         flush();
-        section.blocks.push({
-          type: 'debates',
-          items: n.children.map((li) => {
-            const p = li.children[0];
-            const first = p?.children?.[0];
-            const hasTitle = first?.type === 'strong';
-            const rest = hasTitle ? p.children.slice(1) : p.children;
-            const bodyHtml = (renderInline(rest, ctxFor()).replace(/^\s+/, '') || '') + renderBlocks(li.children.slice(1), ctxFor());
-            return {
-              titleHtml: hasTitle ? renderInline(first.children, ctxFor()) : null,
-              bodyHtml,
-              contested: /\bCONTESTED\b/.test(mdText(li)),
-            };
-          }),
-        });
+        let items;
+        if (n.type === 'list') items = n.children.map((li) => parseDebate(li.children, line));
+        else {
+          items = [parseDebate([n, nodes[k + 1]], line)]; // prose §12 (contemporary/03, /04): one item
+          k++;
+        }
+        const prev = section.blocks.at(-1);
+        if (prev?.type === 'debates') prev.items.push(...items);
+        else section.blocks.push({ type: 'debates', items });
         continue;
       }
 
@@ -647,7 +648,7 @@ function parsePeriod(file) {
     flush();
     if (h.n === 11 && !section.blocks.some((b) => b.type === 'misconceptions')) fail(file, lineOf(0), 'no misconception table');
     if (h.n === 13 && !section.blocks.some((b) => b.type === 'confidence')) fail(file, lineOf(0), 'no confidence table');
-    if (h.n === 12 && !section.blocks.some((b) => b.type === 'debates')) warn(file, '§12 has no bullet list of debates; rendered as prose');
+    if (h.n === 12 && !section.blocks.some((b) => b.type === 'debates')) fail(file, lineOf(0), '§12 has no debates with "In plain words" lines');
     sections.push(section);
   }
 
@@ -682,7 +683,7 @@ function parsePeriod(file) {
     constitution,
     fiveThings,
     auditClaims: auditMap[file] ?? [],
-    glossaryTerms: [...usedTerms],
+    dictionaryUsed: [...usedEntries],
   };
 }
 
@@ -696,34 +697,6 @@ const periods = periodFiles.map(parsePeriod);
 for (const f of Object.keys(erasCfg.files)) if (!periodFiles.includes(f)) fail('data/eras.json', 0, `configured file ${f} does not exist`);
 for (const [f, claims] of Object.entries(auditMap))
   for (const c of claims) if (!audit.find((a) => a.n === c)) fail('data/audit-map.json', 0, `${f}: no audit claim ${c}`);
-
-// ───────────────────────── glossary candidates (for review, never auto-published) ─────────────────────────
-const glossaryCandidates = [];
-const GERMANISH = /[äöüßÄÖÜ]|^[A-ZÄÖÜ][a-zäöüß]+(?:[a-zäöüß]{6,})$|(ung|keit|heit|schaft|recht|stadt|land|reich|tum|wesen|kammer|bund|rat|tag)(e|en|er|s)?$/;
-for (const f of kbFiles) {
-  if (f.startsWith('sources/')) continue;
-  const text = stripImageBlocks(raw[f]).split(/^## 14\. Sources/m)[0];
-  const tree = parseMd(text);
-  (function visit(node, parent) {
-    if (node.type === 'emphasis' && parent) {
-      const term = mdText(node).trim();
-      if (!GERMANISH.test(term) || term.split(' ').length > 4) return;
-      if (glossaryIndex.has(term)) return;
-      const i = parent.children.indexOf(node);
-      const before = parent.children[i - 1];
-      const after = parent.children[i + 1];
-      let candidate = null;
-      if (before?.type === 'text' && /\($/.test(before.value.trimEnd()) && after?.type === 'text' && /^[,)]/.test(after.value)) {
-        candidate = before.value.trimEnd().slice(0, -1).split(/[.;:—,"]/).pop().trim().split(' ').slice(-6).join(' ');
-      } else if (after?.type === 'text' && /^ \(([^)]+)\)/.test(after.value)) {
-        candidate = after.value.match(/^ \(([^),;]+)/)[1];
-      }
-      glossaryCandidates.push({ term, candidateGloss: candidate || null, file: f, line: node.position.start.line });
-      return;
-    }
-    node.children?.forEach((c) => visit(c, node));
-  })(tree, null);
-}
 
 // ───────────────────────── whole documents rendered by H2 (method page, audit page) ─────────────────────────
 function renderDoc(file, { skipTableUnder } = {}) {
@@ -785,15 +758,15 @@ const report = {
     imagesPublicDomain: images.filter((i) => i.rights !== '©').length,
     auditClaims: audit.length,
     bibliography: bibliography.length,
-    glossary: glossary.length,
-    glossaryCandidates: glossaryCandidates.length,
+    dictionaryEntries: dictionary.entries.length,
+    dictionaryForms: dictMatcher.formCount,
+    dictionaryAmbiguousForms: dictionary.amb.size,
     matrices: periods.filter((p) => p.matrix).length,
     matrixCrossRefs: periods.filter((p) => p.matrixRef).length,
   },
   exceptionsApplied: exceptionsCfg,
   kbIssues,
   warnings,
-  glossaryCandidates,
 };
 
 if (errors.length) {
@@ -807,7 +780,9 @@ fs.mkdirSync(OUT, { recursive: true });
 const write = (name, data) => fs.writeFileSync(path.join(OUT, `${name}.json`), JSON.stringify(data, null, 1));
 write('periods', periods);
 write('images', images);
-write('glossary', glossary);
+write('dictionary', { entries: dictionary.entries });
+write('kb-titles', kbTitles);
+write('dictionary-matches', dictLog);
 write('audit', audit);
 write('bibliography', bibliography);
 write('method', { confidenceScale, sourceLevels, accessLegend, primaryChecklist, canonicalSections: CANONICAL, groups: erasCfg.groups, ruptures: erasCfg.ruptures.years });

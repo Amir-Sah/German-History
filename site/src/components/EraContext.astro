@@ -45,6 +45,7 @@ for (let y = Math.ceil(from / 10) * 10; y <= to; y += to - from > 200 ? 50 : 10)
             <li
               class:list={['ctx-bar', p.slug === current.slug && 'is-current', p.sensitive && 'is-calm']}
               style={`--l:${pct(p.span.start)}%;--w:${pct(p.span.end) - pct(p.span.start)}%;--lane:${lane}`}
+              title={`${p.title} (${p.dateLabel})`}
             >
               {p.slug === current.slug ? (
                 <span aria-current="page">{inner}</span>
