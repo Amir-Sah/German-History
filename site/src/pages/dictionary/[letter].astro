@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import DictShell from '../../components/DictShell.astro';
+import DictEntry from '../../components/DictEntry.astro';
+import { dictionary } from '../../lib/content';
+
+export function getStaticPaths() {
+  const letters = [...new Set(dictionary.map((e) => e.letter))];
+  return letters.map((letter) => ({ params: { letter }, props: { letter } }));
+}
+const { letter } = Astro.props as { letter: string };
+const entries = dictionary
+  .filter((e) => e.letter === letter)
+  .sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+const label = letter === 'num' ? '#' : letter.toUpperCase();
+---
+<Base title={`Dictionary · ${label}`} description={`Dictionary entries under ${label}.`}>
+  <div class="wrap page dict" data-dict-page="letter">
+    <p class="kicker"><a href="/dictionary/">Dictionary</a></p>
+    <h1>{label} <span class="muted small">{entries.length} entries</span></h1>
+    <DictShell current={letter} />
+    <p id="dict-none" class="muted" hidden>No entries of the selected kinds under this letter.</p>
+    <div class="dict-list">
+      {entries.map((e) => <DictEntry e={e} />)}
+    </div>
+  </div>
+</Base>
+<style is:global>@import '../../styles/dictionary.css';</style>
+<script>import '../../scripts/dictionary-page.ts';</script>

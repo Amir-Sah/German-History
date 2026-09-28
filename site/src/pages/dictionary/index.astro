@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import DictShell from '../../components/DictShell.astro';
+import { dictionary } from '../../lib/content';
+const n = (k: string) => dictionary.filter((e) => e.kind === k).length;
+---
+<Base title="Dictionary" description="People, places and terms named in the knowledge base, with short and longer explanations.">
+  <div class="wrap page dict" data-dict-page="index">
+    <p class="kicker">Reference</p>
+    <h1>Dictionary</h1>
+    <p class="lead-small">
+      People, places and terms named in the knowledge base, with the short and longer explanations from its dictionary
+      (dictionary/*.md): {n('person')} people, {n('place')} places and {n('term')} terms.
+    </p>
+    <p class="muted small">
+      Entries marked KB+K combine knowledge-base text with well-established general knowledge, such as birth and death dates
+      from standard reference works. Switch on "How do we know?" to see each entry's basis.
+    </p>
+    <DictShell />
+    <p class="muted small">Choose a letter, or search above.</p>
+  </div>
+</Base>
+<style is:global>@import '../../styles/dictionary.css';</style>
+<script>import '../../scripts/dictionary-page.ts';</script>

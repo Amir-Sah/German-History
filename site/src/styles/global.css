@@ -207,7 +207,9 @@ strong.conf { font-size: 0.72em; }
   .ribbon-of { display: none; }
   .ribbon-track { height: 22px; }
   .ribbon-tick { font-size: 9px; top: 11px; }
+  .ribbon-bare { grid-template-columns: 1fr; } /* no "you are here" label (home, index pages): the track takes the row */
 }
+.ribbon-bare { grid-template-columns: 1fr; }
 
 /* ── chapter hero ─────────────────────────────────────────────────────── */
 .chapter-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); grid-template-areas: 'head media' 'lead media'; column-gap: clamp(1.5rem, 4vw, 3.5rem); row-gap: 0; align-items: start; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: 2rem; }
@@ -452,6 +454,10 @@ html.dx-off a.dx::before { display: none; }
 .dx-card-kind.dx-kind-person { color: var(--dx-person); } .dx-card-kind.dx-kind-place { color: var(--dx-place); } .dx-card-kind.dx-kind-term { color: var(--muted); }
 .dx-card h2 { margin: 0.15rem 0 0.2rem; font-size: 1.45rem; }
 .dx-card-meta { margin: 0; font: 0.85rem var(--sans); color: var(--ink-2); display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.dx-card-meta > :empty { display: none; }
+.dx-card .chip[hidden] { display: none; }
+.soon { display: inline-block; margin-left: 0.2rem; padding: 0 0.4em; border-radius: 3px; border: 1px dashed var(--muted); color: var(--muted); font: 600 0.66rem var(--sans); letter-spacing: 0.04em; text-transform: uppercase; vertical-align: 0.1em; white-space: nowrap; }
+.btn-link { font: 600 0.8rem var(--sans); color: var(--link); background: none; border: 0; padding: 0.2rem 0; cursor: pointer; text-decoration: underline; text-underline-offset: 0.2em; }
 .dx-card-close { position: absolute; top: -0.4rem; right: -0.6rem; width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font-size: 1.3rem; line-height: 1; cursor: pointer; }
 .dx-card-note { font: 0.85rem var(--sans); color: var(--ink-2); margin: 0.75rem 0 0; }
 .dx-card-expl { margin: 0.8rem 0; }

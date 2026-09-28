@@ -103,6 +103,38 @@ export function parseDictionary(raw, kbFileSet, fail) {
 
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+/** A–Z bucket of an entry (the dictionary is published one page per letter; digits and symbols → "num"). */
+export function dictLetter(name) {
+  const c = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '')[0];
+  return c && /[a-z]/.test(c) ? c : 'num';
+}
+export const dictHref = (e) => `/dictionary/${dictLetter(e.name)}/#${e.id}`;
+
+/**
+ * Surface forms the site matches for an entry (user review of 29 Sept 2026, CONTENT_TRACE D3):
+ * - hyphenated compounds whose first part is already a form of the entry ("Moscow-aligned") are not used;
+ *   the matcher links just "Moscow" inside such compounds;
+ * - lowercase single-word alternative forms that are not a case variant or plural of one of the entry's
+ *   names are not used: they are ordinary derived words ("tolerated", "feudal", "nationalist").
+ */
+export function matchForms(e) {
+  const isLowerWord = (f) => /^\p{Ll}[\p{L}']*$/u.test(f);
+  const heads = new Set(
+    e.forms.filter((f) => f === e.name || !isLowerWord(f)).flatMap((f) => [f.toLowerCase(), f.toLowerCase().split(/[\s-]/).pop()]),
+  );
+  const pluralOrCase = (f) => {
+    const base = f.replace(/ies$/, 'y').replace(/(es|s)$/, '');
+    return [...heads].some((h) => h === f || h === base || h + 's' === f || h + 'es' === f || h.replace(/y$/, 'ies') === f);
+  };
+  return e.forms.filter((f) => {
+    if (f === e.name) return true;
+    const compound = f.match(/^(.+?)-\p{Ll}/u);
+    if (compound && e.forms.includes(compound[1])) return false;
+    if (isLowerWord(f) && !pluralOrCase(f)) return false;
+    return true;
+  });
+}
+
 /**
  * Build-time matcher. A surface form is ambiguous when ambiguous_forms.md lists it, or when several entries
  * claim it; ambiguous forms are highlighted only where the table names an entry for that chapter.
@@ -111,12 +143,12 @@ export function makeMatcher({ entries, byId, amb }, overrides = []) {
   // Site-side suppressions for dictionary misreadings (data/dictionary-overrides.json), each reported to the KB owner.
   const suppress = new Set(overrides.map((o) => `${o.form}\u0000${o.chapter}`));
   const formOwners = new Map();
-  for (const e of entries) for (const f of e.forms) {
+  for (const e of entries) for (const f of matchForms(e)) {
     if (!formOwners.has(f)) formOwners.set(f, new Set());
     formOwners.get(f).add(e.id);
   }
   const forms = [...new Set([...formOwners.keys(), ...amb.keys()])].filter((f) => f.length > 1).sort((a, b) => b.length - a.length);
-  const re = new RegExp(`(?<![\\p{L}\\p{N}\\-’'])(${forms.map(escRe).join('|')})(?![\\p{L}\\p{N}\\-])`, 'gu');
+  const re = new RegExp(`(?<![\\p{L}\\p{N}\\-’'])(${forms.map(escRe).join('|')})(?![\\p{L}\\p{N}]|-(?!\\p{Ll}))`, 'gu');
 
   function resolve(form, chapter) {
     if (suppress.has(`${form}\u0000${chapter}`) || suppress.has(`${form}\u0000*`)) return null;

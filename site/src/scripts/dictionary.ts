@@ -1,12 +1,12 @@
 // Inline dictionary (SITE_CHANGELOG_AND_TASKS.md C3). Words are marked at build time as
-// <a class="dx dx-person|dx-place|dx-term" href="/dictionary/#id" data-dx="id" aria-describedby="dxd-id">.
+// <a class="dx dx-person|dx-place|dx-term" href="/dictionary/<letter>/#id" data-dx="id" aria-describedby="dxd-id">.
 // Without JS they are plain links to the dictionary page. With JS:
 //   hover (mouse) or keyboard focus → small tooltip (name, dates, kind, Short), placed so it never covers the word;
 //   click / Enter / tap → the dictionary card (<dialog>; bottom sheet on phones); Esc closes and focus returns.
 type Chapter = { title: string; href: string | null } | null;
 type Entry = {
   name: string; kind: 'person' | 'place' | 'term'; subkind: string | null; dates: string | null; german: string | null;
-  short: string; explanation: string; note: string | null; basis: string | null; main: Chapter; also: Chapter[];
+  short: string; explanation: string; note: string | null; basis: string | null; main: Chapter; also: Chapter[]; href: string;
 };
 
 const root = document.documentElement;
@@ -106,6 +106,10 @@ if (dataEl) {
     }
     const s = document.createElement('span');
     s.textContent = c.title;
+    const soon = document.createElement('span');
+    soon.className = 'soon';
+    soon.textContent = 'coming soon';
+    s.append(' ', soon);
     s.title = 'This chapter is built in a later step';
     return s;
   }
@@ -135,14 +139,26 @@ if (dataEl) {
     const main = f('main');
     main.replaceChildren(chapterNode(e.main, id), document.createTextNode(e.main?.href ? ' →' : ''));
     f('main-wrap').hidden = !e.main;
+    // "Also in": at most 6 chips, then "Show all (N)".
     const also = f('also');
-    also.replaceChildren(...e.also.filter(Boolean).map((c) => {
-      const n = chapterNode(c, id);
-      (n as HTMLElement).classList?.add('chip');
+    const chips = e.also.filter(Boolean).map((c) => {
+      const n = chapterNode(c, id) as HTMLElement;
+      n.classList?.add('chip');
       return n;
-    }));
-    f('also-wrap').hidden = !e.also.length;
-    (f('dict-link') as HTMLAnchorElement).href = `/dictionary/#${id}`;
+    });
+    const LIMIT = 6;
+    chips.forEach((n, i) => (n.hidden = i >= LIMIT));
+    also.replaceChildren(...chips);
+    const more = f('also-more') as HTMLButtonElement;
+    more.hidden = chips.length <= LIMIT;
+    more.textContent = `Show all (${chips.length})`;
+    more.onclick = () => {
+      chips.forEach((n) => (n.hidden = false));
+      more.hidden = true;
+      chips[LIMIT]?.querySelector('a')?.focus?.();
+    };
+    f('also-wrap').hidden = !chips.length;
+    (f('dict-link') as HTMLAnchorElement).href = e.href;
     f('basis').textContent = e.basis ?? '';
     opener = a;
     card.showModal();

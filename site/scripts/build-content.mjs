@@ -21,7 +21,7 @@ import {
 import { makeResolver, periodSlug, PERIOD_FOLDERS } from './lib/routes.mjs';
 import { BUILT_PAGES } from './lib/scope.mjs';
 import { Period, Image } from './lib/schema.mjs';
-import { parseDictionary, makeMatcher } from './lib/dictionary.mjs';
+import { parseDictionary, makeMatcher, dictHref, dictLetter, matchForms } from './lib/dictionary.mjs';
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const KB = process.env.KB_ROOT ? path.resolve(process.env.KB_ROOT) : path.resolve(SITE, '..');
@@ -780,7 +780,9 @@ fs.mkdirSync(OUT, { recursive: true });
 const write = (name, data) => fs.writeFileSync(path.join(OUT, `${name}.json`), JSON.stringify(data, null, 1));
 write('periods', periods);
 write('images', images);
-write('dictionary', { entries: dictionary.entries });
+write('dictionary', {
+  entries: dictionary.entries.map((e) => ({ ...e, letter: dictLetter(e.name), href: dictHref(e), matchForms: matchForms(e) })),
+});
 write('kb-titles', kbTitles);
 write('dictionary-matches', dictLog);
 write('audit', audit);

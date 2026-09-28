@@ -5,6 +5,7 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import { toString } from 'mdast-util-to-string';
+import { dictHref } from './dictionary.mjs';
 
 const processor = unified().use(remarkParse).use(remarkGfm);
 
@@ -94,7 +95,7 @@ function renderText(value, ctx) {
       d.log?.push({ chapter: d.chapter, form: part.text, id: e.id, kind: e.kind, context: value.slice(Math.max(0, at - 70), at + part.text.length + 70) });
       const cls = `dx dx-${e.kind}${firstInSection ? ' dx-first' : ''}`;
       const anchor = firstOnPage ? ` id="m-${e.id}"` : '';
-      return `<a class="${cls}"${anchor} href="/dictionary/#${e.id}" data-dx="${e.id}" aria-describedby="dxd-${e.id}">${esc}</a>`;
+      return `<a class="${cls}"${anchor} href="${dictHref(e)}" data-dx="${e.id}" aria-describedby="dxd-${e.id}">${esc}</a>`;
     })
     .join('');
 }

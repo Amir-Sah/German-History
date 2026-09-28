@@ -13,7 +13,7 @@ const groups = method.groups;
 const ticks = [-500, 0, 500, 1000, 1500, 2000];
 ---
 
-<div class="ribbon" role="group" aria-label="Time ribbon, 500 BCE to 2026">
+<div class:list={['ribbon', !current && 'ribbon-bare']} role="group" aria-label="Time ribbon, 500 BCE to 2026">
   <div class="ribbon-track" aria-hidden="true">
     {
       groups.map((g, i) => (

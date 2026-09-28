@@ -21,6 +21,9 @@ export const kbTitles = kbTitlesJson as Record<string, string>;
 export type DictEntry = (typeof dictionaryJson.entries)[number];
 export const dictionary = dictionaryJson.entries as DictEntry[];
 export const dictById = new Map(dictionary.map((e) => [e.id, e]));
+/** Files that are reading chapters (for "Also in" lists): not the image index, method, README, sources or dictionary. */
+export const isChapterFile = (f: string) =>
+  !/^(images|sources|dictionary)\//.test(f) && !['01_RESEARCH_METHOD.md', '00_README.md'].includes(f);
 /** Site URL of a KB file if that page is built, else null. */
 export const kbHref = (file: string): string | null => {
   const p = periods.find((x) => x.file === file);

@@ -1,0 +1,30 @@
+---
+// Shared frame of the dictionary pages: intro, kind filters, search (index-wide), letter navigation.
+import { dictionary } from '../lib/content';
+interface Props { current?: string; }
+const { current } = Astro.props;
+const letters = [...new Set(dictionary.map((e) => e.letter))].sort((a, b) => (a === 'num' ? -1 : b === 'num' ? 1 : a.localeCompare(b)));
+const count = (l: string) => dictionary.filter((e) => e.letter === l).length;
+const label = (l: string) => (l === 'num' ? '#' : l.toUpperCase());
+---
+<div class="dict-tools" role="search" aria-label="Search and filter the dictionary">
+  <div class="dict-kinds" role="group" aria-label="Kinds of entry">
+    <button type="button" class="dict-kind" data-kind-btn="person" aria-pressed="true">People</button>
+    <button type="button" class="dict-kind" data-kind-btn="place" aria-pressed="true">Places</button>
+    <button type="button" class="dict-kind" data-kind-btn="term" aria-pressed="true">Terms</button>
+  </div>
+  <div class="dict-search">
+    <label for="dict-q">Search the whole dictionary</label>
+    <input id="dict-q" type="search" autocomplete="off" placeholder="Name, German form or description" />
+  </div>
+  <p class="small muted" id="dict-count" aria-live="polite"></p>
+</div>
+<section id="dict-results" class="dict-results" hidden aria-label="Search results">
+  <ol class="dict-result-list"></ol>
+  <p class="small muted" id="dict-more" hidden></p>
+</section>
+<nav class="dict-letters" aria-label="Letters">
+  {letters.map((l) => (
+    <a href={`/dictionary/${l}/`} aria-current={l === current ? 'page' : undefined} title={`${count(l)} entries`}>{label(l)}</a>
+  ))}
+</nav>
