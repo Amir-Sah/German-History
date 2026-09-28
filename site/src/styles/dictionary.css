@@ -1,0 +1,50 @@
+/* Dictionary pages (index + one page per letter). Global, scoped under .dict, to keep pages small. */
+
+  /* global (not scoped) to keep the 2,300-entry page small: no per-element scope attributes */
+  .dict h1 { margin: 0.2rem 0 0.6rem; }
+  .dict .dict-tools { display: grid; gap: 0.75rem; margin: 1.25rem 0 0.75rem; padding: 0.9rem; background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius); }
+  .dict .dict-kinds { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .dict .dict-kind { font-family: var(--sans); font-size: 0.9rem; font-weight: 600; min-height: 2.5rem; padding: 0 1rem; border-radius: var(--radius); border: 1px solid var(--rule); background: var(--paper); color: var(--ink-2); cursor: pointer; }
+  .dict .dict-kind[aria-pressed='true'] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .dict .dict-kind:focus-visible, .dict .dict-search input:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+  .dict .dict-search label { display: block; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
+  .dict .dict-search input { width: 100%; max-width: 28rem; box-sizing: border-box; min-height: 2.5rem; padding: 0 0.75rem; font: inherit; font-family: var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--muted); border-radius: var(--radius); }
+  .dict #dict-count { margin: 0; }
+  .dict .dict-letters { display: flex; flex-wrap: wrap; gap: 0.25rem; margin: 0.5rem 0 1.5rem; }
+  .dict .dict-letters a { display: inline-flex; align-items: center; justify-content: center; min-width: 2.25rem; min-height: 2.25rem; font-family: var(--sans); font-weight: 600; border: 1px solid var(--rule); border-radius: var(--radius); text-decoration: none; }
+  .dict .dict-letters a:hover { background: var(--paper-2); }
+  .dict .dict-letter { font-family: var(--serif); font-size: 1.8rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.2rem; margin: 2rem 0 0.5rem; scroll-margin-top: 8rem; }
+  .dict .dict-entry { scroll-margin-top: 8rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); max-width: 46rem; overflow-wrap: anywhere; }
+  .dict .dict-entry[hidden], .dict .dict-group[hidden] { display: none; }
+  .dict .dict-entry h3 { margin: 0; font-size: 1.2rem; line-height: 1.3; }
+  .dict .dn-person { color: var(--dx-person); font-variant: small-caps; letter-spacing: 0.02em; }
+  .dict .dn-place { color: var(--dx-place); }
+  .dict .dn-term { color: var(--dx-term); }
+  .dict .pin { vertical-align: -0.1em; margin-right: 0.3em; }
+  .dict .dict-entry p { margin: 0.35rem 0 0; }
+  .dict .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.75rem; }
+  .dict .meta .chip { vertical-align: baseline; }
+  .dict .meta .de { font-style: italic; color: var(--ink-2); }
+  .dict .meta .dates { color: var(--ink-2); }
+  .dict .short { font-weight: 600; color: var(--ink); }
+  .dict .expl { color: var(--ink-2); }
+  .dict .note { padding: 0.4rem 0.6rem; border-left: 3px solid var(--ink-2); background: var(--paper-2); color: var(--ink); font-size: 0.95rem; }
+  .dict .note-l { font-family: var(--sans); font-weight: 700; }
+  .dict .also { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; }
+  .dict .also .chip { white-space: normal; text-decoration: none; }
+  .dict .also a.chip { color: var(--link); }
+
+  .dict .dict-letters a[aria-current='page'] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .dict h1 .small { font-family: var(--sans); font-size: 0.9rem; font-weight: 500; }
+  .dict .dict-results { margin: 0.5rem 0 1.5rem; }
+  .dict .dict-result-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+  .dict .dict-result-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+  .dict .dict-result-list a { font-weight: 650; text-decoration: none; }
+  .dict .dict-result-list a:hover { text-decoration: underline; }
+  .dict .dict-result-list .r-kind { margin-left: 0.4rem; }
+  .dict .dict-result-list .r-short { display: block; font-size: 0.92rem; color: var(--ink-2); }
+  /* While a search is active the letter grid and the letter's own entries step aside (item 5). */
+  .dict.searching .dict-letters, .dict.searching .dict-list, .dict.searching > .muted.small:last-child { display: none; }
+  /* …and so does the intro, so the first results sit just below the search box on a phone. */
+  .dict.searching > .lead-small, .dict.searching > p.muted.small { display: none; }
+  .dict.searching h1 { font-size: 1.6rem; }

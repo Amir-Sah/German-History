@@ -1,0 +1,39 @@
+---
+// One dictionary entry (used on the per-letter pages). All text comes from dictionary/*.md.
+import { kbTitles, kbHref, isChapterFile, type DictEntry } from '../lib/content';
+interface Props { e: DictEntry; }
+const { e } = Astro.props;
+const KIND: Record<string, string> = { person: 'Person', place: 'Place', term: 'Term' };
+const title = (f: string) => kbTitles[f] ?? f;
+const contested = e.note && /CONTESTED/.test(e.note);
+const noteRest = e.note ? e.note.replace(/CONTESTED/g, '').replace(/^[\s.,;:–—-]+/, '').trim() : '';
+const mainHref = e.main ? kbHref(e.main) : null;
+const also = e.also.filter(isChapterFile);
+const extra = e.forms.filter((f) => f !== e.name).join(' · ');
+---
+<article class="dict-entry" id={e.id} data-kind={e.kind} data-forms={extra || undefined}>
+  <h3 class={`dn dn-${e.kind}`}>
+    {e.kind === 'place' && <svg class="pin" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>}
+    {e.name}
+  </h3>
+  <p class="meta small">
+    <span class="chip">{KIND[e.kind]}</span>
+    {e.subkind && <span class="muted">{e.subkind}</span>}
+    {e.dates && <span class="dates">{e.dates}</span>}
+    {e.german && e.german !== e.name && <span class="de" lang="de">{e.german}</span>}
+  </p>
+  <p class="short">{e.short}</p>
+  <p class="expl">{e.explanation}</p>
+  {e.note && <p class="note"><span class="note-l">Note:</span> {contested && <span class="conf conf-contested">CONTESTED</span>}{noteRest && ` ${noteRest}`}</p>}
+  {e.main && (
+    <p class="small main"><span class="muted">Main chapter:</span>{' '}
+      {mainHref ? <a href={mainHref}>{title(e.main)}</a> : <span>{title(e.main)} <span class="soon">coming soon</span></span>}
+    </p>
+  )}
+  {also.length > 0 && (
+    <p class="small also"><span class="muted">Also in:</span>
+      {also.map((f) => { const h = kbHref(f); return h ? <a class="chip" href={h}>{title(f)}</a> : <span class="chip">{title(f)}</span>; })}
+    </p>
+  )}
+  <p class="ev-only small"><span class="chip">Basis: {e.basis}</span></p>
+</article>
