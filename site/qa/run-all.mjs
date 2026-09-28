@@ -13,6 +13,7 @@ const steps = [
   ['contrast tokens', ['qa/contrast.mjs']],
   ['behaviour (keyboard, reduced motion, no-JS, PUBLIC_BUILD)', ['qa/behaviour.mjs']],
   ['inline dictionary', ['qa/dictionary.mjs']],
+  ['review 29 Sept (ribbon, card, compounds, dictionary search/pages)', ['qa/review-2909.mjs']],
   ['screenshots', ['qa/screenshots.mjs', 'serve']],
   ...(extra.includes('--external') ? [['hotlinked images render', ['qa/image-urls.mjs']]] : []),
 ];
