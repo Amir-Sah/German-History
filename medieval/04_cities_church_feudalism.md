@@ -118,7 +118,11 @@ The link between religious and political authority; corporate (group-based) righ
 ## 12. Historiographical Debate
 
 - **Towns and "bourgeois" freedom:** 19th-century liberals saw medieval towns as seedbeds of German freedom; modern historians stress oligarchy and exclusion but also genuine traditions of self-government and legal culture.
+
+  *In plain words:* Were medieval towns the cradle of German freedom? Nineteenth-century liberals said yes, seeing self-governing towns as the origin of citizens' liberty. Modern historians stress that towns were run by small rich elites and shut many residents out — but they also recognise real traditions of self-government and respect for law.
 - **The Hanse as "network" vs "organisation":** Recent scholarship (e.g., Stuart Jenks, Carsten Jahnke) emphasises informality and merchant networks over the older image of a quasi-state league.
+
+  *In plain words:* Was the Hanse, the league of northern trading towns, a kind of state-like organisation or a loose web of merchants? The older image is of a quasi-state league. Recent scholars such as Stuart Jenks and Carsten Jahnke emphasise its informality and the personal networks of merchants.
 
 ## 13. Confidence Assessment
 

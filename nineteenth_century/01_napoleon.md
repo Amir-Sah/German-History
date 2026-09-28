@@ -113,8 +113,14 @@ Monarchy; nobility's social dominance (especially in Prussia's east); the prince
 ## 12. Historiographical Debate
 
 - **"Defensive modernisation" (Hans-Ulrich Wehler) / "revolution from above":** Reforms as responses to French pressure. Consensus on the fact; debate on how "modern" the outcomes were.
+
+  *In plain words:* Were the German reforms of this era real modernisation? Wehler called them 'defensive modernisation' — changes made from above to survive French pressure. Everyone agrees they were a response to France; historians disagree on how modern the results actually were.
 - **Myth of the Wars of Liberation:** Planert (2007) and others vs older national narratives.
+
+  *In plain words:* Did the German people rise up together against Napoleon in 1813–15? The older national story says yes. Ute Planert (2007) and others say this 'Wars of Liberation' story is largely a myth.
 - **Rhine Confederation reforms:** Once dismissed as French imposition, now seen (e.g., by Elisabeth Fehrenbach) as a significant modernising phase for southern Germany.
+
+  *In plain words:* Were the reforms in Napoleon's allied German states (the Confederation of the Rhine) just French orders? That was the old view. Historians such as Elisabeth Fehrenbach now see them as an important modernising phase for southern Germany.
 
 ## 13. Confidence Assessment
 

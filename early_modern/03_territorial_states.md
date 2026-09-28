@@ -102,7 +102,11 @@ Estate society; religious territorial churches; peasant dependence; fragmentatio
 ## 12. Historiographical Debate
 
 - **Was the Empire a "state"?** Georg Schmidt (*Geschichte des Alten Reiches*, 1999) argued for a "complementary Empire-State" (*komplementärer Reichs-Staat*) and a German nation in the early modern period. Heinz Schilling and Wolfgang Reinhard rejected projecting state and nation concepts backwards ("partially modernised imperial system"). Barbara Stollberg-Rilinger (*Des Kaisers alte Kleider*, 2008) stresses ritual and symbolic communication — the Empire "existed in the immediate relationship between emperor and estates." **CONTESTED.**
+
+  *In plain words:* Was the Holy Roman Empire after 1648 a real state — even a nation? Georg Schmidt says yes: a 'complementary Empire-State' in which Empire and territories shared government, and a German nation already existed. Schilling and Reinhard say modern ideas of state and nation should not be pushed back in time. Stollberg-Rilinger stresses that the Empire lived through rituals and ceremonies between emperor and princes.
 - **"Absolutism":** increasingly regarded as a problematic label (Nicholas Henshall, *The Myth of Absolutism*, 1992).
+
+  *In plain words:* Is 'absolutism' — the idea that kings ruled with unlimited power — a useful label? Increasingly historians say no; Nicholas Henshall called it a 'myth' in 1992, because in practice most rulers had to bargain with nobles, towns and courts.
 
 ## 13. Confidence Assessment
 

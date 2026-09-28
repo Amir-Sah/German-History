@@ -122,10 +122,20 @@ Catholic and Social Democratic milieus stayed largely loyal to their parties unt
 ## 12. Historiographical Debate
 
 - **Class-based theories** (Seymour Martin Lipset's "extremism of the centre"; Marxist theories of fascism as capital's instrument) vs **"people's party of protest"** (Falter, Childers).
+
+  *In plain words:* Who voted Nazi, and why? Class-based theories tie Nazism to one social group: Seymour Martin Lipset saw an 'extremism of the centre' (the middle classes turning radical), while Marxists saw fascism as a tool of big business ('capital'). Falter and Childers argue instead that the Nazis were a 'people's party of protest', drawing discontented voters from many groups.
 - **Economic vs political causation:** How much did the Depression vs political choices matter? (Borchardt debate; NBER austerity study; Straumann on devaluation fears.)
+
+  *In plain words:* Did the Nazis come to power mainly because of the Great Depression, or because of political choices? Evidence cited includes the Borchardt debate over whether Brüning's spending cuts were unavoidable, an NBER study (by a US economics research body) linking cuts to Nazi votes, and Straumann's work on fears of devaluation (letting the currency's value fall).
 - **Role of antisemitism in Nazi support:** Goldhagen (central) vs Kershaw/Falter (secondary for most voters, but no obstacle).
+
+  *In plain words:* Did Germans vote Nazi because they hated Jews? Goldhagen says antisemitism (hostility to Jews) was central. Kershaw and Falter say that for most voters it was secondary, since they backed the Nazis for other reasons, but it did not put them off either.
 - **Sonderweg:** Long-term German peculiarity (Wehler, Bracher) vs contingency (Evans, Piper).
+
+  *In plain words:* Did Germany follow a long 'special path' (Sonderweg) that led to Nazism? Wehler and Bracher say long-term peculiarities of German development prepared the ground. Evans and Piper stress contingency: the outcome was not fixed in advance but depended on particular events and decisions.
 - **The KPD's role:** Its "social fascism" line and attacks on the SPD contributed to the left's paralysis; GDR historiography downplayed this.
+
+  *In plain words:* Did the Communists help Hitler by attacking the Social Democrats? The KPD (Communist Party) branded the SPD (Social Democrats) 'social fascists' and attacked them, which helped paralyse the left against the Nazis. Historians in communist East Germany (the GDR) played this down.
 
 ## 13. Confidence Assessment
 

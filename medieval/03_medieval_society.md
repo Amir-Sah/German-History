@@ -122,8 +122,14 @@ Birth largely determined status; the harvest determined survival; the Church str
 ## 12. Historiographical Debate
 
 - **"Feudalism" as a concept:** Susan Reynolds (*Fiefs and Vassals*, 1994) argued that the classic model distorts the evidence; German historians often prefer *Lehnswesen* (fief system) and *Grundherrschaft* as separate, more precise concepts.
+
+  *In plain words:* Is 'feudalism' a useful word at all? Susan Reynolds (Fiefs and Vassals, 1994) argued the classic model — lords granting land to vassals in return for loyalty, all in a neat hierarchy — distorts what the sources show. German historians often prefer two separate, more precise terms: Lehnswesen (the system of fiefs among nobles) and Grundherrschaft (a lord's rights over land and the peasants working it).
 - **Ostsiedlung:** Nationalist German and Polish historiographies once framed it as either civilising mission or aggression; post-1970s research (e.g., the German–Polish textbook commission; Jan Piskorski) treats it as part of a Europe-wide colonisation and legal-transfer movement.
+
+  *In plain words:* Was medieval German settlement east of the Elbe a 'civilising mission' or an act of aggression? Nationalist German and Polish historians once argued one or the other. Since the 1970s, research — including the German–Polish textbook commission and Jan Piskorski — treats it as one part of a Europe-wide movement of settlers and of legal models such as town law.
 - **Peasant condition:** Older "misery" narratives vs newer work on village agency and negotiation (Peter Blickle's "communalism" thesis).
+
+  *In plain words:* Were medieval peasants mostly helpless victims? Older accounts told a story of misery and oppression. Newer work, notably Peter Blickle's 'communalism' thesis, stresses that villages acted collectively — negotiating with lords and running their own affairs.
 
 ## 13. Confidence Assessment
 

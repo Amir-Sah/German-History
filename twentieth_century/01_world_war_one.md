@@ -104,11 +104,23 @@ The officer corps, bureaucracy, judiciary, universities and large landowners —
 
 - **War origins:**
   - **Fritz Fischer** (*Griff nach der Weltmacht*, 1961; *Krieg der Illusionen*, 1969) argued Germany deliberately pursued war for continental hegemony — sparking the "Fischer controversy." By the 1980s–90s a consensus accepted a "special responsibility" of the German Reich alongside other powers (Mombauer 2015).
+
+    *In plain words:* Did Germany deliberately start the First World War? Fritz Fischer said yes: its leaders pursued war to dominate the continent (hegemony), which set off a fierce public row, the 'Fischer controversy'. By the 1980s–90s most historians settled on a middle view: the German Reich bore a 'special responsibility', though other powers shared the blame.
   - **Christopher Clark** (*The Sleepwalkers*, 2012) spread responsibility across all powers and elevated Serbia's and Russia's roles; in Germany it had "a near-magical effect" (Mombauer), welcomed by many as relief from guilt.
+
+    *In plain words:* Was the war everyone's fault? Christopher Clark's 'The Sleepwalkers' spread responsibility across all the great powers and gave Serbia and Russia bigger roles. In Germany the book had what historian Annika Mombauer called 'a near-magical effect': many readers welcomed it as relief from national guilt.
   - **Critics** (John Röhl, Annika Mombauer, Gerd Krumeich) point to evidence of deliberate German risk-taking: the December 1912 "war council," Bethmann Hollweg's statements, the blank cheque (5 July 1914) despite high estimated risk of general war, and the September Programme.
+
+    *In plain words:* Is the shared-blame view too kind to Germany? Critics Röhl, Mombauer and Krumeich say German leaders knowingly took big risks: a December 1912 'war council', Chancellor Bethmann Hollweg's statements, the 'blank cheque' of 5 July 1914 (unconditional backing for Austria-Hungary) given despite a high risk of general war, and the September Programme (a list of German war aims).
   - **Current state:** Most specialists see German and Austro-Hungarian decisions in July 1914 as decisive, while acknowledging a system of mutual escalation. **CONTESTED (degree), not binary.**
+
+    *In plain words:* So who was to blame for 1914? Most specialists today say the decisions taken by Germany and Austria-Hungary in July 1914 were decisive, while accepting that all the powers were caught in a cycle of mutual escalation. The argument is about how much blame Germany bears, not a simple guilty-or-innocent verdict.
 - **"Silent dictatorship":** Martin Kitchen's term (1976) for the OHL's rule; others (e.g., Holger Afflerbach) show the OHL's power had limits and depended on popular prestige.
+
+  *In plain words:* Did the army secretly run Germany in the later war years? Martin Kitchen (1976) called the rule of the OHL (the Supreme Army Command under Hindenburg and Ludendorff) a 'silent dictatorship'. Others, such as Holger Afflerbach, show that its power had limits and depended on its prestige with the public.
 - **Hunger deaths:** see §4.
+
+  *In plain words:* How many German civilians died because the British blockade cut off food imports? The often-cited figure of about 700,000–763,000 comes from the German government's own post-war case against the blockade. Some population experts (demographers) argue for lower totals of around 400,000–500,000. The number remains uncertain.
 
 ## 13. Confidence Assessment
 

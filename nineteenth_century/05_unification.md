@@ -106,8 +106,14 @@ The monarchies (22 princely states + 3 free cities remained as federal members);
 ## 12. Historiographical Debate
 
 - **Bismarck as genius vs product of structures:** Older biographies (Gall, Pflanze) vs structural accounts (economic integration, Zollverein, liberal nationalism).
+
+  *In plain words:* Was German unification the work of one brilliant man or of larger forces? Older biographers (Lothar Gall, Otto Pflanze) put Bismarck's personal skill at the centre. Structural historians point instead to deeper developments — economic integration, the customs union (Zollverein) and the liberal national movement — as the driving forces.
 - **"Revolution from above" (Wehler) and "white revolutionary" (Gall):** Bismarck used revolutionary means (war, universal suffrage) for conservative ends.
+
+  *In plain words:* Was Bismarck a conservative or a revolutionary? Two famous labels say both. Hans-Ulrich Wehler called unification a 'revolution from above'; Lothar Gall called Bismarck a 'white revolutionary' (white being the colour of conservative monarchists). Both mean that he used radical tools — war and the vote for all men — to reach conservative goals.
 - **Inevitability:** Recent historians (Clark, Breuilly) stress contingency.
+
+  *In plain words:* Was a Prussian-led unification bound to happen? Recent historians such as Christopher Clark and John Breuilly stress contingency: things could easily have turned out differently. They reject the picture of unification as a predetermined outcome.
 
 ## 13. Confidence Assessment
 

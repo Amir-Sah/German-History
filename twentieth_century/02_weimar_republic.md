@@ -115,10 +115,20 @@ Army officer corps (the Reichswehr, limited to 100,000 by Versailles, remained a
 ## 12. Historiographical Debate
 
 - **Why did Weimar fail?** Structural (constitution, Versailles, economy, elites) vs contingent (1930–33 decisions). Karl Dietrich Bracher's classic *Die Auflösung der Weimarer Republik* (1955) emphasised the power vacuum and presidential system; recent work (e.g., Piper for bpb; Ursula Büttner; Tim B. Müller) emphasises that democracy was not doomed and was destroyed by elite choices.
+
+  *In plain words:* Was Weimar democracy doomed from the start? The 'structural' view blames deep problems: the constitution, the Versailles treaty, the economy and hostile elites; Karl Dietrich Bracher's classic 1955 study stressed a power vacuum and the strong presidential system. Recent historians (Piper, Ursula Büttner, Tim B. Müller) say it was not doomed: choices made by elites in 1930–33 destroyed it.
 - **The Borchardt controversy (1979–):** Knut Borchardt argued Brüning had no room for manoeuvre ("Zwangslagen") because the Weimar economy was already "sick" (wages above productivity) and credit was unavailable. Carl-Ludwig Holtfrerich and others contested the wage data and argued alternatives existed. Albrecht Ritschl accepts Borchardt's diagnosis but locates the constraint in the external debt crisis under the Young Plan. **CONTESTED.**
+
+  *In plain words:* Could Chancellor Brüning have fought the Depression by spending more instead of cutting? Knut Borchardt said no: wages were higher than what workers produced, so the economy was already 'sick', and nobody would lend Germany money. Carl-Ludwig Holtfrerich and others say the wage figures are wrong and alternatives existed; Albrecht Ritschl says the real trap was Germany's foreign debts under the Young Plan (the reparations payment scheme).
 - **Austerity and Nazi votes:** Galofré-Vilà, Meissner, McKee and Stuckler (NBER, 2017/2018) find that districts hit harder by austerity saw larger Nazi vote gains — "austerity is only one factor."
+
+  *In plain words:* Did government spending cuts (austerity) help the Nazis win votes? A 2017/2018 study by the economists Galofré-Vilà, Meissner, McKee and Stuckler found that districts hit harder by the cuts saw bigger Nazi gains. The authors stress that austerity was only one factor among several.
 - **"Crisis of classical modernity" (Peukert):** Weimar as a laboratory of modernity whose tensions were exploited by the Nazis.
+
+  *In plain words:* Was Weimar's crisis really a crisis of modern society itself? The historian Peukert saw Weimar as a 'laboratory of modernity', a society trying out modern ways of living, working and doing politics, whose built-in tensions the Nazis were then able to exploit.
 - **Weimar as "democracy history":** bpb's concluding chapter (2021) frames Weimar as a site of democratic history rather than merely prelude to Nazism.
+
+  *In plain words:* Should Weimar be remembered only as the road to Hitler? Germany's Federal Agency for Civic Education (bpb) argued in 2021 that it should be seen as part of Germany's democratic history, a real democracy worth studying in its own right, rather than merely as the prelude to Nazism.
 
 ## 13. Confidence Assessment
 

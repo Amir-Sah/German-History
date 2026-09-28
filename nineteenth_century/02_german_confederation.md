@@ -102,7 +102,11 @@ Monarchical sovereignty; nobility's privileged access to army and diplomacy; reg
 ## 12. Historiographical Debate
 
 - **Reassessment of the Confederation:** Older nationalist historiography dismissed it; recent work (e.g., Jürgen Müller, *Der Deutsche Bund 1815–1866*) stresses its function as a peace order and its reform debates (e.g., federal reform plans of the 1860s) — similar to the Empire's reassessment.
+
+  *In plain words:* Was the German Confederation simply a failure, or did it do something useful? Older nationalist historians dismissed it because it did not unite Germany. Recent historians such as Jürgen Müller stress that it kept the peace among the German states and seriously debated reforming itself in the 1860s — a rethink similar to the one the old Holy Roman Empire has received.
 - **Economic unity and national unity:** Debate over how far the Zollverein made Prussian leadership "natural" (a *kleindeutsch* retrospective narrative).
+
+  *In plain words:* Did the customs union (Zollverein) make it 'natural' that Prussia would lead a united Germany? Some accounts tell the story backwards from 1871, as if economic unity under Prussia led straight to a Prussian-led Germany without Austria (the 'small German', kleindeutsch, solution). Historians debate how far that is true and how far it is a story written after the fact.
 
 ## 13. Confidence Assessment
 

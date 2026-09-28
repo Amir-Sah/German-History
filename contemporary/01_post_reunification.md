@@ -92,8 +92,14 @@ The Basic Law, federalism, social partnership, the export model, consensus coali
 ## 12. Historiographical Debate
 
 - **The Treuhand:** Institute for Contemporary History (IfZ) research (2017–2022) vs public perception; Böick's "Achilles heel" of unity; debate on responsibility of politics vs agency.
+
+  *In plain words:* Who is responsible for the painful break-up of East German industry by the Treuhand, the agency that sold or closed East German state firms after 1990? Research by the Institute for Contemporary History (2017–2022) is set against public memory of the agency, which Marcus Böick calls the 'Achilles heel' (weak spot) of unity. Did the blame lie with political decisions or with the agency's own actions?
 - **East German grievance and the radical right:** Explanations emphasise economic transformation shocks, demographic decline, GDR-era socialisation, and a sense of cultural devaluation (Steffen Mau, *Lütten Klein*, 2019; *Ungleich vereint*, 2024); others stress ideological factors (ethnic nationalism, anti-migrant attitudes) and party agency. **CONTESTED.**
+
+  *In plain words:* Why is the radical right so strong in eastern Germany? One side, including Steffen Mau, points to the economic shocks after 1990, shrinking populations, attitudes formed under the GDR (communist East Germany) and a feeling that eastern lives were looked down on. Others stress ideas themselves — ethnic nationalism (belonging defined by ancestry) and hostility to migrants — and the choices parties make. The question remains contested.
 - **"Berlin Republic" vs "Bonn Republic":** Continuity or new era?
+
+  *In plain words:* Is united Germany, governed from Berlin, a new kind of state — a 'Berlin Republic' — or simply the old West German 'Bonn Republic' made bigger? Some see a new era; others stress continuity of the same institutions.
 
 ## 13. Confidence Assessment
 

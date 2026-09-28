@@ -115,8 +115,14 @@ Monarchs controlled armies; aristocratic dominance in Prussia; no national state
 ## 12. Historiographical Debate
 
 - **"Failure" vs "learning process":** Older view (Veit Valentin, Taylor) — failed revolution; newer view (Dieter Langewiesche, Osterhammel, Christopher Clark's *Revolutionary Spring*, 2023) — Europe-wide event with lasting institutional effects.
+
+  *In plain words:* Was 1848 simply a failed revolution? Older historians (Veit Valentin, A.J.P. Taylor) say yes: it did not create a united, free Germany. Newer historians (Dieter Langewiesche, Osterhammel, Christopher Clark in Revolutionary Spring) see a Europe-wide event that left lasting institutions behind — a learning process rather than a mere failure.
 - **Social base:** Marxist/GDR historiography — "bourgeois revolution" betrayed by the bourgeoisie; Western social history — multiple parallel revolutions (national, liberal, democratic, social, peasant) with different aims.
+
+  *In plain words:* Who made the revolution, and what did they want? Marxist historians, including those of communist East Germany (the GDR), called it a 'bourgeois revolution' — one the middle classes should have led but betrayed. Western social historians see several revolutions running side by side — national, liberal, democratic, social and peasant — each with different aims.
 - **1848 and the Sonderweg:** Part of the broader Sonderweg debate (see `06_german_empire.md`).
+
+  *In plain words:* Did the failure of 1848 put Germany on a 'special path' (Sonderweg) that set it apart from Western democracies and ended in dictatorship? This question is one part of the wider Sonderweg debate, which is explained in the chapter on the German Empire.
 
 ## 13. Confidence Assessment
 

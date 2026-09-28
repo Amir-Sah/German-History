@@ -112,8 +112,14 @@ In the West: many elites and professionals (judges, doctors, officials, business
 ## 12. Historiographical Debate
 
 - **Success or failure of denazification:** The traditional verdict "administratively successful, ideologically failed" (Bundestag WD summary) vs revisionist work (Mikkel Dack, *Everyday Denazification in Postwar Germany*, CUP 2023) arguing that screening via the *Fragebogen* had real effects on political life and elite recruitment.
+
+  *In plain words:* Did the post-war purge of Nazis (denazification) work? The traditional verdict: it succeeded as administration but failed to change minds. Mikkel Dack (2023) disagrees: screening people with the Fragebogen (a long questionnaire about their Nazi past) had real effects on political life and on who was recruited into leading positions.
 - **Continuities of personnel:** Norbert Frei's *Vergangenheitspolitik* (1996) on Adenauer-era amnesty and integration; debate whether integrating former Nazis stabilised democracy (Hermann Lübbe's "communicative silence" thesis, 1983) or damaged it.
+
+  *In plain words:* Was it good or bad for democracy that many former Nazis were quietly let back into jobs and public life? Norbert Frei studied the amnesties and integration of the Adenauer era (West Germany's first chancellor). Hermann Lübbe (1983) argued that 'communicative silence', not talking about people's Nazi pasts, stabilised democracy; others say it damaged it.
 - **Victimhood narratives** of expellees vs the context of German crimes.
+
+  *In plain words:* How should the suffering of Germans expelled from their homes in the east be remembered? Expellees' own stories cast Germans as victims; the counter-view insists their fate must be seen in the context of the crimes Germany committed.
 
 ## 13. Confidence Assessment
 

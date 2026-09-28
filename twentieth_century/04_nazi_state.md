@@ -117,8 +117,14 @@ Much of the civil service, judiciary, army leadership, universities, businesses,
 ## 12. Historiographical Debate
 
 - **Intentionalism vs functionalism/structuralism:** Did Nazi policy (esp. the Holocaust) follow Hitler's long-held intentions (Karl Dietrich Bracher, Klaus Hildebrand, Eberhard Jäckel, Lucy Dawidowicz) or emerge from institutional chaos and cumulative radicalisation (Broszat, Mommsen)? **Current synthesis** (Kershaw, Browning, Longerich): Hitler's ideological goals and authority were indispensable; the path and timing were shaped by structures, competition and war.
+
+  *In plain words:* Did Nazi policy, above all the Holocaust, follow Hitler's long-held plans (intentionalists: Bracher, Hildebrand, Jäckel, Dawidowicz), or grow out of chaotic rivalry between agencies that pushed each other to ever more extreme steps, 'cumulative radicalisation' (functionalists: Broszat, Mommsen)? Today's synthesis (Kershaw, Browning, Longerich): Hitler's goals and authority were indispensable, but structures, competition and war shaped how and when things happened.
 - **Totalitarianism theory** (Arendt, Friedrich/Brzezinski) vs "fascism" theories; comparisons with Stalinism (Kershaw & Lewin, *Stalinism and Nazism*, 1997).
+
+  *In plain words:* What kind of regime was Nazi Germany? Totalitarianism theory (Arendt; Friedrich and Brzezinski) sees it, like Stalin's Soviet Union, as a system aiming at total control over society. Rival 'fascism' theories classify it instead as a form of fascism, the far-right nationalist type of movement. Kershaw and Lewin's 1997 book compared Nazism and Stalinism directly.
 - **Consent vs coercion:** see `05_everyday_life_under_nazism.md`.
+
+  *In plain words:* Did Germans back the Nazi regime willingly, or were they forced? One side stresses consent, such as citizens informing on neighbours to the Gestapo (secret police); the other stresses terror, mass arrests and rigged votes. Most historians now think both worked together. The debate is set out in the chapter on everyday life under Nazism.
 
 ## 13. Confidence Assessment
 

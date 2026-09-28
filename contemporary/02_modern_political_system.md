@@ -100,9 +100,17 @@ The Basic Law's core design, federalism, the Constitutional Court's centrality, 
 ## 12. Historiographical Debate
 
 - **Is the Brandmauer sustainable?** Especially where the AfD wins pluralities in the East.
+
+  *In plain words:* Can the other parties keep their 'firewall' (Brandmauer) — their refusal to cooperate with the radical-right AfD? The question is sharpest in eastern states where the AfD wins pluralities, meaning the most votes but not a majority.
 - **AfD ban procedure:** Legal (evidence thresholds, VG Köln 2026) and political (backlash) arguments.
+
+  *In plain words:* Should Germany try to ban the AfD? Legal arguments concern evidence thresholds — how much proof of extremism a court demands before acting; the 2026 ruling of the Administrative Court of Cologne (VG Köln) on the AfD is central here. Political arguments concern backlash — a hostile reaction from voters that a ban attempt could provoke.
 - **Reform of federalism and bureaucracy** (speed of planning, digitalisation).
+
+  *In plain words:* How should Germany reform the division of power between the federal government and the 16 states (federalism) and its bureaucracy? The debate is about making planning faster and bringing public administration into the digital age.
 - **Electoral reform (2023)** — BVerfG upheld the size cap but restored the basic-mandate clause (July 2024).
+
+  *In plain words:* Was the 2023 reform of Bundestag elections constitutional? In July 2024 the Federal Constitutional Court (BVerfG) accepted its cap on the size of parliament but restored the 'basic-mandate clause' — the rule that lets a party into parliament below the usual vote threshold if it wins enough local constituency seats.
 
 ## 13. Confidence Assessment
 

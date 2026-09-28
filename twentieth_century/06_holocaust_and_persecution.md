@@ -121,11 +121,23 @@ Many perpetrators returned to civilian careers after 1945; many were never prose
 ## 12. Historiographical Debate
 
 - **Intentionalism vs functionalism:** Did Hitler plan the Holocaust from the start (Jäckel, Dawidowicz) or did it result from cumulative radicalisation of competing agencies (Broszat, Mommsen)? **Synthesis:** Hitler's intentions and authority were essential; the decision process was incremental, with key escalation points in summer–autumn 1941 and December 1941 (Browning, *The Origins of the Final Solution*, 2004; Longerich; Christian Gerlach on December 1941). Exact timing of the "decision" is **CONTESTED**.
+
+  *In plain words:* Did Hitler plan the Holocaust from the start (Jäckel, Dawidowicz), or did it grow step by step as rival Nazi agencies competed to be more radical (Broszat, Mommsen)? Most historians now combine both: Hitler's intentions and authority were essential, but the decision was reached gradually, with key escalations in summer–autumn 1941 and December 1941. Exactly when 'the decision' fell is still disputed.
 - **Perpetrator motives:** Daniel Goldhagen (*Hitler's Willing Executioners*, 1996): an "eliminationist antisemitism" pervading German culture made ordinary Germans willing killers. Christopher Browning (*Ordinary Men*, 1992): situational factors — conformity, careerism, deference, peer pressure, wartime brutalisation — turned ordinary men into killers; antisemitism mattered but was not sufficient. Most historians side closer to Browning while acknowledging ideology's role (USHMM 1996 symposium).
+
+  *In plain words:* Why did ordinary Germans become mass killers? Daniel Goldhagen says an 'eliminationist antisemitism', a hatred of Jews aiming at their removal that ran through German culture, made them willing. Christopher Browning says the situation mattered most: conformity, careerism, obedience, peer pressure and wartime brutality; antisemitism mattered but was not enough on its own. Most historians lean towards Browning.
 - **Knowledge:** Longerich; Bajohr/Pohl ("open secret").
+
+  *In plain words:* How much did ordinary Germans know about the murder of the Jews? Longerich has studied this question, and Bajohr and Pohl describe the killing as an 'open secret': something widely known or suspected even though it was not openly discussed.
 - **Wehrmacht crimes:** The Hamburg Institute's exhibition (1995–99) shattered the "clean Wehrmacht" myth; photo misattributions led to a revised exhibition (2001) with the core findings confirmed.
+
+  *In plain words:* Was the regular German army (the Wehrmacht) innocent of Nazi crimes? For decades many believed in a 'clean Wehrmacht'. An exhibition by the Hamburg Institute (1995–99) shattered that myth. Some photos turned out to be wrongly labelled, so it was revised and reopened in 2001, and its core findings were confirmed.
 - **Resistance memory:** West Germany long celebrated only 20 July (and treated communists as traitors); the GDR celebrated communist resistance. Both instrumentalised.
+
+  *In plain words:* Whose resistance to Hitler did each post-war German state honour? West Germany long celebrated only the 20 July plot against Hitler and treated communist resisters as traitors; East Germany (the GDR) celebrated communist resistance. Both states used the memory of resistance for their own political purposes.
 - **Holocaust singularity vs colonial comparison ("Historikerstreit 2.0," 2021–22).** See `nineteenth_century/08_colonialism.md`.
+
+  *In plain words:* Should the Holocaust be treated as a unique crime, or compared with colonial violence? In 2021–22 a new historians' dispute ('Historikerstreit 2.0') broke out after A. Dirk Moses challenged the central place of Holocaust uniqueness in German memory culture; critics defended it. The debate is set out in the chapter on colonialism.
 
 ## 13. Confidence Assessment
 

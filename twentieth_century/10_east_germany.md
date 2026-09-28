@@ -114,14 +114,32 @@ A single-party state with secret police and ideology — structurally resembling
 ## 12. Historiographical Debate
 
 - **How to characterise the GDR** (Konrad Jarausch, Docupedia 2023):
+
+  *In plain words:* What kind of state was East Germany, and which label fits it best? Konrad Jarausch's 2023 overview sets out the competing answers listed below. Some stress repression; others stress how far the party reached into society, how people took part in or bent its rules, or the welfare it provided. Historians still disagree on the best overall description.
   - **Totalitarian dictatorship** (Klaus Schroeder, Bundestag inquiry commissions 1992–98): emphasises repression.
+
+    *In plain words:* Was the GDR above all a totalitarian dictatorship — a regime aiming at total control over people's lives? Klaus Schroeder and the Bundestag's inquiry commissions (1992–98) say yes and put repression at the centre. Other labels in this debate give more weight to how society lived with, took part in or escaped party rule.
   - **"Thoroughly ruled society"** (*durchherrschte Gesellschaft*, Jürgen Kocka/Alf Lüdtke): party penetration of all spheres, but society not fully controlled.
+
+    *In plain words:* Did the ruling party control everything, or only reach into everything? Jürgen Kocka and Alf Lüdtke call the GDR a 'thoroughly ruled society' (durchherrschte Gesellschaft): the party penetrated every area of life, yet society was never fully under its control. The term sits between the 'totalitarian' label and views that stress ordinary people's room for manoeuvre.
   - **"Welfare dictatorship"** (*Fürsorgediktatur*, Jarausch): captures "the contradictory nature of the political system of the GDR, which both had an emancipatory claim and consisted of Stalinist practice."
+
+    *In plain words:* How can one state both look after and oppress its people? Konrad Jarausch's term 'welfare dictatorship' (Fürsorgediktatur) tries to capture both sides at once: the GDR claimed to free and care for its citizens (an 'emancipatory claim') while ruling with Stalinist methods of repression. It is one of several competing labels for the GDR.
   - **"Participatory dictatorship"** (Mary Fulbrook, *The People's State*, 2005): many citizens took part in running the system; everyday life was often "normal."
+
+    *In plain words:* Was the GDR run only from the top? Mary Fulbrook (The People's State, 2005) calls it a 'participatory dictatorship': many ordinary citizens took part in running the system, and everyday life was often 'normal'. This contrasts with the 'totalitarian dictatorship' label, which puts repression first.
   - **"Eigen-Sinn"** (Alf Lüdtke): people's self-will and appropriation of rules.
+
+    *In plain words:* Did people simply follow the rules the regime gave them? Alf Lüdtke's concept 'Eigen-Sinn' (roughly 'self-will' or 'a sense of one's own') says no: people kept a will of their own and appropriated the rules — reshaping and using them for their own purposes. The idea shifts attention from what the state demanded to how individuals actually behaved.
   - **"Unrechtsstaat"** (state without rule of law): politically contested term — used by the Bundestag and courts; many East Germans find it dismisses their lives.
+
+    *In plain words:* Should the GDR be called an 'Unrechtsstaat' — a state without the rule of law? The Bundestag (German parliament) and German courts use the term. Many East Germans reject it because it seems to dismiss the lives they lived there. The dispute is as much political as historical.
 - **Comparing two dictatorships:** Totalitarianism theory invites comparison with Nazism; most historians compare structures while stressing fundamental differences in aims and crimes.
+
+  *In plain words:* Can East Germany be compared with Nazi Germany? Totalitarianism theory — the idea that dictatorships aiming at total control share key features — invites the comparison. Most historians do compare how the two regimes were built and run, but stress that they differed fundamentally in their aims and in their crimes.
 - **Recent trends** (Samuel Huneke, *CEH* 2022): global and transnational GDR history; links between GDR experiences and present East German political discontent.
+
+  *In plain words:* Where is research on the GDR heading? Samuel Huneke (in the journal Central European History, 2022) sees two trends: placing East Germany in global and transnational (cross-border) history rather than only German history, and asking how experiences in the GDR connect to political discontent in eastern Germany today.
 
 ## 13. Confidence Assessment
 

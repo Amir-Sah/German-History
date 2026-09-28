@@ -90,8 +90,14 @@ Estate society; princely rule; confessional churches; censorship.
 ## 12. Historiographical Debate
 
 - **"Apolitical German" thesis:** Older view (and later Sonderweg arguments) that German intellectuals withdrew into culture, leaving politics to princes. Critics point to lively political journalism, reading societies and reform bureaucracies.
+
+  *In plain words:* Did German thinkers retreat into culture and leave politics to the princes? An older view, later used in 'Sonderweg' (special-path) arguments, says yes. Critics reply that there was lively political journalism, reading societies and reform-minded officials.
 - **Habermas's public sphere (1962):** influential, criticised for idealising a bourgeois male sphere.
+
+  *In plain words:* How useful is Habermas's idea of a 'public sphere' — a space where private people debated public affairs in print, clubs and coffee houses? It has been very influential, but critics say it paints too rosy a picture of a world open mainly to educated middle-class men.
 - **Jewish emancipation as "conditional":** broad agreement that emancipation was framed as a quid pro quo for assimilation.
+
+  *In plain words:* On what terms were Jews offered equal rights? Here historians broadly agree: 'emancipation' (legal equality) was framed as a bargain — rights in exchange for Jews giving up their distinctiveness and assimilating.
 
 ## 13. Confidence Assessment
 

@@ -107,8 +107,14 @@ Shared language, much shared culture (literature, football rivalries, West TV), 
 ## 12. Historiographical Debate
 
 - **Stalin Note (1952):** Genuine missed opportunity (Rolf Steininger) vs propaganda manoeuvre (Hermann Graml, Gerhard Wettig — supported by Soviet archival evidence). Majority now lean towards manoeuvre. **CONTESTED.**
+
+  *In plain words:* In 1952 Stalin offered a united but neutral Germany — did he mean it? Rolf Steininger says it was a genuine chance for unity that the West missed. Hermann Graml and Gerhard Wettig say it was a propaganda manoeuvre, not a serious offer, a view supported by evidence from Soviet archives. Most historians now lean towards 'manoeuvre', but the question remains contested.
 - **Who pushed for the Wall — Ulbricht or Khrushchev?** Hope Harrison (*Driving the Soviets up the Wall*, 2003) shows Ulbricht pressed the Soviets; Khrushchev decided.
+
+  *In plain words:* Was the Berlin Wall East Germany's idea or the Soviet Union's? Hope Harrison (Driving the Soviets up the Wall, 2003) shows that East German leader Walter Ulbricht pressed the Soviets to act, while Soviet leader Nikita Khrushchev took the final decision.
 - **Did Ostpolitik stabilise or undermine the GDR?** Both: it stabilised it economically in the short term and undermined it through contacts and Helsinki norms in the long term. **CONTESTED weighting.**
+
+  *In plain words:* Did Ostpolitik — West Germany's policy of treaties and contacts with the Eastern bloc — prop East Germany up or help bring it down? Both, it seems: in the short term it stabilised the GDR's economy; in the long term, human contacts and the human-rights norms of the 1975 Helsinki agreement weakened it. Historians disagree on which effect weighed more.
 
 ## 13. Confidence Assessment
 
