@@ -88,7 +88,7 @@ const sectionTitle = (s: Period['sections'][number]) => s.name + (s.qualifier ? 
 
       <section class="five" aria-labelledby="five-h">
         <h2 id="five-h">If you remember only 5 things</h2>
-        <ol>{period.fiveThings.map((t) => <li set:html={t} />)}</ol>
+        <ol>{period.fiveThings.map((t) => <li><span set:html={t} /></li>)}</ol>
       </section>
 
       <nav class="chapter-nav" aria-label="Neighbouring chapters">
