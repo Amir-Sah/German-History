@@ -10502,11 +10502,12 @@
 
 - **Kind:** term · institution
 - **Dates:** 1956–1990
+- **Also written as:** NVA
 - **Short:** The GDR's armed forces, part of the Warsaw Pact; conscription from 1962.
-- **Explanation:** The Nationale Volksarmee (NVA), founded in 1956, the year after West Germany's Bundeswehr. It was dissolved at unification in 1990.
+- **Explanation:** The Nationale Volksarmee (NVA), founded in 1956, the year after West Germany's Bundeswehr. It was dissolved at unification in 1990. A party army controlled by the ruling SED, alongside paramilitary youth training in the GDR.
 - **German:** Nationale Volksarmee (NVA)
 - **Main chapter:** [`twentieth_century/10_east_germany.md`](../twentieth_century/10_east_germany.md)
-- **Also in:** `twentieth_century/11_cold_war_germany.md`
+- **Also in:** `themes/militarism.md` · `twentieth_century/11_cold_war_germany.md`
 - **Basis:** KB+K
 
 ### National Socialism
@@ -11106,21 +11107,6 @@
 - **Main chapter:** [`nineteenth_century/02_german_confederation.md`](../nineteenth_century/02_german_confederation.md)
 - **Also in:** `02_MASTER_TIMELINE.md`
 - **Basis:** KB+K
-
-### NVA
-<a id="nva"></a>
-
-- **Kind:** term · institution
-- **Dates:** 1956–1990
-- **Also written as:** National People's Army
-- **Short:** The GDR's army (National People's Army), controlled by the ruling SED.
-- **Explanation:** A party army; the GDR also militarised education with paramilitary youth training. It was dissolved at unification in 1990.
-- **German:** Nationale Volksarmee
-- **Main chapter:** [`twentieth_century/10_east_germany.md`](../twentieth_century/10_east_germany.md)
-- **Also in:** `themes/militarism.md`
-- **Basis:** KB+K
-
-## O
 
 ### occupation of the Ruhr
 <a id="occupation-of-the-ruhr"></a>
@@ -14852,22 +14838,11 @@
 <a id="solidarity-surcharge"></a>
 
 - **Kind:** term · economic term
-- **Dates:** since 1991
+- **Dates:** 1991–
+- **Also written as:** solidarity tax
 - **Short:** Extra income-tax charge introduced after unification to help pay for rebuilding the East.
 - **Explanation:** An additional levy on income tax paid in both East and West. It became a symbol of the cost of unity to West Germans.
 - **German:** Solidaritätszuschlag ('Soli')
-- **Main chapter:** [`contemporary/01_post_reunification.md`](../contemporary/01_post_reunification.md)
-- **Basis:** KB+K
-
-### solidarity tax
-<a id="solidarity-tax"></a>
-
-- **Kind:** term · economic term
-- **Dates:** 1991–
-- **Also written as:** solidarity surcharge
-- **Short:** Surcharge on income tax introduced to help pay for rebuilding eastern Germany.
-- **Explanation:** Solidaritätszuschlag, paid by taxpayers in West and East, one of the ways unification was financed.
-- **German:** Solidaritätszuschlag
 - **Main chapter:** [`contemporary/01_post_reunification.md`](../contemporary/01_post_reunification.md)
 - **Also in:** `twentieth_century/12_reunification.md`
 - **Basis:** KB+K

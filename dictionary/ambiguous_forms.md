@@ -22,6 +22,7 @@
 | Allies | `early_modern/04_prussia_and_austria.md` | — |
 | Allies | `themes/continuity_and_change.md` | — |
 | Allies | `themes/democracy.md` | — |
+| Allies | `twentieth_century/01_world_war_one.md` | [Allies](terms.md#allies-first-world-war) |
 | Allies | `twentieth_century/06_holocaust_and_persecution.md` | — |
 | Allies | `twentieth_century/08_occupation_and_denazification.md` | [Allies](terms.md#allies-second-world-war) |
 | Allies | `twentieth_century/09_west_germany.md` | [Allies](terms.md#allies-second-world-war) |
@@ -70,6 +71,7 @@
 | atonement | `twentieth_century/06_holocaust_and_persecution.md` | [Atonement levy](terms.md#atonement-levy) |
 | Austrian Empire | `early_modern/04_prussia_and_austria.md` | [Austria](places.md#austria) |
 | Austrian Empire | `nineteenth_century/02_german_confederation.md` | [Austria](places.md#austria) |
+| auxiliaries | `ancient/01_germanic_societies.md` | [auxiliaries](terms.md#auxiliaries) |
 | auxiliaries | `twentieth_century/06_holocaust_and_persecution.md` | — |
 | auxiliaries | `twentieth_century/07_world_war_two.md` | — |
 | Baltic | `00_README.md` | — |
@@ -205,6 +207,7 @@
 | chancellor | `twentieth_century/04_nazi_state.md` | [Reich Chancellor](terms.md#reich-chancellor) |
 | chancellor | `twentieth_century/08_occupation_and_denazification.md` | — |
 | chancellor | `twentieth_century/09_west_germany.md` | — |
+| Citizenship | `contemporary/01_post_reunification.md` | [citizenship law](terms.md#citizenship-law) |
 | Citizenship | `medieval/04_cities_church_feudalism.md` | — |
 | civic | `01_RESEARCH_METHOD.md` | — |
 | civic | `03_MENTAL_MODEL.md` | — |
@@ -278,8 +281,10 @@
 | confessional | `themes/political_power.md` | — |
 | confessional | `themes/religion.md` | — |
 | confirmation | `early_modern/04_prussia_and_austria.md` | — |
+| confirmation | `twentieth_century/10_east_germany.md` | [confirmation](terms.md#confirmation) |
 | contributions | `contemporary/02_modern_political_system.md` | — |
 | contributions | `contemporary/04_germany_in_europe.md` | — |
+| contributions | `early_modern/02_thirty_years_war.md` | [contributions](terms.md#contributions) |
 | contributions | `nineteenth_century/02_german_confederation.md` | — |
 | contributions | `nineteenth_century/07_industrial_society.md` | — |
 | contributions | `twentieth_century/09_west_germany.md` | — |
@@ -346,6 +351,7 @@
 | Diet of Worms | `early_modern/01_reformation.md` | [Diet of Worms](terms.md#diet-of-worms-1521) |
 | Diet of Worms | `medieval/02_holy_roman_empire.md` | [Diet of Worms](terms.md#diet-of-worms-1495) |
 | Diets | `medieval/02_holy_roman_empire.md` | [Imperial Diet](terms.md#imperial-diet) |
+| dismantling | `twentieth_century/10_east_germany.md` | [dismantling](terms.md#dismantling) |
 | dismantling | `twentieth_century/12_reunification.md` | — |
 | districts | `contemporary/02_modern_political_system.md` | — |
 | districts | `early_modern/04_prussia_and_austria.md` | — |
@@ -355,6 +361,7 @@
 | districts | `themes/political_power.md` | — |
 | districts | `twentieth_century/02_weimar_republic.md` | — |
 | Dutch | `ancient/01_germanic_societies.md` | — |
+| Dutch | `early_modern/02_thirty_years_war.md` | [Dutch Republic](places.md#dutch-republic) |
 | East Elbian | `early_modern/04_prussia_and_austria.md` | [Elbe](places.md#elbe) |
 | East Elbian | `nineteenth_century/06_german_empire.md` | [East Elbia](places.md#east-elbia) |
 | East Elbian | `twentieth_century/02_weimar_republic.md` | [East Elbia](places.md#east-elbia) |
@@ -571,11 +578,11 @@
 | Gall | `medieval/01_carolingian_world.md` | — |
 | Gall | `nineteenth_century/05_unification.md` | [Lothar Gall](people.md#lothar-gall) |
 | Gotha | `early_modern/03_territorial_states.md` | — |
-| Gotha | `nineteenth_century/07_industrial_society.md` | — |
+| Gotha | `nineteenth_century/07_industrial_society.md` | [Gotha unification](terms.md#gotha-unification) |
 | Gotha | `themes/socialism.md` | — |
 | Gothic | `ancient/01_germanic_societies.md` | [Goths](terms.md#goths) |
 | Gradual | `ancient/02_roman_frontier.md` | — |
-| grand coalition | `twentieth_century/12_reunification.md` | — |
+| grand coalition | `twentieth_century/12_reunification.md` | [grand coalition](terms.md#grand-coalition) |
 | Great Depression | `00_FINAL_EXPLANATION.md` | — |
 | Great Depression | `images/IMAGE_INDEX.md` | — |
 | Great Depression | `nineteenth_century/07_industrial_society.md` | [Great Depression (1873–1895)](terms.md#great-depression-18731895) |
@@ -611,6 +618,7 @@
 | Hull | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Hull | `nineteenth_century/08_colonialism.md` | [Isabel V. Hull](people.md#isabel-v-hull) |
 | Hull | `themes/militarism.md` | — |
+| Israel | `contemporary/04_germany_in_europe.md` | [Israel](places.md#israel) |
 | Israel | `early_modern/05_enlightenment.md` | — |
 | Jordan | `nineteenth_century/04_1848_revolutions.md` | [Wilhelm Jordan](people.md#wilhelm-jordan) |
 | Land | `ancient/02_roman_frontier.md` | — |
@@ -646,6 +654,7 @@
 | Main | `twentieth_century/09_west_germany.md` | — |
 | mass organisations | `twentieth_century/04_nazi_state.md` | — |
 | mass organisations | `twentieth_century/05_everyday_life_under_nazism.md` | — |
+| mass organisations | `twentieth_century/10_east_germany.md` | [mass organisations](terms.md#mass-organisations) |
 | Max | `early_modern/02_thirty_years_war.md` | — |
 | Max | `twentieth_century/01_world_war_one.md` | [Prince Max of Baden](people.md#prince-max-of-baden) |
 | Max | `twentieth_century/04_nazi_state.md` | [Prince Max of Baden](people.md#prince-max-of-baden) |
@@ -814,6 +823,7 @@
 | reaction | `twentieth_century/09_west_germany.md` | — |
 | rearmament | `contemporary/01_post_reunification.md` | — |
 | rearmament | `contemporary/04_germany_in_europe.md` | — |
+| rearmament | `twentieth_century/04_nazi_state.md` | [rearmament](terms.md#rearmament) |
 | Reich | `00_FINAL_EXPLANATION.md` | — |
 | Reich | `00_README.md` | — |
 | Reich | `01_RESEARCH_METHOD.md` | — |
@@ -857,7 +867,9 @@
 | Reichstag | `twentieth_century/02_weimar_republic.md` | [Reichstag](terms.md#reichstag) |
 | Reichstag | `twentieth_century/03_rise_of_nazism.md` | — |
 | Reichstag | `twentieth_century/04_nazi_state.md` | — |
+| Reparations | `twentieth_century/02_weimar_republic.md` | [reparations](terms.md#reparations) |
 | Reparations | `twentieth_century/08_occupation_and_denazification.md` | — |
+| reparations | `twentieth_century/02_weimar_republic.md` | [reparations](terms.md#reparations) |
 | reparations | `twentieth_century/08_occupation_and_denazification.md` | — |
 | reparations | `twentieth_century/10_east_germany.md` | — |
 | resettlers | `contemporary/03_modern_society.md` | — |
@@ -922,9 +934,11 @@
 | Soviet Russia | `twentieth_century/01_world_war_one.md` | — |
 | State Council | `05_REGIME_MATRIX.md` | — |
 | State Council | `themes/political_power.md` | — |
+| state within the state | `nineteenth_century/07_industrial_society.md` | [State within the state](terms.md#state-within-the-state) |
 | state within the state | `twentieth_century/02_weimar_republic.md` | — |
 | state within the state | `twentieth_century/04_nazi_state.md` | — |
 | Stein | `nineteenth_century/01_napoleon.md` | [Karl vom und zum Stein](people.md#karl-vom-stein) |
+| subsidies | `early_modern/03_territorial_states.md` | [subsidies](terms.md#subsidies) |
 | subsidies | `twentieth_century/02_weimar_republic.md` | — |
 | Taylor | `04_QUESTIONS_WORTH_EXPLORING.md` | — |
 | Taylor | `medieval/02_holy_roman_empire.md` | [A.J.P. Taylor](people.md#a-j-p-taylor) |

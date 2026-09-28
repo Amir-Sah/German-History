@@ -101,6 +101,6 @@ Some dates differ between files because they mark *different things*. The conven
 
 ## 10. Dictionary and plain-language lines
 
-The knowledge base includes a reference dictionary (`dictionary/`) of 2,300 entries (437 people, 280 places, 1,583 terms) extracted from the chapter text and verified against well-established reference sources. Entries marked "Basis: KB+K" combine knowledge base content with reliable general knowledge, such as standard biographical dates. All entries were fact-checked but are not audited claim by claim like the source audit; some recent items (e.g., September 2026 election figures) come from KB text and are not independently verified.
+The knowledge base includes a reference dictionary (`dictionary/`) of 2,298 entries (437 people, 280 places, 1,581 terms) extracted from the chapter text and verified against well-established reference sources. Entries marked "Basis: KB+K" combine knowledge base content with reliable general knowledge, such as standard biographical dates. All entries were fact-checked but are not audited claim by claim like the source audit; some recent items (e.g., September 2026 election figures) come from KB text and are not independently verified.
 
 Dense historiographical debates (section 12 of each period file) were made more accessible by adding a short "In plain words" explanation paragraph after each debate point. These 122 lines paraphrase the KB text and are meant for readers unfamiliar with the debates. They do not add new sources or interpretations.

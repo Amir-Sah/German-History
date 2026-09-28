@@ -158,9 +158,9 @@ All named entities (people, places, terms) mentioned across the 35 period files 
 |---|---|
 | People | 437 |
 | Places | 280 |
-| Terms | 1,583 |
+| Terms | 1,581 |
 | Ambiguous rows | 1,135 (338 resolved; 797 unresolved) |
-| Total entries | 2,300 |
+| Total entries | 2,298 |
 | Fact-check fixes applied | 9 |
 | "In plain words" lines added to §12 (historiographical debate) sections | 122 |
 

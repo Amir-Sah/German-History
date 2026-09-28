@@ -19,7 +19,7 @@ Full log: `sources/SOURCE_AUDIT.md` → "Consistency pass 2". Rules: `01_RESEARC
 - Three chapter titles gained date ranges (`medieval/04`, `nineteenth_century/04`, `contemporary/04`); `nineteenth_century/06` and `contemporary/02` titles were reformatted.
 
 ### A2. Dictionary of people, places and terms — done
-A new folder `dictionary/` is being added to the KB: `people.md`, `places.md`, `terms.md`, `ambiguous_forms.md` and `README.md`. It has about 2,300 entries (≈440 people, ≈280 places, ≈1,580 terms). Every entry has:
+A new folder `dictionary/` is being added to the KB: `people.md`, `places.md`, `terms.md`, `ambiguous_forms.md` and `README.md`. It has about 2,298 entries (≈440 people, ≈280 places, ≈1,580 terms). Every entry has:
 
 - a canonical name;
 - "Also written as" (the exact surface forms used in the KB);
@@ -36,7 +36,7 @@ A new folder `dictionary/` is being added to the KB: `people.md`, `places.md`, `
 
 `ambiguous_forms.md` says, for each chapter, which entry an ambiguous form means (e.g. "Reichstag" = Imperial Diet in the early modern chapters, the parliament after 1871). "—" means: do not highlight it there.
 
-**Status:** Complete. Final counts: 437 people, 280 places, 1,583 terms, 1,135 ambiguous rows (338 resolved, 797 unresolved) = 2,300 total. 9 fact-check fixes applied. Dictionary written to `dictionary/{people,places,terms,ambiguous_forms}.md` and `dictionary/README.md`. Ready for Part C.
+**Status:** Complete. Final counts: 437 people, 280 places, 1,581 terms, 1,128 ambiguous rows (345 resolved, 783 unresolved) = 2,298 total. 9 fact-check fixes applied. Dictionary written to `dictionary/{people,places,terms,ambiguous_forms}.md` and `dictionary/README.md`. Ready for Part C.
 
 ### A3. "In plain words" lines for every historiographical debate — done
 Each item in §12 "Historiographical Debate" of the 35 period files will get an indented paragraph starting `*In plain words:*` (122 lines in total). It explains the dispute for a non-specialist: the question, the sides and any jargon. Example (Weimar, Borchardt controversy):
