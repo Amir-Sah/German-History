@@ -32,7 +32,8 @@ for (const w of [360, 600, 768]) {
   check(shown <= 6 && bad.length === 0, `card "Also in": ${shown} shown of ${chips.length}, non-chapters: ${bad.map((c) => c.t).join(', ') || 'none'}`);
   const moreTxt = await p.$eval('#dx-card [data-f="also-more"]', (e) => (e.hidden ? '' : e.textContent));
   check(chips.length <= 6 || /^Show all \(\d+\)$/.test(moreTxt), `"Show all" button: "${moreTxt}"`);
-  check(await p.$eval('#dx-card [data-f="main"]', (e) => /coming soon/i.test(e.textContent)), 'unbuilt main chapter shows "coming soon"');
+  const main = await p.$eval('#dx-card [data-f="main"]', (e) => ({ link: !!e.querySelector('a[href]'), soon: /coming soon/i.test(e.textContent) }));
+  check(main.link !== main.soon, `main chapter is a link when built, "coming soon" otherwise (${main.link ? 'link' : 'coming soon'})`);
   const metaGap = await p.$eval('#dx-card .dx-card-meta', (m) => [...m.children].filter((c) => getComputedStyle(c).display !== 'none')[0]?.getBoundingClientRect().left - m.getBoundingClientRect().left);
   check(metaGap < 1, `date line starts flush (offset ${metaGap}px)`);
   const basisHidden = await p.$eval('#dx-card [data-f="basis"]', (e) => getComputedStyle(e).display === 'none');

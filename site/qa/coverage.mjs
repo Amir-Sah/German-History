@@ -32,6 +32,15 @@ for (const p of periods) {
     matrixRows: [count(h, /<div class="matrix-row">/g), p.matrix ? 12 : 0],
     constitution: [count(h, /<section class="constitution"/g), 1],
   };
+  // image frames use the measured proportions (a silent fallback to 4:3 went unnoticed once)
+  const layout = JSON.parse(fs.readFileSync('src/content/generated/image-layout.json', 'utf8')).sizes;
+  const wrongRatio = p.images.filter((i) => {
+    const size = layout[i.id];
+    if (!size) return false;
+    const want = Math.min(21 / 9, Math.max(4 / 5, size[0] / size[1])).toFixed(4);
+    return !h.includes(`id="img-${i.id}"><div class="fig-media`) || !new RegExp(`id="img-${i.id}"><div[^>]*aspect-ratio:${want}`).test(h);
+  });
+  expect.imageProportions = [p.images.length - wrongRatio.length, p.images.length];
   for (const [k, [got, want]] of Object.entries(expect)) {
     if (got !== want) { strictFails++; console.log(`✖ ${p.slug}: ${k} ${got}/${want}`); }
   }

@@ -137,6 +137,8 @@ body.calm, .sec.calm {
   --era-line: var(--rule);
 }
 body.calm, .sec.calm { --dx-person: var(--ink-2); --dx-place: var(--ink-2); }
+/* No map pins in the calm register (they read like a travel map next to places of persecution); places keep weight + underline. */
+body.calm a.dx-place.dx-first::before, .sec.calm a.dx-place.dx-first::before { display: none; }
 body.calm *, .sec.calm * { animation: none !important; transition: none !important; }
 
 /* ── base ─────────────────────────────────────────────────────────────── */
