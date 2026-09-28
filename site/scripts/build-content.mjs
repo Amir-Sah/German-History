@@ -19,7 +19,7 @@ import {
   escapeHtml,
 } from './lib/markdown.mjs';
 import { makeResolver, periodSlug, PERIOD_FOLDERS } from './lib/routes.mjs';
-import { BUILT_PAGES } from './lib/scope.mjs';
+import { BUILT_PAGES, BUILT_ERAS } from './lib/scope.mjs';
 import { Period, Image } from './lib/schema.mjs';
 import { parseDictionary, makeMatcher, dictHref, dictLetter, matchForms } from './lib/dictionary.mjs';
 
@@ -784,6 +784,7 @@ write('dictionary', {
   entries: dictionary.entries.map((e) => ({ ...e, letter: dictLetter(e.name), href: dictHref(e), matchForms: matchForms(e) })),
 });
 write('kb-titles', kbTitles);
+write('scope', { builtEras: BUILT_ERAS, builtPages: BUILT_PAGES });
 write('dictionary-matches', dictLog);
 write('audit', audit);
 write('bibliography', bibliography);

@@ -43,6 +43,7 @@ const sectionTitle = (s: Period['sections'][number]) => s.name + (s.qualifier ? 
         <p class="kicker">{period.groupLabel} · <code>{period.file}</code></p>
         <h1 set:html={period.titleHtml} />
         <p class="hero-date">{period.dateLabel}</p>
+        {period.preambleHtml && <div class="preamble" set:html={period.preambleHtml} />}
       </div>
       <div class="lead" id="s1">
         <h2 class="visually-hidden">1. Period in One Paragraph</h2>

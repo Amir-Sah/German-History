@@ -15,7 +15,7 @@ const { rows, extraHeads } = Astro.props;
             <span class="conf-badges">
               {r.levels.map((l, i) => (<>{i > 0 && <span aria-hidden="true">–</span>}<span class={`conf conf-${l.toLowerCase()}`} title={levelMeaning(l)}>{l}</span></>))}
             </span>
-            {r.qualifier && <span class="conf-q">({r.qualifier})</span>}
+            {r.qualifier && <span class="conf-q"> ({r.qualifier})</span>}
           </td>
           {r.extraHtml.map((h) => <td set:html={h} />)}
         </tr>

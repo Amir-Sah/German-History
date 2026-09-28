@@ -2,9 +2,26 @@
   "_about": "Editorial flags for images that show how power wanted to be seen (propaganda, official art, posed photographs). Flagging is a classification, not new history: each flag cites the knowledge-base text that justifies it. The note shown on the site is the image's own caption plus the checklist in sources/primary_sources.md ('How to read primary sources critically'). Traced in CONTENT_TRACE.md §1 (id I1).",
   "basis": "images/IMAGE_INDEX.md, 'How images were chosen': \"Propaganda (the Völkischer Beobachter, Hitler Youth marches), official art (Bürde, Hünten) and posed colonial photographs show how power wanted to be seen — read them with the same source criticism as texts.\"",
   "flags": {
-    "kaiserproklamation": { "kind": "official art", "why": "Bürde is named as official art in IMAGE_INDEX.md 'How images were chosen'; the brief names 'Bürde's celebration of the new emperor'." },
-    "koeniggraetz": { "kind": "official art", "why": "Hünten is named as official art in IMAGE_INDEX.md 'How images were chosen'." },
-    "kolonialbeamter": { "kind": "posed photograph", "why": "'Posed colonial photographs' in IMAGE_INDEX.md 'How images were chosen'; the brief names 'the posed colonial photo'." }
+    "kaiserproklamation": {
+      "kind": "official art",
+      "why": "Bürde is named as official art in IMAGE_INDEX.md 'How images were chosen'; the brief names 'Bürde's celebration of the new emperor'."
+    },
+    "koeniggraetz": {
+      "kind": "official art",
+      "why": "Hünten is named as official art in IMAGE_INDEX.md 'How images were chosen'."
+    },
+    "kolonialbeamter": {
+      "kind": "posed photograph",
+      "why": "'Posed colonial photographs' in IMAGE_INDEX.md 'How images were chosen'; the brief names 'the posed colonial photo'."
+    },
+    "hj-march": {
+      "kind": "propaganda",
+      "why": "'Hitler Youth marches' are named as propaganda in IMAGE_INDEX.md 'How images were chosen'; the index title is 'Hitler Youth propaganda march'."
+    },
+    "vb-enabling": {
+      "kind": "propaganda",
+      "why": "'the Völkischer Beobachter' is named as propaganda in IMAGE_INDEX.md 'How images were chosen'; the caption calls it 'The Nazi party paper celebrating the Enabling Act'."
+    }
   },
-  "pendingReview": "Völkischer Beobachter and Hitler Youth images are flagged during rollout once their index ids are confirmed."
+  "openQuestions": "Not flagged without the owner's decision (official messaging of other states, not named in IMAGE_INDEX.md): white-rose (RAF leaflet drop), hakenkreuz (US Army newsreel), wir-bleiben (West German government poster)."
 }

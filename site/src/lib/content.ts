@@ -6,7 +6,7 @@ import auditJson from '../content/generated/audit.json';
 import methodJson from '../content/generated/method.json';
 import kbTitlesJson from '../content/generated/kb-titles.json';
 import dictionaryJson from '../content/generated/dictionary.json';
-import { BUILT_ERAS } from '../../scripts/lib/scope.mjs';
+import scopeJson from '../content/generated/scope.json';
 
 export type Period = (typeof periodsJson)[number];
 export type ImageRec = (typeof imagesJson)[number];
@@ -15,7 +15,7 @@ export const periods = periodsJson as Period[];
 export const images = imagesJson as ImageRec[];
 export const audit = auditJson;
 export const method = methodJson;
-export const builtEras: string[] = BUILT_ERAS;
+export const builtEras: string[] = scopeJson.builtEras;
 
 export const kbTitles = kbTitlesJson as Record<string, string>;
 export type DictEntry = (typeof dictionaryJson.entries)[number];

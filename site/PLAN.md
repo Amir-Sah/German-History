@@ -240,4 +240,4 @@ A shared system on all pages: one serif for reading (Source Serif 4), one grotes
 - [x] C4 "In plain words" panels in every debate card and sub-point.
 - [x] C5 `qa/dictionary.mjs` (no highlights in headings/links/credits/code, completeness, stale overrides, keyboard, touch, toggle, axe on the open card); screenshots at 360/375 and 1280 px, light and dark.
 
-**Next:** roll the chapter pattern out to the other 34 eras (step 8.3).
+**Step 8.3 (29 Sept 2026):** all 35 era chapters built from the same template; moods for every era group; calm sections for the GDR and Cold War chapters; propaganda flags for the Hitler Youth and *Völkischer Beobachter* images; audit claims mapped to 28 chapters. Next: Journey home page, then regimes, themes, timeline, gallery, questions, self-check.

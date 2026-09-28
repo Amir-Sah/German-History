@@ -24,7 +24,7 @@ for (const p of periods) {
     sections: [count(h, /<details class="sec /g), 13],
     images: [p.images.filter((i) => h.includes(`id="img-${i.id}"`)).length, p.images.length],
     misconceptions: [count(h, /<li class="myth"/g), blocks.find((b) => b.type === 'misconceptions').items.length],
-    debates: [count(h, /<li class="debate/g), blocks.find((b) => b.type === 'debates')?.items.length ?? 0],
+    debates: [count(h, /<li class="debate(?!-sub)/g), blocks.find((b) => b.type === 'debates')?.items.length ?? 0],
     confidenceRows: [count(h, /<td class="conf-cell">/g), blocks.find((b) => b.type === 'confidence').rows.length],
     sources: [count(h, /<ul class="sources">[\s\S]*?<\/ul>/g) ? count(h.match(/<ul class="sources">[\s\S]*?<\/ul>/)[0], /<li>/g) : 0, blocks.find((b) => b.type === 'sources').items.length],
     fiveThings: [count(h.match(/<section class="five"[\s\S]*?<\/section>/)?.[0] ?? '', /<li>/g), 5],

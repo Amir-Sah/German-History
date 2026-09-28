@@ -1,24 +1,29 @@
 ---
-// Preview landing for the vertical slice. The Journey (00_FINAL_EXPLANATION.md) replaces this page in the rollout.
+// Temporary home: links to all era chapters by group. The Journey (00_FINAL_EXPLANATION.md) replaces this page next.
 import Base from '../layouts/Base.astro';
 import TimeRibbon from '../components/TimeRibbon.astro';
-import { periods, builtEras } from '../lib/content';
-const built = periods.filter((p) => builtEras.includes(p.slug));
+import { periods, method, eraHref } from '../lib/content';
+const groups = method.groups.map((g) => ({ ...g, items: periods.filter((p) => p.group === g.id) }));
 ---
-<Base title="Preview">
+<Base title="Home">
   <TimeRibbon slot="ribbon" />
   <div class="wrap page">
-    <p class="kicker">Build preview · vertical slice</p>
+    <p class="kicker">Build preview</p>
     <h1>German History, Explained</h1>
     <p class="lead-small">
-      This preview contains one complete era chapter, built with the pattern that every chapter will use. The Journey
-      through the ten Parts of <code>00_FINAL_EXPLANATION.md</code> becomes this home page in the next step.
+      All 35 era chapters are built. The Journey through the ten Parts of <code>00_FINAL_EXPLANATION.md</code> becomes this
+      home page in the next step.
     </p>
-    <ul class="card-list">
-      {built.map((p) => (
-        <li class="card"><a href={`/eras/${p.slug}/`}><span class="card-kicker">{p.groupLabel}</span><span class="card-title">{p.title}</span><span class="card-date">{p.dateLabel}</span></a></li>
-      ))}
-    </ul>
-    <p><a href="/eras/">All 35 era chapters</a> · <a href="/how-we-know/">How the research was done</a> · <a href="/dictionary/">Dictionary</a></p>
+    {groups.map((g) => (
+      <section aria-labelledby={`h-${g.id}`}>
+        <h2 id={`h-${g.id}`} class="kicker">{g.label}</h2>
+        <ul class="card-list">
+          {g.items.map((p) => (
+            <li class="card"><a href={eraHref(p.slug) ?? '#'}><span class="card-title">{p.title}</span><span class="card-date">{p.dateLabel}</span></a></li>
+          ))}
+        </ul>
+      </section>
+    ))}
+    <p><a href="/dictionary/">Dictionary</a> · <a href="/how-we-know/">How the research was done</a> · <a href="/how-we-know/audit/">Source audit</a></p>
   </div>
 </Base>

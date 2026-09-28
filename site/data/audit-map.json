@@ -1,6 +1,125 @@
 {
   "_about": "Editorial mapping of SOURCE_AUDIT.md claim numbers to the period chapters that make the same claim. Rule: a claim maps to a chapter when the chapter's §13 Confidence table or text states the same finding. Traced in CONTENT_TRACE.md §1 (id A1). Filled for the Weimar slice; the rest is added during rollout.",
   "map": {
-    "twentieth_century/02_weimar_republic.md": [28, 29, 30, 32]
+    "ancient/01_germanic_societies.md": [
+      1
+    ],
+    "ancient/02_roman_frontier.md": [
+      2,
+      3
+    ],
+    "medieval/02_holy_roman_empire.md": [
+      4,
+      5,
+      6
+    ],
+    "medieval/03_medieval_society.md": [
+      7
+    ],
+    "early_modern/01_reformation.md": [
+      8,
+      9
+    ],
+    "early_modern/02_thirty_years_war.md": [
+      10,
+      11
+    ],
+    "early_modern/04_prussia_and_austria.md": [
+      12
+    ],
+    "nineteenth_century/01_napoleon.md": [
+      13,
+      14,
+      15
+    ],
+    "nineteenth_century/02_german_confederation.md": [
+      16
+    ],
+    "nineteenth_century/04_1848_revolutions.md": [
+      17
+    ],
+    "nineteenth_century/05_unification.md": [
+      18
+    ],
+    "nineteenth_century/06_german_empire.md": [
+      19,
+      20,
+      21
+    ],
+    "nineteenth_century/08_colonialism.md": [
+      22
+    ],
+    "twentieth_century/01_world_war_one.md": [
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "twentieth_century/02_weimar_republic.md": [
+      28,
+      29,
+      30,
+      32
+    ],
+    "twentieth_century/03_rise_of_nazism.md": [
+      29,
+      31,
+      32
+    ],
+    "twentieth_century/04_nazi_state.md": [
+      33,
+      34,
+      35
+    ],
+    "twentieth_century/05_everyday_life_under_nazism.md": [
+      35,
+      36,
+      41
+    ],
+    "twentieth_century/06_holocaust_and_persecution.md": [
+      37,
+      38,
+      39,
+      40,
+      41
+    ],
+    "twentieth_century/07_world_war_two.md": [
+      42
+    ],
+    "twentieth_century/08_occupation_and_denazification.md": [
+      43,
+      44
+    ],
+    "twentieth_century/09_west_germany.md": [
+      45,
+      46,
+      47
+    ],
+    "twentieth_century/10_east_germany.md": [
+      48,
+      51
+    ],
+    "twentieth_century/11_cold_war_germany.md": [
+      50,
+      52
+    ],
+    "twentieth_century/12_reunification.md": [
+      53,
+      54
+    ],
+    "contemporary/01_post_reunification.md": [
+      55,
+      56,
+      58
+    ],
+    "contemporary/02_modern_political_system.md": [
+      57,
+      58,
+      59
+    ],
+    "contemporary/03_modern_society.md": [
+      56
+    ]
   }
 }

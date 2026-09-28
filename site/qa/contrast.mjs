@@ -26,7 +26,7 @@ const { server, url } = await serve(path.resolve('dist'));
 const browser = await launch();
 let bad = 0;
 for (const scheme of ['light', 'dark']) {
-  for (const mood of ['', 'mood-weimar']) {
+  for (const mood of ['', 'mood-weimar', 'mood-vellum', 'mood-woodcut', 'mood-callot', 'mood-biedermeier', 'mood-iron', 'mood-two-inks', 'mood-civic']) {
     const page = await (await browser.newContext({ colorScheme: scheme })).newPage();
     await page.goto(url + '/eras/');
     const res = await page.evaluate(({ PAIRS, mood }) => {
