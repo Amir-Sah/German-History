@@ -36,12 +36,15 @@ const esc = (s) => String(s ?? '').replaceAll('|', '\\|').replace(/\s+/g, ' ').t
 const words = (s) => (s ?? '').trim().split(/\s+/).filter(Boolean).length;
 
 // 1. misreadings (suppressed on the site)
-const misreadings = overrides.map((o) => {
+const allOverrides = overrides.map((o) => {
   const id = plain.resolve(o.form, o.chapter);
   const e = id ? dict.byId.get(id) : null;
   const inAmb = dict.amb.has(o.form);
   return { ...o, entry: e, inAmb, why: o.why.replace(/\s*\(was: [^)]*\)\s*$/, '') };
 });
+// Still wrong = the dictionary itself still links the form to an entry in that chapter.
+const misreadings = allOverrides.filter((m) => m.entry);
+const redundantOverrides = allOverrides.filter((m) => !m.entry);
 
 // 2. rows for site/ files
 const ambLines = raw['dictionary/ambiguous_forms.md'].split('\n');
@@ -89,6 +92,9 @@ const notInMain = dict.entries
     return { e, anyText, ambForms };
   });
 
+const a = notInMain.filter((x) => !x.anyText);
+const b = notInMain.filter((x) => x.anyText);
+
 // 6. length limits (dictionary/README.md: Short ≤ 18 words, Explanation ≤ 60 words)
 const longShort = dict.entries.filter((e) => words(e.short) > 18);
 const longExpl = dict.entries.filter((e) => words(e.explanation) > 60);
@@ -120,12 +126,12 @@ P(`| 1 | Word highlighted as the wrong entry (misreading) | ${misreadings.length
 P(`| 2 | \`ambiguous_forms.md\` rows that point at non-chapter files (\`site/…\`, task files) | ${siteRows.length} | \`ambiguous_forms.md\` (delete rows) |`);
 P(`| 3 | "Also in" chapters supported only by a misreading | ${alsoOnlyMisread.length} | entry's **Also in** |`);
 P(`| 4 | Forms shared by several entries but missing from \`ambiguous_forms.md\` (never highlighted) | ${sharedNotInTable.length} | \`ambiguous_forms.md\` (add rows) |`);
-P(`| 5 | Entries never found in their own main chapter | ${notInMain.length} | entry's **Also written as** or **Main chapter** |`);
+P(`| 5 | Entries never found in their own main chapter: 5a no spelling there / 5b blocked by the table / 5c only inside a longer name | ${a.length} / ${notInMain.filter((x) => x.anyText && x.ambForms.length).length} / ${notInMain.filter((x) => x.anyText && !x.ambForms.length).length} | entry's **Also written as**, **Main chapter**, or \`ambiguous_forms.md\` |`);
 P(`| 6 | **Short** longer than 18 words / **Explanation** longer than 60 words | ${longShort.length} / ${longExpl.length} | entry text |`);
 P(`| 7 | Structural errors (malformed entries, bad links) | ${errors.length} | as listed |`);
 P(`| 8 | README counts differ from the files | ${countMismatch.length} | \`dictionary/README.md\` |`);
 P();
-P('The website currently works around 1 (the 72 pairs are shown as plain text, see `site/data/dictionary-overrides.json`) and ignores 2. Once 1 is fixed in `ambiguous_forms.md`, those workarounds can be deleted.');
+P(`Site-side workarounds (\`site/data/dictionary-overrides.json\`): ${overrides.length} in use, of which ${redundantOverrides.length} are no longer needed because the dictionary now resolves those words correctly.`);
 P();
 
 P('## 1. Misreadings — add a row to `ambiguous_forms.md` for each');
@@ -163,7 +169,7 @@ P();
 
 P('## 4. Forms shared by several entries but missing from `ambiguous_forms.md`');
 P();
-P('These surface forms belong to more than one entry and have no row in `ambiguous_forms.md`, so the website never highlights them (it cannot know which entry is meant). **Fix:** add a row per chapter naming the right entry (or `—`), or remove the form from the entries where it is not a real alternative name.');
+P('These surface forms belong to more than one entry and have no row in `ambiguous_forms.md`, so the website never highlights them (it cannot know which entry is meant). **Fix:** if the entries describe the same thing (e.g. an abbreviation and its full name as two entries), **merge them into one entry**; otherwise add a row per chapter to `ambiguous_forms.md` naming the right entry, or remove the form from the entry where it is not a real alternative name.');
 P();
 P('| Form | Claimed by | Occurs in chapters |');
 P('|---|---|---|');
@@ -174,8 +180,6 @@ P('## 5. Entries never found in their own main chapter');
 P();
 P('The website finds no highlight for these entries in the chapter named as **Main chapter**. Two causes: (a) the chapter uses a spelling that is not listed under **Also written as** — add it; (b) the name occurs but only as an ambiguous form that has no row for this chapter — add the row to `ambiguous_forms.md`. If the entry is really not discussed in that chapter, correct **Main chapter**.');
 P();
-const a = notInMain.filter((x) => !x.anyText);
-const b = notInMain.filter((x) => x.anyText);
 P(`### 5a. No listed form occurs in the main chapter (${a.length})`);
 P();
 P('The last column shows where a listed form **does** occur — usually the right main chapter. "none" means no listed spelling occurs anywhere: add the spelling the text uses (e.g. "Hans and Sophie Scholl" contains neither "Hans Scholl" nor "Sophie Scholl" as written) or remove the entry.');
@@ -187,11 +191,23 @@ for (const { e } of a) {
   P(`| ${esc(e.name)} (${ref(e)}) | \`${e.main}\` | ${e.forms.map(esc).join(' · ')} | ${where.length ? where.map((c) => `\`${c}\``).join(' · ') : 'none'} |`);
 }
 P();
-P(`### 5b. A form occurs, but the match is blocked (ambiguous, shared, or only inside a longer name) (${b.length})`);
+const b1 = b.filter((x) => x.ambForms.length);
+const b2 = b.filter((x) => !x.ambForms.length);
+P(`### 5b. A form occurs, but \`ambiguous_forms.md\` blocks it in the main chapter (${b1.length})`);
 P();
-P('| Entry | Main chapter | Ambiguous/shared forms |');
+P('The name occurs, but the table says `—` (or has no row) for this chapter, so it is never highlighted where it matters most. **Fix:** give the row for the main chapter the entry id. If the same short form means two different entries in one chapter (e.g. "Meissner" in the Weimar chapter is both State Secretary Otto Meissner and the economist Christopher M. Meissner), the table cannot express it: add the fuller spelling the text uses to "Also written as" (e.g. "State Secretary Meissner"), or accept plain text there.');
+P();
+P('| Entry | Main chapter | Blocked forms |');
 P('|---|---|---|');
-for (const { e, ambForms } of b) P(`| ${esc(e.name)} (${ref(e)}) | \`${e.main}\` | ${ambForms.map(esc).join(' · ') || '— (occurs only inside a longer matched name)'} |`);
+for (const { e, ambForms } of b1) P(`| ${esc(e.name)} (${ref(e)}) | \`${e.main}\` | ${ambForms.map(esc).join(' · ')} |`);
+P();
+P(`### 5c. The name occurs only inside a longer word or a longer dictionary name (${b2.length}) — low priority`);
+P();
+P('Example: "Ruhr" occurs only within "Ruhr occupation", which is its own entry, so the longer entry is highlighted instead; or the text has the name only as part of a longer word. Often nothing needs to change. **Fix only if wrong:** correct **Main chapter** to a chapter that names the entry on its own.');
+P();
+P('| Entry | Main chapter |');
+P('|---|---|');
+for (const { e } of b2) P(`| ${esc(e.name)} (${ref(e)}) | \`${e.main}\` |`);
 P();
 
 P('## 6. Length limits (`dictionary/README.md`: Short ≤ 18 words, Explanation ≤ 60 words)');
@@ -214,4 +230,4 @@ for (const k of countMismatch) P(`- ${k}: README says ${claimed[k]}, files conta
 P();
 
 fs.writeFileSync(path.join(SITE, 'DICTIONARY_ISSUES.md'), out.join('\n'));
-console.log(`DICTIONARY_ISSUES.md: 1:${misreadings.length} 2:${siteRows.length} 3:${alsoOnlyMisread.length} 4:${sharedNotInTable.length} 5:${notInMain.length} (${a.length}+${b.length}) 6:${longShort.length}/${longExpl.length} 7:${errors.length} 8:${countMismatch.length}`);
+console.log(`DICTIONARY_ISSUES.md: redundant overrides ${redundantOverrides.length}; 1:${misreadings.length} 2:${siteRows.length} 3:${alsoOnlyMisread.length} 4:${sharedNotInTable.length} 5:${notInMain.length} (${a.length}+${b.length}) 6:${longShort.length}/${longExpl.length} 7:${errors.length} 8:${countMismatch.length}`);
