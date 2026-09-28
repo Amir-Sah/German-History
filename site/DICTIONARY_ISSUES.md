@@ -11,8 +11,8 @@
 | 1 | Word highlighted as the wrong entry (misreading) | 0 | `ambiguous_forms.md` (add rows) |
 | 2 | `ambiguous_forms.md` rows that point at non-chapter files (`site/…`, task files) | 0 | `ambiguous_forms.md` (delete rows) |
 | 3 | "Also in" chapters supported only by a misreading | 0 | entry's **Also in** |
-| 4 | Forms shared by several entries but missing from `ambiguous_forms.md` (never highlighted) | 2 | `ambiguous_forms.md` (add rows) |
-| 5 | Entries never found in their own main chapter: 5a no spelling there / 5b blocked by the table / 5c only inside a longer name | 126 / 26 / 22 | entry's **Also written as**, **Main chapter**, or `ambiguous_forms.md` |
+| 4 | Forms shared by several entries but missing from `ambiguous_forms.md` (never highlighted) | 0 | `ambiguous_forms.md` (add rows) |
+| 5 | Entries never found in their own main chapter: 5a no spelling there / 5b blocked by the table / 5c only inside a longer name | 126 / 8 / 22 | entry's **Also written as**, **Main chapter**, or `ambiguous_forms.md` |
 | 6 | **Short** longer than 18 words / **Explanation** longer than 60 words | 0 / 0 | entry text |
 | 7 | Structural errors (malformed entries, bad links) | 0 | as listed |
 | 8 | README counts differ from the files | 0 | `dictionary/README.md` |
@@ -44,8 +44,6 @@ These surface forms belong to more than one entry and have no row in `ambiguous_
 
 | Form | Claimed by | Occurs in chapters |
 |---|---|---|
-| National People's Army | National People's Army (`terms.md#national-people-s-army`); NVA (`terms.md#nva`) | `twentieth_century/10_east_germany.md` · `twentieth_century/11_cold_war_germany.md` |
-| solidarity surcharge | solidarity surcharge (`terms.md#solidarity-surcharge`); solidarity tax (`terms.md#solidarity-tax`) | `contemporary/01_post_reunification.md` |
 
 ## 5. Entries never found in their own main chapter
 
@@ -184,38 +182,20 @@ The last column shows where a listed form **does** occur — usually the right m
 | Wilhelmine era (`terms.md#wilhelmine-era`) | `nineteenth_century/06_german_empire.md` | Wilhelmine era · Wilhelmine | `02_MASTER_TIMELINE.md` |
 | Zündapp (`terms.md#zundapp`) | `twentieth_century/09_west_germany.md` | Zündapp | none |
 
-### 5b. A form occurs, but `ambiguous_forms.md` blocks it in the main chapter (26)
+### 5b. A form occurs, but `ambiguous_forms.md` blocks it in the main chapter (8)
 
 The name occurs, but the table says `—` (or has no row) for this chapter, so it is never highlighted where it matters most. **Fix:** give the row for the main chapter the entry id. If the same short form means two different entries in one chapter (e.g. "Meissner" in the Weimar chapter is both State Secretary Otto Meissner and the economist Christopher M. Meissner), the table cannot express it: add the fuller spelling the text uses to "Also written as" (e.g. "State Secretary Meissner"), or accept plain text there.
 
 | Entry | Main chapter | Blocked forms |
 |---|---|---|
 | Christopher M. Meissner (`people.md#christopher-m-meissner`) | `twentieth_century/02_weimar_republic.md` | Meissner |
-| Dutch Republic (`places.md#dutch-republic`) | `early_modern/02_thirty_years_war.md` | Dutch |
 | Gotha (`places.md#gotha`) | `nineteenth_century/07_industrial_society.md` | Gotha |
-| Israel (`places.md#israel`) | `contemporary/04_germany_in_europe.md` | Israel |
 | Province of Westphalia (`places.md#province-of-westphalia`) | `nineteenth_century/01_napoleon.md` | Westphalia |
 | Allies (`terms.md#allies-first-world-war`) | `twentieth_century/01_world_war_one.md` | Allies · Allied · allies |
-| auxiliaries (`terms.md#auxiliaries`) | `ancient/01_germanic_societies.md` | auxiliaries |
-| citizenship law (`terms.md#citizenship-law`) | `contemporary/01_post_reunification.md` | Citizenship |
 | Concentration camp (`terms.md#concentration-camp`) | `twentieth_century/04_nazi_state.md` | concentration camp |
-| confirmation (`terms.md#confirmation`) | `twentieth_century/10_east_germany.md` | confirmation |
-| contributions (`terms.md#contributions`) | `early_modern/02_thirty_years_war.md` | contributions |
 | Councils (`terms.md#councils`) | `twentieth_century/02_weimar_republic.md` | councils |
-| dismantling (`terms.md#dismantling`) | `twentieth_century/10_east_germany.md` | dismantling |
-| Gotha unification (`terms.md#gotha-unification`) | `nineteenth_century/07_industrial_society.md` | Gotha |
-| grand coalition (`terms.md#grand-coalition`) | `twentieth_century/12_reunification.md` | grand coalition |
 | Maastricht (`terms.md#maastricht`) | `contemporary/04_germany_in_europe.md` | Maastricht |
-| mass organisations (`terms.md#mass-organisations`) | `twentieth_century/10_east_germany.md` | mass organisations |
-| National People's Army (`terms.md#national-people-s-army`) | `twentieth_century/10_east_germany.md` | National People's Army |
-| NVA (`terms.md#nva`) | `twentieth_century/10_east_germany.md` | National People's Army |
 | Protestantism (`terms.md#protestantism`) | `early_modern/01_reformation.md` | Protestant |
-| rearmament (`terms.md#rearmament`) | `twentieth_century/04_nazi_state.md` | rearmament |
-| reparations (`terms.md#reparations`) | `twentieth_century/02_weimar_republic.md` | reparations · Reparations |
-| solidarity surcharge (`terms.md#solidarity-surcharge`) | `contemporary/01_post_reunification.md` | solidarity surcharge |
-| solidarity tax (`terms.md#solidarity-tax`) | `contemporary/01_post_reunification.md` | solidarity surcharge |
-| State within the state (`terms.md#state-within-the-state`) | `nineteenth_century/07_industrial_society.md` | state within the state |
-| subsidies (`terms.md#subsidies`) | `early_modern/03_territorial_states.md` | subsidies |
 
 ### 5c. The name occurs only inside a longer word or a longer dictionary name (22) — low priority
 
@@ -256,4 +236,4 @@ None — all 2,300 entries parse (required fields, ids, kinds, basis, chapter li
 
 ## 8. README counts
 
-Match the files (437 people, 280 places, 1583 terms).
+Match the files (437 people, 280 places, 1581 terms).

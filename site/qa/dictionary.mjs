@@ -36,6 +36,11 @@ for (const slug of BUILT_ERAS) {
   const bad = await page.$$eval('h1 a.dx, h2 a.dx, h3 a.dx, h4 a.dx, h5 a.dx, h6 a.dx, summary a.dx, a a.dx, .fig-credit a.dx, code a.dx, .xref a.dx', (els) => els.map((e) => e.textContent));
   check(bad.length === 0, `${slug}: no highlight in headings, links, credits or code${bad.length ? ' — found: ' + bad.join(', ') : ''}`);
 
+  // Highlights must flow inline with the text: a direct child of a grid/flex container becomes its own cell
+  // (this broke the "5 things" card once).
+  const inLayout = await page.$$eval('a.dx', (els) => els.filter((a) => /grid|flex/.test(getComputedStyle(a.parentElement).display)).map((a) => `${a.textContent} in ${a.parentElement.tagName.toLowerCase()}.${a.parentElement.className}`));
+  check(inLayout.length === 0, `${slug}: no highlight is a direct child of a grid/flex container${inLayout.length ? ' — ' + [...new Set(inLayout)].slice(0, 5).join('; ') : ''}`);
+
   const onPage = new Set(await page.$$eval('a.dx', (els) => els.map((e) => e.dataset.dx)));
   const missing = p.dictionaryUsed.filter((id) => !onPage.has(id));
   const counts = await page.$$eval('a.dx', (els) => ['person', 'place', 'term'].map((k) => els.filter((e) => e.classList.contains(`dx-${k}`)).length));
