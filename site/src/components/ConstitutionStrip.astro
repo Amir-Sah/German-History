@@ -30,10 +30,10 @@ const split = said.length > 0 && worked.length > 0;
     </div>
   )}
   {(!split && items.length > 0) && (
-    <ul class="cvr-list">{items.map((i) => (<li>{i.label && <strong class="cvr-label">{i.label}: </strong>}<span set:html={i.html} /></li>))}</ul>
+    <ul class="cvr-list">{items.map((i) => (<li>{i.label && <strong class="cvr-label">{i.label} </strong>}<span set:html={i.html} /></li>))}</ul>
   )}
   {split && other.length > 0 && (
-    <ul class="cvr-list">{other.map((i) => (<li set:html={i.html} />))}</ul>
+    <ul class="cvr-list">{other.map((i) => (<li>{i.label && <strong class="cvr-label">{i.label} </strong>}<span set:html={i.html} /></li>))}</ul>
   )}
   {c.tableHtml && <Fragment set:html={c.tableHtml} />}
   <p class="source-note">From <code>{period.file}</code> §2.</p>

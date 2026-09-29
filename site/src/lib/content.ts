@@ -6,7 +6,7 @@ import auditJson from '../content/generated/audit.json';
 import methodJson from '../content/generated/method.json';
 import kbTitlesJson from '../content/generated/kb-titles.json';
 import dictionaryJson from '../content/generated/dictionary.json';
-import { BUILT_ERAS } from '../../scripts/lib/scope.mjs';
+import scopeJson from '../content/generated/scope.json';
 
 export type Period = (typeof periodsJson)[number];
 export type ImageRec = (typeof imagesJson)[number];
@@ -15,7 +15,7 @@ export const periods = periodsJson as Period[];
 export const images = imagesJson as ImageRec[];
 export const audit = auditJson;
 export const method = methodJson;
-export const builtEras: string[] = BUILT_ERAS;
+export const builtEras: string[] = scopeJson.builtEras;
 
 export const kbTitles = kbTitlesJson as Record<string, string>;
 export type DictEntry = (typeof dictionaryJson.entries)[number];
@@ -36,16 +36,11 @@ export const eraHref = (slug: string) => (isBuiltEra(slug) ? `/eras/${slug}/` : 
 /** PUBLIC_BUILD=1 renders © images as credit-and-link cards (decision of 27 Sept 2026). */
 export const PUBLIC_BUILD = process.env.PUBLIC_BUILD === '1';
 
-// Local copies made by scripts/download-images.mjs (optional). Never used for © images in PUBLIC_BUILD.
-import fs from 'node:fs';
-const manifestFile = new URL('../../public/img-cache/manifest.json', import.meta.url);
-const imageCache: Record<string, { file: string }> = fs.existsSync(manifestFile) ? JSON.parse(fs.readFileSync(manifestFile, 'utf8')) : {};
-export const localImage = (id: string) => imageCache[id]?.file ?? null;
-
-// Measured image sizes (qa/image-urls.mjs --write-sizes); absent → a 4:3 frame.
-const sizesFile = new URL('../../data/image-sizes.json', import.meta.url);
-const imageSizes: Record<string, [number, number]> = fs.existsSync(sizesFile) ? JSON.parse(fs.readFileSync(sizesFile, 'utf8')).sizes : {};
-export const imageSize = (id: string) => imageSizes[id] ?? null;
+// Measured image sizes and optional local copies (via src/content/generated/image-layout.json).
+import imageLayoutJson from '../content/generated/image-layout.json';
+const imageLayout = imageLayoutJson as { sizes: Record<string, [number, number]>; local: Record<string, string> };
+export const localImage = (id: string) => imageLayout.local[id] ?? null;
+export const imageSize = (id: string) => imageLayout.sizes[id] ?? null;
 
 export const RIBBON = { from: -500, to: 2026 };
 

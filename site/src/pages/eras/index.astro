@@ -8,7 +8,7 @@ const groups = method.groups.map((g) => ({ ...g, items: periods.filter((p) => p.
   <TimeRibbon slot="ribbon" />
   <div class="wrap page">
     <h1>Eras</h1>
-    <p class="lead-small">All 35 period chapters of the knowledge base, grouped by era. In this preview only the Weimar chapter is built; the others follow the same pattern in the rollout.</p>
+    <p class="lead-small">All 35 period chapters of the knowledge base, grouped by era.</p>
     {groups.map((g) => (
       <section class={`era-group band-${g.id}-edge`} aria-labelledby={`g-${g.id}`}>
         <h2 id={`g-${g.id}`}>{g.label}</h2>

@@ -92,6 +92,44 @@
 }
 :root[data-theme='dark'] .mood-weimar { --era-accent: #9dbcf0; --era-accent-2: #e2b863; --era-tint: #181c24; --era-line: #8a6a2a; }
 
+/* ── era moods (decision of 27 Sept 2026): only --era-* tokens change; each pair checked by qa/contrast.mjs ── */
+.mood-vellum { --era-accent: #8a2b1d; --era-accent-2: #5b4a2a; --era-tint: #f3ecdc; --era-line: #c9a86b; }
+.mood-woodcut { --era-accent: #1f1d1a; --era-accent-2: #9b2a1c; --era-tint: #f1ede4; --era-line: #8c8577; }
+.mood-callot { --era-accent: #3d3d3f; --era-accent-2: #5a5750; --era-tint: #ecebe8; --era-line: #a09e98; }
+.mood-biedermeier { --era-accent: #3f5e3a; --era-accent-2: #7a4f2a; --era-tint: #f0efe2; --era-line: #b7c2a0; }
+.mood-iron { --era-accent: #8a3324; --era-accent-2: #3b3f45; --era-tint: #efe9e4; --era-line: #a8877d; }
+.mood-two-inks { --era-accent: #8a4b17; --era-accent-2: #1f5577; --era-tint: #f1eee8; --era-line: #c29a6a; }
+.mood-civic { --era-accent: #1d4f9a; --era-accent-2: #3a3f47; --era-tint: #eef2f8; --era-line: #8fa9d6; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .mood-vellum { --era-accent: #e8a594; --era-accent-2: #d8c28f; --era-tint: #1e1a14; --era-line: #7a6440; }
+  :root:not([data-theme='light']) .mood-woodcut { --era-accent: #e6e1d6; --era-accent-2: #ec9b8a; --era-tint: #18171a; --era-line: #5f5a52; }
+  :root:not([data-theme='light']) .mood-callot { --era-accent: #d5d4d0; --era-accent-2: #b9b5ab; --era-tint: #1a1a1c; --era-line: #55545a; }
+  :root:not([data-theme='light']) .mood-biedermeier { --era-accent: #a9c9a1; --era-accent-2: #e0b48a; --era-tint: #171b16; --era-line: #56644d; }
+  :root:not([data-theme='light']) .mood-iron { --era-accent: #eca48f; --era-accent-2: #c2c7ce; --era-tint: #1b1918; --era-line: #6e5048; }
+  :root:not([data-theme='light']) .mood-two-inks { --era-accent: #e8b27d; --era-accent-2: #95c3e6; --era-tint: #171a1d; --era-line: #6a5540; }
+  :root:not([data-theme='light']) .mood-civic { --era-accent: #a3c2f0; --era-accent-2: #c6ccd4; --era-tint: #151a22; --era-line: #3f5277; }
+}
+:root[data-theme='dark'] .mood-vellum { --era-accent: #e8a594; --era-accent-2: #d8c28f; --era-tint: #1e1a14; --era-line: #7a6440; }
+:root[data-theme='dark'] .mood-woodcut { --era-accent: #e6e1d6; --era-accent-2: #ec9b8a; --era-tint: #18171a; --era-line: #5f5a52; }
+:root[data-theme='dark'] .mood-callot { --era-accent: #d5d4d0; --era-accent-2: #b9b5ab; --era-tint: #1a1a1c; --era-line: #55545a; }
+:root[data-theme='dark'] .mood-biedermeier { --era-accent: #a9c9a1; --era-accent-2: #e0b48a; --era-tint: #171b16; --era-line: #56644d; }
+:root[data-theme='dark'] .mood-iron { --era-accent: #eca48f; --era-accent-2: #c2c7ce; --era-tint: #1b1918; --era-line: #6e5048; }
+:root[data-theme='dark'] .mood-two-inks { --era-accent: #e8b27d; --era-accent-2: #95c3e6; --era-tint: #171a1d; --era-line: #6a5540; }
+:root[data-theme='dark'] .mood-civic { --era-accent: #a3c2f0; --era-accent-2: #c6ccd4; --era-tint: #151a22; --era-line: #3f5277; }
+/* typographic accents per mood (no blackletter anywhere) */
+.mood-vellum .chapter-hero h1::first-letter { color: var(--era-accent); }
+.mood-vellum .hero-text, .mood-woodcut .hero-text, .mood-callot .hero-text { border-top: 3px double var(--era-accent); padding-top: 0.9rem; }
+.mood-woodcut .chapter-hero h1 { letter-spacing: -0.015em; }
+.mood-biedermeier .hero-date, .mood-vellum .preamble { font-size: 0.95rem; color: var(--ink-2); margin: -0.5rem 0 1rem; }
+.preamble p { margin: 0; }
+.hero-date { font-family: var(--serif); font-style: italic; font-weight: 500; }
+.mood-biedermeier .hero-text { border-top: 1px solid var(--era-line); padding-top: 0.9rem; }
+.mood-iron .chapter-hero h1, .mood-civic .chapter-hero h1 { font-family: var(--sans); font-weight: 750; letter-spacing: -0.025em; }
+.mood-iron .hero-text { border-top: 6px solid var(--era-accent-2); padding-top: 0.9rem; }
+.mood-civic .hero-text { border-top: 4px solid var(--era-accent); padding-top: 0.9rem; }
+.mood-two-inks .hero-text { border-top: 6px solid var(--era-accent); padding-top: 0.9rem; position: relative; }
+.mood-two-inks .hero-text::before { content: ''; position: absolute; top: -6px; right: 0; width: 50%; height: 6px; background: var(--era-accent-2); }
+
 /* Calm register (sensitive eras): neutral archive palette, no accent, no motion. */
 body.calm, .sec.calm {
   --era-accent: var(--ink-2);
@@ -99,6 +137,8 @@ body.calm, .sec.calm {
   --era-line: var(--rule);
 }
 body.calm, .sec.calm { --dx-person: var(--ink-2); --dx-place: var(--ink-2); }
+/* No map pins in the calm register (they read like a travel map next to places of persecution); places keep weight + underline. */
+body.calm a.dx-place.dx-first::before, .sec.calm a.dx-place.dx-first::before { display: none; }
 body.calm *, .sec.calm * { animation: none !important; transition: none !important; }
 
 /* ── base ─────────────────────────────────────────────────────────────── */
@@ -208,6 +248,8 @@ strong.conf { font-size: 0.72em; }
   .ribbon-track { height: 22px; }
   .ribbon-tick { font-size: 9px; top: 11px; }
   .ribbon-bare { grid-template-columns: 1fr; } /* no "you are here" label (home, index pages): the track takes the row */
+  .ribbon:not(.ribbon-bare) .ribbon-tick { display: none; } /* the date label gives the years; ticks would overlap */
+  .ribbon:not(.ribbon-bare) .ribbon-track { height: 14px; }
 }
 .ribbon-bare { grid-template-columns: 1fr; }
 
@@ -228,6 +270,7 @@ strong.conf { font-size: 0.72em; }
 .fig-media { position: relative; aspect-ratio: 4 / 3; background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
 .fig-media img { position: absolute; inset: 0; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; }
 .fig-fallback-msg { display: none; }
+.fig-media.loaded:not(.failed) .fig-fallback { visibility: hidden; }
 .fig-media.failed .fig-fallback-msg { display: block; }
 /* The credit card sits behind every image: a placeholder while loading, the fallback if loading fails. */
 .fig-fallback { display: flex; position: absolute; inset: 0; padding: 1.25rem; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-family: var(--sans); font-size: 0.9rem; color: var(--ink-2);

@@ -24,7 +24,7 @@ for (const p of periods) {
     sections: [count(h, /<details class="sec /g), 13],
     images: [p.images.filter((i) => h.includes(`id="img-${i.id}"`)).length, p.images.length],
     misconceptions: [count(h, /<li class="myth"/g), blocks.find((b) => b.type === 'misconceptions').items.length],
-    debates: [count(h, /<li class="debate/g), blocks.find((b) => b.type === 'debates')?.items.length ?? 0],
+    debates: [count(h, /<li class="debate(?!-sub)/g), blocks.find((b) => b.type === 'debates')?.items.length ?? 0],
     confidenceRows: [count(h, /<td class="conf-cell">/g), blocks.find((b) => b.type === 'confidence').rows.length],
     sources: [count(h, /<ul class="sources">[\s\S]*?<\/ul>/g) ? count(h.match(/<ul class="sources">[\s\S]*?<\/ul>/)[0], /<li>/g) : 0, blocks.find((b) => b.type === 'sources').items.length],
     fiveThings: [count(h.match(/<section class="five"[\s\S]*?<\/section>/)?.[0] ?? '', /<li>/g), 5],
@@ -32,6 +32,15 @@ for (const p of periods) {
     matrixRows: [count(h, /<div class="matrix-row">/g), p.matrix ? 12 : 0],
     constitution: [count(h, /<section class="constitution"/g), 1],
   };
+  // image frames use the measured proportions (a silent fallback to 4:3 went unnoticed once)
+  const layout = JSON.parse(fs.readFileSync('src/content/generated/image-layout.json', 'utf8')).sizes;
+  const wrongRatio = p.images.filter((i) => {
+    const size = layout[i.id];
+    if (!size) return false;
+    const want = Math.min(21 / 9, Math.max(4 / 5, size[0] / size[1])).toFixed(4);
+    return !h.includes(`id="img-${i.id}"><div class="fig-media`) || !new RegExp(`id="img-${i.id}"><div[^>]*aspect-ratio:${want}`).test(h);
+  });
+  expect.imageProportions = [p.images.length - wrongRatio.length, p.images.length];
   for (const [k, [got, want]] of Object.entries(expect)) {
     if (got !== want) { strictFails++; console.log(`✖ ${p.slug}: ${k} ${got}/${want}`); }
   }
