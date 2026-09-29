@@ -1,0 +1,30 @@
+{
+  "_about": "Editorial map from the labels of the mental map in 00_FINAL_EXPLANATION.md ('Before we start: the mental map') to the chapters that treat each node. Labels are copied verbatim from the code block and must occur there exactly once (the build fails otherwise). The rule: a node links to the period files whose H1 date range and subject cover it. Traced in CONTENT_TRACE.md §1 (J2). calmParts: Journey Parts shown in the calm register (PLAN.md §5: 'Journey Part 6').",
+  "calmParts": [6],
+  "nodes": [
+    { "label": "ROMAN FRONTIER (to c. 450)", "files": ["ancient/02", "ancient/01"] },
+    { "label": "FRANKISH EMPIRE (c. 500–843)", "files": ["medieval/01"] },
+    { "label": "EAST FRANCIA (843–911)", "files": ["medieval/01", "medieval/02"] },
+    { "label": "German kingdom (from 919)", "files": ["medieval/02"] },
+    { "label": "HOLY ROMAN EMPIRE (962–1806)", "files": ["medieval/02", "medieval/03", "medieval/04"] },
+    { "label": "Reformation (1517–1555)", "files": ["early_modern/01"] },
+    { "label": "Thirty Years' War (1618–48)", "files": ["early_modern/02"] },
+    { "label": "TERRITORIAL STATES (1648–1806)", "files": ["early_modern/03", "early_modern/04", "early_modern/05"] },
+    { "label": "NAPOLEONIC SHOCK (1792–1815)", "files": ["nineteenth_century/01"] },
+    { "label": "GERMAN CONFEDERATION (1815–66)", "files": ["nineteenth_century/02"] },
+    { "label": "nationalism &", "files": ["nineteenth_century/03"] },
+    { "label": "industrialisation", "files": ["nineteenth_century/07"] },
+    { "label": "1848 revolution", "files": ["nineteenth_century/04"] },
+    { "label": "PRUSSIA'S WARS (1864–71)", "files": ["nineteenth_century/05"] },
+    { "label": "GERMAN EMPIRE (1871–1918)", "files": ["nineteenth_century/06", "nineteenth_century/07", "nineteenth_century/08"] },
+    { "label": "WORLD WAR I (1914–18)", "files": ["twentieth_century/01"] },
+    { "label": "WEIMAR REPUBLIC (1918/19–33)", "files": ["twentieth_century/02", "twentieth_century/03"] },
+    { "label": "NAZI DICTATORSHIP (1933–45)", "files": ["twentieth_century/04", "twentieth_century/05", "twentieth_century/06", "twentieth_century/07"] },
+    { "label": "DEFEAT & OCCUPATION (1945–49)", "files": ["twentieth_century/08"] },
+    { "label": "FEDERAL REPUBLIC (West, 1949–)", "files": ["twentieth_century/09", "twentieth_century/11"] },
+    { "label": "GDR (East, 1949–90)", "files": ["twentieth_century/10", "twentieth_century/11"] },
+    { "label": "PEACEFUL REVOLUTION (1989)", "files": ["twentieth_century/12"] },
+    { "label": "UNIFICATION (3 Oct 1990)", "files": ["twentieth_century/12", "contemporary/01"] },
+    { "label": "UNITED GERMANY (1990–)", "files": ["contemporary/01", "contemporary/02", "contemporary/03", "contemporary/04"] }
+  ]
+}

@@ -59,6 +59,29 @@ for (const slug of BUILT_ERAS) {
     console.log(`${ok ? '✔' : '✖'} [${slug}] ${s.length > 110 ? s.slice(0, 107) + '…' : s}`);
   }
 }
+// The Journey (home, 00_FINAL_EXPLANATION.md): same rule, without the image blocks and the mental-map code block
+// (checked character for character by qa/coverage.mjs). The Parts' bracketed year ranges are shown as a kicker.
+{
+  const file = '00_FINAL_EXPLANATION.md';
+  const md = fs.readFileSync(path.resolve('..', file), 'utf8').replace(/<!-- IMAGES:START -->[\s\S]*?<!-- IMAGES:END -->/g, '');
+  const text = pageText(fs.readFileSync('dist/index.html', 'utf8'));
+  const units = [];
+  (function visit(n) {
+    if (['paragraph', 'tableCell', 'heading'].includes(n.type)) units.push(mdText(n));
+    else n.children?.forEach(visit);
+  })(parseMd(md));
+  const sentences = units
+    .map((u) => norm(u).replace(/^Part \d+ — /, '').replace(/\s*\([^()]*\d[^()]*\)$/, '').replace(/^Details: .*/, ''))
+    .flatMap((u) => u.split(/(?<=[.;!?])\s+(?=[A-Z"(])/))
+    .filter((s) => s.length >= (ALL ? 12 : 50));
+  const picks = ALL ? sentences : Array.from({ length: N }, () => sentences[Math.floor(rand() * sentences.length)]);
+  for (const s of picks) {
+    const ok = text.includes(norm(presentational(s, file)));
+    report.push({ slug: 'journey', ok, passage: s });
+    if (!ok) fails++;
+    if (!ok || !ALL) console.log(`${ok ? '✔' : '✖'} [journey] ${s.length > 110 ? s.slice(0, 107) + '…' : s}`);
+  }
+}
 console.log(`${fails ? '✖' : '✔'} fidelity: ${report.length - fails}/${report.length} passages found verbatim (seed ${process.argv[3] ?? 'random'})`);
 fs.mkdirSync('qa/reports', { recursive: true });
 fs.writeFileSync('qa/reports/fidelity.json', JSON.stringify(report, null, 1));

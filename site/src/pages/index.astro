@@ -1,29 +1,119 @@
 ---
-// Temporary home: links to all era chapters by group. The Journey (00_FINAL_EXPLANATION.md) replaces this page next.
+// The Journey (home): the ten Parts of 00_FINAL_EXPLANATION.md in order, with the mental map as a navigable
+// overview. All historical text comes from src/content/generated/journey.json; UI wording is in CONTENT_TRACE.md (J1–J6).
 import Base from '../layouts/Base.astro';
 import TimeRibbon from '../components/TimeRibbon.astro';
-import { periods, method, eraHref } from '../lib/content';
-const groups = method.groups.map((g) => ({ ...g, items: periods.filter((p) => p.group === g.id) }));
+import Figure from '../components/Figure.astro';
+import { journey, fmtYear, periods } from '../lib/content';
+
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// The ASCII map exactly as written, with each node label turned into a link to its first chapter.
+let mapHtml = esc(journey.map.ascii);
+for (const n of journey.map.nodes) {
+  const first = n.chapters.find((c) => c.href);
+  const tip = n.chapters.map((c) => c.title).join(' · ');
+  const label = esc(n.label);
+  mapHtml = mapHtml.replace(label, first ? `<a class="map-node" href="${first.href}" title="${esc(tip)}">${label}</a>` : label);
+}
+const rangeOf = (p: (typeof journey.parts)[number]) => (p.span ? `${fmtYear(p.span.start)}–${p.span.end}` : null);
 ---
-<Base title="Home">
-  <TimeRibbon slot="ribbon" />
-  <div class="wrap page">
-    <p class="kicker">Build preview</p>
-    <h1>German History, Explained</h1>
-    <p class="lead-small">
-      All 35 era chapters are built. The Journey through the ten Parts of <code>00_FINAL_EXPLANATION.md</code> becomes this
-      home page in the next step.
-    </p>
-    {groups.map((g) => (
-      <section aria-labelledby={`h-${g.id}`}>
-        <h2 id={`h-${g.id}`} class="kicker">{g.label}</h2>
-        <ul class="card-list">
-          {g.items.map((p) => (
-            <li class="card"><a href={eraHref(p.slug) ?? '#'}><span class="card-title">{p.title}</span><span class="card-date">{p.dateLabel}</span></a></li>
-          ))}
-        </ul>
-      </section>
-    ))}
-    <p><a href="/dictionary/">Dictionary</a> · <a href="/how-we-know/">How the research was done</a> · <a href="/how-we-know/audit/">Source audit</a></p>
+
+<Base title="The Journey" description="German history in ten Parts, from the Roman frontier to 2026, with a map of how it branches." dictIds={journey.dictionaryUsed}>
+  <TimeRibbon slot="ribbon" journey />
+
+  <div data-pagefind-body>
+  <header class="journey-intro wrap-wide">
+    <p class="kicker">The Journey</p>
+    <h1>{journey.title}</h1>
+    <p class="journey-sub" set:html={journey.subtitleHtml} />
+    <nav class="journey-toc" aria-label="The ten Parts">
+      <ol>
+        {journey.parts.map((p) => (
+          <li class:list={[p.mood && `mood-${p.mood}`, p.calm && 'calm']}>
+            <a href={`#${p.id}`}>
+              <span class="toc-n">Part {p.n}</span>
+              <span class="toc-title" set:html={p.titleHtml} />
+              {p.rangeLabel && <span class="toc-range">{p.rangeLabel}</span>}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </header>
+
+  <section class="journey-map wrap-wide" id="mental-map" aria-labelledby="map-h">
+    <h2 id="map-h">Before we start: the mental map</h2>
+    <p class="journey-hint" data-ui>Each name in bold is a link to its chapter.</p>
+    <div class="map-frame" tabindex="0">
+      <pre class="map-ascii"><code set:html={mapHtml} /></pre>
+    </div>
+    <details class="map-list">
+      <summary>The map as a list of chapters</summary>
+      <ul>
+        {journey.map.nodes.map((n) => (
+          <li>
+            <span class="map-label">{n.label}</span>
+            <span class="map-chapters">
+              {n.chapters.map((c) => (c.href ? <a class="xref" href={c.href}>{c.title}</a> : <span class="xref xref-pending">{c.title}</span>))}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </details>
+    <div class="prose map-after" set:html={journey.map.afterHtml} />
+  </section>
+
+  {journey.parts.map((p, i) => (
+    <section
+      class:list={['part', p.mood && `mood-${p.mood}`, p.calm && 'calm']}
+      id={p.id}
+      aria-labelledby={`${p.id}-h`}
+      data-part={p.n}
+      data-start={p.span?.start}
+      data-end={p.span?.end}
+      data-mood={p.mood ?? ''}
+      data-label={`Part ${p.n}${p.rangeLabel ? ` · ${p.rangeLabel}` : ''}`}
+    >
+      <div class="part-head wrap">
+        <p class="kicker">Part {p.n}{p.rangeLabel && <span class="part-range"> · {p.rangeLabel}</span>}</p>
+        <h2 id={`${p.id}-h`} set:html={p.titleHtml} />
+        {rangeOf(p) && <p class="visually-hidden">On the time ribbon: {rangeOf(p)}</p>}
+      </div>
+      <div class:list={['part-media', p.images.length > 1 && 'part-media-two']}>
+        {p.images.map((im) => <Figure id={im.id} captionHtml={im.captionHtml} variant="bleed" eager={i === 0} />)}
+      </div>
+      <div class="wrap part-body">
+        {p.leadHtml && <p class="part-lead" set:html={p.leadHtml} />}
+        <div class="prose" set:html={p.html} />
+        {p.five && (
+          <section class="five" aria-labelledby={`${p.id}-five`}>
+            <h3 id={`${p.id}-five`}>{p.five.heading}</h3>
+            <ol>{p.five.items.map((t) => <li><span set:html={t} /></li>)}</ol>
+          </section>
+        )}
+        {p.details.length > 0 && (
+          <nav class="part-details" aria-label={`Part ${p.n}: chapters with the details`}>
+            <span class="part-details-label">Details:</span>
+            <ul>
+              {p.details.map((d) => (
+                <li>{d.href ? <a class="chip-link" href={d.href}>{d.title}</a> : <span class="chip-link pending">{d.title}</span>}</li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </div>
+    </section>
+  ))}
+
+  {journey.epilogueHtml && (
+    <footer class="wrap journey-end">
+      <p set:html={journey.epilogueHtml} />
+      <p data-ui><a href="#main">Back to the top</a> · <a href="/eras/">All {periods.length} chapters</a></p>
+    </footer>
+  )}
+
   </div>
+  <script>
+    import '../scripts/journey.ts';
+  </script>
 </Base>

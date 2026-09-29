@@ -733,6 +733,166 @@ function renderDoc(file, { skipTableUnder } = {}) {
 const methodDoc = renderDoc('01_RESEARCH_METHOD.md');
 const auditDoc = renderDoc('sources/SOURCE_AUDIT.md', { skipTableUnder: 'Claim table' });
 
+// ───────────────────────── the Journey (home): 00_FINAL_EXPLANATION.md ─────────────────────────
+// Structure (checked, fails loudly): H1 · italic subtitle · "## Before we start: the mental map" (one code block +
+// prose) · "## Part N — Title" ×10, each with an image block, prose (optional ### subsections), a
+// "> **If you remember only 5 things (…)**" blockquote with 5 items (Parts 1–9) and a "*Details: `…`*" line.
+const mentalMapCfg = readJson('data/mental-map.json');
+function parseJourney() {
+  const file = '00_FINAL_EXPLANATION.md';
+  const text = stripImageBlocks(raw[file]);
+  const lines = text.split('\n');
+  const h1 = lines[0].match(/^# (.+)$/);
+  if (!h1) fail(file, 1, 'first line is not an H1');
+  const heads = [];
+  lines.forEach((l, i) => {
+    if (/^## /.test(l)) heads.push({ title: l.slice(3).trim(), line: i });
+  });
+  const bodyOf = (k) => lines.slice(heads[k].line + 1, k + 1 < heads.length ? heads[k + 1].line : lines.length);
+  const trimRule = (arr) => {
+    const a = [...arr];
+    while (a.length && /^(---|\s*)$/.test(a.at(-1))) a.pop();
+    while (a.length && /^(---|\s*)$/.test(a[0])) a.shift();
+    return a;
+  };
+  const used = new Set();
+  const ctxFor = (seen) => ({ ...baseCtx(file), headingShift: 0, dict: dictCtx(file, seen, used) });
+  const subtitle = trimRule(lines.slice(1, heads[0]?.line ?? 1)).join('\n');
+
+  // Mental map
+  if (heads[0]?.title !== 'Before we start: the mental map') fail(file, (heads[0]?.line ?? 0) + 1, 'first H2 is not "Before we start: the mental map"');
+  const mapBody = heads[0] ? bodyOf(0) : [];
+  const cStart = mapBody.findIndex((l) => l.startsWith('```'));
+  const cEnd = mapBody.findIndex((l, i) => i > cStart && l.startsWith('```'));
+  if (cStart < 0 || cEnd < 0) fail(file, (heads[0]?.line ?? 0) + 1, 'mental map has no code block');
+  const ascii = mapBody.slice(cStart + 1, cEnd).join('\n');
+  const nodes = mentalMapCfg.nodes.map((n) => {
+    const count = ascii.split(n.label).length - 1;
+    if (count !== 1) fail('data/mental-map.json', 0, `label "${n.label}" occurs ${count}× in the mental map (must be exactly once)`);
+    const chapters = n.files.map((f) => {
+      const r = resolveXref(f, file);
+      if (!r) fail('data/mental-map.json', 0, `${n.label}: cannot resolve ${f}`);
+      return r ? { kb: r.kb, title: r.title, href: r.href ?? null } : null;
+    }).filter(Boolean);
+    return { label: n.label, chapters };
+  });
+  const mapAfterHtml = renderMd(trimRule(mapBody.slice(cEnd + 1)).join('\n'), ctxFor(new Set()));
+
+  // Parts
+  const partHeads = heads.slice(1);
+  let epilogueLines = [];
+  const parts = partHeads.map((h, k) => {
+    const hm = h.title.match(/^Part (\d+) — (.+)$/);
+    if (!hm || +hm[1] !== k + 1) fail(file, h.line + 1, `expected "## Part ${k + 1} — …", found "${h.title}"`);
+    const n = +(hm?.[1] ?? k + 1);
+    const titleFull = hm?.[2] ?? h.title;
+    let body = bodyOf(k + 1);
+    // The closing line of the file sits after the last Part's rule: it is the page's epilogue, not Part 10 prose.
+    if (k === partHeads.length - 1 && body.lastIndexOf('---') >= 0) {
+      epilogueLines = trimRule(body.slice(body.lastIndexOf('---') + 1));
+      body = body.slice(0, body.lastIndexOf('---'));
+    }
+    body = trimRule(body);
+    const lineOf = (i) => h.line + 2 + i;
+
+    // Details line
+    let details = [];
+    const di = body.findIndex((l) => /^\*Details: .*\*$/.test(l));
+    if (di >= 0) {
+      for (const m of body[di].matchAll(/`([a-z_]+)\/(\d{2})(?:–(\d{2}))?`/g)) {
+        const [a, b] = [+m[2], +(m[3] ?? m[2])];
+        for (let x = a; x <= b; x++) {
+          const short = `${m[1]}/${String(x).padStart(2, '0')}`;
+          const r = resolveXref(short, file);
+          if (!r) fail(file, lineOf(di), `Details: cannot resolve ${short}`);
+          else details.push({ kb: r.kb, title: r.title, href: r.href ?? null });
+        }
+      }
+      if (!details.length) fail(file, lineOf(di), 'Details line lists no chapters');
+      body = trimRule(body.slice(0, di));
+    } else if (n !== 10) fail(file, h.line + 1, `Part ${n} has no "*Details: …*" line`);
+
+    // "If you remember only 5 things" blockquote
+    let five = null;
+    const fi = body.findIndex((l) => /^> \*\*If you remember only 5 things/.test(l));
+    if (fi >= 0) {
+      let fe = fi;
+      while (fe < body.length && body[fe].startsWith('>')) fe++;
+      const q = body.slice(fi, fe).map((l) => l.replace(/^> ?/, ''));
+      const heading = q[0].replace(/^\*\*|\*\*$/g, '');
+      const tree = parseMd(q.slice(1).join('\n'));
+      const list = tree.children.find((x) => x.type === 'list' && x.ordered);
+      if (!list || list.children.length !== 5) fail(file, lineOf(fi), '"5 things" must be an ordered list of exactly 5');
+      const seen5 = new Set();
+      five = {
+        heading,
+        items: (list?.children ?? []).map((li) => renderInline(li.children.flatMap((c) => c.children ?? [c]), ctxFor(seen5))),
+      };
+      body = trimRule([...body.slice(0, fi), ...body.slice(fe)]);
+    } else if (n !== 10) fail(file, h.line + 1, `Part ${n} has no "If you remember only 5 things" box`);
+
+    // Span: years in the title's final parentheses, or a leading "1989–90"; "to 919" starts with the first Details chapter.
+    const rng = titleFull.match(/\(([^()]*\d[^()]*)\)$/)?.[1] ?? titleFull.match(/^(\d{4}(?:–\d{2,4})?)/)?.[1] ?? null;
+    const title = titleFull.replace(/\s*\([^()]*\d[^()]*\)$/, '');
+    let span = null;
+    if (rng) {
+      const to = rng.match(/^to (\d{3,4})$/);
+      const ys = [...rng.matchAll(/(\d{2,4})(?:\/\d{2})?/g)].map((m) => m[1]);
+      if (to) {
+        const firsts = details.map((d) => periods.find((p) => p.file === d.kb)?.span.start).filter((y) => y !== undefined);
+        span = { start: Math.min(...firsts), end: +to[1] };
+      } else if (ys.length === 2) {
+        const s = +ys[0];
+        const e = ys[1].length === 2 ? Math.floor(s / 100) * 100 + +ys[1] : +ys[1];
+        span = { start: s, end: e };
+      } else fail(file, h.line + 1, `cannot parse the years "${rng}"`);
+    }
+
+    // Lead: the first paragraph when it opens with bold text (the Part's own question), rendered apart.
+    const seen = new Set();
+    const tree = parseMd(body.join('\n'));
+    let leadHtml = null;
+    const first = tree.children[0];
+    if (first?.type === 'paragraph' && first.children[0]?.type === 'strong') {
+      leadHtml = renderInline(first.children, ctxFor(seen));
+      tree.children.shift();
+    }
+    const html = renderBlocks(tree.children, ctxFor(seen));
+
+    // Mood and register: from the Details chapters (the first one's era group); Part 6 is calm (PLAN.md §5).
+    const firstPeriod = periods.find((p) => p.file === details[0]?.kb);
+    const calm = mentalMapCfg.calmParts.includes(n);
+    return {
+      n,
+      id: `part-${n}`,
+      title,
+      titleHtml: renderMdInline(title, { ...ctxFor(new Set()), noDict: true }),
+      rangeLabel: rng,
+      span,
+      mood: firstPeriod?.mood ?? null,
+      group: firstPeriod?.group ?? null,
+      calm,
+      images: (imageBlocks[file] ?? []).filter((b) => b.block === k).map((b) => ({ id: b.id, captionHtml: b.captionHtml })),
+      leadHtml,
+      html,
+      five,
+      details,
+    };
+  });
+  if (parts.length !== 10) fail(file, 0, `expected 10 Parts, found ${parts.length}`);
+  for (const p of parts) if (!p.images.length) fail(file, 0, `Part ${p.n} has no image`);
+  const epilogue = epilogueLines.join('\n');
+  return {
+    title: h1?.[1] ?? '',
+    subtitleHtml: renderMdInline(subtitle, ctxFor(new Set())),
+    map: { ascii, nodes, afterHtml: mapAfterHtml },
+    parts,
+    epilogueHtml: epilogue ? renderMdInline(epilogue, ctxFor(new Set())) : null,
+    dictionaryUsed: [...used],
+  };
+}
+const journey = parseJourney();
+
 // ───────────────────────── schema check ─────────────────────────
 for (const p of periods) {
   const r = Period.safeParse(p);
@@ -763,6 +923,8 @@ const report = {
     dictionaryAmbiguousForms: dictionary.amb.size,
     matrices: periods.filter((p) => p.matrix).length,
     matrixCrossRefs: periods.filter((p) => p.matrixRef).length,
+    journeyParts: journey.parts.length,
+    mentalMapNodes: journey.map.nodes.length,
   },
   exceptionsApplied: exceptionsCfg,
   kbIssues,
@@ -799,6 +961,7 @@ write('bibliography', bibliography);
 write('method', { confidenceScale, sourceLevels, accessLegend, primaryChecklist, canonicalSections: CANONICAL, groups: erasCfg.groups, ruptures: erasCfg.ruptures.years });
 write('report', report);
 write('docs', { method: methodDoc, audit: auditDoc });
+write('journey', journey);
 
 console.log('✔ build-content: knowledge base parsed and validated');
 for (const [k, v] of Object.entries(report.counts)) console.log(`  ${k.padEnd(20)} ${v}`);

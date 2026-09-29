@@ -13,4 +13,4 @@ export const BUILT_ERAS = PERIOD_FOLDERS.flatMap((folder) =>
     : [],
 );
 
-export const BUILT_PAGES = [...BUILT_ERAS.map((s) => `/eras/${s}/`), '/eras/', '/dictionary/', '/how-we-know/', '/how-we-know/audit/'];
+export const BUILT_PAGES = ['/', ...BUILT_ERAS.map((s) => `/eras/${s}/`), '/eras/', '/dictionary/', '/how-we-know/', '/how-we-know/audit/'];

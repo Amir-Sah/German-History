@@ -7,6 +7,7 @@ import methodJson from '../content/generated/method.json';
 import kbTitlesJson from '../content/generated/kb-titles.json';
 import dictionaryJson from '../content/generated/dictionary.json';
 import scopeJson from '../content/generated/scope.json';
+import journeyJson from '../content/generated/journey.json';
 
 export type Period = (typeof periodsJson)[number];
 export type ImageRec = (typeof imagesJson)[number];
@@ -18,6 +19,7 @@ export const method = methodJson;
 export const builtEras: string[] = scopeJson.builtEras;
 
 export const kbTitles = kbTitlesJson as Record<string, string>;
+export const journey = journeyJson;
 export type DictEntry = (typeof dictionaryJson.entries)[number];
 export const dictionary = dictionaryJson.entries as DictEntry[];
 export const dictById = new Map(dictionary.map((e) => [e.id, e]));

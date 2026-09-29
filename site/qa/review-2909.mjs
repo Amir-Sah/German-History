@@ -14,8 +14,9 @@ const out = 'qa/reports/crops';
 for (const w of [360, 600, 768]) {
   const p = await (await b.newContext({ viewport: { width: w, height: 800 } })).newPage();
   await p.goto(url + '/');
-  const tw = await p.$eval('.ribbon-track', (el) => el.getBoundingClientRect().width);
-  check(tw > w * 0.7, `home ribbon at ${w}px: track ${Math.round(tw)}px wide`);
+  // Since the Journey (29 Sept 2026) the home ribbon carries a "Part N" label beside the track, as chapter pages do.
+  const [tw, right] = await p.$eval('.ribbon', (el) => [el.querySelector('.ribbon-track').getBoundingClientRect().width, el.getBoundingClientRect().right]);
+  check(tw > w * 0.55 && right <= w, `home ribbon at ${w}px: track ${Math.round(tw)}px wide, inside the screen`);
   if (w === 360) await p.locator('.site-header').screenshot({ path: `${out}/home-ribbon-360.png` });
   await p.context().close();
 }
