@@ -23,5 +23,5 @@
       "why": "'the Völkischer Beobachter' is named as propaganda in IMAGE_INDEX.md 'How images were chosen'; the caption calls it 'The Nazi party paper celebrating the Enabling Act'."
     }
   },
-  "openQuestions": "Not flagged without the owner's decision (official messaging of other states, not named in IMAGE_INDEX.md): white-rose (RAF leaflet drop), hakenkreuz (US Army newsreel), wir-bleiben (West German government poster)."
+  "notFlagged": "Owner's decision (29 Sept 2026): white-rose (RAF leaflet drop), hakenkreuz (US Army newsreel) and wir-bleiben (West German poster) are not flagged — they are not named in IMAGE_INDEX.md 'How images were chosen'."
 }
