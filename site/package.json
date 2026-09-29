@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "version": "0.1.0",
+  "license": "MIT",
   "description": "Source-critical interactive website generated from the German history knowledge base (../).",
   "scripts": {
     "content": "node scripts/build-content.mjs",
