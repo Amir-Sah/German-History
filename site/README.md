@@ -13,20 +13,23 @@ npm install            # once
 npm run dev            # parse the KB, then serve at http://localhost:4321 with live reload
 npm run build          # parse the KB → dist/ (+ Pagefind search index)
 npm run preview        # serve dist/ at http://localhost:4321
+npm run build:pages    # dist-pages/: the version published on GitHub Pages (all images hotlinked)
 npm run build:public   # PUBLIC_BUILD=1 → dist-public/: © images become credit-and-link cards
 npm run qa             # all checks (see below); run after `npm run build`
 ```
 
-The default build is a **local, personal-study site**: 54 of the 72 images are © and hotlinked "for personal study only". Use `build:public` for anything that other people will see, and do not deploy either build without deciding on image rights first.
+54 of the 72 images are ©. All images are hotlinked (never copied) with full credit. The published site shows them under the owner's decision of 29 Sept 2026: all rights belong to the holders, and any image is taken down on request (root `README.md`, "Images"). `build:public` gives a version without the © images.
 
 ## Published on GitHub Pages
 
-`.github/workflows/pages.yml` publishes the **public build** on every push to `master`, to https://amir-sah.github.io/History/:
-1. `npm run build:public` builds the site with every © image shown as a credit-and-link card.
+`.github/workflows/pages.yml` publishes the site on every push to `master`, to https://amir-sah.github.io/History/:
+1. `npm run build:pages` builds the site with all images hotlinked.
 2. `scripts/rebase.mjs` moves all links below `/History/`.
 3. `qa/rebase-check.mjs` checks that every internal link still resolves.
 
-To try the same locally, run `npm run build:public && node scripts/rebase.mjs dist-public /History`, then serve the folder's parent directory.
+To try the same locally, run `npm run build:pages && node scripts/rebase.mjs dist-pages /History`, then serve the folder's parent directory.
+
+**To take an image down** after a request: add its id (from `images/IMAGE_INDEX.md`) with the date and requester to `data/takedowns.json`, then merge to `master`. Every build then shows that image only as a credit-and-link card, and the build fails if the id is unknown.
 
 ## How it works
 

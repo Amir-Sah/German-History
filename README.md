@@ -10,7 +10,7 @@ It is not a list of dates. Every chapter asks the same questions of its era: who
 | **Website** | [`site/`](site/): an Astro static site that turns the Markdown into pages. It validates every file, fails the build on template breaks and never adds historical text of its own |
 | **Status** | September 2026. The home page (the Journey), all 35 era chapters, the dictionary and the method and audit pages are built. Themes, timeline, gallery, regime explorer and search UI are next ([`site/PLAN.md`](site/PLAN.md)) |
 
-**Website:** https://amir-sah.github.io/History/ (the public build: © images are shown as credit-and-link cards)
+**Website:** https://amir-sah.github.io/History/
 
 ## Read the knowledge base
 
@@ -45,20 +45,23 @@ Other commands, all run from `site/`:
 
 ```sh
 npm run build          # static site in site/dist/ (with a Pagefind search index)
-npm run build:public   # the version for public hosting, in site/dist-public/ (see "Images" below)
+npm run build:pages    # the version published on GitHub Pages, in site/dist-pages/
+npm run build:public   # a variant that shows every © image only as a credit-and-link card, in site/dist-public/
 npm run qa             # checks for accessibility, fidelity, coverage and links (needs Playwright's Chromium)
 ```
 
 [`site/README.md`](site/README.md) explains the pipeline, the checks and the design decisions. [`site/CONTENT_TRACE.md`](site/CONTENT_TRACE.md) lists every piece of wording the site adds and every inconsistency it found in the knowledge base.
 
-## Images: read this before hosting the site
+## Images: copyright and takedown
 
-The pictures are **not stored in this repository**. The chapters link to them at the museums and archives that hold them, and each one carries its credit and licence ([`images/IMAGE_INDEX.md`](images/IMAGE_INDEX.md)).
+**No image is stored in this repository or on the website.** Every picture is linked (hotlinked) from the museum, archive or library that holds it, and it is shown with its creator, date, holder, licence and a link to the holder's page. [`images/IMAGE_INDEX.md`](images/IMAGE_INDEX.md) lists all 72.
 
 - **18 of 72** are public domain, CC0 or have "no known restrictions" (Cleveland Museum of Art, The Metropolitan Museum of Art, Library of Congress).
-- **54 of 72** are **©** (Deutsches Historisches Museum, Haus der Geschichte, Bundesarchiv and others). They are shown **for personal study only**.
+- **54 of 72** are **©**: Deutsches Historisches Museum, Stiftung Haus der Geschichte, Bundesarchiv, photographers' estates and other rights holders.
 
-If you host the site publicly, use **`npm run build:public`**. It replaces every © image with a card showing the credit and a link to the holder's page. The default build (`npm run build`) is meant for local, personal study.
+**All rights to the images belong to their respective holders.** This project claims no rights in them, and the licences of this repository ([`LICENSE.md`](LICENSE.md)) do not cover them. They are linked for non-commercial education, with full credit.
+
+**Takedown:** if you hold the rights to an image and want it removed, [open an issue](https://github.com/Amir-Sah/History/issues) naming the image or page. It will be taken down on request, without question. Anyone who wants to host a copy of the site without the © images can build it with `npm run build:public`, which replaces them with credit-and-link cards.
 
 ## How this was made
 

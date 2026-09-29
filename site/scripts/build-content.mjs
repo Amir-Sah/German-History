@@ -951,7 +951,10 @@ write('scope', { builtEras: BUILT_ERAS, builtPages: BUILT_PAGES });
 // (public/img-cache/manifest.json, written by scripts/download-images.mjs). Passed through here because the
 // bundled site cannot read files relative to its own source location.
 const optJson = (p) => (fs.existsSync(path.join(SITE, p)) ? JSON.parse(fs.readFileSync(path.join(SITE, p), 'utf8')) : null);
+const takedowns = readJson('data/takedowns.json').takedowns;
+for (const id of Object.keys(takedowns)) if (!imageById.has(id)) { console.error(`✖ data/takedowns.json: unknown image id ${id}`); process.exit(1); }
 write('image-layout', {
+  takedowns: Object.keys(takedowns),
   sizes: optJson('data/image-sizes.json')?.sizes ?? {},
   local: Object.fromEntries(Object.entries(optJson('public/img-cache/manifest.json') ?? {}).map(([id, v]) => [id, v.file])),
 });
