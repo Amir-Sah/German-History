@@ -23,9 +23,9 @@ description: Use when building, extending, fixing or reviewing the German-histor
 | Content pipeline | `scripts/build-content.mjs` parses all 70 KB files → `src/content/generated/*.json`; strict validation (template §8, closed confidence vocabulary, image blocks ↔ `IMAGE_INDEX.md`, dictionary structure) |
 | Era chapters | **All 35 built** from one template (`src/pages/eras/[slug].astro`), moods per era group, calm register |
 | Dictionary | Inline highlighting (people/places/terms) on all chapters; tooltip + card dialog; `/dictionary/` index + one page per letter + JSON search index |
-| Other pages | `/eras/`, `/how-we-know/` (method), `/how-we-know/audit/` (59 claims with anchors), temporary home listing all chapters |
+| Other pages | `/` the Journey (10 Parts + mental map, from `00_FINAL_EXPLANATION.md` → `journey.json`; node map `data/mental-map.json`; ribbon script `src/scripts/journey.ts`), `/eras/`, `/how-we-know/` (method), `/how-we-know/audit/` (59 claims with anchors) |
 | QA | `npm run qa` = 11 checks, all passing (see §6) |
-| **Not built yet** | Journey home (10 Parts of `00_FINAL_EXPLANATION.md` + mental map), regime explorer (`05_REGIME_MATRIX.md`), 14 theme pages, interactive timeline (`02_MASTER_TIMELINE.md`), gallery, open questions (`04_…`), self-check, mental-model page (`03_…`), search UI (Pagefind index exists, no UI), sources/bibliography page, two charts proposed in PLAN §4 (NSDAP votes, Thirty Years' War mortality range) |
+| **Not built yet** | Regime explorer (`05_REGIME_MATRIX.md`), 14 theme pages, interactive timeline (`02_MASTER_TIMELINE.md`), gallery, open questions (`04_…`), self-check, mental-model page (`03_…`), search UI (Pagefind index exists, no UI), sources/bibliography page, two charts proposed in PLAN §4 (NSDAP votes, Thirty Years' War mortality range) |
 
 Merged PRs so far: Amir-Sah/History#1 (pipeline + Weimar slice + QA), #2 (dictionary, plain words, review fixes), #3–#5 (dictionary report, 5-things fix), #6 (review of 29 Sept), #7 (all 35 chapters).
 
@@ -161,8 +161,7 @@ Visual review pattern: screenshots → one Sonnet subagent reviews `*-1280-light
 
 ## 10. Open items / next steps
 
-1. **Journey home** from `00_FINAL_EXPLANATION.md` (10 Parts; each has an image block, a bold "Why…?" lead, prose, a "5 things" blockquote and a `*Details: …*` line; mental map is a code block) — scroll narrative with the time ribbon tracking scroll; mental-map nodes → chapters (editorial map file, traced). KB inconsistency K13: Part 1 "(to 919)" vs its box "(to 900)".
-2. Regime explorer (`05_REGIME_MATRIX.md` + 26 chapter matrices; compare 2–3; constitution-vs-reality on top).
-3. Theme pages (14, free-form; `themes/*.md`), timeline (systems A–J tables; filters; theme tags by traced rule), gallery (72, filters by era + Type), open questions (§A–D), self-check (from 5 things + myths; no points; plain cards in calm chapters), mental-model page, sources/bibliography page, search UI (Pagefind), the two charts.
-4. Final delivery per the brief: README (run/build), `CONTENT_TRACE.md`, limitations + v2 ideas; `npm run qa:final` (full coverage + external links) green.
-5. KB hand-offs still open: `DICTIONARY_ISSUES.md` §5 (156 entries not found in their main chapter), K14 (two parenthesised matrix headings), K15 (audit confidence cells), sort people by surname, "Zwangslagen" wording.
+1. Regime explorer (`05_REGIME_MATRIX.md` + 26 chapter matrices; compare 2–3; constitution-vs-reality on top).
+2. Theme pages (14, free-form; `themes/*.md`), timeline (systems A–J tables; filters; theme tags by traced rule), gallery (72, filters by era + Type), open questions (§A–D), self-check (from 5 things + myths; no points; plain cards in calm chapters), mental-model page, sources/bibliography page, search UI (Pagefind), the two charts.
+3. Final delivery per the brief: README (run/build), `CONTENT_TRACE.md`, limitations + v2 ideas; `npm run qa:final` (full coverage + external links) green.
+4. KB hand-offs still open: `DICTIONARY_ISSUES.md` §5 (156 entries not found in their main chapter), K14 (two parenthesised matrix headings), K15 (audit confidence cells), sort people by surname, "Zwangslagen" wording.

@@ -59,6 +59,17 @@ Every piece of wording or classification on the site that does not come verbatim
 | P3b | Hero order (Part B11) | Desktop: title, date and summary on the left, hero image on the right. Phones: title, then the hero image, then the one-paragraph summary — the image comes first in reading order after the title, as the brief asks | Brief: "Start with a hero image and the one-paragraph summary" |
 | P2 | Chapter page | Sections 8, 11 and 12 open by default (featured diagram, cards, debate panel); the others expand on demand; §1 is the lead | Brief: "expandable sections" + featured components |
 
+### 1c. The Journey (home page, 29 Sept 2026)
+
+| id | Site location | New text / rule | Derived from |
+|---|---|---|---|
+| J1 | Home page interface wording | "The Journey" (kicker), "Each name in bold is a link to its chapter.", "The map as a list of chapters", "Part {n}" labels on the contents cards and the ribbon, "Back to the top", "All {N} chapters", page description "German history in ten Parts, from the Roman frontier to 2026, with a map of how it branches." | — (interface) |
+| J2 | `data/mental-map.json` | Mental-map node → chapter map (24 labels copied verbatim from the code block; each must occur exactly once). Rule: a node links to the period files whose H1 date range and subject cover it; the first file is the link target, all are listed under "The map as a list of chapters" | `00_FINAL_EXPLANATION.md` "Before we start: the mental map" + period H1s |
+| J3 | Part spans on the time ribbon | From the years in the Part heading's final brackets ("919–1806"; "1918/19–1933" → 1918–1933) or its leading years ("1989–90" → 1989–1990). "to 919" starts at the first Details chapter's start (Germanic Societies, c. 500 BCE). Part 10 has no span: the marker is hidden. The bracketed years move from the heading to the kicker above it | Part headings in `00_FINAL_EXPLANATION.md`; period H1s |
+| J4 | Part moods and register | Each Part takes the era mood of its first Details chapter (`data/eras.json`); Part 10 keeps the default. Part 6 uses the calm register (`calmParts` in `data/mental-map.json`) | PLAN.md §5 ("Journey Part 6"), §6 |
+| J5 | "Details" lines | Ranges such as `medieval/02–04` are expanded to each chapter (02, 03, 04) and shown as links with the chapter titles | `*Details: …*` lines in `00_FINAL_EXPLANATION.md` |
+| J6 | Part lead | When a Part's first paragraph opens with its bold question ("**Why start here?**"), that paragraph is set larger as the lead (placement only; Parts 5, 9 and 10 have none) | PLAN.md §4 ("each opening with the file's own bold 'Why…?' lead line") |
+
 ## 2. Knowledge-base inconsistencies (flagged, not resolved)
 
 Found during the inventory (27 Sept 2026, `PLAN.md` §7) and during the pipeline build. **Status** records what the KB itself says now.
@@ -77,7 +88,7 @@ Found during the inventory (27 Sept 2026, `PLAN.md` §7) and during the pipeline
 | K10 | Transition label scheme | CRISIS/TRANSITION and 15+ variants | Resolved: BEFORE → PRESSURES → TRANSITION → AFTER in all 35 files, enforced |
 | K11 | Confidence scale | LOW in the brief; free-text labels in files | Resolved in period files (closed vocabulary, enforced; no LOW). See K15 for the audit file |
 | K12 | Image blocks | 8 files have none | By design (brief: the method file and `sources/` have none). Those pages get no hero image |
-| K13 | Journey Part 1 range | Heading "Part 1 — … (to 919)" vs its box "If you remember only 5 things (to 900)" (`00_FINAL_EXPLANATION.md`) | **Open.** Both shown as written when the Journey is built |
+| K13 | Journey Part 1 range | Heading "Part 1 — … (to 919)" vs its box "If you remember only 5 things (to 900)" (`00_FINAL_EXPLANATION.md`) | **Open.** Both shown as written on the Journey (Part 1 kicker "to 919", box "(to 900)") |
 | K14 | Matrix heading form | `ancient/02` "### Regime Matrix (Roman provinces …)" and `twentieth_century/07` "### Regime Matrix (wartime changes)" use parentheses, not an em dash (§8 rule) | **Open** (still in the KB on 28 Sept 2026, so `data/template-exceptions.json` cannot be emptied as Part A1 expects). Qualifier shown as written |
 | K15 | Audit confidence cells | Claim 36 "Largely REJECTED (strong form)" is outside the §4 closed vocabulary; many cells hold two labels ("HIGH (fact) / CONTESTED (effect)"), while §4 describes one label per cell | **Open.** Audit page shows the cell text as written |
 | K16 | Unexplained German terms (Weimar page) | *Reichstag*, *Reichsrat*, *Reichswehr*, *Rentenmark*, *Osthilfe*, *Doppelverdiener*, *Zwangslagen* have no English explanation anywhere in the KB | **Open — for the author.** No tooltip is shown (none may be invented). Adding a short explanation in the KB would let the glossary pick them up |

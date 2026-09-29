@@ -6,7 +6,7 @@ import { imageById, PUBLIC_BUILD, method, localImage, imageSize } from '../lib/c
 interface Props {
   id: string;
   captionHtml?: string | null; // the caption as written in the file that uses the image
-  variant?: 'hero' | 'band' | 'grid';
+  variant?: 'hero' | 'band' | 'grid' | 'bleed';
   eager?: boolean;
 }
 const { id, captionHtml, variant = 'band', eager = false } = Astro.props;
