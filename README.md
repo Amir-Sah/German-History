@@ -10,6 +10,8 @@ It is not a list of dates. Every chapter asks the same questions of its era: who
 | **Website** | [`site/`](site/): an Astro static site that turns the Markdown into pages. It validates every file, fails the build on template breaks and never adds historical text of its own |
 | **Status** | September 2026. The home page (the Journey), all 35 era chapters, the dictionary and the method and audit pages are built. Themes, timeline, gallery, regime explorer and search UI are next ([`site/PLAN.md`](site/PLAN.md)) |
 
+**Website:** https://amir-sah.github.io/History/ (the public build: © images are shown as credit-and-link cards)
+
 ## Read the knowledge base
 
 You can read everything directly on GitHub:

@@ -15,9 +15,11 @@ const more = document.getElementById('dict-more')!;
 const entries = [...document.querySelectorAll<HTMLElement>('.dict-entry')];
 const none = document.getElementById('dict-none');
 
+// Path prefix when the site is served below a sub-path (GitHub Pages); set on <html data-base> by scripts/rebase.mjs.
+const BASE = document.documentElement.dataset.base ?? '';
 let index: Row[] | null = null;
 async function loadIndex() {
-  if (!index) index = (await (await fetch('/dictionary/index.json')).json()) as Row[];
+  if (!index) index = (await (await fetch(`${BASE}/dictionary/index.json`)).json()) as Row[];
   return index;
 }
 const kindsOn = () => new Set(btns.filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.dataset.kindBtn));
@@ -54,7 +56,7 @@ async function search() {
   list.replaceChildren(...hits.slice(0, MAX).map((r) => {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.href = `/dictionary/${r[3]}/#${r[0]}`;
+    a.href = `${BASE}/dictionary/${r[3]}/#${r[0]}`;
     a.textContent = r[1];
     a.className = `dn dn-${r[2]}`;
     const k = document.createElement('span');
@@ -85,6 +87,6 @@ if (page.dataset.dictPage === 'index' && location.hash.length > 1) {
   const id = decodeURIComponent(location.hash.slice(1));
   loadIndex().then((rows) => {
     const r = rows.find((x) => x[0] === id);
-    if (r) location.replace(`/dictionary/${r[3]}/#${id}`);
+    if (r) location.replace(`${BASE}/dictionary/${r[3]}/#${id}`);
   });
 }

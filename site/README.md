@@ -19,6 +19,15 @@ npm run qa             # all checks (see below); run after `npm run build`
 
 The default build is a **local, personal-study site**: 54 of the 72 images are © and hotlinked "for personal study only". Use `build:public` for anything that other people will see, and do not deploy either build without deciding on image rights first.
 
+## Published on GitHub Pages
+
+`.github/workflows/pages.yml` publishes the **public build** on every push to `master`, to https://amir-sah.github.io/History/:
+1. `npm run build:public` builds the site with every © image shown as a credit-and-link card.
+2. `scripts/rebase.mjs` moves all links below `/History/`.
+3. `qa/rebase-check.mjs` checks that every internal link still resolves.
+
+To try the same locally, run `npm run build:public && node scripts/rebase.mjs dist-public /History`, then serve the folder's parent directory.
+
 ## How it works
 
 ```
