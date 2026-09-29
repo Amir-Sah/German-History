@@ -40,9 +40,11 @@ export const PUBLIC_BUILD = process.env.PUBLIC_BUILD === '1';
 
 // Measured image sizes and optional local copies (via src/content/generated/image-layout.json).
 import imageLayoutJson from '../content/generated/image-layout.json';
-const imageLayout = imageLayoutJson as { sizes: Record<string, [number, number]>; local: Record<string, string> };
+const imageLayout = imageLayoutJson as { sizes: Record<string, [number, number]>; local: Record<string, string>; takedowns?: string[] };
 export const localImage = (id: string) => imageLayout.local[id] ?? null;
 export const imageSize = (id: string) => imageLayout.sizes[id] ?? null;
+// Images removed at a rights holder's request (data/takedowns.json): shown only as credit-and-link cards.
+export const isTakenDown = (id: string) => (imageLayout.takedowns ?? []).includes(id);
 
 export const RIBBON = { from: -500, to: 2026 };
 

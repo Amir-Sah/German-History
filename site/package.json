@@ -13,6 +13,7 @@
     "qa": "node qa/run-all.mjs",
     "images:download": "node scripts/download-images.mjs",
     "build:public": "npm run content && PUBLIC_BUILD=1 ASTRO_TELEMETRY_DISABLED=1 astro build --outDir dist-public",
+    "build:pages": "npm run content && ASTRO_TELEMETRY_DISABLED=1 astro build --outDir dist-pages",
     "qa:pipeline": "node qa/pipeline-negative.mjs",
     "qa:final": "node qa/run-all.mjs --final --external",
     "predev": "node scripts/check-deps.mjs",

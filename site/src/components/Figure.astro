@@ -1,7 +1,7 @@
 ---
 // An image as a source: caption, creator, date, holder, licence and a source link are always shown.
 // No cropping (object-fit: contain), no zoom/pan/filters. If the hotlink fails, the credit card remains.
-import { imageById, PUBLIC_BUILD, method, localImage, imageSize } from '../lib/content';
+import { imageById, PUBLIC_BUILD, method, localImage, imageSize, isTakenDown } from '../lib/content';
 
 interface Props {
   id: string;
@@ -13,8 +13,8 @@ const { id, captionHtml, variant = 'band', eager = false } = Astro.props;
 const img = imageById.get(id);
 if (!img) throw new Error(`Figure: unknown image id ${id}`);
 const caption = captionHtml ?? img.captionHtml;
-const showImage = !(PUBLIC_BUILD && img.rights === '©');
-const rightsLabel = img.rights === '©' ? '© personal study only' : img.rights === 'CC0' ? 'Public domain (CC0)' : 'No known restrictions';
+const showImage = !(PUBLIC_BUILD && img.rights === '©') && !isTakenDown(id);
+const rightsLabel = img.rights === '©' ? '© rights holder' : img.rights === 'CC0' ? 'Public domain (CC0)' : 'No known restrictions';
 const size = imageSize(id);
 // True proportions, but never taller than 4:5 (portrait) or flatter than 21:9; the image is contained, never cropped.
 const ratio = size ? Math.min(21 / 9, Math.max(4 / 5, size[0] / size[1])) : 4 / 3;
@@ -43,7 +43,7 @@ const creditBits = [img.creator, dateInTitle ? null : img.date].filter(Boolean);
     <div class="fig-fallback">
       <p class="fig-fallback-title">{img.title}</p>
       <p class:list={[showImage && 'fig-fallback-msg']}>
-        {showImage ? 'The image could not be loaded from its holder.' : 'This image is © and is not reproduced in the public version.'}
+        {showImage ? 'The image could not be loaded from its holder.' : isTakenDown(id) ? 'This image was removed at the rights holder’s request.' : 'This image is © and is not reproduced in the public version.'}
       </p>
       <p class:list={[showImage && 'fig-fallback-msg']}><a href={img.holderUrl} rel="noopener">View it at {img.holder}</a></p>
     </div>

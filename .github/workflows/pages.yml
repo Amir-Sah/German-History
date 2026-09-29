@@ -1,4 +1,4 @@
-# Builds the public version of the website (© images shown as credit-and-link cards) and publishes it to
+# Builds the website (all 72 images, hotlinked from their holders; see README "Images") and publishes it to
 # GitHub Pages at https://<owner>.github.io/<repo>/. Runs on every push to master, or by hand.
 name: Publish website to GitHub Pages
 
@@ -30,15 +30,15 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
       - run: npm ci
-      - name: Build the public site
-        run: npm run build:public
+      - name: Build the site
+        run: npm run build:pages
       - name: Move it below /${{ github.event.repository.name }}/
         run: |
-          node scripts/rebase.mjs dist-public "/${{ github.event.repository.name }}"
-          node qa/rebase-check.mjs dist-public "/${{ github.event.repository.name }}"
+          node scripts/rebase.mjs dist-pages "/${{ github.event.repository.name }}"
+          node qa/rebase-check.mjs dist-pages "/${{ github.event.repository.name }}"
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site/dist-public
+          path: site/dist-pages
 
   deploy:
     needs: build
