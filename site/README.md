@@ -2,7 +2,7 @@
 
 A static, source-critical website generated from the Markdown knowledge base in the parent folder. The knowledge base is the single source of truth; nothing in `site/` changes it.
 
-**Status (27 Sept 2026): vertical slice.** The whole knowledge base is parsed and validated; one era chapter (the Weimar Republic) is built end to end so the pattern can be reviewed before the rollout. See `PLAN.md` for the plan and `CONTENT_TRACE.md` for every new word and every flagged inconsistency.
+**Status (29 Sept 2026):** the Journey home page, all 35 era chapters, the dictionary and the method and audit pages are built; themes, timeline, gallery, regime explorer and search UI follow (`PLAN.md`). `PLAN.md` is the plan; `CONTENT_TRACE.md` lists every new word and every flagged inconsistency. Licence: MIT for the code (`LICENSE`); the knowledge-base texts are CC BY 4.0 (`../LICENSE.md`); third-party terms in `../NOTICE.md`.
 
 ## Run it
 
