@@ -5,13 +5,13 @@ description: Use when building, extending, fixing or reviewing the German-histor
 
 # Site Builder — workflow, state and lessons
 
-*Written 29 Sept 2026 by the Site Builder session. Records what was built in `site/`, how, the decisions taken with the owner, the pitfalls met, and how to keep token use low. Read this first in every new Site Builder session; then read only what the task needs.*
+*Written 29 Sept 2026 by the Site Builder session; publishing step added 30 Sept 2026. Records what was built in `site/`, how, the decisions taken with the owner, the pitfalls met, and how to keep token use low. Read this first in every new Site Builder session; then read only what the task needs.*
 
 ---
 
 ## 1. Role and boundaries
 
-- The Site Builder owns **`site/`** only. The knowledge base (KB: the repository root — period folders, `themes/`, `sources/`, `images/`, `dictionary/`, top-level `0x_*.md`) is **read-only**. The only exception outside `site/` is `.claude/launch.json`.
+- The Site Builder owns **`site/`** only (plus, since the public release, the repository-level release files it created on the owner's request: `README.md`, `LICENSE.md`, `NOTICE.md`, `.github/workflows/pages.yml`, see §5.7). The knowledge base (KB: the repository root — period folders, `themes/`, `sources/`, `images/`, `dictionary/`, top-level `0x_*.md`) is **read-only**. The other exception outside `site/` is `.claude/launch.json`.
 - A separate **KB builder** session maintains the KB and follows `../KB_BUILDER_DICTIONARY_WORKFLOW.md`. Hand-offs go both ways as Markdown files: KB → site in `../SITE_CHANGELOG_AND_TASKS.md`; site → KB in `site/DICTIONARY_ISSUES.md` (generated) and `site/CONTENT_TRACE.md` §2 (KB inconsistencies).
 - Non-negotiables (full text: `../WEBSITE_BUILD_PROMPT.md`, short form: `site/CLAUDE.md`): the Markdown is the only source of historical text; every new word or classification is logged in `CONTENT_TRACE.md`; no new facts; epistemics visible; images are sources (full credits, no crop/zoom/effects on photographs, "Read this image critically" for propaganda/official art); calm register for Nazi era, Holocaust, colonial violence, GDR repression; the build fails loudly on template breaks; ask before downloads, publishing, deploying.
 - Git: develop on the session's designated branch; commit in small described steps; the stop hook requires a clean, pushed tree before a turn ends. Merge to `master` only when the owner says so (pattern that worked: **pull `master` into the branch first, rebuild + QA, then open a PR and merge it**).
@@ -25,9 +25,10 @@ description: Use when building, extending, fixing or reviewing the German-histor
 | Dictionary | Inline highlighting (people/places/terms) on all chapters; tooltip + card dialog; `/dictionary/` index + one page per letter + JSON search index |
 | Other pages | `/` the Journey (10 Parts + mental map, from `00_FINAL_EXPLANATION.md` → `journey.json`; node map `data/mental-map.json`; ribbon script `src/scripts/journey.ts`), `/eras/`, `/how-we-know/` (method), `/how-we-know/audit/` (59 claims with anchors) |
 | QA | `npm run qa` = 11 checks, all passing (see §6) |
+| Publishing | **Optional step, done 29 Sept 2026** (§5.7): repo public; GitHub Pages at https://amir-sah.github.io/History/ via `.github/workflows/pages.yml` on every push to `master`; all 72 images hotlinked with rights + takedown notice; `data/takedowns.json` |
 | **Not built yet** | Regime explorer (`05_REGIME_MATRIX.md`), 14 theme pages, interactive timeline (`02_MASTER_TIMELINE.md`), gallery, open questions (`04_…`), self-check, mental-model page (`03_…`), search UI (Pagefind index exists, no UI), sources/bibliography page, two charts proposed in PLAN §4 (NSDAP votes, Thirty Years' War mortality range) |
 
-Merged PRs so far: Amir-Sah/History#1 (pipeline + Weimar slice + QA), #2 (dictionary, plain words, review fixes), #3–#5 (dictionary report, 5-things fix), #6 (review of 29 Sept), #7 (all 35 chapters).
+Merged PRs so far: Amir-Sah/History#1 (pipeline + Weimar slice + QA), #2 (dictionary, plain words, review fixes), #3–#5 (dictionary report, 5-things fix), #6 (review of 29 Sept), #7 (all 35 chapters), #8 (this workflow file), #9 (Journey home), #10 (README, licences, Pages), #11 (all images on the published site + takedown list).
 
 ## 3. Architecture (read this instead of the code)
 
@@ -54,6 +55,8 @@ npm install                  # after every pull that changes package.json (prede
 npm run content              # parse + validate the KB only (fast; run after any KB or data change)
 npm run dev | build | preview
 npm run build:public         # dist-public/, © images as credit cards (needed by the behaviour check)
+npm run build:pages          # dist-pages/, the version GitHub Pages publishes (all images hotlinked)
+node scripts/rebase.mjs dist-pages /History && node qa/rebase-check.mjs dist-pages /History   # links below /History/
 npm run qa                   # 11 checks; qa:final adds --final coverage and --external links
 npm run dictionary:report    # regenerate DICTIONARY_ISSUES.md for the KB session
 node qa/fidelity.mjs all     # every passage verbatim (fast; run after any rendering change)
@@ -96,6 +99,31 @@ node qa/image-urls.mjs [--write-sizes]          # all 72 hotlinks render in Chro
 ### 5.6 Commit, push, merge
 - `git add -A site && git commit` (message: what + why; include the attribution lines required by the session), `git push -u origin <branch>`.
 - Merge only on the owner's word: `git fetch && git merge --no-edit origin/master` → rebuild + QA → `create_pull_request` → `merge_pull_request` with `expectedHeadSha` = **full 40-char** `git rev-parse HEAD`.
+- Since publishing (§5.7) every merge to `master` redeploys the live site: after merging, check the run (`actions_list` → `list_workflow_runs`) and that the change is live.
+
+### 5.7 Optional: publish (only when the owner asks)
+Never publish on your own initiative. The owner asked on 29 Sept 2026. The steps below are the recipe; skip the ones already done (check `README.md`, `.github/workflows/pages.yml`).
+1. **Release files at the repo root** (these were the owner's explicit exception to the `site/`-only rule):
+   - `README.md`: overview, reading guide, how to run the site, image rights, "How this was made" (AI assistance disclosed);
+   - `LICENSE.md`: KB texts under CC BY 4.0, linking to the legal code rather than copying it (nothing downloaded);
+   - `site/LICENSE`: code under MIT; `"license": "MIT"` in `package.json`;
+   - `NOTICE.md`: image holders, quotations, fonts (OFL), software licences (read them from `node_modules/*/package.json`).
+2. **Pre-publication scan** (report, don't fix silently):
+   - secrets: `git grep` for key/token patterns, `.env`, credentials (none found; the site needs none);
+   - personal data: local paths (`WEBSITE_BUILD_PROMPT.md` has `/Users/amir/…`), emails;
+   - third-party files: `sources/Steinacher_2023_…pdf` (the owner chose to keep it);
+   - history: old commits stay visible once the repo is public, so say so. Only a fresh repository would hide them.
+3. **Pages workflow** (`.github/workflows/pages.yml`): `npm ci` → `npm run build:pages` → `scripts/rebase.mjs dist-pages /<repo>` → `qa/rebase-check.mjs` → `upload-pages-artifact` → `deploy-pages`. A project site lives under `/<repo>/`, but every page links root-absolute (`/eras/…`): `rebase.mjs` rewrites HTML attributes, inline JSON `"href"`, CSS `url()` and sets `<html data-base>`; client scripts that build URLs must prefix `document.documentElement.dataset.base ?? ''` (see `dictionary-page.ts`). Any new client-side URL needs the same.
+4. **Owner-only settings**: no tool here can change visibility or enable Pages. Ask the owner for:
+   - Settings → General → Change visibility → Public (Pages on a free plan needs a public repo);
+   - Settings → Pages → Source: **GitHub Actions**.
+
+   Until then `deploy` fails with 404 "Ensure GitHub Pages has been enabled". Afterwards, re-run it with `actions_run_trigger` `rerun_failed_jobs`.
+5. **Verify live**:
+   - `curl` the key paths under `https://amir-sah.github.io/History/`;
+   - a Playwright smoke test on the live URL: ribbon, dictionary search, card link, `/dictionary/#id` forwarding, no failed requests;
+   - a scroll-through that lists each `figure.fig` as loaded or card.
+6. **Images** (owner's decision, 29 Sept 2026): the published site shows all 72 images hotlinked, with the notice that all rights belong to the holders and any image is taken down on request via a GitHub issue (README, NOTICE, footer). To take one down, add its id to `data/takedowns.json` and merge: every build then shows a credit card. `build:public` remains the variant without © images.
 
 ## 6. QA suite (`npm run qa`, must stay green)
 
@@ -110,6 +138,7 @@ node qa/image-urls.mjs [--write-sizes]          # all 72 hotlinks render in Chro
 | Behaviour | `behaviour.mjs` | keyboard, reduced motion, no-JS, persisted toggle, PUBLIC_BUILD |
 | Dictionary | `dictionary.mjs` | no marks in headings/links/credits/code or directly in grid/flex; completeness; stale overrides; tooltip/card keyboard + touch; toggle; axe on open card |
 | Review 29 Sept | `review-2909.mjs` | ribbon, card chips, coming soon, compounds, dictionary search/pages, forwarding |
+| Rebase (publishing) | `rebase-check.mjs <dir> </base>` | after `rebase.mjs`: every root-absolute link is below the base and resolves; runs in the Pages workflow |
 | Screenshots | `screenshots.mjs serve` | all pages, 360/1280, light/dark (scrolls first so lazy images load) |
 
 Visual review pattern: screenshots → one Sonnet subagent reviews `*-1280-light-full` + `*-360-dark-top` against the Weimar reference and lists defects → verify flagged pages by hand with element crops.
@@ -119,7 +148,7 @@ Visual review pattern: screenshots → one Sonnet subagent reviews `*-1280-light
 - Stack: Astro 7 static + vanilla TS + Pagefind; fonts Source Serif 4 + Inter (self-hosted); no blackletter anywhere.
 - Moods: Vellum · Woodcut · Biedermeier · Archive (Weimar modern for `twentieth_century/02`) · Two inks · Civic paper; accents Callot grey (`early_modern/02`), Iron & soot (`nineteenth_century/07`).
 - Calm register: `nineteenth_century/08`, `twentieth_century/03`–`08` whole; `twentieth_century/10` §2, §11; `twentieth_century/11` §2. No points/streaks, no playful motion, cards stacked, no map pins.
-- Default build = local personal study; `PUBLIC_BUILD=1` makes © images credit cards; never deploy without asking; repo stays private.
+- Publishing (29–30 Sept 2026): the repo is **public** and the site is on GitHub Pages; every merge to `master` redeploys. The published build shows all images hotlinked with a rights and takedown notice (`data/takedowns.json`); `PUBLIC_BUILD=1` (`build:public`) stays available as the variant without © images. The PDF in `sources/` stays. Licences: KB CC BY 4.0, code MIT. Anything beyond this (new hosts, custom domain, history rewrite) needs the owner's go-ahead.
 - Classifications by documented rules, each in a data file and `CONTENT_TRACE.md`; image types from the index's Type column.
 - QA with Playwright + axe; in cloud use the pre-installed Chromium.
 - Critical-reading flags: official art `kaiserproklamation`, `koeniggraetz`; posed photo `kolonialbeamter`; propaganda `hj-march`, `vb-enabling`. **Not** flagged (owner, 29 Sept): `white-rose`, `hakenkreuz`, `wir-bleiben`.
@@ -146,6 +175,10 @@ Visual review pattern: screenshots → one Sonnet subagent reviews `*-1280-light
 | Tool calls refused "classifier gave no verdict" | transient harness failure | retry once later; do read-only work meanwhile; check `.git/logs/HEAD` with Grep to see if a commit happened |
 | Subagent left a screenshot process running | subagents start long jobs | `ps aux | grep -E 'qa/|chrome'` after they finish; kill leftovers |
 | Merge failed: sha must be 40 chars | short sha | `git rev-parse HEAD` |
+| `git push`/PR creation: 503 "credential service temporarily unavailable" / "token store temporarily unavailable" | transient GitHub-credential outage | retry push with backoff; wait with `until` loops (a bare `sleep N; …` chain is blocked), then retry the MCP call |
+| Live site: links 404 / styles missing | project Pages serves under `/<repo>/` | `rebase.mjs` in the workflow; new client-built URLs must use `data-base` |
+| Pages `deploy` job: 404 "Ensure GitHub Pages has been enabled" | Pages off or repo private | owner enables Pages (Source: GitHub Actions) and makes the repo public, then re-run failed jobs |
+| Full `qa/run-all.mjs` killed at 15 min | own `timeout 900` | run long checks (axe, behaviour, dictionary, review) separately in the background |
 
 ## 9. Token economy (how to do this cheaply)
 
