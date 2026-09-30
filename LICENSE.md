@@ -13,7 +13,7 @@ The texts of the knowledge base, meaning every Markdown file outside `site/` (in
 
 You may share and adapt the material for any purpose, including commercial use, if you give appropriate credit, link to the licence, and indicate whether you made changes. Suggested credit:
 
-> "German History, Explained" by Amir Sahebozamani, CC BY 4.0, https://github.com/Amir-Sah/History
+> "German History, Explained" by Amir Sahebozamani, CC BY 4.0, https://github.com/Amir-Sah/German-History
 
 **Not covered by this licence:**
 - quotations from other authors, which are reproduced under the right of quotation and belong to their authors;

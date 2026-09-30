@@ -10,7 +10,7 @@ It is not a list of dates. Every chapter asks the same questions of its era: who
 | **Website** | [`site/`](site/): an Astro static site that turns the Markdown into pages. It validates every file, fails the build on template breaks and never adds historical text of its own |
 | **Status** | September 2026. The home page (the Journey), all 35 era chapters, the dictionary and the method and audit pages are built. Themes, timeline, gallery, regime explorer and search UI are next ([`site/PLAN.md`](site/PLAN.md)) |
 
-**Website:** https://amir-sah.github.io/History/
+**Website:** https://amir-sah.github.io/German-History/
 
 ## Read the knowledge base
 
@@ -35,8 +35,8 @@ You can read everything directly on GitHub:
 Requires **Node.js 22.12 or later**. No accounts, API keys or other credentials are needed.
 
 ```sh
-git clone https://github.com/Amir-Sah/History.git
-cd History/site
+git clone https://github.com/Amir-Sah/German-History.git
+cd German-History/site
 npm install
 npm run dev            # parse the knowledge base, then serve at http://localhost:4321
 ```
@@ -61,7 +61,7 @@ npm run qa             # checks for accessibility, fidelity, coverage and links 
 
 **All rights to the images belong to their respective holders.** This project claims no rights in them, and the licences of this repository ([`LICENSE.md`](LICENSE.md)) do not cover them. They are linked for non-commercial education, with full credit.
 
-**Takedown:** if you hold the rights to an image and want it removed, [open an issue](https://github.com/Amir-Sah/History/issues) naming the image or page. It will be taken down on request, without question. Anyone who wants to host a copy of the site without the © images can build it with `npm run build:public`, which replaces them with credit-and-link cards.
+**Takedown:** if you hold the rights to an image and want it removed, [open an issue](https://github.com/Amir-Sah/German-History/issues) naming the image or page. It will be taken down on request, without question. Anyone who wants to host a copy of the site without the © images can build it with `npm run build:public`, which replaces them with credit-and-link cards.
 
 ## How this was made
 
@@ -82,4 +82,4 @@ Please treat the knowledge base as a well-sourced study guide, not as a peer-rev
 | The website code in `site/` (scripts, templates, styles, QA) | [MIT](site/LICENSE) |
 | Images, quoted passages, fonts and libraries | Their own licences: see [`NOTICE.md`](NOTICE.md) |
 
-To reuse the text under CC BY 4.0, credit it as: *"German History, Explained" by Amir Sahebozamani, CC BY 4.0, https://github.com/Amir-Sah/History*.
+To reuse the text under CC BY 4.0, credit it as: *"German History, Explained" by Amir Sahebozamani, CC BY 4.0, https://github.com/Amir-Sah/German-History*.

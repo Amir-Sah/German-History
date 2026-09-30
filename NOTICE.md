@@ -14,7 +14,7 @@ No image files are stored in this repository. The chapters and the website **lin
 | Deutsches Historisches Museum, *LeMO* (many photographs © Bundesarchiv) | © rights holders | 54 in total are © |
 | Stiftung Haus der Geschichte der Bundesrepublik Deutschland, *LeMO* | © HdG and other rights holders | (counted in the 54 above) |
 
-**All rights to the images belong to their holders.** The © images are linked, not copied, for non-commercial education, with full credit. This project claims no rights in them. **Any image will be taken down on request:** rights holders can [open an issue](https://github.com/Amir-Sah/History/issues). To host a copy of the site without the © images, build it with `npm run build:public` in `site/`, which shows them only as credit-and-link cards.
+**All rights to the images belong to their holders.** The © images are linked, not copied, for non-commercial education, with full credit. This project claims no rights in them. **Any image will be taken down on request:** rights holders can [open an issue](https://github.com/Amir-Sah/German-History/issues). To host a copy of the site without the © images, build it with `npm run build:public` in `site/`, which shows them only as credit-and-link cards.
 
 ## Quotations and sources
 
