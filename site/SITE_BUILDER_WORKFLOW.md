@@ -25,10 +25,10 @@ description: Use when building, extending, fixing or reviewing the German-histor
 | Dictionary | Inline highlighting (people/places/terms) on all chapters; tooltip + card dialog; `/dictionary/` index + one page per letter + JSON search index |
 | Other pages | `/` the Journey (10 Parts + mental map, from `00_FINAL_EXPLANATION.md` → `journey.json`; node map `data/mental-map.json`; ribbon script `src/scripts/journey.ts`), `/eras/`, `/how-we-know/` (method), `/how-we-know/audit/` (59 claims with anchors) |
 | QA | `npm run qa` = 11 checks, all passing (see §6) |
-| Publishing | **Optional step, done 29 Sept 2026** (§5.7): repo public; GitHub Pages at https://amir-sah.github.io/History/ via `.github/workflows/pages.yml` on every push to `master`; all 72 images hotlinked with rights + takedown notice; `data/takedowns.json` |
+| Publishing | **Optional step, done 29 Sept 2026** (§5.7): repo public; GitHub Pages at https://amir-sah.github.io/German-History/ via `.github/workflows/pages.yml` on every push to `master`; all 72 images hotlinked with rights + takedown notice; `data/takedowns.json` |
 | **Not built yet** | Regime explorer (`05_REGIME_MATRIX.md`), 14 theme pages, interactive timeline (`02_MASTER_TIMELINE.md`), gallery, open questions (`04_…`), self-check, mental-model page (`03_…`), search UI (Pagefind index exists, no UI), sources/bibliography page, two charts proposed in PLAN §4 (NSDAP votes, Thirty Years' War mortality range) |
 
-Merged PRs so far: Amir-Sah/History#1 (pipeline + Weimar slice + QA), #2 (dictionary, plain words, review fixes), #3–#5 (dictionary report, 5-things fix), #6 (review of 29 Sept), #7 (all 35 chapters), #8 (this workflow file), #9 (Journey home), #10 (README, licences, Pages), #11 (all images on the published site + takedown list).
+Merged PRs so far: Amir-Sah/German-History#1 (pipeline + Weimar slice + QA), #2 (dictionary, plain words, review fixes), #3–#5 (dictionary report, 5-things fix), #6 (review of 29 Sept), #7 (all 35 chapters), #8 (this workflow file), #9 (Journey home), #10 (README, licences, Pages), #11 (all images on the published site + takedown list).
 
 ## 3. Architecture (read this instead of the code)
 
@@ -56,7 +56,7 @@ npm run content              # parse + validate the KB only (fast; run after any
 npm run dev | build | preview
 npm run build:public         # dist-public/, © images as credit cards (needed by the behaviour check)
 npm run build:pages          # dist-pages/, the version GitHub Pages publishes (all images hotlinked)
-node scripts/rebase.mjs dist-pages /History && node qa/rebase-check.mjs dist-pages /History   # links below /History/
+node scripts/rebase.mjs dist-pages /German-History && node qa/rebase-check.mjs dist-pages /German-History   # links below /German-History/
 npm run qa                   # 11 checks; qa:final adds --final coverage and --external links
 npm run dictionary:report    # regenerate DICTIONARY_ISSUES.md for the KB session
 node qa/fidelity.mjs all     # every passage verbatim (fast; run after any rendering change)
@@ -120,7 +120,7 @@ Never publish on your own initiative. The owner asked on 29 Sept 2026. The steps
 
    Until then `deploy` fails with 404 "Ensure GitHub Pages has been enabled". Afterwards, re-run it with `actions_run_trigger` `rerun_failed_jobs`.
 5. **Verify live**:
-   - `curl` the key paths under `https://amir-sah.github.io/History/`;
+   - `curl` the key paths under `https://amir-sah.github.io/German-History/`;
    - a Playwright smoke test on the live URL: ribbon, dictionary search, card link, `/dictionary/#id` forwarding, no failed requests;
    - a scroll-through that lists each `figure.fig` as loaded or card.
 6. **Images** (owner's decision, 29 Sept 2026): the published site shows all 72 images hotlinked, with the notice that all rights belong to the holders and any image is taken down on request via a GitHub issue (README, NOTICE, footer). To take one down, add its id to `data/takedowns.json` and merge: every build then shows a credit card. `build:public` remains the variant without © images.
@@ -177,6 +177,7 @@ Visual review pattern: screenshots → one Sonnet subagent reviews `*-1280-light
 | Merge failed: sha must be 40 chars | short sha | `git rev-parse HEAD` |
 | `git push`/PR creation: 503 "credential service temporarily unavailable" / "token store temporarily unavailable" | transient GitHub-credential outage | retry push with backoff; wait with `until` loops (a bare `sleep N; …` chain is blocked), then retry the MCP call |
 | Live site: links 404 / styles missing | project Pages serves under `/<repo>/` | `rebase.mjs` in the workflow; new client-built URLs must use `data-base` |
+| Live site unstyled, links 404 after the repo was renamed (History → German-History, 30 Sept 2026) | the deployed build still links below the old `/<repo>/`; Pages does not redirect | the workflow takes the base from the repo name: push/re-run to redeploy; update hard-coded URLs (README, NOTICE, LICENSE, footer issue link, this file) and `git remote set-url` |
 | Pages `deploy` job: 404 "Ensure GitHub Pages has been enabled" | Pages off or repo private | owner enables Pages (Source: GitHub Actions) and makes the repo public, then re-run failed jobs |
 | Full `qa/run-all.mjs` killed at 15 min | own `timeout 900` | run long checks (axe, behaviour, dictionary, review) separately in the background |
 

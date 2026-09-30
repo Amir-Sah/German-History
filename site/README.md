@@ -22,12 +22,12 @@ npm run qa             # all checks (see below); run after `npm run build`
 
 ## Published on GitHub Pages
 
-`.github/workflows/pages.yml` publishes the site on every push to `master`, to https://amir-sah.github.io/History/:
+`.github/workflows/pages.yml` publishes the site on every push to `master`, to https://amir-sah.github.io/German-History/:
 1. `npm run build:pages` builds the site with all images hotlinked.
-2. `scripts/rebase.mjs` moves all links below `/History/`.
+2. `scripts/rebase.mjs` moves all links below `/German-History/`.
 3. `qa/rebase-check.mjs` checks that every internal link still resolves.
 
-To try the same locally, run `npm run build:pages && node scripts/rebase.mjs dist-pages /History`, then serve the folder's parent directory.
+To try the same locally, run `npm run build:pages && node scripts/rebase.mjs dist-pages /German-History`, then serve the folder's parent directory.
 
 **To take an image down** after a request: add its id (from `images/IMAGE_INDEX.md`) with the date and requester to `data/takedowns.json`, then merge to `master`. Every build then shows that image only as a credit-and-link card, and the build fails if the id is unknown.
 
